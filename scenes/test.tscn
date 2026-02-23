@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://djp0w40wncpty"]
+
+[ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/player.tscn" id="1_bl13t"]
+[ext_resource type="Texture2D" uid="uid://by1lihw48xymo" path="res://icon.svg" id="1_iyx0m"]
+[ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="2_iyx0m"]
+
+[node name="main" type="Node2D" unique_id=742483551]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1360301049]
+position = Vector2(-9, -11.000001)
+scale = Vector2(3.75, 2.0234375)
+texture = ExtResource("1_iyx0m")
+
+[node name="pony" parent="." unique_id=301655442 instance=ExtResource("1_bl13t")]
+
+[node name="input" type="Node" parent="." unique_id=1357546916]
+script = ExtResource("2_iyx0m")
