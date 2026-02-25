@@ -17,9 +17,17 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "red",
+"res://assets/scripts/": "green",
+"res://objects/": "orange",
+"res://scenes/": "purple"
+}
 
 [input]
 

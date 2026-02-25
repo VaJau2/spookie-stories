@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cytxmowj02pwx"]
+
+[ext_resource type="Texture2D" uid="uid://s1ompg8xl4cl" path="res://assets/sprites/props/plants/tree1.png" id="1_waisu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdj5t"]
+size = Vector2(26, 11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_waisu"]
+polygon = PackedVector2Array(12, 0, 12, -43, -14, -43, -14, 0)
+
+[node name="tree1" type="StaticBody2D" unique_id=669454785]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1242816002]
+texture_filter = 1
+position = Vector2(0, -120.34)
+scale = Vector2(1.765625, 1.6280272)
+texture = ExtResource("1_waisu")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=421805980]
+position = Vector2(-1, -4.5)
+shape = SubResource("RectangleShape2D_wdj5t")
+
+[node name="occluder" type="LightOccluder2D" parent="." unique_id=1533210807]
+occluder = SubResource("OccluderPolygon2D_waisu")

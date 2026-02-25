@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfkm2l3fcl7vj"
-path="res://.godot/imported/colt-base.png-07a0b2b4c764087dc5c0f80023d0345d.ctex"
+uid="uid://cf6q667qkif01"
+path="res://.godot/imported/meteorite.png-bc492f03a9f6b7a460116cda85412d91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/colt-base.png"
-dest_files=["res://.godot/imported/colt-base.png-07a0b2b4c764087dc5c0f80023d0345d.ctex"]
+source_file="res://assets/sprites/sky/meteorite.png"
+dest_files=["res://.godot/imported/meteorite.png-bc492f03a9f6b7a460116cda85412d91.ctex"]
 
 [params]
 

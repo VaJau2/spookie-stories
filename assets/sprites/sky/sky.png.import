@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwdekdivk4j8b"
-path="res://.godot/imported/mare-base.png-a3088f4bea457e9431c8ae6db58dade8.ctex"
+uid="uid://crn2q4c6am5mm"
+path="res://.godot/imported/sky.png-85c7c54007de42d5088800f6fc3f3655.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/mare-base.png"
-dest_files=["res://.godot/imported/mare-base.png-a3088f4bea457e9431c8ae6db58dade8.ctex"]
+source_file="res://assets/sprites/sky/sky.png"
+dest_files=["res://.godot/imported/sky.png-85c7c54007de42d5088800f6fc3f3655.ctex"]
 
 [params]
 
