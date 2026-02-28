@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b6ifdwyt3avok"]
+
+[ext_resource type="Script" uid="uid://b3lofky68soaf" path="res://assets/scripts/interface/dialogue/dialogueMenu.gd" id="1_prful"]
+[ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="2_fs0q5"]
+[ext_resource type="Texture2D" uid="uid://c4soggtd70lwq" path="res://assets/sprites/characters/dialogue/strikely.png" id="3_hlvh2"]
+[ext_resource type="Script" uid="uid://d1owaqv0af01v" path="res://assets/scripts/interface/dialogue/dialogueAvatar.gd" id="4_sg52v"]
+[ext_resource type="Script" uid="uid://c6lwrwysonfvw" path="res://assets/scripts/interface/dialogue/dialogueAudi.gd" id="5_2x3gq"]
+
+[node name="dialogueMenu" type="Panel" unique_id=2084497248]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -96.0
+offset_right = -80.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_prful")
+
+[node name="text" type="RichTextLabel" parent="." unique_id=473439137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = 8.0
+offset_right = -48.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_fs0q5")
+bbcode_enabled = true
+text = "Тестовый [b]диалоговый[/b] текст"
+
+[node name="skip" type="Label" parent="." unique_id=1200783727]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -24.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_fs0q5")
+theme_override_font_sizes/font_size = 12
+text = "пробел чтобы продолжить"
+vertical_alignment = 1
+
+[node name="avatar_point" type="Control" parent="." unique_id=629659834]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 8.0
+
+[node name="avatar" type="Sprite2D" parent="avatar_point" unique_id=585671705]
+texture_filter = 1
+position = Vector2(45.1, -13.099987)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("3_hlvh2")
+hframes = 6
+vframes = 6
+script = ExtResource("4_sg52v")
+
+[node name="audi" type="AudioStreamPlayer" parent="." unique_id=599730044]
+script = ExtResource("5_2x3gq")

@@ -1,0 +1,13 @@
+{
+	"strikely": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.5",
+		"max_pitch": "2",
+		"chars_to_sound": "3",
+	},
+}

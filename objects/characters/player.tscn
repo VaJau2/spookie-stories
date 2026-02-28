@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6j5nqwe7x4v3"]
 
 [ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_s7pd4"]
-[ext_resource type="Texture2D" uid="uid://bgtyxn6w4ibcf" path="res://assets/sprites/characters/pay.png" id="1_ssmtf"]
+[ext_resource type="Texture2D" uid="uid://dts6m4gpnv8u4" path="res://assets/sprites/characters/strikely.png" id="2_kaojo"]
 [ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="2_qmg4u"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_up0fu"]
 [ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="4_3tm56"]
@@ -114,7 +114,7 @@ texture = ExtResource("1_s7pd4")
 [node name="sprite" type="Sprite2D" parent="." unique_id=1857052420]
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("1_ssmtf")
+texture = ExtResource("2_kaojo")
 hframes = 8
 vframes = 6
 
@@ -127,32 +127,32 @@ shape = SubResource("CapsuleShape2D_5mxps")
 root_node = NodePath("../sprite")
 libraries/ = SubResource("AnimationLibrary_b8q40")
 
-[node name="movementController" type="Node" parent="." unique_id=883112943]
+[node name="movementController" type="Node" parent="." unique_id=1950806343]
 script = ExtResource("4_3tm56")
 
-[node name="walk" type="Node" parent="movementController" unique_id=670054223]
+[node name="walk" type="Node" parent="movementController" unique_id=5973867]
 script = ExtResource("5_qmg4u")
 default = true
 
-[node name="run" type="Node" parent="movementController" unique_id=1516494118]
+[node name="run" type="Node" parent="movementController" unique_id=147852670]
 script = ExtResource("5_qmg4u")
 anim = "run"
 speed = 300
 
-[node name="sit" type="Node" parent="movementController" unique_id=1233996208]
+[node name="sit" type="Node" parent="movementController" unique_id=732522925]
 script = ExtResource("5_qmg4u")
 idle_anim = "sit"
 
-[node name="inputController" type="Node" parent="." unique_id=1258807778 node_paths=PackedStringArray("movement_controller")]
+[node name="inputController" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("3_up0fu")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("")
 
-[node name="animationController" type="Node" parent="." unique_id=120507850 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
+[node name="animationController" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("2_qmg4u")
 sprites = [NodePath("../sprite")]
 anim = NodePath("../anim")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("")
 
-[node name="camera" type="Camera2D" parent="." unique_id=610240244]
+[node name="camera" type="Camera2D" parent="." unique_id=1899412962]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true

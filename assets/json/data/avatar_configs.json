@@ -1,0 +1,14 @@
+{
+	"strikely": {
+		"idle": {
+			"eyes_open": 0,
+			"eyes_closed": 1,
+			"mouth_open": 2,
+		},
+		"happy":  {
+			"eyes_open": 3,
+			"eyes_closed": 3,
+			"mouth_open": 4,
+		}
+	}
+}
