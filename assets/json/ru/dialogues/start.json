@@ -1,0 +1,221 @@
+{
+	"test": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Ну что ж, теперь, когда мы полностью расположились и закончили с обустройством палаток, можно наконец расслабиться."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"talk_state": "smirk-talk",
+				"text": "И нормально познакомиться."
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "А какой смысл?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Мы пересеклись тут абсолютно случайно и разойдемся на следующее утро."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Предлагаю не тратить время и идти спать."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"talk_state": "confused-talk",
+				"text": "И пропустить самое интересное?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"talk_state": "smirk-talk",
+				"text": "Неее. Поспать ты всегда успеешь."
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Меня ждет дальняя дорога домой, мне нужен полноценный отдых."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Пожалуйста, мы тебя не держим. Иди отсыпайся."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"talk_state": "smirk-talk",
+				"text": "А мы останемся и заведем новые полезные знакомства. Правильно, дамы?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"text": "Поддерживаю."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"text": "Я предпочитаю спать в компании знакомых мне пони, чем в компании незнакомых."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Так спится крепче."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Некоторые из нас уже знакомы, но не все знают друг друга."
+			}, 
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"talk_state": "happy-talk",
+				"text": "А сейчас идеальный момент это исправить!"
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikely",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Я тоже согласна."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Вдобавок, у меня в запасе есть множество интересных жутких историй, которые пони обычно рассказывают в такие ночи у костра."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"text": "О, и у меня тоже!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"talk_state": "sad-talk",
+				"text": "Хорошо, убедили."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"talk_state": "sarcastic-talk",
+				"text": "Давайте будем знакомиться."
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "happy",
+				"talk_state": "happy-talk",
+				"text": "Великолепно! Моё имя Котелок."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "А ваше, дамы?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "happy",
+				"text": "Меня зовут Пей."
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Даск."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Страйкли."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Серрьюс Тейл."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"talk_state": "confused-talk",
+				"text": "..Тейл?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"talk_state": "confused-talk",
+				"text": "Да у тебя же в имени написано слушать и рассказывать истории! А ты еще отказываешься!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"talk_state": "sarcastic-talk",
+				"text": "Я все еще могу передумать."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Ладно, ладно! С этапом знакомства, я считаю, закончили."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Итак, кто-нибудь хочет взять инициативу и рассказать первую историю?"
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "..."
+			},
+		],
+	}
+}

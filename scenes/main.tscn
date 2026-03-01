@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dt1dbmby5so87" path="res://assets/sprites/characters/serious-tale.png" id="22_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="23_y6deb"]
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="24_og1vs"]
+[ext_resource type="Script" uid="uid://cnsf3tw1jch1e" path="res://assets/scripts/interface/skipButton.gd" id="26_2wyq8"]
 
 [sub_resource type="Animation" id="Animation_trceg"]
 length = 0.001
@@ -951,11 +952,140 @@ tracks/0/keys = {
 "update": 1,
 "values": [24, 24, 25, 24, 24]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0loja"]
+resource_name = "sad"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 0.6333333, 0.7, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 30, 31, 30, 30]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ids8r"]
+resource_name = "sad-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 30]
+}
+
+[sub_resource type="Animation" id="Animation_dnhof"]
+resource_name = "sarcastic"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 0.6333333, 0.7, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 27, 28, 27, 27]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_1v6qk"]
+resource_name = "sarcastic-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [29, 27]
+}
+
+[sub_resource type="Animation" id="Animation_ty1g6"]
+resource_name = "talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [26, 24]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j8jky"]
 _data = {
 &"RESET": SubResource("Animation_qkpxi"),
-&"idle": SubResource("Animation_dgi5k")
+&"idle": SubResource("Animation_dgi5k"),
+&"sad": SubResource("Animation_0loja"),
+&"sad-talk": SubResource("Animation_ids8r"),
+&"sarcastic": SubResource("Animation_dnhof"),
+&"sarcastic-talk": SubResource("Animation_1v6qk"),
+&"talk": SubResource("Animation_ty1g6")
 }
 
 [sub_resource type="Animation" id="Animation_j8jky"]
@@ -973,6 +1103,53 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_e755i"]
+resource_name = "confused"
+length = 1.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 0.96666664, 1.0333333, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [29, 29, 30, 29, 29]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.96666664),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ro3en"]
+resource_name = "confused-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [31, 29]
+}
+
 [sub_resource type="Animation" id="Animation_kmb1v"]
 resource_name = "idle"
 length = 1.7
@@ -988,6 +1165,36 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [26, 26, 27, 26, 26]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.96666664),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_o7ddy"]
+resource_name = "talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [28, 26]
 }
 
 [sub_resource type="Animation" id="Animation_fuf3a"]
@@ -1009,7 +1216,10 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pibwh"]
 _data = {
 &"RESET": SubResource("Animation_j8jky"),
+&"confused": SubResource("Animation_e755i"),
+&"confused-talk": SubResource("Animation_ro3en"),
 &"idle": SubResource("Animation_kmb1v"),
+&"talk": SubResource("Animation_o7ddy"),
 &"walk": SubResource("Animation_fuf3a")
 }
 
@@ -1028,6 +1238,38 @@ tracks/0/keys = {
 "values": [24]
 }
 
+[sub_resource type="Animation" id="Animation_kf5aa"]
+resource_name = "happy"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 32]
+}
+
+[sub_resource type="Animation" id="Animation_t5ykj"]
+resource_name = "happy-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [33, 32]
+}
+
 [sub_resource type="Animation" id="Animation_pibwh"]
 resource_name = "idle"
 length = 1.2
@@ -1043,6 +1285,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [29, 29, 30, 29, 29]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_cjqg0"]
@@ -1061,6 +1317,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [24, 24, 25, 24, 24]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.56666666),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_vchkt"]
 resource_name = "sit2"
@@ -1078,13 +1348,46 @@ tracks/0/keys = {
 "update": 1,
 "values": [26, 26, 27, 26, 26]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.43333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_bu4jf"]
+resource_name = "talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [31, 29]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6pm6"]
 _data = {
 &"RESET": SubResource("Animation_5q0nq"),
+&"happy": SubResource("Animation_kf5aa"),
+&"happy-talk": SubResource("Animation_t5ykj"),
 &"idle": SubResource("Animation_pibwh"),
 &"sit": SubResource("Animation_cjqg0"),
-&"sit2": SubResource("Animation_vchkt")
+&"sit2": SubResource("Animation_vchkt"),
+&"talk": SubResource("Animation_bu4jf")
 }
 
 [sub_resource type="Animation" id="Animation_c6pm6"]
@@ -1102,6 +1405,87 @@ tracks/0/keys = {
 "values": [24]
 }
 
+[sub_resource type="Animation" id="Animation_j2jfr"]
+resource_name = "confused"
+length = 1.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.73333335, 0.8, 0.8666667, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [29, 29, 30, 29, 29]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_bjg73"]
+resource_name = "confused-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [31, 29]
+}
+
+[sub_resource type="Animation" id="Animation_augu2"]
+resource_name = "happy"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [32, 32]
+}
+
+[sub_resource type="Animation" id="Animation_tm6hj"]
+resource_name = "happy-talk"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [33, 32]
+}
+
 [sub_resource type="Animation" id="Animation_5he1u"]
 resource_name = "idle"
 length = 1.7
@@ -1117,6 +1501,69 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [24, 24, 25, 24, 24]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vc5cj"]
+resource_name = "smirk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [27, 27]
+}
+
+[sub_resource type="Animation" id="Animation_nvyfr"]
+resource_name = "smirk-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [28, 27]
+}
+
+[sub_resource type="Animation" id="Animation_txyw0"]
+resource_name = "talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [26, 24]
 }
 
 [sub_resource type="Animation" id="Animation_5poiv"]
@@ -1138,7 +1585,14 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2cjbq"]
 _data = {
 &"RESET": SubResource("Animation_c6pm6"),
+&"confused": SubResource("Animation_j2jfr"),
+&"confused-talk": SubResource("Animation_bjg73"),
+&"happy": SubResource("Animation_augu2"),
+&"happy-talk": SubResource("Animation_tm6hj"),
 &"idle": SubResource("Animation_5he1u"),
+&"smirk": SubResource("Animation_vc5cj"),
+&"smirk-talk": SubResource("Animation_nvyfr"),
+&"talk": SubResource("Animation_txyw0"),
 &"walk": SubResource("Animation_5poiv")
 }
 
@@ -1262,7 +1716,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(7.833333),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["test", "test", NodePath("../../ponies/strikely/anim_controller")],
+"args": ["start", "test"],
 "method": &"start_dialogue"
 }]
 }
@@ -1917,6 +2371,10 @@ shape = SubResource("RectangleShape2D_ihc3w")
 libraries/ = SubResource("AnimationLibrary_j8jky")
 autoplay = &"idle"
 
+[node name="anim_controller" type="Node" parent="ponies/serious_tale" unique_id=1110084134 node_paths=PackedStringArray("anim")]
+script = ExtResource("19_og1vs")
+anim = NodePath("../anim")
+
 [node name="dusk" type="CharacterBody2D" parent="ponies" unique_id=663760292]
 texture_filter = 1
 position = Vector2(195, -292)
@@ -1940,6 +2398,10 @@ shape = SubResource("RectangleShape2D_ihc3w")
 
 [node name="anim" type="AnimationPlayer" parent="ponies/dusk" unique_id=2125682322]
 libraries/ = SubResource("AnimationLibrary_pibwh")
+
+[node name="anim_controller" type="Node" parent="ponies/dusk" unique_id=500385855 node_paths=PackedStringArray("anim")]
+script = ExtResource("19_og1vs")
+anim = NodePath("../anim")
 
 [node name="pay" type="CharacterBody2D" parent="ponies" unique_id=204001263]
 texture_filter = 1
@@ -1966,6 +2428,10 @@ shape = SubResource("RectangleShape2D_ihc3w")
 libraries/ = SubResource("AnimationLibrary_c6pm6")
 autoplay = &"sit"
 
+[node name="anim_controller" type="Node" parent="ponies/pay" unique_id=2000119051 node_paths=PackedStringArray("anim")]
+script = ExtResource("19_og1vs")
+anim = NodePath("../anim")
+
 [node name="bowler_hat" type="CharacterBody2D" parent="ponies" unique_id=853310757]
 texture_filter = 1
 position = Vector2(-71, -210)
@@ -1990,6 +2456,10 @@ shape = SubResource("RectangleShape2D_ihc3w")
 [node name="anim" type="AnimationPlayer" parent="ponies/bowler_hat" unique_id=1607397170]
 libraries/ = SubResource("AnimationLibrary_2cjbq")
 
+[node name="anim_controller" type="Node" parent="ponies/bowler_hat" unique_id=1906636275 node_paths=PackedStringArray("anim")]
+script = ExtResource("19_og1vs")
+anim = NodePath("../anim")
+
 [node name="directional_light" type="DirectionalLight2D" parent="." unique_id=1813651885]
 color = Color(0.20667216, 0.3282447, 0.69893837, 1)
 blend_mode = 2
@@ -1999,11 +2469,16 @@ zoom = Vector2(0.8, 0.8)
 
 [node name="menu" type="CanvasLayer" parent="." unique_id=1290733646]
 
-[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("24_og1vs")]
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 node_paths=PackedStringArray("ponies_parent") instance=ExtResource("24_og1vs")]
 texture_filter = 1
+ponies_parent = NodePath("../../ponies")
 
 [node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("23_y6deb")]
 
 [node name="scenario" type="AnimationPlayer" parent="." unique_id=1626369692]
 libraries/ = SubResource("AnimationLibrary_yq6so")
 autoplay = &"idle"
+
+[node name="skip" type="Node" parent="scenario" unique_id=1221431517 node_paths=PackedStringArray("anim_to_skip")]
+script = ExtResource("26_2wyq8")
+anim_to_skip = NodePath("..")

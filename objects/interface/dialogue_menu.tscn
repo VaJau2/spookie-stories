@@ -54,10 +54,10 @@ vertical_alignment = 1
 
 [node name="avatar_point" type="Control" parent="." unique_id=629659834]
 anchors_preset = 0
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 16.0
-offset_bottom = 8.0
+offset_left = 17.0
+offset_top = 43.0
+offset_right = 17.0
+offset_bottom = 43.0
 
 [node name="avatar" type="Sprite2D" parent="avatar_point" unique_id=585671705]
 texture_filter = 1

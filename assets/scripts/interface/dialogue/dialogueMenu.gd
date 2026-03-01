@@ -4,6 +4,8 @@ class_name DialogueMenu
 
 const DEFAULT_TIMER: float = 0.03
 
+@export var ponies_parent: Node2D
+
 @onready var movement_controller: MovementController = null
 @onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
 
@@ -22,7 +24,7 @@ var animation_timer: float = 0
 
 enum TypeEnum {
 	phrase,
-	change_code
+	new_state
 }
 
 
@@ -37,11 +39,7 @@ func _process(delta: float) -> void:
 			text.visible_ratio = 1
 
 
-func start_dialogue(file: String, code: String, anim = null) -> void:
-	if anim != null:
-		if anim is NodePath: temp_anim = get_node(anim)
-		else: temp_anim = anim
-	
+func start_dialogue(file: String, code: String) -> void:	
 	dialogue_data = _get_dialogue_data(file, code)
 	if dialogue_data.is_empty(): return
 	index = 0
@@ -63,10 +61,11 @@ func _show_node(node_data: Dictionary) -> void:
 	match type:
 		TypeEnum.phrase:
 			speaker_name = node_data.speaker
+			_find_speaker_anim(speaker_name)
 			audi.set_config(speaker_name)
 			
 			var state = node_data.state if node_data.has("state") else "idle"
-			var talk_state = node_data.talk_state if node_data.has("talk_state") else ""
+			var talk_state = node_data.talk_state if node_data.has("talk_state") else "talk"
 			avatar.load_avatar(speaker_name, state, temp_anim)
 			if temp_anim: temp_anim.set_state(state, talk_state)
 			text.text = node_data.text
@@ -74,6 +73,13 @@ func _show_node(node_data: Dictionary) -> void:
 			animation_timer = 0
 			text.visible_characters = 0
 			skip.visible = false
+		
+		TypeEnum.new_state:
+			var state = node_data.state if node_data.has("state") else "idle"
+			speaker_name = node_data.speaker
+			_find_speaker_anim(speaker_name)
+			if temp_anim: temp_anim.set_state(state)
+			_next_node()
 
 
 func _next_node() -> void:
@@ -119,3 +125,10 @@ func _get_dialogue_data(file_name: String, dialogue_name: String) -> Array:
 	if json_data.has(dialogue_name):
 		return json_data[dialogue_name].nodes
 	return []
+
+
+func _find_speaker_anim(speaker_code: String) -> void:
+	if ponies_parent == null: return
+	var speaker = ponies_parent.get_node_or_null(speaker_code)
+	if speaker == null: return
+	temp_anim = speaker.get_node("anim_controller")

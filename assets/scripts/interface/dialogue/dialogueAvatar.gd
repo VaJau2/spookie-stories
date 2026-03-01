@@ -19,6 +19,7 @@ func load_avatar(character_name: String, state: String, anim: DialogueAnimContro
 		texture = texture_file
 		avatar_config = AvatarConfig.new()
 		avatar_config.load_from_file(character_name, state)
+		frame = avatar_config.eyes_open
 		visible = true
 		if anim != null and temp_anim != anim:
 			if temp_anim != null:

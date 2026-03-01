@@ -10,4 +10,45 @@
 		"max_pitch": "2",
 		"chars_to_sound": "3",
 	},
+	"bowler_hat": {
+		"sounds": [
+			"beeps/sound_i.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_u.wav",
+			"beeps/sound_y.wav",
+		],
+		"min_pitch": "0.6",
+		"max_pitch": "0.9",
+		"chars_to_sound": "3",
+	},
+	"serious_tale": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_u.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "0.4",
+		"max_pitch": "0.7",
+		"chars_to_sound": "4",
+	},
+	"pay": {
+		"sounds": [
+			"beeps/sound_y.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_i.wav",
+		],
+		"min_pitch": "1.7",
+		"max_pitch": "2.4",
+		"chars_to_sound": "3",
+	},
+	"dusk": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.8",
+		"max_pitch": "2.5",
+		"chars_to_sound": "4",
+	}
 }
