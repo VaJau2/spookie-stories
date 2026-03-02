@@ -69,4 +69,5 @@ vframes = 6
 script = ExtResource("4_sg52v")
 
 [node name="audi" type="AudioStreamPlayer" parent="." unique_id=599730044]
+bus = &"Sound"
 script = ExtResource("5_2x3gq")

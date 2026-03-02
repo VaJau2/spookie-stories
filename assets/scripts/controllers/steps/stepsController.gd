@@ -11,15 +11,16 @@ const RUN_COOLDOWN = 0.6
 
 var current_material: Enums.Materials
 var curent_sound_array: Array[AudioStream]
-var current_state: String
+var current_state: String = "walk"
 var sound_index: int = 0
 var timer: float = 0
 
 
 func _ready() -> void:
 	current_material = default_material
-	movement_controller.move.connect(on_move)
-	movement_controller.stop.connect(on_stop)
+	if movement_controller:
+		movement_controller.move.connect(on_move)
+		movement_controller.stop.connect(on_stop)
 	on_stop()
 
 
@@ -62,4 +63,5 @@ func build_sound_array() -> void:
 
 
 func get_movement_state() -> String:
-	return movement_controller.current_state.name
+	if movement_controller: return movement_controller.current_state.name
+	return current_state

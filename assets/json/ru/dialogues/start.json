@@ -171,6 +171,12 @@
 			},
 			{
 				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Твоя очередь, ковпони."
+			},
+			{
+				"type": "phrase",
 				"speaker": "serious_tale",
 				"text": "Серрьюс Тейл."
 			},
@@ -212,9 +218,52 @@
 			},
 			{
 				"type": "phrase",
+				"speaker": "strikely",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
 				"speaker": "dusk",
 				"state": "confused",
 				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"text": "Окей, давайте я начну."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Это история про одну пегаску…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "..?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "…которая очень любила маффины."
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "confused",
+			},
+				{
+				"type": "phrase",
+				"speaker": "pay",
+				"text": "И вот однажды она обнаружила, что её маффины закончились, и отправилась в магазин, чтобы купить ещё…"
 			},
 		],
 	}

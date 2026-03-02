@@ -78,5 +78,10 @@
 			"eyes_closed": 4,
 			"mouth_open": 5,
 		},
+		"shy": {
+			"eyes_open": 6,
+			"eyes_closed": 7,
+			"mouth_open": 8,
+		},
 	}
 }
