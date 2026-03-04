@@ -24,7 +24,8 @@ var animation_timer: float = 0
 
 enum TypeEnum {
 	phrase,
-	new_state
+	new_state,
+	script
 }
 
 
@@ -80,6 +81,12 @@ func _show_node(node_data: Dictionary) -> void:
 			_find_speaker_anim(speaker_name)
 			if temp_anim: temp_anim.set_state(state)
 			_next_node()
+		
+		TypeEnum.script:
+			var node = get_node(node_data.path)
+			var method = node_data.method
+			if node.has_method(method):
+				node.call(method)
 
 
 func _next_node() -> void:

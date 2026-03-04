@@ -13,11 +13,13 @@ config_version=5
 config/name="Spookie Stories"
 run/main_scene="uid://djp0w40wncpty"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 G="*uid://h3phtdmelbel"
+Scenes="*uid://b3at64sfs5we3"
 
 [display]
 
@@ -97,3 +99,4 @@ ui_sit={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

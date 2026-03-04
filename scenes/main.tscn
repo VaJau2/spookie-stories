@@ -38,6 +38,15 @@
 [ext_resource type="FontFile" uid="uid://dwiqxpak0w7cd" path="res://assets/materials/fonts/rubikMonoOne/RubikMonoOne-Regular.ttf" id="35_kmb1v"]
 [ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="36_fuf3a"]
 [ext_resource type="Script" uid="uid://uctf86vuwugf" path="res://assets/scripts/interface/buttons/startButton.gd" id="37_pibwh"]
+[ext_resource type="Script" uid="uid://kchc4jq4p0j2" path="res://assets/scripts/interface/buttons/exitButton.gd" id="38_5poiv"]
+[ext_resource type="Script" uid="uid://d326s2faw7wm5" path="res://assets/scripts/interface/buttons/volumeSlider.gd" id="38_c6pm6"]
+[ext_resource type="AudioStream" uid="uid://b60lvi8m5jeqs" path="res://assets/audio/dialogue/beeps/sound_a.wav" id="39_5he1u"]
+[ext_resource type="Script" uid="uid://r3llylg2jb7i" path="res://assets/scripts/interface/buttons/fullscreenButton.gd" id="41_2cjbq"]
+[ext_resource type="FontFile" uid="uid://t21pgqonhslq" path="res://assets/materials/fonts/centuryGothic/CenturyGhotic.TTF" id="41_txyw0"]
+[ext_resource type="Script" uid="uid://c70une7os5brx" path="res://assets/scripts/interface/buttons/languageButton.gd" id="42_chjal"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="43_cjqg0"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="44_vchkt"]
+[ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="47_vc5cj"]
 
 [sub_resource type="Animation" id="Animation_trceg"]
 length = 0.001
@@ -1662,12 +1671,54 @@ _data = {
 &"walk": SubResource("Animation_5poiv")
 }
 
+[sub_resource type="Resource" id="Resource_vchkt"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../start_button")
+code = "main_menu.start"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_bjg73"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../exit_button")
+code = "main_menu.exit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pibwh"]
 bg_color = Color(0, 0, 0.011764706, 0.98039216)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+
+[sub_resource type="Resource" id="Resource_txyw0"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../settings_title")
+code = "settings.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_vc5cj"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../volume_label")
+code = "settings.volume"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_nvyfr"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../fullscreen_label")
+code = "settings.fullscreen"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ty1g6"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../languale_label")
+code = "settings.language_label"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_j2jfr"]
+script = ExtResource("44_vchkt")
+node_path = NodePath("../language_button")
+code = "settings.language"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Animation" id="Animation_vxglm"]
 length = 0.001
@@ -2612,9 +2663,9 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -656.0
-offset_top = 312.0
+offset_top = 288.0
 offset_right = -18.0
-offset_bottom = 375.0
+offset_bottom = 351.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("35_kmb1v")
 theme_override_font_sizes/font_size = 50
@@ -2623,15 +2674,30 @@ text = "Spookie Stories"
 [node name="start_button" type="Button" parent="menu/main_menu" unique_id=1903705571 node_paths=PackedStringArray("scenario_anim", "main_menu_panel")]
 layout_mode = 0
 offset_left = 872.0
-offset_top = 384.0
+offset_top = 360.0
 offset_right = 1128.0
-offset_bottom = 416.0
+offset_bottom = 392.0
 theme = ExtResource("36_fuf3a")
 text = "Играть >   "
 alignment = 2
 script = ExtResource("37_pibwh")
 scenario_anim = NodePath("../../../scenario")
 main_menu_panel = NodePath("..")
+
+[node name="exit_button" type="Button" parent="menu/main_menu" unique_id=591724696]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 408.0
+offset_right = 1128.0
+offset_bottom = 440.0
+theme = ExtResource("36_fuf3a")
+text = "Выход X   "
+alignment = 2
+script = ExtResource("38_5poiv")
+
+[node name="translate" type="Node" parent="menu/main_menu" unique_id=1150022051]
+script = ExtResource("43_cjqg0")
+nodes = Array[ExtResource("44_vchkt")]([SubResource("Resource_vchkt"), SubResource("Resource_bjg73")])
 
 [node name="settings" type="Panel" parent="menu/main_menu" unique_id=286138554]
 layout_mode = 1
@@ -2650,15 +2716,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -44.0
+offset_left = -34.0
 offset_top = 8.0
 offset_right = 45.0
-offset_bottom = 31.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme = ExtResource("36_fuf3a")
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("41_txyw0")
 text = "Настройки"
+vertical_alignment = 1
 
 [node name="volume_label" type="Label" parent="menu/main_menu/settings" unique_id=1021082204]
 layout_mode = 1
@@ -2668,6 +2736,7 @@ offset_right = 208.0
 offset_bottom = 87.0
 theme = ExtResource("36_fuf3a")
 text = "Громкость звука:"
+vertical_alignment = 1
 
 [node name="volume" type="HSlider" parent="menu/main_menu/settings" unique_id=381756459]
 layout_mode = 1
@@ -2676,6 +2745,14 @@ offset_top = 72.0
 offset_right = 344.0
 offset_bottom = 88.0
 theme = ExtResource("36_fuf3a")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("38_c6pm6")
+
+[node name="sample" type="AudioStreamPlayer" parent="menu/main_menu/settings/volume" unique_id=948997144]
+stream = ExtResource("39_5he1u")
+bus = &"Sound"
 
 [node name="fullscreen_label" type="Label" parent="menu/main_menu/settings" unique_id=457090608]
 layout_mode = 1
@@ -2685,6 +2762,7 @@ offset_right = 202.0
 offset_bottom = 127.0
 theme = ExtResource("36_fuf3a")
 text = "Полноэкранный режим:"
+vertical_alignment = 1
 
 [node name="fullscreen" type="CheckBox" parent="menu/main_menu/settings" unique_id=874250087]
 layout_mode = 1
@@ -2693,6 +2771,7 @@ offset_top = 104.0
 offset_right = 240.0
 offset_bottom = 128.0
 theme = ExtResource("36_fuf3a")
+script = ExtResource("41_2cjbq")
 
 [node name="languale_label" type="Label" parent="menu/main_menu/settings" unique_id=677212259]
 layout_mode = 1
@@ -2702,6 +2781,7 @@ offset_right = 202.0
 offset_bottom = 176.0
 theme = ExtResource("36_fuf3a")
 text = "Язык:"
+vertical_alignment = 1
 
 [node name="language_button" type="Button" parent="menu/main_menu/settings" unique_id=698400099]
 layout_mode = 1
@@ -2711,6 +2791,20 @@ offset_right = 344.0
 offset_bottom = 175.0
 theme = ExtResource("36_fuf3a")
 text = "Русский"
+script = ExtResource("42_chjal")
+
+[node name="translate" type="Node" parent="menu/main_menu/settings" unique_id=1078140638]
+script = ExtResource("43_cjqg0")
+nodes = Array[ExtResource("44_vchkt")]([SubResource("Resource_txyw0"), SubResource("Resource_vc5cj"), SubResource("Resource_nvyfr"), SubResource("Resource_ty1g6"), SubResource("Resource_j2jfr")])
+
+[node name="black_screen" type="ColorRect" parent="menu" unique_id=357954745]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [node name="scenario" type="AnimationPlayer" parent="." unique_id=1626369692]
 libraries/ = SubResource("AnimationLibrary_yq6so")
@@ -2718,3 +2812,7 @@ libraries/ = SubResource("AnimationLibrary_yq6so")
 [node name="skip" type="Node" parent="scenario" unique_id=1221431517 node_paths=PackedStringArray("anim_to_skip")]
 script = ExtResource("26_2wyq8")
 anim_to_skip = NodePath("..")
+
+[node name="next_level" type="Node" parent="scenario" unique_id=565994854 node_paths=PackedStringArray("black_screen")]
+script = ExtResource("47_vc5cj")
+black_screen = NodePath("../../menu/black_screen")

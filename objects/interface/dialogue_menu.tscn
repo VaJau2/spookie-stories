@@ -5,6 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://c4soggtd70lwq" path="res://assets/sprites/characters/dialogue/strikely.png" id="3_hlvh2"]
 [ext_resource type="Script" uid="uid://d1owaqv0af01v" path="res://assets/scripts/interface/dialogue/dialogueAvatar.gd" id="4_sg52v"]
 [ext_resource type="Script" uid="uid://c6lwrwysonfvw" path="res://assets/scripts/interface/dialogue/dialogueAudi.gd" id="5_2x3gq"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="6_hlvh2"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="7_sg52v"]
+
+[sub_resource type="Resource" id="Resource_2x3gq"]
+script = ExtResource("7_sg52v")
+node_path = NodePath("../skip")
+code = "dialogue.skip"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="dialogueMenu" type="Panel" unique_id=2084497248]
 visible = false
@@ -71,3 +79,7 @@ script = ExtResource("4_sg52v")
 [node name="audi" type="AudioStreamPlayer" parent="." unique_id=599730044]
 bus = &"Sound"
 script = ExtResource("5_2x3gq")
+
+[node name="translate" type="Node" parent="." unique_id=448602713]
+script = ExtResource("6_hlvh2")
+nodes = Array[ExtResource("7_sg52v")]([SubResource("Resource_2x3gq")])

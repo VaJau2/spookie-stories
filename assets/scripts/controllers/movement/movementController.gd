@@ -35,7 +35,9 @@ func load_state(state_name: String = 'default') -> void:
 			if state is MovementState and state.default:
 				set_current_state(state)
 	else:
-		set_current_state(get_node(state_name))
+		var new_state = get_node_or_null(state_name)
+		if new_state:
+			set_current_state(get_node(state_name))
 
 
 func set_current_state(new_state: MovementState) -> void:

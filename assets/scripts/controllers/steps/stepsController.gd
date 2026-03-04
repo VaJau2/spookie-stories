@@ -2,8 +2,8 @@ extends AudioStreamPlayer2D
 
 class_name StepsController
 
-const WALK_COOLDOWN = 0.4
-const RUN_COOLDOWN = 0.6
+const WALK_COOLDOWN: float = 0.4
+const RUN_COOLDOWN: float = 0.6
 
 @export var movement_controller: MovementController
 @export var steps_data: Array[StepData]
@@ -15,6 +15,9 @@ var current_state: String = "walk"
 var sound_index: int = 0
 var timer: float = 0
 
+var walk_cooldown: float = WALK_COOLDOWN
+var run_cooldown: float = RUN_COOLDOWN
+
 
 func _ready() -> void:
 	current_material = default_material
@@ -25,11 +28,14 @@ func _ready() -> void:
 
 
 func on_move() -> void:
-	set_process(true)
+	if !is_processing():
+		timer = 0
+		set_process(true)
 
 
 func on_stop() -> void:
-	set_process(false)
+	if is_processing():
+		set_process(false)
 
 
 func on_change_material(new_material: Enums.Materials) -> void:
@@ -47,7 +53,7 @@ func _process(delta: float) -> void:
 		stream = curent_sound_array[sound_index]
 		play()
 		sound_index += 1
-		timer = WALK_COOLDOWN if current_state == "walk" else RUN_COOLDOWN
+		timer = walk_cooldown if current_state == "walk" else run_cooldown
 
 
 func build_sound_array() -> void:
@@ -60,6 +66,8 @@ func build_sound_array() -> void:
 				else step_data.walk_sounds
 			curent_sound_array.shuffle()
 			sound_index = 0
+			walk_cooldown = step_data.walk_cooldown
+			run_cooldown = step_data.run_cooldown
 
 
 func get_movement_state() -> String:

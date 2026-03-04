@@ -1,0 +1,16 @@
+{
+	"main_menu": {
+		"start": "Играть >   ",
+		"exit": "Выход X   ",
+	},
+	"settings": {
+		"title": "Настройки",
+		"volume": "Громкость звука:",
+		"fullscreen": "Полноэкранный режим:",
+		"language_label": "Язык:",
+		"language": "Русский"
+	},
+	"dialogue": {
+		"skip": "пробел чтобы продолжить"
+	}
+}

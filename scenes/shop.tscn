@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dq3brbph18oyp"]
+
+[ext_resource type="Texture2D" uid="uid://mc3krq8p5oh0" path="res://assets/sprites/props/shop/shop-back.png" id="1_032fp"]
+[ext_resource type="Texture2D" uid="uid://cis588m7gtuts" path="res://assets/sprites/props/shop/shop-shelfs.png" id="2_2fc2m"]
+[ext_resource type="Texture2D" uid="uid://gu7s2mdqmlqq" path="res://assets/sprites/props/shop/shop-table.png" id="3_8r1wq"]
+[ext_resource type="Texture2D" uid="uid://dq3arje758460" path="res://assets/sprites/characters/opal.png" id="4_ajxib"]
+[ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="6_8r1wq"]
+[ext_resource type="PackedScene" uid="uid://c5il4mkj2wr2i" path="res://objects/characters/derpy.tscn" id="6_ajxib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fc2m"]
+size = Vector2(17, 298)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r1wq"]
+size = Vector2(282, 17)
+
+[sub_resource type="Animation" id="Animation_y6sft"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_m4ofw"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.7, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 0, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_heatd"]
+_data = {
+&"RESET": SubResource("Animation_y6sft"),
+&"idle": SubResource("Animation_m4ofw")
+}
+
+[node name="main" type="Node2D" unique_id=1054606192]
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="props" type="Node2D" parent="." unique_id=1616006616]
+z_index = -1
+
+[node name="back" type="Sprite2D" parent="props" unique_id=1119484375]
+texture = ExtResource("1_032fp")
+
+[node name="shelfs" type="Sprite2D" parent="props" unique_id=695209852]
+texture = ExtResource("2_2fc2m")
+
+[node name="collision" type="StaticBody2D" parent="props" unique_id=1999032909]
+
+[node name="shape" type="CollisionShape2D" parent="props/collision" unique_id=1933553803]
+position = Vector2(134.5, 0)
+shape = SubResource("RectangleShape2D_2fc2m")
+
+[node name="shape2" type="CollisionShape2D" parent="props/collision" unique_id=306522654]
+position = Vector2(-134, 0)
+shape = SubResource("RectangleShape2D_2fc2m")
+
+[node name="shape3" type="CollisionShape2D" parent="props/collision" unique_id=2011812843]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_8r1wq")
+
+[node name="shape4" type="CollisionShape2D" parent="props/collision" unique_id=518541789]
+position = Vector2(0, 157)
+shape = SubResource("RectangleShape2D_8r1wq")
+
+[node name="shop_table" type="Sprite2D" parent="." unique_id=1528552545]
+texture = ExtResource("3_8r1wq")
+
+[node name="opal" type="Node2D" parent="." unique_id=1301487794]
+position = Vector2(-5, -45)
+
+[node name="sprite" type="Sprite2D" parent="opal" unique_id=1696955725]
+texture = ExtResource("4_ajxib")
+flip_h = true
+hframes = 2
+
+[node name="anim" type="AnimationPlayer" parent="opal" unique_id=2021227730]
+libraries/ = SubResource("AnimationLibrary_heatd")
+autoplay = &"idle"
+
+[node name="input" type="Node" parent="." unique_id=1088781624]
+script = ExtResource("6_8r1wq")
+
+[node name="derpy" parent="." unique_id=301655442 instance=ExtResource("6_ajxib")]
+position = Vector2(-27, 130)

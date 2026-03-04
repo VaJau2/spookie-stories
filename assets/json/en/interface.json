@@ -1,0 +1,16 @@
+{
+	"main_menu": {
+		"start": "Start >   ",
+		"exit": "Exit X   ",
+	},
+	"settings": {
+		"title": "Settings",
+		"volume": "Sound volume:",
+		"fullscreen": "Fullscreen mode:",
+		"language_label": "Language:",
+		"language": "English"
+	},
+	"dialogue": {
+		"skip": "press space to skip"
+	}
+}
