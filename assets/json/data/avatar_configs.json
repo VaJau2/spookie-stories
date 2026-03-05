@@ -66,6 +66,21 @@
 			"eyes_closed": 6,
 			"mouth_open": 7,
 		},
+		"sus": {
+			"eyes_open": 8,
+			"eyes_closed": 9,
+			"mouth_open": 10,
+		},
+		"scared": {
+			"eyes_open": 11,
+			"eyes_closed": 12,
+			"mouth_open": 13,
+		},
+		"sad": {
+			"eyes_open": 14,
+			"eyes_closed": 15,
+			"mouth_open": 16,
+		},
 	},
 	"dusk": {
 		"idle": {

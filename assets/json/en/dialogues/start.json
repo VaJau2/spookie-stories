@@ -1,5 +1,5 @@
 {
-	"test": {
+	"start": {
 		"nodes": [
 			{
 				"type": "phrase",
@@ -265,6 +265,11 @@
 				"speaker": "pay",
 				"text": "And then one day she discovered that her muffins were out, and went to the store to buy more…"
 			},
+			{
+				"type": "script",
+				"path": "/root/main/scenario/next_level",
+				"method": "start"
+			}
 		],
 	}
 }

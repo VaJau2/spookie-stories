@@ -62,7 +62,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [10, 10, 11, 10, 10]
+"values": [13, 13, 14, 13, 13]
+}
+
+[sub_resource type="Animation" id="Animation_iprlk"]
+resource_name = "surprised"
+length = 1.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 11, 12, 11, 11]
 }
 
 [sub_resource type="Animation" id="Animation_8a60l"]
@@ -87,6 +104,7 @@ _data = {
 &"RESET": SubResource("Animation_a64wj"),
 &"idle": SubResource("Animation_5bgmr"),
 &"sad": SubResource("Animation_2iclm"),
+&"surprised": SubResource("Animation_iprlk"),
 &"walk": SubResource("Animation_8a60l")
 }
 
@@ -119,22 +137,32 @@ shape = SubResource("CapsuleShape2D_5mxps")
 [node name="anim" type="AnimationPlayer" parent="." unique_id=1998849000]
 libraries/ = SubResource("AnimationLibrary_tywfe")
 
-[node name="movementController" type="Node" parent="." unique_id=1950806343]
+[node name="movement_controller" type="Node" parent="." unique_id=1950806343]
 script = ExtResource("3_2iclm")
 
-[node name="walk" type="Node" parent="movementController" unique_id=5973867]
+[node name="walk" type="Node" parent="movement_controller" unique_id=5973867]
 script = ExtResource("4_8a60l")
 default = true
 
-[node name="inputController" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
-script = ExtResource("5_tywfe")
-movement_controller = NodePath("../movementController")
+[node name="sad" type="Node" parent="movement_controller" unique_id=284423297]
+script = ExtResource("4_8a60l")
+idle_anim = "sad"
+speed = 0
 
-[node name="animationController" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
+[node name="surprised" type="Node" parent="movement_controller" unique_id=157539349]
+script = ExtResource("4_8a60l")
+idle_anim = "surprised"
+speed = 0
+
+[node name="input_controller" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("5_tywfe")
+movement_controller = NodePath("../movement_controller")
+
+[node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("6_iprlk")
 sprites = [NodePath("../sprite")]
 anim = NodePath("../anim")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("../movement_controller")
 
 [node name="camera" type="Camera2D" parent="." unique_id=1899412962]
 zoom = Vector2(2, 2)
@@ -142,5 +170,5 @@ position_smoothing_enabled = true
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=673726631 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("7_iprlk")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("../movement_controller")
 steps_data = Array[ExtResource("8_6nike")]([SubResource("Resource_hbxcp")])

@@ -1,0 +1,56 @@
+{
+	"shop_1": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Ничего не предвещало беды, кроме того факта, что магазин был подозрительно пуст.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Ни одного пони, кроме продавца.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Пегаска подошла ближе к нему…",
+			},
+		]
+	},
+	"shop_2": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "И внезапно увидела, что…",
+			},
+			{
+				"type": "new_state",
+				"speaker": "derpy",
+				"state": "surprised",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "scared",
+				"text": "…маффины подорожали в десять раз!",
+			},
+			{
+				"type": "new_state",
+				"speaker": "derpy",
+				"state": "sad",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sad",
+				"text": "И так она осталась без маффинов, очень грустная.",
+			},
+		]
+	}
+}

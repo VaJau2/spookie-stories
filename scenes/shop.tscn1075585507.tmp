@@ -58,9 +58,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44xle"]
 size = Vector2(261, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_heatd"]
-size = Vector2(105, 17)
-
 [node name="main" type="Node2D" unique_id=1054606192]
 y_sort_enabled = true
 texture_filter = 1
@@ -125,23 +122,10 @@ dialogue_menu = NodePath("../menu/dialogue_menu")
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_44xle")
 
-[node name="dialogue_area_2" type="Area2D" parent="." unique_id=1916625857 node_paths=PackedStringArray("player_node", "dialogue_menu")]
-position = Vector2(2, 19)
-script = ExtResource("7_heatd")
-player_node = NodePath("../derpy")
-dialogue_file = "shop"
-dialogue_code = "shop_2"
-dialogue_menu = NodePath("../menu/dialogue_menu")
-
-[node name="shape" type="CollisionShape2D" parent="dialogue_area_2" unique_id=334190621]
-position = Vector2(-0.5, -1.5)
-shape = SubResource("RectangleShape2D_heatd")
-
 [node name="menu" type="CanvasLayer" parent="." unique_id=1712317698]
 
-[node name="dialogue_menu" parent="menu" unique_id=2084497248 node_paths=PackedStringArray("ponies_parent") instance=ExtResource("7_m4ofw")]
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("7_m4ofw")]
 texture_filter = 1
-ponies_parent = NodePath("../..")
 
 [node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("8_heatd")]
 
@@ -156,4 +140,3 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("9_1v8qu")
 
 [connection signal="body_entered" from="dialogue_area_1" to="dialogue_area_1" method="_on_body_entered"]
-[connection signal="body_entered" from="dialogue_area_2" to="dialogue_area_2" method="_on_body_entered"]

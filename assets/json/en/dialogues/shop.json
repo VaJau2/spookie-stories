@@ -1,0 +1,56 @@
+{
+	"shop_1": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "There were no signs of trouble except that the store was suspiciously empty.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "There was no any ponies, except a seller pony.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "The pegasus stept closer to him…",
+			},
+		]
+	},
+	"shop_2": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "And suddenly she saw that…",
+			},
+			{
+				"type": "new_state",
+				"speaker": "derpy",
+				"state": "surprised",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "scared",
+				"text": "...muffins have gone up tenfold!",
+			},
+			{
+				"type": "new_state",
+				"speaker": "derpy",
+				"state": "sad",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sad",
+				"text": "And so she was left without muffins, very sad.",
+			},
+		]
+	}
+}

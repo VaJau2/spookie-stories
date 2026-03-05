@@ -21,6 +21,8 @@ var index: int = 0
 var node_timer: float = DEFAULT_TIMER
 var animation_timer: float = 0
 
+signal finished_dialogue
+
 
 enum TypeEnum {
 	phrase,
@@ -55,6 +57,7 @@ func finish_dialogue() -> void:
 	pause_menu.may_pause = true
 	if movement_controller: movement_controller.may_move = true
 	visible = false
+	finished_dialogue.emit()
 
 
 func _show_node(node_data: Dictionary) -> void:
@@ -78,8 +81,11 @@ func _show_node(node_data: Dictionary) -> void:
 		TypeEnum.new_state:
 			var state = node_data.state if node_data.has("state") else "idle"
 			speaker_name = node_data.speaker
-			_find_speaker_anim(speaker_name)
-			if temp_anim: temp_anim.set_state(state)
+			var anim = _find_speaker_anim(speaker_name)
+			if anim is DialogueAnimController:
+				anim.set_state(state)
+			elif anim is MovementController:
+				anim.load_state(state)
 			_next_node()
 		
 		TypeEnum.script:
@@ -134,8 +140,13 @@ func _get_dialogue_data(file_name: String, dialogue_name: String) -> Array:
 	return []
 
 
-func _find_speaker_anim(speaker_code: String) -> void:
+func _find_speaker_anim(speaker_code: String):
 	if ponies_parent == null: return
 	var speaker = ponies_parent.get_node_or_null(speaker_code)
 	if speaker == null: return
-	temp_anim = speaker.get_node("anim_controller")
+	if speaker.has_node("anim_controller"):
+		temp_anim = speaker.get_node("anim_controller")
+		return temp_anim
+	if speaker.has_node("movement_controller"):
+		return speaker.get_node("movement_controller")
+	
