@@ -13,14 +13,17 @@ class_name DialogueAnimController
 signal blink
 
 
-func set_state(new_state: String, new_talk_state: String = "") -> void:
+func set_state(new_state: String) -> void:
 	if anim.has_animation(new_state):
 		state = new_state 
 	else:
 		state = "idle"
 	
 	anim.play(state)
-	if new_talk_state != "" and anim.has_animation(talk_state):
+	
+	var new_talk_state = new_state + "-talk"
+	
+	if anim.has_animation(new_talk_state):
 		talk_state = new_talk_state
 	else:
 		talk_state = "talk"

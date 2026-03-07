@@ -10,7 +10,6 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"talk_state": "smirk-talk",
 				"text": "И нормально познакомиться."
 			},
 			{
@@ -37,14 +36,12 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"talk_state": "confused-talk",
 				"text": "И пропустить самое интересное?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"talk_state": "smirk-talk",
 				"text": "Неее. Поспать ты всегда успеешь."
 			},
 			{
@@ -66,7 +63,6 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"talk_state": "smirk-talk",
 				"text": "А мы останемся и заведем новые полезные знакомства. Правильно, дамы?"
 			},
 			{
@@ -94,7 +90,6 @@
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "happy",
-				"talk_state": "happy-talk",
 				"text": "А сейчас идеальный момент это исправить!"
 			},
 			{
@@ -121,14 +116,12 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"talk_state": "sad-talk",
 				"text": "Хорошо, убедили."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"talk_state": "sarcastic-talk",
 				"text": "Давайте будем знакомиться."
 			},
 			{
@@ -140,7 +133,6 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "happy",
-				"talk_state": "happy-talk",
 				"text": "Великолепно! Моё имя Котелок."
 			},
 			{
@@ -184,21 +176,18 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"talk_state": "confused-talk",
 				"text": "..Тейл?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"talk_state": "confused-talk",
 				"text": "Да у тебя же в имени написано слушать и рассказывать истории! А ты еще отказываешься!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"talk_state": "sarcastic-talk",
 				"text": "Я все еще могу передумать."
 			},
 			{

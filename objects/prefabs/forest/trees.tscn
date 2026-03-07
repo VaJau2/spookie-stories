@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://cg36xiw6e68t2"]
+
+[ext_resource type="PackedScene" uid="uid://cytxmowj02pwx" path="res://objects/props/plants/tree1.tscn" id="1_vji05"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pm3ni"]
+polygon = PackedVector2Array(13, 2, 13, -41, 10, -31, 11, 2)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y6deb"]
+polygon = PackedVector2Array(0, -234, -15, -1, -14, -1)
+
+[node name="trees" type="Node2D" unique_id=1865270009]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="tree2" parent="." unique_id=669454785 instance=ExtResource("1_vji05")]
+position = Vector2(322, -293)
+
+[node name="tree5" parent="." unique_id=67666014 instance=ExtResource("1_vji05")]
+position = Vector2(368, -254)
+
+[node name="tree6" parent="." unique_id=567242039 instance=ExtResource("1_vji05")]
+position = Vector2(203, -318)
+
+[node name="shadow" type="LightOccluder2D" parent="tree6" unique_id=947628297]
+occluder = SubResource("OccluderPolygon2D_pm3ni")
+
+[node name="tree7" parent="." unique_id=862097806 instance=ExtResource("1_vji05")]
+position = Vector2(-44, -320)
+
+[node name="tree8" parent="." unique_id=310169263 instance=ExtResource("1_vji05")]
+position = Vector2(88, -393)
+
+[node name="shadow2" type="LightOccluder2D" parent="tree8" unique_id=145248535]
+position = Vector2(0, -2)
+occluder = SubResource("OccluderPolygon2D_y6deb")
+
+[node name="tree9" parent="." unique_id=404327119 instance=ExtResource("1_vji05")]
+position = Vector2(576, -59)
+
+[node name="tree10" parent="." unique_id=1728856569 instance=ExtResource("1_vji05")]
+position = Vector2(569, -252)
+
+[node name="tree11" parent="." unique_id=2009744017 instance=ExtResource("1_vji05")]
+position = Vector2(522, -359)
+
+[node name="tree12" parent="." unique_id=1411979190 instance=ExtResource("1_vji05")]
+position = Vector2(478, -246)
+
+[node name="tree13" parent="." unique_id=505854835 instance=ExtResource("1_vji05")]
+position = Vector2(341, -29)
+
+[node name="shadow2" type="LightOccluder2D" parent="tree13" unique_id=525389610]
+position = Vector2(0, -2)
+occluder = SubResource("OccluderPolygon2D_pm3ni")
+
+[node name="tree14" parent="." unique_id=1355395502 instance=ExtResource("1_vji05")]
+position = Vector2(377, -140)
+
+[node name="tree16" parent="." unique_id=53812813 instance=ExtResource("1_vji05")]
+position = Vector2(-107, -223)
+
+[node name="shadow3" type="LightOccluder2D" parent="tree16" unique_id=1833760797]
+occluder = SubResource("OccluderPolygon2D_y6deb")
+
+[node name="tree17" parent="." unique_id=111893306 instance=ExtResource("1_vji05")]
+position = Vector2(33, -323)
+
+[node name="shadow" type="LightOccluder2D" parent="tree17" unique_id=1582560953]
+occluder = SubResource("OccluderPolygon2D_y6deb")
+
+[node name="tree18" parent="." unique_id=1066201183 instance=ExtResource("1_vji05")]
+position = Vector2(-144, -360)
+
+[node name="shadow2" type="LightOccluder2D" parent="tree18" unique_id=2035535128]
+position = Vector2(-23, 0)
+occluder = SubResource("OccluderPolygon2D_pm3ni")
+
+[node name="tree19" parent="." unique_id=1841519414 instance=ExtResource("1_vji05")]
+position = Vector2(-494, -243)
+
+[node name="tree20" parent="." unique_id=1075243488 instance=ExtResource("1_vji05")]
+position = Vector2(-516, 0)
+
+[node name="tree21" parent="." unique_id=1245108658 instance=ExtResource("1_vji05")]
+position = Vector2(-424, 121)
+
+[node name="tree22" parent="." unique_id=1678469202 instance=ExtResource("1_vji05")]
+position = Vector2(-10, 322)
+
+[node name="tree23" parent="." unique_id=856393707 instance=ExtResource("1_vji05")]
+position = Vector2(499, 310)
+
+[node name="tree24" parent="." unique_id=304218265 instance=ExtResource("1_vji05")]
+position = Vector2(253, 326)
+
+[node name="tree25" parent="." unique_id=525736262 instance=ExtResource("1_vji05")]
+position = Vector2(-373, 264)
+
+[node name="tree26" parent="." unique_id=231141322 instance=ExtResource("1_vji05")]
+position = Vector2(-560, 254)
+
+[node name="tree27" parent="." unique_id=1488178655 instance=ExtResource("1_vji05")]
+position = Vector2(-597, -217)
+
+[node name="tree15" parent="." unique_id=866422748 instance=ExtResource("1_vji05")]
+position = Vector2(470, -1)
+
+[node name="tree28" parent="." unique_id=956639521 instance=ExtResource("1_vji05")]
+position = Vector2(761, -87)
+
+[node name="tree29" parent="." unique_id=878005859 instance=ExtResource("1_vji05")]
+position = Vector2(677, -310)
+
+[node name="tree30" parent="." unique_id=116619839 instance=ExtResource("1_vji05")]
+position = Vector2(953, -269)
+
+[node name="tree31" parent="." unique_id=1597387606 instance=ExtResource("1_vji05")]
+position = Vector2(823, -344)
+
+[node name="tree32" parent="." unique_id=352850933 instance=ExtResource("1_vji05")]
+position = Vector2(949, -72)
+
+[node name="tree33" parent="." unique_id=2120594367 instance=ExtResource("1_vji05")]
+position = Vector2(1162, -148)
+
+[node name="tree34" parent="." unique_id=169272786 instance=ExtResource("1_vji05")]
+position = Vector2(1052, -260)
+
+[node name="tree35" parent="." unique_id=365936724 instance=ExtResource("1_vji05")]
+position = Vector2(1268, -18)
+
+[node name="tree36" parent="." unique_id=1849219333 instance=ExtResource("1_vji05")]
+position = Vector2(1036, -54)
+
+[node name="tree37" parent="." unique_id=1972426434 instance=ExtResource("1_vji05")]
+position = Vector2(-802, -185)
+
+[node name="tree38" parent="." unique_id=915793838 instance=ExtResource("1_vji05")]
+position = Vector2(-1070, -38)
+
+[node name="tree39" parent="." unique_id=2142371381 instance=ExtResource("1_vji05")]
+position = Vector2(-827, 41)
+
+[node name="tree40" parent="." unique_id=953012010 instance=ExtResource("1_vji05")]
+position = Vector2(-1194, 284)
+
+[node name="tree41" parent="." unique_id=297447255 instance=ExtResource("1_vji05")]
+position = Vector2(-1528, 373)
+
+[node name="tree42" parent="." unique_id=1613805903 instance=ExtResource("1_vji05")]
+position = Vector2(-727, 410)
+
+[node name="tree43" parent="." unique_id=1525072798 instance=ExtResource("1_vji05")]
+position = Vector2(-1323, 59)
+
+[node name="tree44" parent="." unique_id=1702352089 instance=ExtResource("1_vji05")]
+position = Vector2(-939, 227)
+
+[node name="tree45" parent="." unique_id=1875187563 instance=ExtResource("1_vji05")]
+position = Vector2(833, 341)
+
+[node name="tree46" parent="." unique_id=1990004907 instance=ExtResource("1_vji05")]
+position = Vector2(1327, 360)
+
+[node name="tree47" parent="." unique_id=120515479 instance=ExtResource("1_vji05")]
+position = Vector2(1068, 350)
+
+[node name="tree48" parent="." unique_id=1872428305 instance=ExtResource("1_vji05")]
+position = Vector2(636, 391)

@@ -1,0 +1,90 @@
+{
+	"talk": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "The horror!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "…maffins? Really?"
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "confused",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "angry",
+				"text": "Well, thats really scary!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "scared",
+				"text": "Inflation, unlike these ghosts of yours, really exists and scares!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "scared",
+				"text": "Do you have any idea what such a sharp inflation threatens the economy with?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "No I don't."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "satisfied",
+				"text": "That's right."
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Now it's my turn. I'm going to tell you a really creepy story!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "I'll bet you 10 bits that it's going to be a ghost story."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Well, then get your wallet ready, because there definitely won't be any ghosts in my story!",
+			}
+		]
+	}
+}

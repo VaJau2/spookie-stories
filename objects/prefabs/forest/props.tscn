@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://barln5f6rwvlc"]
+
+[ext_resource type="Texture2D" uid="uid://2we4gdyrjpuo" path="res://assets/sprites/props/tent.png" id="1_7kldc"]
+[ext_resource type="Texture2D" uid="uid://b50cqply8pu23" path="res://assets/sprites/props/fire.png" id="2_4sfk6"]
+[ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="3_e6ysb"]
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="4_qpo0l"]
+[ext_resource type="AudioStream" uid="uid://npephfw2wrm5" path="res://assets/audio/background/fire_back.ogg" id="5_rl3hy"]
+[ext_resource type="Texture2D" uid="uid://c06iv4ohesx3s" path="res://assets/sprites/props/wood.png" id="6_roiqy"]
+[ext_resource type="Texture2D" uid="uid://co8g31tgp5g20" path="res://assets/sprites/props/wood1.png" id="7_qsjnx"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dp3eg"]
+polygon = PackedVector2Array(25.762085, 16.40884, 25.762085, 10.939226, 15.925644, -7.292816, 11.241638, -7.292816, 15.457245, -7.292816, 25.293686, 10.939226, 25.293686, 16.40884)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_og1vs"]
+polygon = PackedVector2Array(-28.57249, 16.773483, -18.267658, -10.209946, -21.078068, -10.939224, -31.3829, 16.044197)
+
+[sub_resource type="Animation" id="Animation_gqmmt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_pm3ni"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6deb"]
+_data = {
+&"RESET": SubResource("Animation_gqmmt"),
+&"idle": SubResource("Animation_pm3ni")
+}
+
+[sub_resource type="Animation" id="Animation_eb6dy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_jkv2x"]
+resource_name = "idle"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, -0.4), Vector2(-1, 0.2), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19984019, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 1.9, 2.0999999999999996, 1.8, 2.0, 1.9, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbj1t"]
+_data = {
+&"RESET": SubResource("Animation_eb6dy"),
+&"idle": SubResource("Animation_jkv2x")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yc10j"]
+polygon = PackedVector2Array(-6.545456, 39.740257, -3.6363678, 37.532467, -1.4545441, 35.324673, -0.72727966, 28.701298, 6.545456, -5.887451, 10.909088, -30.909096, 10.909088, -33.852814, 11.636368, -30.909096, 10.909088, -22.077927, 7.2727203, -4.4155884, 0, 28.701298, -0.72727966, 36.060604, -3.6363678, 38.2684)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2wyq8"]
+polygon = PackedVector2Array(-16.654175, 36.867226, -13.412567, 38.68982, -4.657196, 38.494125, -1.8308716, 35.129898, 3.8787537, 3.3366165, 9.366455, -24.783875, 8.45285, -36.19487, 10.115173, -34.764893, 10.391632, -24.867912, 5.458008, 3.7292404, -1.2767639, 35.60656, -4.574127, 39.531487, -13.329529, 39.72718)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vxglm"]
+polygon = PackedVector2Array(8.2771, 36.526733, 1.6402664, 35.560867, -1.5369949, 33.243652, -1.8103714, 27.316849, 0.70363617, 23.085999, -2.854576, 10.55217, -8.245659, -10.393433, -11.68737, -28.232803, -11.678444, -37.82817, -12.184814, -33.143845, -12.301308, -27.838287, -8.859596, -9.998917, -5.3103333, 12.130249, -2.814186, 27.090118, -2.15094, 33.638184, 1.4162064, 36.57663)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2f3dj"]
+polygon = PackedVector2Array(-11.754288, -36.380478, -11.69236, -31.726463, -7.709526, -8.971939, 0.10133362, 24.902107, -0.95127106, 29.025478, -0.0140686035, 33.51516, 1.39048, 35.357964, 6.468239, 36.68524, 0.94293976, 36.295036, -1.6269073, 33.30439, -6.3894196, 3.810936, -8.843864, -7.7927704, -12.826698, -30.547302)
+
+[node name="props" type="Node2D" unique_id=82684433]
+y_sort_enabled = true
+
+[node name="tent" type="Sprite2D" parent="." unique_id=27811531]
+position = Vector2(343, -108)
+scale = Vector2(2.1349206, 2.7424242)
+texture = ExtResource("1_7kldc")
+flip_h = true
+
+[node name="shadow" type="LightOccluder2D" parent="tent" unique_id=1200677970]
+position = Vector2(5.620818, 0)
+occluder = SubResource("OccluderPolygon2D_dp3eg")
+
+[node name="tent2" type="Sprite2D" parent="." unique_id=1071939261]
+position = Vector2(356, -263)
+scale = Vector2(2.1349206, 2.7424242)
+texture = ExtResource("1_7kldc")
+flip_h = true
+
+[node name="shadow" type="LightOccluder2D" parent="tent2" unique_id=429112601]
+occluder = SubResource("OccluderPolygon2D_dp3eg")
+
+[node name="tent5" type="Sprite2D" parent="." unique_id=897936261]
+position = Vector2(485, -203)
+scale = Vector2(2.1349206, 2.7424242)
+texture = ExtResource("1_7kldc")
+flip_h = true
+
+[node name="tent3" type="Sprite2D" parent="." unique_id=2016842076]
+position = Vector2(294, -352)
+scale = Vector2(2.1349206, 2.7424242)
+texture = ExtResource("1_7kldc")
+flip_h = true
+
+[node name="shadow" type="LightOccluder2D" parent="tent3" unique_id=815786341]
+occluder = SubResource("OccluderPolygon2D_dp3eg")
+
+[node name="tent4" type="Sprite2D" parent="." unique_id=84467416]
+position = Vector2(-80, -289)
+scale = Vector2(2.1349206, 2.7424242)
+texture = ExtResource("1_7kldc")
+
+[node name="shadow" type="LightOccluder2D" parent="tent4" unique_id=1553029105]
+occluder = SubResource("OccluderPolygon2D_og1vs")
+
+[node name="fire" type="Sprite2D" parent="." unique_id=574962260]
+z_index = 1
+z_as_relative = false
+position = Vector2(106, -166)
+scale = Vector2(1.9166666, 1.8000001)
+texture = ExtResource("2_4sfk6")
+hframes = 6
+vframes = 2
+frame = 6
+metadata/_edit_lock_ = true
+
+[node name="anim" type="AnimationPlayer" parent="fire" unique_id=721757453]
+libraries/ = SubResource("AnimationLibrary_y6deb")
+autoplay = &"idle"
+
+[node name="fire_light" type="PointLight2D" parent="fire" unique_id=773466172]
+scale = Vector2(0.5217391, 0.5555555)
+color = Color(0.9297724, 0.5113648, 0.41967377, 1)
+shadow_enabled = true
+texture = ExtResource("3_e6ysb")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="anim" type="AnimationPlayer" parent="fire/fire_light" unique_id=1660692852]
+libraries/ = SubResource("AnimationLibrary_jbj1t")
+autoplay = &"idle"
+
+[node name="fire_ambient_light" type="PointLight2D" parent="fire" unique_id=619622489]
+scale = Vector2(0.5217391, 0.5555555)
+color = Color(0.8484337, 0.25481656, 0.26415798, 1)
+energy = 0.5
+texture = ExtResource("3_e6ysb")
+texture_scale = 2.0
+metadata/_edit_lock_ = true
+
+[node name="anim" type="AnimationPlayer" parent="fire/fire_ambient_light" unique_id=1867984538]
+libraries/ = SubResource("AnimationLibrary_jbj1t")
+autoplay = &"idle"
+
+[node name="shadow2" type="Sprite2D" parent="fire" unique_id=962132718]
+modulate = Color(1, 1, 1, 0.45882353)
+z_index = -1
+position = Vector2(0, 12.361275)
+scale = Vector2(0.5217391, 0.7539199)
+texture = ExtResource("4_qpo0l")
+
+[node name="fire_sound" type="AudioStreamPlayer2D" parent="fire" unique_id=53787184]
+stream = ExtResource("5_rl3hy")
+autoplay = true
+bus = &"Sound"
+
+[node name="wood" type="Sprite2D" parent="." unique_id=1134799273]
+position = Vector2(225, -72)
+scale = Vector2(1.3749999, 1.3588235)
+texture = ExtResource("6_roiqy")
+
+[node name="shadow" type="LightOccluder2D" parent="wood" unique_id=906460553]
+visible = false
+occluder = SubResource("OccluderPolygon2D_yc10j")
+
+[node name="wood2" type="Sprite2D" parent="." unique_id=1841967596]
+position = Vector2(255.00003, -260)
+rotation = -0.70455766
+scale = Vector2(1.3749999, 1.3588235)
+texture = ExtResource("6_roiqy")
+
+[node name="shadow" type="LightOccluder2D" parent="wood2" unique_id=1256893901]
+visible = false
+occluder = SubResource("OccluderPolygon2D_2wyq8")
+
+[node name="wood3" type="Sprite2D" parent="." unique_id=1540842835]
+position = Vector2(15.00001, -270)
+rotation = 0.5657871
+scale = Vector2(1.3749999, 1.3588235)
+texture = ExtResource("7_qsjnx")
+flip_h = true
+
+[node name="shadow" type="LightOccluder2D" parent="wood3" unique_id=686631361]
+visible = false
+occluder = SubResource("OccluderPolygon2D_vxglm")
+
+[node name="wood4" type="Sprite2D" parent="." unique_id=513159983]
+position = Vector2(-36.000004, -148)
+rotation = 0.33521363
+scale = Vector2(1.3749999, 1.3588235)
+texture = ExtResource("7_qsjnx")
+flip_h = true
+
+[node name="shadow" type="LightOccluder2D" parent="wood4" unique_id=1795702841]
+visible = false
+occluder = SubResource("OccluderPolygon2D_2f3dj")

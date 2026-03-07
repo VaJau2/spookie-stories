@@ -51,6 +51,11 @@
 				"state": "sad",
 				"text": "And so she was left without muffins, very sad.",
 			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
 		]
 	}
 }

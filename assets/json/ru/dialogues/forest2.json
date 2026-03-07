@@ -1,0 +1,90 @@
+{
+	"talk": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "О ужас!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "…маффины? Серьёзно?"
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "confused",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "angry",
+				"text": "Вообще-то это действительно страшно!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "scared",
+				"text": "Инфляция, в отличие от этих ваших призраков, действительно существует и пугает!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "scared",
+				"text": "Ты хоть представляешь, чем грозит экономике такая резкая инфляция?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Не представляю."
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "satisfied",
+				"text": "То-то же."
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Теперь моя очередь. Я расскажу вам по-настоящему жуткую историю!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Ставлю 10 бит, что это будет история про призраков."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Ну тогда готовь кошелек, потому что в моей истории точно не будет никаких призраков!",
+			}
+		]
+	}
+}

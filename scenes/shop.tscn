@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="7_m4ofw"]
 [ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="8_heatd"]
 [ext_resource type="Script" uid="uid://cda44q040yc17" path="res://assets/scripts/background/backScreenDissapear.gd" id="9_1v8qu"]
+[ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="11_1v8qu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fc2m"]
 size = Vector2(17, 298)
@@ -154,6 +155,11 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("9_1v8qu")
+
+[node name="next_level" type="Node" parent="." unique_id=1058287147 node_paths=PackedStringArray("black_screen")]
+script = ExtResource("11_1v8qu")
+black_screen = NodePath("../menu/black_screen")
+next_level = "forest2"
 
 [connection signal="body_entered" from="dialogue_area_1" to="dialogue_area_1" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogue_area_2" to="dialogue_area_2" method="_on_body_entered"]

@@ -20,6 +20,7 @@ var speaker_name: String
 var index: int = 0
 var node_timer: float = DEFAULT_TIMER
 var animation_timer: float = 0
+var is_autoskip: bool = false
 
 signal finished_dialogue
 
@@ -35,7 +36,7 @@ func _process(delta: float) -> void:
 	if !visible: return
 	_animate_text(delta)
 	
-	if Input.is_action_just_pressed("ui_select"):
+	if !is_autoskip && Input.is_action_just_pressed("ui_select"):
 		if text.visible_ratio >= 1:
 			_next_node()
 		else:
@@ -61,17 +62,18 @@ func finish_dialogue() -> void:
 
 
 func _show_node(node_data: Dictionary) -> void:
+	is_autoskip = false
 	var type = TypeEnum.get(node_data.type)
 	match type:
 		TypeEnum.phrase:
+			if node_data.has("autoskip"): is_autoskip = true
 			speaker_name = node_data.speaker
 			_find_speaker_anim(speaker_name)
 			audi.set_config(speaker_name)
 			
 			var state = node_data.state if node_data.has("state") else "idle"
-			var talk_state = node_data.talk_state if node_data.has("talk_state") else "talk"
 			avatar.load_avatar(speaker_name, state, temp_anim)
-			if temp_anim: temp_anim.set_state(state, talk_state)
+			if temp_anim: temp_anim.set_state(state)
 			text.text = node_data.text
 			node_timer = node_data.timer if node_data.has("timer") else DEFAULT_TIMER
 			animation_timer = 0
@@ -105,8 +107,11 @@ func _next_node() -> void:
 
 func _animate_text(delta: float) -> void:
 	if text.visible_ratio >= 1:
-		skip.visible = true
-		return
+		if is_autoskip:
+			_next_node()
+		else:
+			skip.visible = true
+			return
 	
 	if animation_timer > 0:
 		animation_timer -= delta

@@ -51,6 +51,11 @@
 				"state": "sad",
 				"text": "И так она осталась без маффинов, очень грустная.",
 			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
 		]
 	}
 }

@@ -31,6 +31,11 @@
 			"eyes_open": 8,
 			"eyes_closed": 8,
 			"mouth_open": 9,
+		},
+		"goofy": {
+			"eyes_open": 10,
+			"eyes_closed": 1,
+			"mouth_open": 11,
 		}
 	},
 	"serious_tale": {
@@ -81,6 +86,16 @@
 			"eyes_closed": 15,
 			"mouth_open": 16,
 		},
+		"angry": {
+			"eyes_open": 17,
+			"eyes_closed": 18,
+			"mouth_open": 19,
+		},
+		"satisfied": {
+			"eyes_open": 20,
+			"eyes_closed": 20,
+			"mouth_open": 21,
+		},
 	},
 	"dusk": {
 		"idle": {
@@ -97,6 +112,11 @@
 			"eyes_open": 6,
 			"eyes_closed": 7,
 			"mouth_open": 8,
+		},
+		"scared": {
+			"eyes_open": 9,
+			"eyes_closed": 10,
+			"mouth_open": 11,
 		},
 	}
 }

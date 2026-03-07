@@ -10,7 +10,6 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"talk_state": "smirk-talk",
 				"text": "And get to know each other properly."
 			},
 			{
@@ -37,14 +36,12 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"talk_state": "confused-talk",
 				"text": "And miss all the fun?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"talk_state": "smirk-talk",
 				"text": "Nuh. You'll always have time to sleep."
 			},
 			{
@@ -66,7 +63,6 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"talk_state": "smirk-talk",
 				"text": "And we will stay here and make new useful acquaintances. Is that right, ladies?"
 			},
 			{
@@ -94,7 +90,6 @@
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "happy",
-				"talk_state": "happy-talk",
 				"text": "And now is the perfect moment to fix it!"
 			},
 			{
@@ -121,14 +116,12 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"talk_state": "sad-talk",
 				"text": "Fine, you've convinced me."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"talk_state": "sarcastic-talk",
 				"text": "Let's get to know each other."
 			},
 			{
@@ -140,7 +133,6 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "happy",
-				"talk_state": "happy-talk",
 				"text": "Excellent! My name is Bowler Hat."
 			},
 			{
@@ -184,21 +176,18 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"talk_state": "confused-talk",
 				"text": "..Tale?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"talk_state": "confused-talk",
 				"text": "Your name literally says to listen and tell stories! And you still refuse!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"talk_state": "sarcastic-talk",
 				"text": "I can still change my mind."
 			},
 			{
@@ -260,7 +249,7 @@
 				"speaker": "dusk",
 				"state": "confused",
 			},
-				{
+			{
 				"type": "phrase",
 				"speaker": "pay",
 				"text": "And then one day she discovered that her muffins were out, and went to the store to buy more…"

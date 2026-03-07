@@ -1,6 +1,7 @@
 extends Node
 
 @export var black_screen: ColorRect
+@export var next_level: String
 
 
 func start() -> void:
@@ -15,4 +16,4 @@ func _process(delta: float) -> void:
 	if black_screen.color.a < 1:
 		black_screen.color.a += 3 * delta
 	else:
-		Scenes.goto_scene("shop")
+		Scenes.goto_scene(next_level)
