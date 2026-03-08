@@ -105,12 +105,18 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "In addition, I have a lot of interesting creepy stories that ponies usually tell around the campfire on nights like this."
+				"text": "Not to mention a lot of interesting creepy stories that ponies usually tell around the campfire on nights like this."
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
-				"text": "Oh, me too!"
+				"state": "happy",
+				"text": "Oh, I love it!"
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
 			},
 			{
 				"type": "phrase",

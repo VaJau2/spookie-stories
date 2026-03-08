@@ -84,6 +84,11 @@
 				"speaker": "bowler_hat",
 				"state": "smirk",
 				"text": "Ну тогда готовь кошелек, потому что в моей истории точно не будет никаких призраков!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
 			}
 		]
 	}

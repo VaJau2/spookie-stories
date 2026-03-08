@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bgtyxn6w4ibcf" path="res://assets/sprites/characters/pay.png" id="15_uai3f"]
 [ext_resource type="Texture2D" uid="uid://c1q6ioy7rv8rm" path="res://assets/sprites/characters/bowler-hat.png" id="16_4qi1y"]
 [ext_resource type="Script" uid="uid://jmky0f50vv00" path="res://assets/scripts/background/startDialogue.gd" id="20_o8t35"]
+[ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="21_v306o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ei2s"]
 size = Vector2(28, 6)
@@ -1350,3 +1351,8 @@ dialogue_menu = NodePath("../menu/dialogue_menu")
 dialogue_file = "forest2"
 dialogue_code = "talk"
 start_timer = 1.0
+
+[node name="next_level" type="Node" parent="." unique_id=549581676 node_paths=PackedStringArray("black_screen")]
+script = ExtResource("21_v306o")
+black_screen = NodePath("../menu/black_screen")
+next_level = "gas_station"

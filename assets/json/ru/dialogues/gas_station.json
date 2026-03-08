@@ -1,0 +1,141 @@
+{
+	"start": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Однажды один с недавнего времени знакомый вам единорог - то есть, я - направлялся в соседний город на своем автомобиле. "
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Ветер раздувал мою гриву, а вечерний закат быстро уходил за горизонт."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/directional_light",
+				"method": "start",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Автомобиль поглощал километры за километрами."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Я наслаждался загородной поездкой."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Кстати, это была не обычная машина."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/land2",
+				"method": "set_skip_showing",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Он был кабриолетом черного цвета с восьмицилиндровым двигателем.",
+				"autoskip": 1,
+				"timer": 0.02,
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "…У него было целых 142 лошадиных силы и трехступенчатая коробка передач.",
+				"autoskip": 1,
+				"timer": 0.02,
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "…Это был первый концепт-кар для всей автомобильной промышленности.",
+				"autoskip": 1,
+				"timer": 0.02,
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "happy",
+				"text": "…Экспериментальная модель, предназначенная для демонстрации новых технологий, а не для массовой продажи!",
+				"autoskip": 1,
+				"timer": 0.01,
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "…Он был просто до краев заполнен этими технологиями",
+				"autoskip": 1,
+				"timer": 0.02,
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"text": "Мы поняли про машину. Давай дальше.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "…Как вы могли догадаться из моего описания, автомобиль был уникальным.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Именно по этой причине я не сумел правильно рассчитать топливо на свою поездку.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_stop",
+				"method": "stop"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "…И заглох посреди леса.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_stop",
+				"method": "try_starting"
+			},
+		]
+	},
+	"try_starting": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Все мои тщетные попытки завести автомобиль не увенчались успехом.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Но я не паниковал, ведь совсем недалеко позади была заправка.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Я решил оставить машину и дойти до неё пешком.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_stop",
+				"method": "get_out_of_car"
+			},
+		],
+	}
+}

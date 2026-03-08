@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://bgk5aa8ggu4fa"]
+
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_y4gfb"]
+[ext_resource type="Texture2D" uid="uid://c1q6ioy7rv8rm" path="res://assets/sprites/characters/bowler-hat.png" id="2_yvsup"]
+[ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="3_aucod"]
+[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_pnm64"]
+[ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="5_g3mof"]
+[ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="6_8etiq"]
+[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="7_v54q8"]
+[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="8_271u3"]
+[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="9_sci1q"]
+[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="10_1c1g1"]
+[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="11_4nslf"]
+[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="12_526ss"]
+[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="13_n0p5q"]
+[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="14_5yyrw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
+radius = 4.0
+height = 28.0
+
+[sub_resource type="Animation" id="Animation_ofrfb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_h612i"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.4666667, 0.56666666, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_4hpix"]
+resource_name = "run"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="Animation" id="Animation_5a6lu"]
+resource_name = "sit"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.4666667, 0.56666666, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 24, 25, 24, 24]
+}
+
+[sub_resource type="Animation" id="Animation_b8q40"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8q40"]
+_data = {
+&"RESET": SubResource("Animation_ofrfb"),
+&"idle": SubResource("Animation_h612i"),
+&"run": SubResource("Animation_4hpix"),
+&"sit": SubResource("Animation_5a6lu"),
+&"walk": SubResource("Animation_b8q40")
+}
+
+[sub_resource type="Resource" id="Resource_iqgwf"]
+script = ExtResource("8_271u3")
+walk_sounds = Array[AudioStream]([ExtResource("12_526ss"), ExtResource("13_n0p5q"), ExtResource("14_5yyrw")])
+run_sounds = Array[AudioStream]([ExtResource("9_sci1q"), ExtResource("10_1c1g1"), ExtResource("11_4nslf")])
+run_cooldown = 1.0
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
+[node name="pony" type="CharacterBody2D" unique_id=301655442]
+texture_filter = 1
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=1258215825]
+modulate = Color(1, 1, 1, 0.33333334)
+position = Vector2(-1.4999995, -2)
+scale = Vector2(0.81395346, 1)
+texture = ExtResource("1_y4gfb")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1857052420]
+texture_filter = 1
+position = Vector2(1, -32)
+texture = ExtResource("2_yvsup")
+hframes = 8
+vframes = 6
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1595805350]
+position = Vector2(-1, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5mxps")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=2074218494]
+root_node = NodePath("../sprite")
+libraries/ = SubResource("AnimationLibrary_b8q40")
+
+[node name="movementController" type="Node" parent="." unique_id=1950806343]
+script = ExtResource("3_aucod")
+
+[node name="walk" type="Node" parent="movementController" unique_id=5973867]
+script = ExtResource("4_pnm64")
+default = true
+
+[node name="run" type="Node" parent="movementController" unique_id=147852670]
+script = ExtResource("4_pnm64")
+anim = "run"
+speed = 300
+
+[node name="inputController" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("5_g3mof")
+movement_controller = NodePath("../movementController")
+
+[node name="animationController" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
+script = ExtResource("6_8etiq")
+sprites = [NodePath("../sprite")]
+anim = NodePath("../anim")
+movement_controller = NodePath("../movementController")
+
+[node name="camera" type="Camera2D" parent="." unique_id=1899412962]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=2122881728 node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("7_v54q8")
+movement_controller = NodePath("../movementController")
+steps_data = Array[ExtResource("8_271u3")]([SubResource("Resource_iqgwf")])

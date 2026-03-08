@@ -84,6 +84,11 @@
 				"speaker": "bowler_hat",
 				"state": "smirk",
 				"text": "Well, then get your wallet ready, because there definitely won't be any ghosts in my story!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
 			}
 		]
 	}

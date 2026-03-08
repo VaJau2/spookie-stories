@@ -6,7 +6,12 @@ extends Node
 @export var start_timer: float = 0
 
 
-func _ready() -> void:
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_select"):
+		start_timer = 0
+	
 	if start_timer > 0:
-		await get_tree().create_timer(start_timer).timeout
-	dialogue_menu.start_dialogue(dialogue_file, dialogue_code)
+		start_timer -= delta
+	else:
+		dialogue_menu.start_dialogue(dialogue_file, dialogue_code)
+		set_process(false)

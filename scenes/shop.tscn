@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gu7s2mdqmlqq" path="res://assets/sprites/props/shop/shop-table.png" id="3_8r1wq"]
 [ext_resource type="Texture2D" uid="uid://dq3arje758460" path="res://assets/sprites/characters/opal.png" id="4_ajxib"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="6_8r1wq"]
-[ext_resource type="PackedScene" uid="uid://c5il4mkj2wr2i" path="res://objects/characters/derpy.tscn" id="6_ajxib"]
+[ext_resource type="PackedScene" uid="uid://c5il4mkj2wr2i" path="res://objects/characters/players/derpy.tscn" id="6_ajxib"]
 [ext_resource type="Script" uid="uid://pe0dwvkln6s" path="res://assets/scripts/background/dialogueArea.gd" id="7_heatd"]
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="7_m4ofw"]
 [ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="8_heatd"]

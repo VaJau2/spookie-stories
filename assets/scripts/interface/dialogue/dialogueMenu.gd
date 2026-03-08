@@ -36,8 +36,8 @@ func _process(delta: float) -> void:
 	if !visible: return
 	_animate_text(delta)
 	
-	if !is_autoskip && Input.is_action_just_pressed("ui_select"):
-		if text.visible_ratio >= 1:
+	if Input.is_action_just_pressed("ui_select"):
+		if is_autoskip or text.visible_ratio >= 1:
 			_next_node()
 		else:
 			text.visible_ratio = 1
@@ -95,6 +95,7 @@ func _show_node(node_data: Dictionary) -> void:
 			var method = node_data.method
 			if node.has_method(method):
 				node.call(method)
+			_next_node()
 
 
 func _next_node() -> void:
