@@ -19,7 +19,7 @@ func _physics_process(_delta):
 		set_physics_process(false)
 		
 		if !nav_agent.is_target_reachable():
-			print(get_parent().name + " cannot reach destination")
+			set_target(nav_agent.target_position)
 		
 		if nav_agent.is_navigation_finished():
 			came_to_point.emit()

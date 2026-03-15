@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://k827eoexb225"]
+
+[ext_resource type="Texture2D" uid="uid://c06iv4ohesx3s" path="res://assets/sprites/props/forest/wood.png" id="1_1tpph"]
+[ext_resource type="Script" uid="uid://xh1xkkuhwsg1" path="res://assets/scripts/scenario/gasStation/woodObstacleStunArea.gd" id="2_tqgig"]
+[ext_resource type="AudioStream" uid="uid://c25t5186f61ba" path="res://assets/audio/crashes/crash1.mp3" id="3_8u5dw"]
+[ext_resource type="AudioStream" uid="uid://bg3u6bsbauhhs" path="res://assets/audio/crashes/crash2.mp3" id="4_0b2c4"]
+[ext_resource type="AudioStream" uid="uid://dgon8ss8kvqff" path="res://assets/audio/crashes/crash3.mp3" id="5_l8fua"]
+[ext_resource type="AudioStream" uid="uid://b2v5ji6t6cagy" path="res://assets/audio/crashes/crash4.mp3" id="6_7kn3p"]
+[ext_resource type="AudioStream" uid="uid://bo38gft0lcqcl" path="res://assets/audio/crashes/crash5.mp3" id="7_fef7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqgig"]
+size = Vector2(17, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7l6b"]
+size = Vector2(30, 77)
+
+[node name="wood_obstacle" type="StaticBody2D" unique_id=1312166864]
+texture_filter = 1
+
+[node name="Wood" type="Sprite2D" parent="." unique_id=1172440688]
+position = Vector2(1, 10)
+texture = ExtResource("1_1tpph")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1357807949]
+position = Vector2(-0.5, 11)
+rotation = 0.17802358
+shape = SubResource("RectangleShape2D_tqgig")
+
+[node name="stun_area" type="Area2D" parent="." unique_id=1306892138]
+script = ExtResource("2_tqgig")
+crash_sounds = Array[AudioStream]([ExtResource("3_8u5dw"), ExtResource("4_0b2c4"), ExtResource("5_l8fua"), ExtResource("6_7kn3p"), ExtResource("7_fef7x")])
+
+[node name="shape" type="CollisionShape2D" parent="stun_area" unique_id=424062266]
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_s7l6b")
+
+[connection signal="body_entered" from="stun_area" to="stun_area" method="_on_body_entered"]

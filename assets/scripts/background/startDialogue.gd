@@ -7,9 +7,6 @@ extends Node
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_select"):
-		start_timer = 0
-	
 	if start_timer > 0:
 		start_timer -= delta
 	else:

@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://cnyojp768nnpu"]
+
+[ext_resource type="Texture2D" uid="uid://dfm780e75u7t6" path="res://assets/sprites/characters/wolf-driving.png" id="1_vv87q"]
+[ext_resource type="Texture2D" uid="uid://bgwowndxw1yjl" path="res://assets/sprites/props/cars/wolf-car.png" id="2_gm17r"]
+[ext_resource type="Texture2D" uid="uid://b127y4tklr1bo" path="res://assets/sprites/props/cars/wolf-wheel.png" id="3_8kl4u"]
+[ext_resource type="Texture2D" uid="uid://d33hepo7wn3k1" path="res://assets/sprites/props/cars/car-light.png" id="4_gm17r"]
+
+[sub_resource type="Curve" id="Curve_gm17r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.056769848), -1.1389815, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yidqh"]
+curve = SubResource("Curve_gm17r")
+
+[sub_resource type="Curve" id="Curve_8kl4u"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2659381), -2.3997376, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2vtl3"]
+curve = SubResource("Curve_8kl4u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4st4k"]
+particle_flag_disable_z = true
+velocity_pivot = Vector3(20, 0, 0)
+direction = Vector3(2, 0, 0)
+spread = 60.0
+initial_velocity_max = 1.0
+gravity = Vector3(5, -9, 0)
+linear_accel_min = 4.549998
+linear_accel_max = 24.619997
+scale_min = 2.0
+scale_max = 9.0
+scale_curve = SubResource("CurveTexture_2vtl3")
+color = Color(0.8500505, 0.85005057, 0.8500505, 1)
+alpha_curve = SubResource("CurveTexture_yidqh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4st4k"]
+size = Vector2(133, 24)
+
+[sub_resource type="Animation" id="Animation_vv87q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wheel2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("car:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -14)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wolf-driving:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_gm17r"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wheel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.5057, 0.96666664, 1, 1.5208137, 1.554147, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586, 0.0, -6.283185307179586, 0.0, -6.283185307179586, 0.0, -6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wheel2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.5001, 0.5057, 0.966096, 0.966196, 0.971796, 1.5207067, 1.5208067, 1.5264066, 2, 2.0001001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -6.283185307179586, -6.2670884, 0.0, -6.283185307179586, -6.2670884, 0.0, -6.283185307179586, -6.2670884, 0.0, -6.283185307179586, -6.2670884]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("car:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 1.2333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -14), Vector2(1, -15), Vector2(1, -13), Vector2(1, -14)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("wolf-driving:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4, -48), Vector2(4, -49), Vector2(4, -46), Vector2(4, -48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8kl4u"]
+_data = {
+&"RESET": SubResource("Animation_vv87q"),
+&"idle": SubResource("Animation_gm17r")
+}
+
+[node name="wolf_car" type="CharacterBody2D" unique_id=288330085]
+texture_filter = 1
+
+[node name="smoke" type="GPUParticles2D" parent="." unique_id=154788154]
+position = Vector2(80, -9)
+amount = 42
+lifetime = 2.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_4st4k")
+
+[node name="wolf-driving" type="Sprite2D" parent="." unique_id=201771198]
+position = Vector2(4, -48)
+texture = ExtResource("1_vv87q")
+
+[node name="car" type="Sprite2D" parent="." unique_id=143130207]
+position = Vector2(1, -14)
+texture = ExtResource("2_gm17r")
+
+[node name="wheel" type="Sprite2D" parent="." unique_id=490656000]
+position = Vector2(-55, 17)
+texture = ExtResource("3_8kl4u")
+
+[node name="wheel2" type="Sprite2D" parent="." unique_id=1935917020]
+position = Vector2(69, 17)
+texture = ExtResource("3_8kl4u")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1490010062]
+position = Vector2(5.5, 20)
+shape = SubResource("RectangleShape2D_4st4k")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1126521136]
+libraries/ = SubResource("AnimationLibrary_8kl4u")
+autoplay = &"idle"
+
+[node name="light" type="PointLight2D" parent="." unique_id=1077861931]
+position = Vector2(-362.99997, -2.000001)
+scale = Vector2(2.0935252, 1.4807693)
+energy = 2.0
+texture = ExtResource("4_gm17r")

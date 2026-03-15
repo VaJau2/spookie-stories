@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://qlbjod8sul57"]
+
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_ryt1d"]
+[ext_resource type="Texture2D" uid="uid://yf28f2lsldcm" path="res://assets/sprites/characters/wolf.png" id="2_jfglg"]
+[ext_resource type="Script" uid="uid://6gu4rfslrt2r" path="res://assets/scripts/controllers/movement/navigationMovementController.gd" id="3_omixj"]
+[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_2rhky"]
+[ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="5_2fxid"]
+[ext_resource type="Script" uid="uid://b0fy2bfsa4faa" path="res://assets/scripts/controllers/followController.gd" id="6_2rhky"]
+[ext_resource type="Script" uid="uid://t2h1nx74g3b" path="res://assets/scripts/scenario/gasStation/lostArea.gd" id="7_kmk7x"]
+[ext_resource type="AudioStream" uid="uid://c2svrishcxgh3" path="res://assets/audio/wolf/bite.ogg" id="8_601y4"]
+[ext_resource type="AudioStream" uid="uid://dtejts56nocpy" path="res://assets/audio/wolf/wolf_run.mp3" id="9_wx3n0"]
+
+[sub_resource type="Animation" id="Animation_d5guy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_omixj"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 1.3238407, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_2rhky"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 14, 9]
+}
+
+[sub_resource type="Animation" id="Animation_2fxid"]
+resource_name = "stun"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [15, 16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_m3o0m"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6, 7, 8, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_20orm"]
+_data = {
+&"RESET": SubResource("Animation_d5guy"),
+&"idle": SubResource("Animation_omixj"),
+&"run": SubResource("Animation_2rhky"),
+&"stun": SubResource("Animation_2fxid"),
+&"walk": SubResource("Animation_m3o0m")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ru1ur"]
+size = Vector2(51, 8)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hllel"]
+radius = 7.0
+height = 62.37
+
+[sub_resource type="GDScript" id="GDScript_601y4"]
+script/source = "extends AudioStreamPlayer2D
+
+@export var run_sound: AudioStream
+var play_run_sound: bool = false
+
+
+func _on_movement_controller_state_changed(state: String) -> void:
+	if !play_run_sound: return
+	
+	if state == \"run\":
+		stream = run_sound
+		play()
+	else:
+		stop()
+"
+
+[node name="wolf" type="CharacterBody2D" unique_id=1483438180]
+texture_filter = 1
+collision_mask = 0
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=616298147]
+position = Vector2(-5, -1)
+scale = Vector2(1.7999995, 1)
+texture = ExtResource("1_ryt1d")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=348215316]
+position = Vector2(-4, -40)
+texture = ExtResource("2_jfglg")
+hframes = 4
+vframes = 5
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=754962492]
+libraries/ = SubResource("AnimationLibrary_20orm")
+autoplay = &"idle"
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=2092911798]
+position = Vector2(-4.5, -3)
+shape = SubResource("RectangleShape2D_ru1ur")
+
+[node name="movement_controller" type="Node" parent="." unique_id=1976003997 node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("3_omixj")
+nav_agent = NodePath("../nav_agent")
+
+[node name="walk" type="Node" parent="movement_controller" unique_id=64885179]
+script = ExtResource("4_2rhky")
+default = true
+
+[node name="run" type="Node" parent="movement_controller" unique_id=1835173640]
+script = ExtResource("4_2rhky")
+anim = "run"
+speed = 320
+
+[node name="stun" type="Node" parent="movement_controller" unique_id=1708508266]
+script = ExtResource("4_2rhky")
+idle_anim = "stun"
+speed = 0
+
+[node name="animation_controller" type="Node" parent="." unique_id=896158849 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
+script = ExtResource("5_2fxid")
+sprites = [NodePath("../sprite")]
+anim = NodePath("../anim")
+movement_controller = NodePath("../movement_controller")
+
+[node name="follow_controller" type="Node" parent="." unique_id=471070712 node_paths=PackedStringArray("nav_controller")]
+script = ExtResource("6_2rhky")
+nav_controller = NodePath("../movement_controller")
+
+[node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=603154578]
+
+[node name="lost_area" type="Area2D" parent="." unique_id=1254210269]
+script = ExtResource("7_kmk7x")
+player_name = "bowler_hat"
+scene_name = "gas_station_wolfs_lost"
+
+[node name="shape" type="CollisionShape2D" parent="lost_area" unique_id=101194154]
+position = Vector2(-3.815, -2.625)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hllel")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="lost_area" unique_id=1579246776]
+stream = ExtResource("8_601y4")
+bus = &"Sound"
+
+[node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=1781351163]
+stream = ExtResource("9_wx3n0")
+volume_db = -2.0
+bus = &"Sound"
+script = SubResource("GDScript_601y4")
+run_sound = ExtResource("9_wx3n0")
+
+[connection signal="state_changed" from="movement_controller" to="audi" method="_on_movement_controller_state_changed"]
+[connection signal="body_entered" from="lost_area" to="lost_area" method="_on_body_entered"]

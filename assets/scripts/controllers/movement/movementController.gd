@@ -25,6 +25,9 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	set_velocity(dir * current_state.speed)
+	
+	if current_state.speed == 0: 
+		set_physics_process(false)
 
 
 func load_state(state_name: String = 'default') -> void:

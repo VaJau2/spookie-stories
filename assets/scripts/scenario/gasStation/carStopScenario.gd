@@ -16,16 +16,20 @@ extends Node
 
 @export_category("getting out")
 @export var driving_pony: Node2D
-@export var spawn_point: Node2D
+@export var player_spawn_point: Node2D
 @export var player_prefab: PackedScene
 @export var black_screen: ColorRect
 @export var exit_sound: AudioStream
 @export var forest_audi: AudioStreamPlayer
 @export var left_obstacle: StaticBody2D
+@export var station_land: Node2D
+@export var spawn_points_variants: Array[Node2D]
 
 
 var is_stopping: bool = false
 var starting_engine: bool = false
+
+signal player_spawned()
 
 
 func stop() -> void:
@@ -60,10 +64,11 @@ func get_out_of_car() -> void:
 	
 	driving_pony.visible = false
 	_spawn_player()
+	_move_station_land()
 	car_sound.stream = exit_sound
 	car_sound.play()
 	forest_audi.play()
-	left_obstacle.global_position.x = spawn_point.global_position.x - 500
+	_move_obstacle()
 	
 	while black_screen.color.a > 0:
 		black_screen.color.a -= 0.01
@@ -72,6 +77,8 @@ func get_out_of_car() -> void:
 	queue_free()
 
 
+func _move_obstacle() -> void:
+	left_obstacle.global_position.x = player_spawn_point.global_position.x - 900
 
 func _process(delta: float) -> void:
 	if is_stopping: 
@@ -119,9 +126,26 @@ func _stop_car() -> void:
 	car_sound.volume_linear = 1
 
 
-func _spawn_player() -> void:
+func _spawn_player() -> CharacterBody2D:
 	var player: Node2D = player_prefab.instantiate()
+	call_deferred("_move_spawned_player", player)
+	return player
+
+
+func _move_spawned_player(player: CharacterBody2D) -> void:
 	get_parent().add_child(player)
-	player.global_position = spawn_point.global_position
+	player.global_position = player_spawn_point.global_position
 	var player_camera: Camera2D = player.get_node("camera")
 	player_camera.make_current()
+	player_spawned.emit()
+
+
+func _move_station_land() -> void:
+	var closest_spawn_point = spawn_points_variants[0]
+	
+	for point in spawn_points_variants:
+		if point.global_position.x > closest_spawn_point.global_position.x:
+			closest_spawn_point = point
+	
+	station_land.global_position = closest_spawn_point.global_position
+	station_land.visible = true

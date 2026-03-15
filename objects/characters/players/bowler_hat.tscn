@@ -114,10 +114,10 @@ _data = {
 script = ExtResource("8_271u3")
 walk_sounds = Array[AudioStream]([ExtResource("12_526ss"), ExtResource("13_n0p5q"), ExtResource("14_5yyrw")])
 run_sounds = Array[AudioStream]([ExtResource("9_sci1q"), ExtResource("10_1c1g1"), ExtResource("11_4nslf")])
-run_cooldown = 1.0
+run_cooldown = 0.75
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
-[node name="pony" type="CharacterBody2D" unique_id=301655442]
+[node name="bowler_hat" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 
 [node name="shadow" type="Sprite2D" parent="." unique_id=1258215825]
@@ -142,27 +142,27 @@ shape = SubResource("CapsuleShape2D_5mxps")
 root_node = NodePath("../sprite")
 libraries/ = SubResource("AnimationLibrary_b8q40")
 
-[node name="movementController" type="Node" parent="." unique_id=1950806343]
+[node name="movement_controller" type="Node" parent="." unique_id=1950806343]
 script = ExtResource("3_aucod")
 
-[node name="walk" type="Node" parent="movementController" unique_id=5973867]
+[node name="walk" type="Node" parent="movement_controller" unique_id=5973867]
 script = ExtResource("4_pnm64")
 default = true
 
-[node name="run" type="Node" parent="movementController" unique_id=147852670]
+[node name="run" type="Node" parent="movement_controller" unique_id=147852670]
 script = ExtResource("4_pnm64")
 anim = "run"
 speed = 300
 
-[node name="inputController" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
+[node name="input_controller" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("5_g3mof")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("../movement_controller")
 
-[node name="animationController" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
+[node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("6_8etiq")
 sprites = [NodePath("../sprite")]
 anim = NodePath("../anim")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("../movement_controller")
 
 [node name="camera" type="Camera2D" parent="." unique_id=1899412962]
 zoom = Vector2(2, 2)
@@ -170,5 +170,5 @@ position_smoothing_enabled = true
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=2122881728 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("7_v54q8")
-movement_controller = NodePath("../movementController")
+movement_controller = NodePath("../movement_controller")
 steps_data = Array[ExtResource("8_271u3")]([SubResource("Resource_iqgwf")])

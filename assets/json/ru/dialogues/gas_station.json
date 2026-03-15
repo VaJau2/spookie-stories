@@ -27,15 +27,15 @@
 				"text": "Я наслаждался загородной поездкой."
 			},
 			{
+				"type": "script",
+				"path": "/root/main/land2",
+				"method": "set_skip_showing",
+			},
+			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
 				"text": "Кстати, это была не обычная машина."
-			},
-			{
-				"type": "script",
-				"path": "/root/main/land2",
-				"method": "set_skip_showing",
 			},
 			{
 				"type": "phrase",
@@ -137,5 +137,295 @@
 				"method": "get_out_of_car"
 			},
 		],
+	},
+	"walking": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Стараясь не обращать внимания на многочисленные шорохи из леса, которые больше не заглушались ревом двигателя…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Я шел дальше.",
+			},
+		]
+	},
+	"meet_station": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Вблизи заправка выглядела не так привлекательно, как до этого.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Из окон не горел свет и не доносилось ни единого звука.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Я зашел внутрь…",
+			},
+		]
+	},
+	"ghosts": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Заправка выглядела темной, заброшенной и жуткой…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "…Но, к вашему сведению, абсолютно никаких призраков там точно не было!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/delete_ghosts",
+				"method": "delete"
+			},
+		]
+	},
+	"ghosts2": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "Бегло осмотрев её, я понял, что разбираться со своими проблемами мне придется самостоятельно.",
+			},
+		]
+	},
+	"pay_cash": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "За кассой никого не было, поэтому я оставил плату за топливо и сам рассчитал сдачу.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/inside_station",
+				"method": "put_cash"
+			},
+		]
+	},
+	"take_canister": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "В подсобке я нашел канистру. Я решил позаимствовать её.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/inside_station",
+				"method": "take_canister"
+			},
+		]
+	},
+	"pump_forgot": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Колонка по какой-то причине не работала.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Вероятно, я забыл что-то важное в помещении заправки."
+			},
+		]
+	},
+	"pump_ready": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/inside_station",
+				"method": "set_pump_working"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Я подставил канистру под колонку и стал набирать в неё топливо.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/inside_station",
+				"method": "process_refuel"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Пока оно набиралось, шорох из леса становился все громче и громче.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "...",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/inside_station",
+				"method": "end_refuel"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Наконец, канистра заполнилась до конца, и я спешно направился в сторону своей машины.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/station_land/spawn_wolfs_area",
+				"method": "set_active"
+			},
+		]
+	},
+	"spawn_wolfs": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/spawn_wolfs",
+				"method": "spawn_wolfs"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "Как вдруг из леса прямо позади меня выскочили волки!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Недолго думая, я побежал к машине изо всех сил.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/spawn_wolfs",
+				"method": "wolfs_run"
+			},
+		]
+	},
+	"wolfs_lost": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "Они... тебя поймали?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "Конечно нет!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/return_to_scene",
+				"method": "start"
+			},
+		]
+	},
+	"sit_in_car": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/spawn_wolfs",
+				"method": "delete_wolfs"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Когда я добежал до машины, волки отстали.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Я моментально влил все топливо из канистры в бак и сел в машину",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_start",
+				"method": "start"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Будто понимая всю опасность вместе со мной, автомобиль тут же завелся и поехал",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_start",
+				"method": "move"
+			},
+		]
+	},
+	"car_moving": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Хоть я и чувствовал себя в безопасности в салоне движущегося автомобиля",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "По какой-то причине я продолжал слышать вой волков",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Он отдавался дрожью в спине",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "Внезапно я заметил свет в зеркале заднего вида",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_moving",
+				"method": "spawn_wolfs"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Это были все те же волки!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Они отстали лишь затем, чтобы сесть в собственные автомобили!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/car_moving",
+				"method": "make_car_movable"
+			},
+		]
 	}
 }
