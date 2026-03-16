@@ -8,10 +8,15 @@ var skip_showing_station: bool = false
 var showed_station: bool = false
 
 var show_obstacles: bool = false
+var hide_obstacles: bool = false
 
 
 func set_show_obstacles() -> void:
 	show_obstacles = true
+
+
+func set_hide_obstacles() -> void:
+	hide_obstacles = true
 
 
 func set_skip_showing() -> void:
@@ -40,4 +45,12 @@ func _update_obstacles() -> void:
 		wood_obstacles.visible = true
 		for obstacle: StaticBody2D in wood_obstacles.get_children():
 			obstacle.collision_layer = 1
+			obstacle.get_node("stun_area").is_active = true
 		show_obstacles = false
+	
+	if hide_obstacles:
+		wood_obstacles.visible = false
+		for obstacle: StaticBody2D in wood_obstacles.get_children():
+			obstacle.collision_layer = 0
+			obstacle.get_node("stun_area").is_active = false
+		hide_obstacles = false

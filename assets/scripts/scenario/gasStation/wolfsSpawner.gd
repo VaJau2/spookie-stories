@@ -20,6 +20,7 @@ func spawn_wolfs() -> void:
 	obstacles.visible = true
 	for obstacle: StaticBody2D in obstacles.get_children():
 		obstacle.collision_layer = 1
+		obstacle.get_node("stun_area").is_active = true
 
 
 func set_wolf_walk_point(wolf: CharacterBody2D, point: Node2D, walk_point: Node2D) -> void:

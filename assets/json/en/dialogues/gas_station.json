@@ -4,12 +4,12 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Однажды один с недавнего времени знакомый вам единорог - то есть, я - направлялся в соседний город на своем автомобиле. "
+				"text": "One day, a unicorn you have recently met - that is, me - was driving to a nearby town in his car."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Ветер раздувал мою гриву, а вечерний закат быстро уходил за горизонт."
+				"text": "The wind was blowing my mane, and the evening sunset was quickly sinking below the horizon."
 			},
 			{
 				"type": "script",
@@ -19,12 +19,12 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Автомобиль поглощал километры за километрами."
+				"text": "The car consumed kilometers after kilometers."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Я наслаждался загородной поездкой."
+				"text": "I was enjoying a country trip."
 			},
 			{
 				"type": "script",
@@ -35,19 +35,19 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Кстати, это была не обычная машина."
+				"text": "By the way, it wasn't an ordinary car."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Он был кабриолетом черного цвета с восьмицилиндровым двигателем.",
+				"text": "It was a black convertible with an eight-cylinder engine.",
 				"autoskip": 1,
 				"timer": 0.02,
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "…У него было целых 142 лошадиных силы и трехступенчатая коробка передач.",
+				"text": "…It had 142 horsepower and a three-speed gearbox.",
 				"autoskip": 1,
 				"timer": 0.02,
 			},
@@ -55,7 +55,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "…Это был первый концепт-кар для всей автомобильной промышленности.",
+				"text": "…It was the first concept car for the entire automotive industry.",
 				"autoskip": 1,
 				"timer": 0.02,
 			},
@@ -63,21 +63,21 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "happy",
-				"text": "…Экспериментальная модель, предназначенная для демонстрации новых технологий, а не для массовой продажи!",
+				"text": "…An experimental model designed to demonstrate new technologies, not for mass sale!",
 				"autoskip": 1,
 				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "…Он был просто до краев заполнен этими технологиями…",
+				"text": "…He was just filled to the brim with these technologies…",
 				"autoskip": 1,
 				"timer": 0.02,
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
-				"text": "Мы поняли про машину. Давай дальше.",
+				"text": "We get the car part. Go on.",
 			},
 			{
 				"type": "phrase",
@@ -89,12 +89,12 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "…Как вы могли догадаться из моего описания, автомобиль был уникальным.",
+				"text": "…As you might have guessed from my description, the car was unique.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Именно по этой причине я не сумел правильно рассчитать топливо на свою поездку.",
+				"text": "That's why I couldn't calculate the fuel for my trip correctly.",
 			},
 			{
 				"type": "script",
@@ -105,7 +105,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "…И заглох посреди леса.",
+				"text": "…And stalled in the middle of the forest.",
 			},
 			{
 				"type": "script",
@@ -119,17 +119,17 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Все мои тщетные попытки завести автомобиль не увенчались успехом.",
+				"text": "All my futile attempts to start the car were unsuccessful.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Но я не паниковал, ведь совсем недалеко позади была заправка.",
+				"text": "But I didn't panic, because there was a gas station not far behind.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Я решил оставить машину и дойти до неё пешком.",
+				"text": "I decided to leave my car and walk on my own.",
 			},
 			{
 				"type": "script",
@@ -143,12 +143,12 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Стараясь не обращать внимания на многочисленные шорохи из леса, которые больше не заглушались ревом двигателя…",
+				"text": "Trying to ignore the many rustling sounds coming from the forest, which were no longer drowned out by the engine's roar…",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Я шел дальше.",
+				"text": "I walked further.",
 			},
 		]
 	},
@@ -157,17 +157,17 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Вблизи заправка выглядела не так привлекательно, как до этого.",
+				"text": "Up close, the gas station didn't look as appealing as it had before.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Из окон не горел свет и не доносилось ни единого звука.",
+				"text": "There was no light coming from the windows, and no sound was coming from inside.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Я зашел внутрь…",
+				"text": "I went inside…",
 			},
 		]
 	},
@@ -176,7 +176,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Заправка выглядела темной, заброшенной и жуткой…",
+				"text": "The gas station looked dark, abandoned, and creepy.…",
 			},
 			{
 				"type": "phrase",
@@ -188,7 +188,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "…Но, к вашему сведению, абсолютно никаких призраков там точно не было!",
+				"text": "…But for your information, there were absolutely no ghosts there!",
 			},
 			{
 				"type": "script",
@@ -203,7 +203,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "Бегло осмотрев её, я понял, что разбираться со своими проблемами мне придется самостоятельно.",
+				"text": "After a quick look around, I realized that I would have to deal with my problems on my own.",
 			},
 		]
 	},
@@ -212,7 +212,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "За кассой никого не было, поэтому я оставил плату за топливо и сам рассчитал сдачу.",
+				"text": "There was no one at the cash register, so I left the fuel payment and calculated my change myself.",
 			},
 			{
 				"type": "script",
@@ -226,7 +226,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "В подсобке я нашел канистру. Я решил позаимствовать её.",
+				"text": "I found a canister in the storeroom, so I decided to borrow it.",
 			},
 			{
 				"type": "script",
@@ -240,12 +240,12 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Колонка по какой-то причине не работала.",
+				"text": "For some reason, the gas pump wasn't working.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Вероятно, я забыл что-то важное в помещении заправки."
+				"text": "I probably forgot something important in the gas station."
 			},
 		]
 	},
@@ -259,7 +259,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Я подставил канистру под колонку и стал набирать в неё топливо.",
+				"text": "I placed the canister under the pump and began to fill it with fuel..",
 			},
 			{
 				"type": "script",
@@ -279,7 +279,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Пока оно набиралось, шорох из леса становился все громче и громче.",
+				"text": "As I was filling it, the rustling in the woods got louder and louder.",
 			},
 			{
 				"type": "phrase",
@@ -294,7 +294,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Наконец, канистра заполнилась до конца, и я спешно направился в сторону своей машины.",
+				"text": "Finally, the canister was full, and I hurried back to my car.",
 			},
 			{
 				"type": "script",
@@ -314,12 +314,12 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "Как вдруг из леса прямо позади меня выскочили волки!",
+				"text": "Suddenly, wolves jumped out of the forest right behind me!",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Недолго думая, я побежал к машине изо всех сил.",
+				"text": "Without thinking twice, I ran towards the car as fast as I could.",
 			},
 			{
 				"type": "script",
@@ -334,13 +334,13 @@
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "scared",
-				"text": "Они... тебя поймали?",
+				"text": "Did... did they catch you?",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "Конечно нет!",
+				"text": "Of course not!",
 			},
 			{
 				"type": "script",
@@ -359,12 +359,12 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Когда я добежал до машины, волки отстали.",
+				"text": "When I reached the car, the wolves were far behind me.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Я моментально влил все топливо из канистры в бак и сел в машину.",
+				"text": "I immediately poured all the fuel from the canister into the tank and got into the car.",
 			},
 			{
 				"type": "script",
@@ -374,7 +374,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Будто понимая всю опасность вместе со мной, автомобиль тут же завелся и поехал.",
+				"text": "As if realizing the danger along with me, the car immediately started and drove off.",
 			},
 			{
 				"type": "script",
@@ -388,23 +388,23 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Хоть я и чувствовал себя в безопасности в салоне движущегося автомобиля.",
+				"text": "Even though I felt safe inside the moving car,",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "По какой-то причине я продолжал слышать вой волков.",
+				"text": "for some reason I kept hearing the wolves howling.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Он отдавался дрожью в спине.",
+				"text": "It sent shivers down my spine.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "Внезапно я заметил свет в зеркале заднего вида.",
+				"text": "Suddenly, I noticed a light in the rearview mirror.",
 			},
 			{
 				"type": "script",
@@ -414,12 +414,12 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Это были все те же волки!",
+				"text": "It was still the same wolves!",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Они отстали лишь затем, чтобы сесть в собственные автомобили!",
+				"text": "They only stayed behind just to get into their own cars!",
 			},
 			{
 				"type": "script",
@@ -433,18 +433,18 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Наконец свет фар позади меня перестал слепить меня из зеркала заднего вида.",
+				"text": "Finally, the headlights behind me stopped blinding me from the rearview mirror.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Волки ошиблись, когда выбрали устаревшие автомобили из ушедшей эпохи!",
+				"text": "The wolves made a mistake when they chose outdated cars from a bygone era!",
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "А я спокойно уехал из этого леса и больше туда не возвращался.",
+				"text": "And I left this forest without any problems and did not return there again.",
 			},
 			{
 				"type": "script",

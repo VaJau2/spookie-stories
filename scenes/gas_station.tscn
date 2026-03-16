@@ -47,10 +47,13 @@
 [ext_resource type="Script" uid="uid://ddh5y232mrk2k" path="res://assets/scripts/scenario/gasStation/playerCarMovingController.gd" id="26_2o723"]
 [ext_resource type="Texture2D" uid="uid://bicj0a8s2sm5m" path="res://assets/sprites/props/gas-station/inside/cashTable.png" id="26_x68an"]
 [ext_resource type="Texture2D" uid="uid://bfytjcyposd27" path="res://assets/sprites/props/gas-station/inside/table2.png" id="27_v33pq"]
+[ext_resource type="Script" uid="uid://ccydspuq4j6qg" path="res://assets/scripts/scenario/gasStation/playerCarCollideWithObstacles.gd" id="29_00tt4"]
 [ext_resource type="Texture2D" uid="uid://0l4hkscjn5mf" path="res://assets/sprites/props/gas-station/inside/cash.png" id="29_oes41"]
 [ext_resource type="Script" uid="uid://bp211jreg8lkc" path="res://assets/scripts/scenario/gasStation/lightFollowsArea.gd" id="29_x68an"]
 [ext_resource type="AudioStream" uid="uid://be5i3qxxqhnng" path="res://assets/audio/cash.mp3" id="30_65dx5"]
+[ext_resource type="AudioStream" uid="uid://dkt1fhn5p688r" path="res://assets/audio/crashes/wood_car_collision.mp3" id="30_fl48t"]
 [ext_resource type="Script" uid="uid://dm0l85620rppk" path="res://assets/scripts/scenario/gasStation/lightFollowsPlayer.gd" id="30_i6evg"]
+[ext_resource type="PackedScene" uid="uid://c4so2r3sfldg5" path="res://objects/prefabs/gas_station/smoke.tscn" id="31_i4ap4"]
 [ext_resource type="Texture2D" uid="uid://djac0bkui2gtq" path="res://assets/sprites/characters/ghosts/ghost1.png" id="32_rmk5d"]
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="33_v0bth"]
 [ext_resource type="Texture2D" uid="uid://b8h01q713fl6h" path="res://assets/sprites/characters/ghosts/ghost2.png" id="33_vqsn6"]
@@ -60,14 +63,15 @@
 [ext_resource type="AudioStream" uid="uid://dtv6c3yj7svcy" path="res://assets/audio/car/refuel/refuel_start.mp3" id="49_qr47d"]
 [ext_resource type="AudioStream" uid="uid://bljbyjxkvoxad" path="res://assets/audio/car/refuel/refuel_process.mp3" id="50_i7u8q"]
 [ext_resource type="AudioStream" uid="uid://cs1r4dixhg3vb" path="res://assets/audio/car/refuel/refuel_end.mp3" id="51_v0bth"]
-[ext_resource type="PackedScene" uid="uid://qlbjod8sul57" path="res://objects/characters/gas_station_wolf.tscn" id="52_i7u8q"]
+[ext_resource type="PackedScene" uid="uid://qlbjod8sul57" path="res://objects/prefabs/gas_station/gas_station_wolf.tscn" id="52_i7u8q"]
 [ext_resource type="Script" uid="uid://ct8fhcwgkqmnj" path="res://assets/scripts/scenario/gasStation/wolfsSpawner.gd" id="53_stlba"]
 [ext_resource type="Script" uid="uid://clqie6sndsdwl" path="res://assets/scripts/scenario/gasStation/sceneReloader.gd" id="55_stlba"]
 [ext_resource type="AudioStream" uid="uid://cne6cdi83doym" path="res://assets/audio/wolf/wolf-growl.mp3" id="60_3mtdj"]
 [ext_resource type="Script" uid="uid://r3u7dojrmlp5" path="res://assets/scripts/scenario/gasStation/carStartScenario.gd" id="63_sccj4"]
 [ext_resource type="Script" uid="uid://cmfiu4oyhnngo" path="res://assets/scripts/scenario/gasStation/carMovingAfter.gd" id="64_53lc2"]
 [ext_resource type="AudioStream" uid="uid://bubppdo0ey0ae" path="res://assets/audio/car/success_start.mp3" id="64_qnn23"]
-[ext_resource type="PackedScene" uid="uid://cnyojp768nnpu" path="res://objects/characters/wolf_car.tscn" id="65_53lc2"]
+[ext_resource type="PackedScene" uid="uid://cnyojp768nnpu" path="res://objects/prefabs/gas_station/wolf_car.tscn" id="65_53lc2"]
+[ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="72_t4dah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npads"]
 texture = ExtResource("5_yidqh")
@@ -1483,6 +1487,14 @@ shape = SubResource("RectangleShape2D_3mtdj")
 script = ExtResource("26_2o723")
 input = NodePath("../../input")
 
+[node name="collide_with_obstacles" type="Node" parent="car" unique_id=388173011 node_paths=PackedStringArray("car_audi2", "land_anim", "camera")]
+script = ExtResource("29_00tt4")
+car_audi2 = NodePath("../audi2")
+collide_sound = ExtResource("30_fl48t")
+smoke_prefab = ExtResource("31_i4ap4")
+land_anim = NodePath("../../land_anim")
+camera = NodePath("../../camera")
+
 [node name="left_obstacle" type="StaticBody2D" parent="." unique_id=1201063554]
 position = Vector2(-3955, 48)
 
@@ -2114,6 +2126,7 @@ script = ExtResource("64_53lc2")
 dialogue_menu = NodePath("../menu/dialogue_menu")
 dialogue_file = "gas_station"
 dialogue_code = "car_moving"
+final_dialogue_code = "win"
 wolf_car_prefab = ExtResource("65_53lc2")
 player_car = NodePath("../car")
 camera = NodePath("../camera")
@@ -2132,6 +2145,11 @@ station_land = NodePath("../land2")
 
 [node name="input" type="Node" parent="." unique_id=1618273650]
 script = ExtResource("20_lj00y")
+
+[node name="next_level" type="Node" parent="." unique_id=921335069 node_paths=PackedStringArray("black_screen")]
+script = ExtResource("72_t4dah")
+black_screen = NodePath("../menu/black_screen")
+next_level = "forest3"
 
 [connection signal="visibility_changed" from="land" to="land" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="land2" to="land2" method="_on_visibility_changed"]

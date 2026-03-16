@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://cnyojp768nnpu"]
 
 [ext_resource type="Texture2D" uid="uid://dfm780e75u7t6" path="res://assets/sprites/characters/wolf-driving.png" id="1_vv87q"]
+[ext_resource type="Script" uid="uid://bhoawseuw2g83" path="res://assets/scripts/scenario/gasStation/wolfCar.gd" id="1_w7ipc"]
+[ext_resource type="AudioStream" uid="uid://dkt1fhn5p688r" path="res://assets/audio/crashes/wood_car_collision.mp3" id="2_chtei"]
 [ext_resource type="Texture2D" uid="uid://bgwowndxw1yjl" path="res://assets/sprites/props/cars/wolf-car.png" id="2_gm17r"]
 [ext_resource type="Texture2D" uid="uid://b127y4tklr1bo" path="res://assets/sprites/props/cars/wolf-wheel.png" id="3_8kl4u"]
 [ext_resource type="Texture2D" uid="uid://d33hepo7wn3k1" path="res://assets/sprites/props/cars/car-light.png" id="4_gm17r"]
+[ext_resource type="Script" uid="uid://t2h1nx74g3b" path="res://assets/scripts/scenario/gasStation/lostArea.gd" id="7_8kqeq"]
+[ext_resource type="AudioStream" uid="uid://c0o06vkonbst" path="res://assets/audio/crashes/lost_crash.mp3" id="8_8kqeq"]
 
 [sub_resource type="Curve" id="Curve_gm17r"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.056769848), -1.1389815, 0.0, 0, 0]
@@ -147,8 +151,14 @@ _data = {
 &"idle": SubResource("Animation_gm17r")
 }
 
-[node name="wolf_car" type="CharacterBody2D" unique_id=288330085]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2v3v"]
+size = Vector2(71, 179)
+
+[node name="wolf_car" type="CharacterBody2D" unique_id=288330085 node_paths=PackedStringArray("car_audi")]
 texture_filter = 1
+script = ExtResource("1_w7ipc")
+car_audi = NodePath("audi")
+collide_sound = ExtResource("2_chtei")
 
 [node name="smoke" type="GPUParticles2D" parent="." unique_id=154788154]
 position = Vector2(80, -9)
@@ -186,3 +196,22 @@ position = Vector2(-362.99997, -2.000001)
 scale = Vector2(2.0935252, 1.4807693)
 energy = 2.0
 texture = ExtResource("4_gm17r")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=232229974]
+
+[node name="lost_area" type="Area2D" parent="." unique_id=281214783]
+script = ExtResource("7_8kqeq")
+player_name = "car"
+scene_name = "gas_station_wolfs_lost"
+variable_value = 2
+
+[node name="shape" type="CollisionShape2D" parent="lost_area" unique_id=13469492]
+position = Vector2(-1.5, 8.500003)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_o2v3v")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="lost_area" unique_id=634153128]
+stream = ExtResource("8_8kqeq")
+bus = &"Sound"
+
+[connection signal="body_entered" from="lost_area" to="lost_area" method="_on_body_entered"]

@@ -1,0 +1,29 @@
+{
+	"talk": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Кстати, история основана на реальных событиях.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "Волки, пфф. Встречал я тварей и пострашнее."
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "Ну расскажи тогда свою историю.",
+			},
+		]
+	}
+}

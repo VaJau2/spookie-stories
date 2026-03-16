@@ -13,5 +13,5 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	car.global_position.y += input.get_dir().y
+	car.global_position.y += input.get_dir().y * 2.5
 	car.global_position.y = clamp(car.global_position.y, min_up_pos, max_up_pos)

@@ -29,6 +29,7 @@ func start() -> void:
 	car_camera.make_current()
 	driving_pony.visible = true
 	car_light.visible = true
+	car_audi.stream = car_sound
 	car_audi2.stream = starting_sound
 	car_audi2.play()
 	smoke.emitting = true
@@ -69,6 +70,7 @@ func _finish_starting() -> void:
 	is_starting = false
 	car_anim.speed_scale = 1
 	car_audi.volume_linear = 1
+	car_audi2.volume_linear = 1
 	land_anim.speed_scale = 1
 	smoke.amount = 42
 	smoke.restart()

@@ -6,5 +6,5 @@ class_name Global
 signal lang_changed  
   
 var scene_vars: Dictionary[String, int] = {
-	"gas_station": 2
+	"gas_station": 0
 }

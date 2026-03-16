@@ -2,11 +2,19 @@ extends Area2D
 
 @export var crash_sounds: Array[AudioStream]
 
-var is_active: bool = true
+var is_active: bool = false
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if !is_active: return
+	
+	if body.name == "car": 
+		body.get_node("collide_with_obstacles").collide(self)
+		return
+	
+	if body.name.begins_with("wolf_car"):
+		body.collide()
+		return
 	
 	var controller = body.get_node_or_null("movement_controller")
 	if controller and controller is NavigationMovementController:
