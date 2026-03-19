@@ -19,10 +19,69 @@
 				"state": "idle",
 			},
 			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
 				"text": "Ну расскажи тогда свою историю.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Что ж, ладно."
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "Это было не так давно. Меня до сих пор иногда бросает в дрожь от воспоминаний."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Я только-только устроился работать шерифом в своем родном городе после смерти моего отца."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "sad",
+				"text": "О, нам очень жаль…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"text": "Да."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "В общем, мне нужно было расследовать загадочные взрывы в шахтах."
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikely",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "Они конечно были не редким явлением, но в то время происходили чуть ли не каждый день."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Когда наконец разгребли завалы, мы с моей верной напарницей направились вглубь шахт."
 			},
 		]
 	}

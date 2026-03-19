@@ -316,7 +316,14 @@ script/source = "extends Sprite2D
 
 
 func _ready() -> void:
-	texture = sprite_variants[randi() % len(sprite_variants)]
+	var saved_car_index = G.scene_vars.get(\"gas_station_car_texture\")
+	if saved_car_index:
+		texture = sprite_variants[saved_car_index]
+		return
+	
+	var rand_car_index = randi() % len(sprite_variants)
+	texture = sprite_variants[rand_car_index]
+	G.scene_vars.set(\"gas_station_car_texture\", rand_car_index)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npads"]
@@ -1779,7 +1786,7 @@ position = Vector2(2501, 37)
 [node name="station_inside" type="Node2D" parent="." unique_id=836995128]
 visible = false
 y_sort_enabled = true
-position = Vector2(1539, -1147)
+position = Vector2(1539, -4107)
 
 [node name="canister" type="Sprite2D" parent="station_inside" unique_id=881102091]
 position = Vector2(234, 101)

@@ -40,7 +40,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "It was a black convertible with an eight-cylinder engine.",
+				"text": "It was a powerful convertible with an eight-cylinder engine.",
 				"autoskip": 1,
 				"timer": 0.02,
 			},

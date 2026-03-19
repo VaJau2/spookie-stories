@@ -9,6 +9,11 @@
 			"eyes_open": 3,
 			"eyes_closed": 3,
 			"mouth_open": 4,
+		},
+		"sad":  {
+			"eyes_open": 5,
+			"eyes_closed": 6,
+			"mouth_open": 7,
 		}
 	},
 	"bowler_hat": {
@@ -53,6 +58,11 @@
 			"eyes_open": 6,
 			"eyes_closed": 7,
 			"mouth_open": 8,
+		},
+		"look-down": {
+			"eyes_open": 9,
+			"eyes_closed": 1,
+			"mouth_open": 10,
 		},
 	},
 	"pay": {
