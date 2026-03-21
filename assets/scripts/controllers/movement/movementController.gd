@@ -7,7 +7,6 @@ class_name MovementController
 #-----------------------------------------------
 
 @onready var parent: CharacterBody2D = get_parent()
-@export var movement_speed = 100
 
 var may_move: bool = true
 var dir: Vector2
@@ -19,15 +18,19 @@ signal state_changed(state: String)
 
 
 func _ready() -> void:
-	set_physics_process(false)
 	load_state('default')
 
 
-func _physics_process(_delta):
+func set_may_move(value: bool) -> void:
+	may_move = value
+	if !may_move:
+		stop.emit()
+
+
+func _physics_process(_delta: float) -> void:
+	if !may_move: return
 	set_velocity(dir * current_state.speed)
-	
-	if current_state.speed == 0: 
-		set_physics_process(false)
+	parent.move_and_slide()
 
 
 func load_state(state_name: String = 'default') -> void:
@@ -49,10 +52,13 @@ func set_current_state(new_state: MovementState) -> void:
 
 
 func set_velocity(new_velocity: Vector2) -> void:
+	if parent.velocity == new_velocity: return
 	parent.velocity = new_velocity
-	
-	if new_velocity.length() > 0 and may_move:
+	emit_move_signals()
+
+
+func emit_move_signals() -> void:
+	if parent.velocity.length() > 0:
 		move.emit()
-		parent.move_and_slide()
 	else:
 		stop.emit()

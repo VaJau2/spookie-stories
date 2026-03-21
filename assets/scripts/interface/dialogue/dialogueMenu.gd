@@ -49,14 +49,14 @@ func start_dialogue(file: String, code: String) -> void:
 	index = 0
 	_show_node(dialogue_data[index])
 	if pause_menu: pause_menu.may_pause = false
-	if movement_controller: movement_controller.may_move = false
+	if movement_controller: movement_controller.set_may_move(false)
 	visible = true
 
 
 func finish_dialogue() -> void:
 	avatar.close_connections()
 	if pause_menu: pause_menu.may_pause = true
-	if movement_controller: movement_controller.may_move = true
+	if movement_controller: movement_controller.set_may_move(true)
 	visible = false
 	finished_dialogue.emit()
 

@@ -13,7 +13,7 @@ const DEFAULT_CAME_DISTANCE: float = 20
 signal came_to_point
 
 
-func _physics_process(_delta):
+func _physics_process(delta: float) -> void:
 	if !nav_agent.is_target_reachable() or nav_agent.is_navigation_finished():
 		set_velocity(Vector2.ZERO)
 		set_physics_process(false)
@@ -30,7 +30,7 @@ func _physics_process(_delta):
 	var next_pos: Vector2 = nav_agent.get_next_path_position()
 	dir = current_pos.direction_to(next_pos)
 	
-	super(_delta)
+	super(delta)
 
 
 func reset_came_distance() -> void:

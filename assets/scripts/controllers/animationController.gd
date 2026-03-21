@@ -4,6 +4,8 @@ class_name AnimationController
 
 @export var sprites: Array[Sprite2D]
 @export var anim: AnimationPlayer
+@export var flip_left: bool = true
+@export var always_watch_velocity: bool = false
 @export var movement_controller: MovementController
 @onready var parent: CharacterBody2D = get_parent()
 
@@ -32,10 +34,15 @@ func on_move() -> void:
 	watch_velocity = true
 
 
-func on_state_changed(_state) -> void:
-	if !watch_velocity: on_stop()
+func on_state_changed(_state: String) -> void:
+	if !watch_velocity:
+		on_stop()
 
 
-func _process(_delta) -> void:
-	if watch_velocity and parent.velocity.x != 0:
-		set_flip(parent.velocity.x < 0)
+func _process(_delta: float) -> void:
+	if !always_watch_velocity && !watch_velocity: return
+	if parent.velocity.x != 0:
+		if flip_left:
+			set_flip(parent.velocity.x < 0)
+		else:
+			set_flip(parent.velocity.x > 0)

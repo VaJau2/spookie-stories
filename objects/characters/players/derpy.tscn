@@ -142,6 +142,7 @@ script = ExtResource("3_2iclm")
 
 [node name="walk" type="Node" parent="movement_controller" unique_id=5973867]
 script = ExtResource("4_8a60l")
+speed = 110
 default = true
 
 [node name="sad" type="Node" parent="movement_controller" unique_id=284423297]

@@ -31,12 +31,12 @@ func _on_body_entered(body: Node2D) -> void:
 	dialogue_menu.start_dialogue(dialogue_file, dialogue_code)
 	if stop_player and player_node != null:
 		var controller: MovementController = player_node.get_node("movement_controller")
-		controller.may_move = false
+		controller.set_may_move(false)
 		if move_player_after:
 			dialogue_menu.finished_dialogue.connect(_on_finished_dialogue)
 
 
 func _on_finished_dialogue() -> void:
 	var controller: MovementController = player_node.get_node("movement_controller")
-	controller.may_move = true
+	controller.set_may_move(true)
 	queue_free()

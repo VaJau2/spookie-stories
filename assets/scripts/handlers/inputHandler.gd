@@ -10,6 +10,7 @@ class_name InputHandler
 signal start_running
 signal stop_running
 
+signal jump
 signal start_sitting
 
 @onready var main: Node2D = get_node('/root/main')
@@ -23,6 +24,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_sit"):
 		start_sitting.emit()
+	
+	if Input.is_action_just_pressed("ui_jump"):
+		jump.emit()
 
 
 func get_dir() -> Vector2:

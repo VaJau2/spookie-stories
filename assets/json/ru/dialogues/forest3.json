@@ -83,6 +83,11 @@
 				"speaker": "serious_tale",
 				"text": "Когда наконец разгребли завалы, мы с моей верной напарницей направились вглубь шахт."
 			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
 		]
 	}
 }

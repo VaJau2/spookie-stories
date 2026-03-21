@@ -35,13 +35,13 @@ func load_wolfs_run() -> void:
 	car_stop._move_obstacle()
 	var player = car_stop._spawn_player()
 	var movement_controller = player.get_node("movement_controller")
-	movement_controller.may_move = false
+	movement_controller.set_may_move(false)
 	call_deferred("_move_player", player)
 	dir_light.finish()
 	car_stop.queue_free()
 	wolfs_spawner.spawn_wolfs()
 	await get_tree().create_timer(2).timeout
-	movement_controller.may_move = true
+	movement_controller.set_may_move(true)
 	wolfs_spawner.wolfs_run()
 
 
