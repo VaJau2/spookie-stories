@@ -13,10 +13,12 @@ signal stop_running
 signal jump
 signal start_sitting
 
+signal shoot(pos: Vector2)
+
 @onready var main: Node2D = get_node('/root/main')
 
 
-func _process(_delta: float) -> void:	
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_run"):
 		start_running.emit()
 	if Input.is_action_just_released("ui_run"):
@@ -27,6 +29,10 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_jump"):
 		jump.emit()
+	
+	if Input.is_action_just_pressed("ui_shoot"):
+		var mouse_pos = get_parent().get_global_mouse_position()
+		shoot.emit(mouse_pos)
 
 
 func get_dir() -> Vector2:

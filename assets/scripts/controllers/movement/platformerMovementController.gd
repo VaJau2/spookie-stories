@@ -25,6 +25,7 @@ func emit_move_signals() -> void:
 
 
 func jump() -> void:
+	if !may_move: return
 	if !on_floor && on_floor_cooldown <= 0: return
 	on_floor_cooldown = 0
 	jumping.emit()

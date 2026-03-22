@@ -1,10 +1,64 @@
 [gd_scene format=3 uid="uid://6b2jpdixlsa4"]
 
 [ext_resource type="Texture2D" uid="uid://c3j016ti4owqc" path="res://assets/sprites/characters/cave/chakky.png" id="1_bgsoh"]
+[ext_resource type="Texture2D" uid="uid://4x5owlmgeqio" path="res://assets/sprites/characters/cave/chakky_lamp.png" id="2_1yxxy"]
 [ext_resource type="Script" uid="uid://cjd1r7nwvured" path="res://assets/scripts/controllers/movement/platformerMovementController.gd" id="2_gg3qa"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_6spuu"]
-[ext_resource type="Script" uid="uid://dt2ncw0lh7gum" path="res://assets/scripts/controllers/npcPlatformerFollowerController.gd" id="5_bgsoh"]
-[ext_resource type="Script" uid="uid://cjabe2c8sand5" path="res://assets/scripts/controllers/platformerAnimationController.gd" id="5_cs1sa"]
+[ext_resource type="Script" uid="uid://dt2ncw0lh7gum" path="res://assets/scripts/controllers/cave/npcPlatformerFollowerController.gd" id="5_bgsoh"]
+[ext_resource type="Script" uid="uid://cjabe2c8sand5" path="res://assets/scripts/controllers/cave/platformerAnimationController.gd" id="5_cs1sa"]
+[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="6_4rag3"]
+[ext_resource type="Script" uid="uid://borc24ulmg2tk" path="res://assets/scripts/controllers/cave/npcStuckController.gd" id="6_uwxjx"]
+[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="7_4aro2"]
+[ext_resource type="Script" uid="uid://30r6g1yjahy4" path="res://assets/scripts/controllers/cave/lampController.gd" id="8_1jjkp"]
+[ext_resource type="AudioStream" uid="uid://c8rgqdg3qguh3" path="res://assets/audio/steps/jump/player_jump_1.mp3" id="8_4aro2"]
+[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="8_enxtb"]
+[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="9_ympdi"]
+[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="10_vguqo"]
+[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="11_xt4ql"]
+[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="12_uwxjx"]
+[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="13_1yxxy"]
+[ext_resource type="Script" uid="uid://cx0kbwvwst70y" path="res://assets/scripts/controllers/steps/audiJump.gd" id="15_enxtb"]
+[ext_resource type="AudioStream" uid="uid://dv6rv2vau1d0k" path="res://assets/audio/steps/jump/chakky_jump_1.mp3" id="16_xt4ql"]
+[ext_resource type="AudioStream" uid="uid://71ps68inb6g6" path="res://assets/audio/steps/jump/chakky_jump_2.mp3" id="17_uwxjx"]
+[ext_resource type="AudioStream" uid="uid://butaobvrqibm7" path="res://assets/audio/steps/jump/chakky_jump_3.mp3" id="18_1yxxy"]
+
+[sub_resource type="Animation" id="Animation_1jjkp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8rt84"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lg7pj"]
+_data = {
+&"RESET": SubResource("Animation_1jjkp"),
+&"idle": SubResource("Animation_8rt84")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u0ls"]
 radius = 7.0
@@ -23,6 +77,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_l:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_r:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_n6328"]
@@ -56,6 +134,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [15]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_l:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, -2)]
+}
 
 [sub_resource type="Animation" id="Animation_gg3qa"]
 resource_name = "hit"
@@ -71,6 +173,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [19, 20, 21, 22, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100373104, 0.20109716, 0.3011193, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(7, -1), Vector2(9, 0), Vector2(7, 3), Vector2(7, 2), Vector2(7, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_l:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.101075016, 0.20074621, 0.3011193, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-7, -1), Vector2(-9, 0), Vector2(-7, 3), Vector2(-7, 2), Vector2(-7, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_3ru8q"]
@@ -89,6 +215,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 0, 1, 0, 0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_l:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_r:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_iwt4h"]
 resource_name = "jump"
@@ -104,6 +254,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100373104, 0.20179906, 0.30147028),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(7, 2), Vector2(7, -1), Vector2(7, -3), Vector2(7, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_l:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10142597, 0.20285194, 0.3011193),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-7, 2), Vector2(-7, -1), Vector2(-7, -3), Vector2(-7, -2)]
 }
 
 [sub_resource type="Animation" id="Animation_gext2"]
@@ -122,6 +296,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [7, 8, 9, 10, 11, 7]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_l:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10064172, 0.30164006, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-9, 2), Vector2(-10, 2), Vector2(-9, 2), Vector2(-9, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_r:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.10072406, 0.30182123, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(9, 2), Vector2(10, 2), Vector2(9, 2), Vector2(9, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_pdf5j"]
 resource_name = "stop_falling"
@@ -137,6 +335,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_r:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13441573),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(7, 3), Vector2(7, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_l:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13441573),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-7, 3), Vector2(-7, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_u0d4t"]
@@ -154,6 +376,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/lamp_pos_l:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(-7, 1), Vector2(-7, 0), Vector2(-7, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite/lamp_pos_r:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(7, 1), Vector2(7, 0), Vector2(7, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8u0ls"]
@@ -195,6 +441,13 @@ func _on_platformer_movement_finish_jumping() -> void:
 	restart()
 "
 
+[sub_resource type="Resource" id="Resource_enxtb"]
+script = ExtResource("7_4aro2")
+walk_sounds = Array[AudioStream]([ExtResource("11_xt4ql"), ExtResource("12_uwxjx"), ExtResource("13_1yxxy")])
+run_sounds = Array[AudioStream]([ExtResource("8_enxtb"), ExtResource("9_ympdi"), ExtResource("10_vguqo")])
+run_cooldown = 0.75
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
 [node name="chakky" type="CharacterBody2D" unique_id=1723412077]
 collision_layer = 2
 collision_mask = 2
@@ -204,6 +457,31 @@ position = Vector2(-4, -18)
 texture = ExtResource("1_bgsoh")
 hframes = 5
 vframes = 5
+
+[node name="lamp_pos_l" type="Node2D" parent="sprite" unique_id=109392620]
+position = Vector2(-7, 1)
+
+[node name="lamp" type="Sprite2D" parent="sprite/lamp_pos_l" unique_id=2008046889]
+position = Vector2(0, 4)
+texture = ExtResource("2_1yxxy")
+hframes = 2
+
+[node name="anim" type="AnimationPlayer" parent="sprite/lamp_pos_l/lamp" unique_id=442582399]
+libraries/ = SubResource("AnimationLibrary_lg7pj")
+autoplay = &"idle"
+
+[node name="lamp_pos_r" type="Node2D" parent="sprite" unique_id=406604165]
+visible = false
+position = Vector2(7, 1)
+
+[node name="lamp" type="Sprite2D" parent="sprite/lamp_pos_r" unique_id=2018081091]
+position = Vector2(0, 4)
+texture = ExtResource("2_1yxxy")
+hframes = 2
+
+[node name="anim" type="AnimationPlayer" parent="sprite/lamp_pos_r/lamp" unique_id=2081862626]
+libraries/ = SubResource("AnimationLibrary_lg7pj")
+autoplay = &"idle"
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1723713460]
 position = Vector2(-1, -13)
@@ -252,6 +530,16 @@ follow_distance = 20.0
 run_distance = 60.0
 teleport_distance = 140.0
 
+[node name="stuck_controller" type="Node" parent="." unique_id=669933737 node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("6_uwxjx")
+movement_controller = NodePath("../platformer_movement")
+
+[node name="lamp_controller" type="Node" parent="." unique_id=1969400903 node_paths=PackedStringArray("anim_controller", "lamp_l", "lamp_r")]
+script = ExtResource("8_1jjkp")
+anim_controller = NodePath("../animation_controller")
+lamp_l = NodePath("../sprite/lamp_pos_l")
+lamp_r = NodePath("../sprite/lamp_pos_r")
+
 [node name="fall_dust" type="GPUParticles2D" parent="." unique_id=2100144907]
 emitting = false
 amount = 30
@@ -260,5 +548,18 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_gext2")
 script = SubResource("GDScript_iwt4h")
+
+[node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=743895726 node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("6_4rag3")
+movement_controller = NodePath("../platformer_movement")
+steps_data = Array[ExtResource("7_4aro2")]([SubResource("Resource_enxtb")])
+
+[node name="audi_jump" type="AudioStreamPlayer2D" parent="." unique_id=508409680 node_paths=PackedStringArray("movement_controller")]
+stream = ExtResource("8_4aro2")
+volume_db = -2.0
+bus = &"Sound"
+script = ExtResource("15_enxtb")
+movement_controller = NodePath("../platformer_movement")
+sound_variants = Array[AudioStream]([ExtResource("16_xt4ql"), ExtResource("17_uwxjx"), ExtResource("18_1yxxy")])
 
 [connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]

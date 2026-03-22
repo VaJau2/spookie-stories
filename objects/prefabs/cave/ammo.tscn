@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c8wecbc3f3d3p"]
+
+[ext_resource type="Script" uid="uid://cq3mqyv21l7im" path="res://assets/scripts/background/ammo.gd" id="1_8tht7"]
+[ext_resource type="Texture2D" uid="uid://bv82dve77ywkx" path="res://assets/sprites/interface/ammo.png" id="2_p2b1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw5kr"]
+size = Vector2(33, 24)
+
+[sub_resource type="Animation" id="Animation_8tht7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p2b1i"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99758613, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vw5kr"]
+_data = {
+&"RESET": SubResource("Animation_8tht7"),
+&"idle": SubResource("Animation_p2b1i")
+}
+
+[node name="ammo" type="Area2D" unique_id=1681627097]
+script = ExtResource("1_8tht7")
+
+[node name="sprites" type="Node2D" parent="." unique_id=989164993]
+
+[node name="Ammo" type="Sprite2D" parent="sprites" unique_id=2144558814]
+position = Vector2(-14, -5)
+texture = ExtResource("2_p2b1i")
+
+[node name="Ammo2" type="Sprite2D" parent="sprites" unique_id=1348738143]
+position = Vector2(-9, -5)
+texture = ExtResource("2_p2b1i")
+
+[node name="Ammo3" type="Sprite2D" parent="sprites" unique_id=828645826]
+position = Vector2(-4, -5)
+texture = ExtResource("2_p2b1i")
+
+[node name="Ammo4" type="Sprite2D" parent="sprites" unique_id=1671690224]
+position = Vector2(1, -5)
+texture = ExtResource("2_p2b1i")
+
+[node name="Ammo5" type="Sprite2D" parent="sprites" unique_id=81094325]
+position = Vector2(7, -5)
+texture = ExtResource("2_p2b1i")
+
+[node name="Ammo6" type="Sprite2D" parent="sprites" unique_id=1282451678]
+position = Vector2(13, -5)
+texture = ExtResource("2_p2b1i")
+
+[node name="box" type="ColorRect" parent="sprites" unique_id=1201288074]
+offset_left = -17.0
+offset_top = 2.9999995
+offset_right = 23.0
+offset_bottom = 43.0
+scale = Vector2(0.87917715, 0.2206704)
+color = Color(0.5882353, 0.37254903, 0.17254902, 1)
+
+[node name="box2" type="ColorRect" parent="sprites" unique_id=1310991517]
+offset_left = 15.0
+offset_top = 3.0000002
+offset_right = 55.0
+offset_bottom = 43.0
+scale = Vector2(0.08018376, 0.22059393)
+color = Color(0.2136381, 0.12216497, 0.03660008, 1)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1596789848]
+visible = false
+shape = SubResource("RectangleShape2D_vw5kr")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=584181467]
+libraries/ = SubResource("AnimationLibrary_vw5kr")
+autoplay = &"idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,93 @@
+{
+	"talk": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "By the way, the story is based on real events.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "Wolfs, pff. I've met scarier creatures."
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "Well, tell us your story then",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Fine."
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "It was not long ago. I still sometimes shudder from the memories."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "I just got a job as a sheriff in my hometown after my father died."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "sad",
+				"text": "Oh, we're sorry…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"text": "Yep."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Anyway, I had to investigate the mysterious explosions in the mines."
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikely",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "They were certainly not a rare occurrence, but at that time they occurred almost every day."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "When the rubble was finally cleared, my faithful partner and I headed deeper into the mines."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
+		]
+	}
+}

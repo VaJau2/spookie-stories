@@ -12,7 +12,8 @@ class_name NpcPlatformerFollowerController
 
 var player: CharacterBody2D
 var temp_jump_pos: Vector2
-var is_jumping: bool 
+var jump_poses: Array[Vector2]
+var is_jumping: bool
 
 
 func _ready() -> void:
@@ -27,8 +28,10 @@ func on_player_jump() -> void:
 
 
 func on_player_finish_jump() -> void:
-	if player.global_position.y <= parent.global_position.y:
-		is_jumping = true
+	if temp_jump_pos == Vector2.ZERO: return
+	jump_poses.append(temp_jump_pos)
+	temp_jump_pos = Vector2.ZERO
+	is_jumping = true
 
 
 func go_to_point(point: Vector2, distance: float) -> bool:
@@ -53,21 +56,34 @@ func go_to_point(point: Vector2, distance: float) -> bool:
 		return true
 
 
-func teleport_to_player() -> void:
+func teleport_to_player() -> bool:
 	var temp_distance = parent.global_position.distance_to(player.global_position)
 	if temp_distance > teleport_distance:
-		parent.global_position = player.global_position
 		is_jumping = false
+		temp_jump_pos = Vector2.ZERO 
+		parent.global_position = player.global_position
+		jump_poses.clear()
+		movement_controller.dir = Vector2.ZERO
+		return true
+	return false
 
 
 func _process(_delta: float) -> void:
 	if !parent.is_on_floor(): return
-	
-	teleport_to_player()
+	if teleport_to_player(): return
 	
 	if !is_jumping:
-		go_to_point(player.global_position, follow_distance)
+		if temp_jump_pos != Vector2.ZERO:
+			go_to_point(temp_jump_pos, follow_distance)
+		else:
+			go_to_point(player.global_position, follow_distance)
 	else:
-		if go_to_point(temp_jump_pos, 6):
-			movement_controller.jump()
+		if len(jump_poses) == 0:
 			is_jumping = false
+			return
+		
+		if go_to_point(jump_poses[0], 6):
+			movement_controller.jump()
+			jump_poses.remove_at(0)
+			if len(jump_poses) <= 0:
+				is_jumping = false

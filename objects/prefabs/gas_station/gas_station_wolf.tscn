@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://6gu4rfslrt2r" path="res://assets/scripts/controllers/movement/navigationMovementController.gd" id="3_omixj"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_2rhky"]
 [ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="5_2fxid"]
-[ext_resource type="Script" uid="uid://b0fy2bfsa4faa" path="res://assets/scripts/controllers/followController.gd" id="6_2rhky"]
+[ext_resource type="Script" uid="uid://b0fy2bfsa4faa" path="res://assets/scripts/controllers/cave/followController.gd" id="6_2rhky"]
 [ext_resource type="Script" uid="uid://t2h1nx74g3b" path="res://assets/scripts/scenario/gasStation/lostArea.gd" id="7_kmk7x"]
 [ext_resource type="AudioStream" uid="uid://c2svrishcxgh3" path="res://assets/audio/wolf/bite.ogg" id="8_601y4"]
 [ext_resource type="AudioStream" uid="uid://dtejts56nocpy" path="res://assets/audio/wolf/wolf_run.mp3" id="9_wx3n0"]

@@ -9,6 +9,8 @@ class_name AnimationController
 @export var movement_controller: MovementController
 @onready var parent: CharacterBody2D = get_parent()
 
+signal flip_changed(new_value: bool)
+
 var watch_velocity: bool = false
 
 
@@ -22,6 +24,7 @@ func _ready() -> void:
 func set_flip(value: bool) -> void:
 	for sprite in sprites:
 		sprite.flip_h = value
+	flip_changed.emit(value)
 
 
 func on_stop() -> void:

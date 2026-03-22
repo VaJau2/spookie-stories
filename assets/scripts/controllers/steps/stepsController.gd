@@ -58,17 +58,22 @@ func _process(delta: float) -> void:
 
 func build_sound_array() -> void:
 	current_state = get_movement_state()
-	
+	var step_data = get_step_data()
+	if !step_data: return
+	curent_sound_array = step_data.run_sounds \
+		if current_state == "run" \
+		else step_data.walk_sounds
+	curent_sound_array.shuffle()
+	sound_index = 0
+	walk_cooldown = step_data.walk_cooldown
+	run_cooldown = step_data.run_cooldown
+
+
+func get_step_data() -> StepData:
 	for step_data in steps_data:
 		if step_data.material_name == current_material:
-			curent_sound_array = step_data.run_sounds \
-				if current_state == "run" \
-				else step_data.walk_sounds
-			curent_sound_array.shuffle()
-			sound_index = 0
-			walk_cooldown = step_data.walk_cooldown
-			run_cooldown = step_data.run_cooldown
-
+			return step_data
+	return null
 
 func get_movement_state() -> String:
 	if movement_controller: return movement_controller.current_state.name

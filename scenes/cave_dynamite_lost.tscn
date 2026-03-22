@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://jhnm3nu8dc6o"]
+
+[ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="1_v4y43"]
+[ext_resource type="Script" uid="uid://3ijgx887muqy" path="res://assets/scripts/scenario/gasStation/returnToScene.gd" id="2_82hbc"]
+
+[node name="main" type="Node2D" unique_id=1484113463]
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="menu" type="CanvasLayer" parent="." unique_id=1113401051]
+
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("1_v4y43")]
+texture_filter = 1
+
+[node name="return_to_scene" type="Node" parent="." unique_id=156088558 node_paths=PackedStringArray("dialogue_menu")]
+script = ExtResource("2_82hbc")
+dialogue_menu = NodePath("../menu/dialogue_menu")
+dialogue_file = "cave"
+dialogue_code = "dynamite_lost"
+start_timer = 1.0
+scene_var = "cave_dynamite_lost_dialogue"
+scene_name = "cave"

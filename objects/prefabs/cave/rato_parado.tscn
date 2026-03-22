@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://bacay471k23b4"]
+
+[ext_resource type="Texture2D" uid="uid://c0aeqms2j8kb7" path="res://assets/sprites/characters/cave/rato_parado.png" id="1_77kpb"]
+[ext_resource type="Texture2D" uid="uid://c66k6oqmwcg1f" path="res://assets/sprites/characters/cave/rato_parado-eyes.png" id="2_1buue"]
+[ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/cave/enemies/stateMachine.gd" id="2_p5qwx"]
+[ext_resource type="Script" uid="uid://bx42hvkglxoja" path="res://assets/scripts/controllers/cave/enemies/jumpController.gd" id="3_4dk0i"]
+[ext_resource type="Script" uid="uid://db1656p4dffkv" path="res://assets/scripts/controllers/cave/enemies/idleState.gd" id="3_065hc"]
+[ext_resource type="Script" uid="uid://dj1lcxrr7u0c1" path="res://assets/scripts/controllers/cave/enemies/attackState.gd" id="4_ish0f"]
+[ext_resource type="Script" uid="uid://clwtykxen13er" path="res://assets/scripts/controllers/cave/enemies/seekArea.gd" id="6_7sepi"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7sepi"]
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_p5qwx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_065hc"]
+resource_name = "run"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("eyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ish0f"]
+_data = {
+&"RESET": SubResource("Animation_p5qwx"),
+&"run": SubResource("Animation_065hc")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77kpb"]
+radius = 16.0
+height = 128.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1buue"]
+size = Vector2(953, 232)
+
+[node name="rato_parado" type="CharacterBody2D" unique_id=205928098]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=273005942]
+position = Vector2(0, -60.5)
+texture = ExtResource("1_77kpb")
+hframes = 3
+
+[node name="eyes" type="Sprite2D" parent="." unique_id=1527284116]
+material = SubResource("CanvasItemMaterial_7sepi")
+position = Vector2(0, -60.5)
+texture = ExtResource("2_1buue")
+hframes = 3
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1292400961]
+libraries/ = SubResource("AnimationLibrary_ish0f")
+autoplay = &"run"
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=538878848]
+position = Vector2(0, -16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_77kpb")
+
+[node name="jump_controller" type="Node" parent="." unique_id=1484100214]
+script = ExtResource("3_4dk0i")
+
+[node name="state_machine" type="Node" parent="." unique_id=793241245 node_paths=PackedStringArray("default_state")]
+script = ExtResource("2_p5qwx")
+default_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="state_machine" unique_id=1009796617 node_paths=PackedStringArray("sprites", "seek_area")]
+script = ExtResource("3_065hc")
+sprites = [NodePath("../../sprite"), NodePath("../../eyes")]
+speed = 30.0
+seek_area = NodePath("../../seek_area")
+
+[node name="attack" type="Node" parent="state_machine" unique_id=1827531032 node_paths=PackedStringArray("sprites", "seek_area")]
+script = ExtResource("4_ish0f")
+sprites = [NodePath("../../sprite"), NodePath("../../eyes")]
+speed = 80.0
+seek_area = NodePath("../../seek_area")
+
+[node name="seek_area" type="Area2D" parent="." unique_id=594008805 node_paths=PackedStringArray("state_machine")]
+script = ExtResource("6_7sepi")
+state_machine = NodePath("../state_machine")
+
+[node name="shape_l" type="CollisionShape2D" parent="seek_area" unique_id=913322917]
+position = Vector2(-371, -120)
+shape = SubResource("RectangleShape2D_1buue")
+disabled = true
+
+[node name="shape_r" type="CollisionShape2D" parent="seek_area" unique_id=2053031266]
+position = Vector2(396.5, -120)
+shape = SubResource("RectangleShape2D_1buue")
+
+[connection signal="body_entered" from="seek_area" to="seek_area" method="_on_body_entered"]
+[connection signal="body_exited" from="seek_area" to="seek_area" method="_on_body_exited"]

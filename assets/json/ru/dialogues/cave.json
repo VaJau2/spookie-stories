@@ -1,0 +1,33 @@
+{
+	"dynamite_lost": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Кстати, забыл сказать. Стены шахты были просто напичканы динамитом.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Любой неосторожный выстрел мог спровоцировать взрыв.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "Которого, там, конечно, не было.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/return_to_scene",
+				"method": "start"
+			},
+		]
+	}
+}

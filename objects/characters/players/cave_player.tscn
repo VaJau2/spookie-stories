@@ -2,9 +2,33 @@
 
 [ext_resource type="Texture2D" uid="uid://8xtqympmtci3" path="res://assets/sprites/characters/cave/serious_tale.png" id="1_3ru8q"]
 [ext_resource type="Script" uid="uid://cjd1r7nwvured" path="res://assets/scripts/controllers/movement/platformerMovementController.gd" id="2_8u0ls"]
+[ext_resource type="Texture2D" uid="uid://b6m1wq0hnes" path="res://assets/sprites/characters/cave/gun.png" id="2_nfuap"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_u0d4t"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="4_gext2"]
-[ext_resource type="Script" uid="uid://cjabe2c8sand5" path="res://assets/scripts/controllers/platformerAnimationController.gd" id="5_iwt4h"]
+[ext_resource type="Script" uid="uid://cjabe2c8sand5" path="res://assets/scripts/controllers/cave/platformerAnimationController.gd" id="5_iwt4h"]
+[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="6_piqml"]
+[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="7_qopx2"]
+[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="8_g7l2s"]
+[ext_resource type="AudioStream" uid="uid://5s7sunimpnb7" path="res://assets/audio/steps/jump/player_jump.mp3" id="8_qopx2"]
+[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="9_pgpb6"]
+[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="10_r32il"]
+[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="11_nfuap"]
+[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="12_y54q8"]
+[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="13_qo0i8"]
+[ext_resource type="Script" uid="uid://cx0kbwvwst70y" path="res://assets/scripts/controllers/steps/audiJump.gd" id="14_qopx2"]
+[ext_resource type="AudioStream" uid="uid://c8rgqdg3qguh3" path="res://assets/audio/steps/jump/player_jump_1.mp3" id="16_pgpb6"]
+[ext_resource type="AudioStream" uid="uid://dyudikpuln68u" path="res://assets/audio/steps/jump/player_jump_2.mp3" id="17_r32il"]
+[ext_resource type="Script" uid="uid://ccy5rueoy8c28" path="res://assets/scripts/controllers/cave/revolverController.gd" id="19_y54q8"]
+[ext_resource type="AudioStream" uid="uid://dgcuischlnqdc" path="res://assets/audio/revolver/shoot.mp3" id="20_qo0i8"]
+[ext_resource type="AudioStream" uid="uid://bjvy8motnfqod" path="res://assets/audio/revolver/gun_off.mp3" id="21_ehd7r"]
+[ext_resource type="Texture2D" uid="uid://ba5fervqmnv52" path="res://assets/sprites/light/512x512 textures (40).png" id="21_nhdup"]
+[ext_resource type="AudioStream" uid="uid://s013yt2eafuh" path="res://assets/audio/revolver/try_shoot.mp3" id="23_11txu"]
+[ext_resource type="AudioStream" uid="uid://c2l2h3bua8hhp" path="res://assets/audio/explosions/Explode1.mp3" id="23_a8nex"]
+[ext_resource type="Texture2D" uid="uid://b0c1rcpot8yxr" path="res://assets/sprites/characters/cave/shoot-effect.png" id="23_o50r0"]
+[ext_resource type="AudioStream" uid="uid://b7mfvqj2digyd" path="res://assets/audio/revolver/take_ammo.mp3" id="24_0osec"]
+[ext_resource type="AudioStream" uid="uid://c2uh2m0kssbyf" path="res://assets/audio/revolver/shot_beside.mp3" id="24_8slgg"]
+[ext_resource type="AudioStream" uid="uid://chdyscolkw5j7" path="res://assets/audio/explosions/Explode2.mp3" id="24_11txu"]
+[ext_resource type="AudioStream" uid="uid://crey0vovk1koc" path="res://assets/audio/explosions/Explode3.mp3" id="25_0osec"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u0ls"]
 radius = 7.0
@@ -19,6 +43,18 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -40,6 +76,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [18]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
 
 [sub_resource type="Animation" id="Animation_3uptd"]
 resource_name = "fall"
@@ -51,6 +99,18 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -73,6 +133,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 0, 1, 0, 0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_iwt4h"]
 resource_name = "jump"
@@ -84,6 +156,18 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
@@ -106,6 +190,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [7, 8, 9, 10, 11, 7]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 7]
+}
 
 [sub_resource type="Animation" id="Animation_pdf5j"]
 resource_name = "stop_falling"
@@ -117,6 +213,18 @@ tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.13333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -138,6 +246,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8u0ls"]
@@ -178,11 +298,28 @@ func _on_platformer_movement_finish_jumping() -> void:
 	restart()
 "
 
+[sub_resource type="Resource" id="Resource_iqgwf"]
+script = ExtResource("7_qopx2")
+walk_sounds = Array[AudioStream]([ExtResource("11_nfuap"), ExtResource("12_y54q8"), ExtResource("13_qo0i8")])
+run_sounds = Array[AudioStream]([ExtResource("8_g7l2s"), ExtResource("9_pgpb6"), ExtResource("10_r32il")])
+run_cooldown = 0.75
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o50r0"]
+light_mode = 1
+
 [node name="player" type="CharacterBody2D" unique_id=1723412077]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=599326609]
 position = Vector2(-4, -18)
 texture = ExtResource("1_3ru8q")
+hframes = 5
+vframes = 4
+
+[node name="gun" type="Sprite2D" parent="." unique_id=1286156847]
+visible = false
+position = Vector2(-4, -18)
+texture = ExtResource("2_nfuap")
 hframes = 5
 vframes = 4
 
@@ -225,7 +362,7 @@ may_move_vertical = false
 
 [node name="animation_controller" type="Node" parent="." unique_id=618511470 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("5_iwt4h")
-sprites = [NodePath("../sprite")]
+sprites = [NodePath("../sprite"), NodePath("../gun")]
 anim = NodePath("../anim")
 flip_left = false
 movement_controller = NodePath("../platformer_movement")
@@ -238,5 +375,81 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_gext2")
 script = SubResource("GDScript_iwt4h")
+
+[node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=897536617 node_paths=PackedStringArray("movement_controller")]
+script = ExtResource("6_piqml")
+movement_controller = NodePath("../platformer_movement")
+steps_data = Array[ExtResource("7_qopx2")]([SubResource("Resource_iqgwf")])
+
+[node name="audi_jump" type="AudioStreamPlayer2D" parent="." unique_id=1648793303 node_paths=PackedStringArray("movement_controller")]
+stream = ExtResource("8_qopx2")
+volume_db = -2.0
+bus = &"Sound"
+script = ExtResource("14_qopx2")
+movement_controller = NodePath("../platformer_movement")
+sound_variants = Array[AudioStream]([ExtResource("8_qopx2"), ExtResource("16_pgpb6"), ExtResource("17_r32il")])
+
+[node name="revolver_controller" type="Node2D" parent="." unique_id=1850719081 node_paths=PackedStringArray("moving_controller", "animation_controller", "pony_sprite", "gun")]
+script = ExtResource("19_y54q8")
+moving_controller = NodePath("../platformer_movement")
+animation_controller = NodePath("../animation_controller")
+pony_sprite = NodePath("../sprite")
+gun = NodePath("../gun")
+shoot_sound = ExtResource("20_qo0i8")
+gun_off_sound = ExtResource("21_ehd7r")
+miss_sound = ExtResource("24_8slgg")
+no_ammo_sound = ExtResource("23_11txu")
+take_ammo_sound = ExtResource("24_0osec")
+explosion_sounds = Array[AudioStream]([ExtResource("23_a8nex"), ExtResource("24_11txu"), ExtResource("25_0osec")])
+
+[node name="audi" type="AudioStreamPlayer2D" parent="revolver_controller" unique_id=1757013537]
+stream = ExtResource("20_qo0i8")
+volume_db = -4.0
+panning_strength = 0.1
+bus = &"Sound"
+
+[node name="light" type="PointLight2D" parent="revolver_controller" unique_id=1304966325]
+visible = false
+position = Vector2(-20, -18)
+color = Color(0.9105493, 0.54144526, 0.22933349, 1)
+energy = 2.0
+texture = ExtResource("21_nhdup")
+texture_scale = 0.5
+
+[node name="light_pos_l" type="Node2D" parent="revolver_controller" unique_id=1038793185]
+position = Vector2(-26, -18)
+
+[node name="light_pos_r" type="Node2D" parent="revolver_controller" unique_id=699541168]
+position = Vector2(18, -18)
+
+[node name="effect_l" type="Node2D" parent="revolver_controller" unique_id=1496605142]
+visible = false
+position = Vector2(-18, -17)
+
+[node name="effect" type="Sprite2D" parent="revolver_controller/effect_l" unique_id=805371834]
+material = SubResource("CanvasItemMaterial_o50r0")
+position = Vector2(96, -1)
+texture = ExtResource("23_o50r0")
+flip_h = true
+
+[node name="effect_r" type="Node2D" parent="revolver_controller" unique_id=1280384477]
+visible = false
+position = Vector2(10, -17)
+
+[node name="effect" type="Sprite2D" parent="revolver_controller/effect_r" unique_id=2131209762]
+material = SubResource("CanvasItemMaterial_o50r0")
+position = Vector2(96, -1)
+texture = ExtResource("23_o50r0")
+flip_h = true
+
+[node name="raycast" type="RayCast2D" parent="revolver_controller" unique_id=1906169046]
+enabled = false
+collision_mask = 5
+
+[node name="miss_audi" type="AudioStreamPlayer2D" parent="revolver_controller" unique_id=1028442084]
+stream = ExtResource("24_8slgg")
+volume_db = -2.0
+max_distance = 1000.0
+attenuation = 2.6390162
 
 [connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b1yu2s7f7x5gi"]
+
+[ext_resource type="Texture2D" uid="uid://bv82dve77ywkx" path="res://assets/sprites/interface/ammo.png" id="1_lgvgm"]
+
+[node name="1" type="TextureRect" unique_id=731808684]
+texture = ExtResource("1_lgvgm")
