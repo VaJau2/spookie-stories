@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://crey0vovk1koc" path="res://assets/audio/explosions/Explode3.mp3" id="25_0osec"]
 [ext_resource type="Script" uid="uid://bv4tdnay25ta5" path="res://assets/scripts/controllers/cave/healthController.gd" id="30_c6ter"]
 [ext_resource type="Script" uid="uid://bo1mfwd12jeak" path="res://assets/scripts/controllers/cave/stepOnEnemiesArea.gd" id="31_imru1"]
+[ext_resource type="AudioStream" uid="uid://dxsspx6l1ls7j" path="res://assets/audio/healPotion.wav" id="31_jfbih"]
 [ext_resource type="AudioStream" uid="uid://dqf3pnm7id7n7" path="res://assets/audio/rat/RatHoofHit.mp3" id="32_yasen"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u0ls"]
@@ -342,20 +343,20 @@ offset = Vector2(0, -20)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
-[node name="platformer_movement" type="Node" parent="." unique_id=555073924]
+[node name="movement_controller" type="Node" parent="." unique_id=555073924]
 script = ExtResource("2_8u0ls")
 
-[node name="walk" type="Node" parent="platformer_movement" unique_id=295092636]
+[node name="walk" type="Node" parent="movement_controller" unique_id=295092636]
 script = ExtResource("3_u0d4t")
 speed = 100
 default = true
 
-[node name="run" type="Node" parent="platformer_movement" unique_id=1341483016]
+[node name="run" type="Node" parent="movement_controller" unique_id=1341483016]
 script = ExtResource("3_u0d4t")
 anim = "run"
 speed = 200
 
-[node name="fall" type="Node" parent="platformer_movement" unique_id=1503602509]
+[node name="fall" type="Node" parent="movement_controller" unique_id=1503602509]
 script = ExtResource("3_u0d4t")
 idle_anim = "fall"
 anim = "fall"
@@ -363,7 +364,7 @@ speed = 100
 
 [node name="input_controller" type="Node" parent="." unique_id=1172774500 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("4_gext2")
-movement_controller = NodePath("../platformer_movement")
+movement_controller = NodePath("../movement_controller")
 may_move_vertical = false
 
 [node name="animation_controller" type="Node" parent="." unique_id=618511470 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
@@ -371,7 +372,7 @@ script = ExtResource("5_iwt4h")
 sprites = [NodePath("../sprite"), NodePath("../gun")]
 anim = NodePath("../anim")
 flip_left = false
-movement_controller = NodePath("../platformer_movement")
+movement_controller = NodePath("../movement_controller")
 
 [node name="fall_dust" type="GPUParticles2D" parent="." unique_id=2100144907]
 emitting = false
@@ -384,7 +385,7 @@ script = SubResource("GDScript_iwt4h")
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=897536617 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("6_piqml")
-movement_controller = NodePath("../platformer_movement")
+movement_controller = NodePath("../movement_controller")
 steps_data = Array[ExtResource("7_qopx2")]([SubResource("Resource_iqgwf")])
 
 [node name="audi_jump" type="AudioStreamPlayer2D" parent="." unique_id=1648793303 node_paths=PackedStringArray("movement_controller")]
@@ -392,12 +393,12 @@ stream = ExtResource("8_qopx2")
 volume_db = -2.0
 bus = &"Sound"
 script = ExtResource("14_qopx2")
-movement_controller = NodePath("../platformer_movement")
+movement_controller = NodePath("../movement_controller")
 sound_variants = Array[AudioStream]([ExtResource("8_qopx2"), ExtResource("16_pgpb6"), ExtResource("17_r32il")])
 
 [node name="revolver_controller" type="Node2D" parent="." unique_id=1850719081 node_paths=PackedStringArray("moving_controller", "animation_controller", "pony_sprite", "gun")]
 script = ExtResource("19_y54q8")
-moving_controller = NodePath("../platformer_movement")
+moving_controller = NodePath("../movement_controller")
 animation_controller = NodePath("../animation_controller")
 pony_sprite = NodePath("../sprite")
 gun = NodePath("../gun")
@@ -461,9 +462,14 @@ attenuation = 2.6390162
 [node name="health_controller" type="Node" parent="." unique_id=220487447]
 script = ExtResource("30_c6ter")
 
+[node name="audi" type="AudioStreamPlayer2D" parent="health_controller" unique_id=1866089514]
+stream = ExtResource("31_jfbih")
+volume_db = 1.0
+bus = &"Sound"
+
 [node name="step_area" type="Area2D" parent="." unique_id=639099065]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("31_imru1")
 
 [node name="shape" type="CollisionShape2D" parent="step_area" unique_id=1745953734]
@@ -473,5 +479,5 @@ shape = SubResource("RectangleShape2D_yasen")
 [node name="audi" type="AudioStreamPlayer2D" parent="step_area" unique_id=2008332346]
 stream = ExtResource("32_yasen")
 
-[connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
+[connection signal="finish_jumping" from="movement_controller" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
 [connection signal="body_entered" from="step_area" to="step_area" method="_on_body_entered"]

@@ -4,22 +4,22 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Мы должны были изучить шахты и найти причину взрывов.",
+				"text": "We need to explore the mines and find the cause of the explosions.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Эту самую причину мы нашли довольно быстро - кто-то заложил шахты динамитом.",
+				"text": "We found this very reason pretty quickly - someone had planted a lot of dynamite in the mines.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Динамитные шашки были развешаны на стенах как гирлянда.",
+				"text": "Dynamite sticks were hung on the walls like a garland.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "У меня был револьвер с собой, но я должен был действовать осторожно, чтобы не попасть по нему и не подорваться.",
+				"text": "I had a revolver with me, but I had to be careful not to hit it and blow myself up.",
 			},
 			{
 				"type": "script",
@@ -34,12 +34,12 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"text": "Примерно вот так бы я умер, если бы был не осторожен с динамитом.",
+				"text": "That's about how I would have died if I hadn't been careful with the dynamite.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Любой неосторожный выстрел мог спровоцировать взрыв.",
+				"text": "Any careless shot could trigger an explosion.",
 			},
 			{
 				"type": "phrase",
@@ -51,7 +51,7 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "look-down",
-				"text": "Которого, там, конечно, не было, ведь я был осторожен.",
+				"text": "Which, of course, wasn't there, because I was careful.",
 			},
 			{
 				"type": "script",
@@ -66,12 +66,12 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"text": "Примерно вот так бы я умер, если бы позволил крысам загрызть себя.",
+				"text": "That's about how I would have died if I'd let the rats eat me.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Но я, конечно, не позволил.",
+				"text": "But of course I wouldn't let them.",
 			},
 			{
 				"type": "script",
@@ -86,23 +86,23 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"text": "И тут случилось самое неприятное.",
+				"text": "And then the most unpleasant thing happened.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"text": "Чакки - моя напарница - заявила мне, цитирую:",
+				"text": "Chucky, my partner, told me, quote:",
 			},
 			{
 				"type": "phrase",
 				"speaker": "chakky",
-				"text": "Шериф, пока мы тут бродим, в городе может что-то случиться.",
+				"text": "Sheriff, something might happen in town while we're out here.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "chakky",
-				"text": "Я должна вернуться в город и следить за порядком.",
+				"text": "I have to go back to the city and keep order.",
 			},
 			{
 				"type": "script",
@@ -113,30 +113,30 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "cry",
-				"text": "И она просто ушла и оставила меня одного!",
+				"text": "And she just walked away and left me alone!",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "cry-2",
-				"text": "Я даже не успел ничего сказать!",
+				"text": "I didn't even have time to say anything!",
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "scared",
-				"text": "Какой ужас…",
+				"text": "What a horror…",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"text": "Я остался один в полной темноте, окруженный крысами.",
+				"text": "I was left alone in total darkness, surrounded by rats.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Но мне нужно было идти дальше, не смотря ни на что.",
+				"text": "But I had to keep going, no matter what.",
 			},
 		],
 	},
@@ -145,7 +145,7 @@
 			{
 				"type": "phrase",
 				"speaker": "chakky",
-				"text": "Шериф, я должна вернуться в город и следить за порядком.",
+				"text": "Sheriff, I have to go back to the city and keep order.",
 			},
 			{
 				"type": "script",
@@ -155,7 +155,7 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "…И я остался один.",
+				"text": "…And then I was left alone.",
 			},
 		],
 	},
@@ -164,12 +164,12 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "В итоге я добрался до конца этой шахты ценой невероятных усилий воли.",
+				"text": "In the end, I got to the end of this shaft with an incredible effort of will.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Я никогда не радовался солнцу, как тогда.",
+				"text": "I've never enjoyed the sun like I did back then.",
 			},
 			{
 				"type": "script",

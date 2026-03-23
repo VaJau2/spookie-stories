@@ -22,6 +22,7 @@ var node_timer: float = DEFAULT_TIMER
 var animation_timer: float = 0
 var is_autoskip: bool = false
 
+signal started_dialogue
 signal finished_dialogue
 
 
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 			text.visible_ratio = 1
 
 
-func start_dialogue(file: String, code: String) -> void:	
+func start_dialogue(file: String, code: String) -> void:
 	dialogue_data = _get_dialogue_data(file, code)
 	if dialogue_data.is_empty(): return
 	index = 0
@@ -51,6 +52,7 @@ func start_dialogue(file: String, code: String) -> void:
 	if pause_menu: pause_menu.may_pause = false
 	if movement_controller: movement_controller.set_may_move(false)
 	visible = true
+	started_dialogue.emit()
 
 
 func finish_dialogue() -> void:

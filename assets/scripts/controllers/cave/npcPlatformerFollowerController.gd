@@ -18,7 +18,7 @@ var is_jumping: bool
 
 func _ready() -> void:
 	player = get_node("../../" + player_name)
-	var player_controller: PlatformerMovementController = player.get_node("platformer_movement")
+	var player_controller: PlatformerMovementController = player.get_node("movement_controller")
 	player_controller.jumping.connect(on_player_jump)
 	player_controller.finish_jumping.connect(on_player_finish_jump)
 

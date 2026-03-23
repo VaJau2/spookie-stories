@@ -22,7 +22,7 @@ func load_avatar(character_name: String, state: String, anim: DialogueAnimContro
 		frame = avatar_config.eyes_open
 		visible = true
 		if anim != null and temp_anim != anim:
-			if temp_anim != null:
+			if temp_anim != null and temp_anim.blink.has_connections():
 				temp_anim.blink.disconnect(_on_blink_emitted)
 			anim.blink.connect(_on_blink_emitted)
 			temp_anim = anim

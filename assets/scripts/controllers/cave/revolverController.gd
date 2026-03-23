@@ -36,6 +36,7 @@ var SHOW_LIGHT_TIME: float = 0.1
 var cooldown_timer: float
 var COOLDOWN_TIME: float = 0.5
 
+signal shoot
 signal ammo_changed(new_value: int)
 
 
@@ -92,6 +93,7 @@ func _on_shoot(pos: Vector2) -> void:
 	show_gun_effect(pos)
 	enable_raycast(pos)
 	ammo_count -= 1
+	shoot.emit()
 	ammo_changed.emit(ammo_count)
 	cooldown_timer = COOLDOWN_TIME
 

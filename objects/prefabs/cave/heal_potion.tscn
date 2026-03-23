@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://r0wnvqtifeeq"]
+
+[ext_resource type="Script" uid="uid://b5u6a0cun12dm" path="res://assets/scripts/background/healPotion.gd" id="1_c3ue1"]
+[ext_resource type="Texture2D" uid="uid://dkricu4s33bpl" path="res://assets/sprites/props/cave/heal-potion.png" id="2_c563c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw5kr"]
+size = Vector2(33, 24)
+
+[sub_resource type="Animation" id="Animation_8tht7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p2b1i"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99758613, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vw5kr"]
+_data = {
+&"RESET": SubResource("Animation_8tht7"),
+&"idle": SubResource("Animation_p2b1i")
+}
+
+[node name="heal_potion" type="Area2D" unique_id=1681627097]
+script = ExtResource("1_c3ue1")
+
+[node name="sprites" type="Node2D" parent="." unique_id=989164993]
+
+[node name="sprite" type="Sprite2D" parent="sprites" unique_id=2144558814]
+position = Vector2(0, -3)
+texture = ExtResource("2_c563c")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1596789848]
+visible = false
+shape = SubResource("RectangleShape2D_vw5kr")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=584181467]
+libraries/ = SubResource("AnimationLibrary_vw5kr")
+autoplay = &"idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

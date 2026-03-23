@@ -2,7 +2,9 @@ extends Node2D
 
 class_name RatSpawnersManager
 
-var rats_count: int = 0
+var rats: Array[CharacterBody2D]
+
+@export var dialogue_menu: DialogueMenu
 
 @export var rats_max_count: int = 10
 @export var spawn_distance: float = 200

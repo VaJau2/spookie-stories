@@ -9,11 +9,11 @@ var manager: RatSpawnersManager
 func die() -> void:
 	particles.restart()
 	var parent = get_parent()
+	manager.rats.erase(parent)
 	delete_children(parent)
 	anim.play("stepped")
 	await anim.animation_finished
 	parent.queue_free()
-	manager.rats_count -= 1
 
 
 func delete_children(parent: Node2D) -> void:

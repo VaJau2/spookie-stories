@@ -1,0 +1,226 @@
+{
+	"talk": {
+		"nodes": [
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "scared",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "Возвращаться обратно кстати пришлось потом тем же путем."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Благо с картой это было гораздо проще."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "Боюсь, после такой истории, ни одна другая не покажется хоть близко такой же страшной."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "С этим трудно поспорить."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Эта история, думается мне, даже страшнее истории про маффины."
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "shy",
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Кстати, про маффины. А где Пей?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Ушла спать."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Думаю, мне тоже пора."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Спасибо вам за истории, они были очень интересные."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Спокойной ночи."
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/play_dusk",
+				"method": "start"
+			}
+		]
+	},
+	"strikely_walks": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "Я бы хотела рассказать свою историю…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "sad",
+				"text": "…Но у нашего разраба не хватило на неё времени…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "…Поэтому я тоже пойду спать."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"text": "Спокойной ночи!"
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikaly",
+				"state": "idle",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/play_strikely",
+				"method": "start"
+			}
+		],
+	},
+	"talk_finish": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "А ты идешь? Ты же вроде спать хотел."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"text": "Хотелось бы."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "Но теперь после того как я вспомнил, что там было…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "…Хрен я усну."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Понимаю."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "А ты сам спать не хочешь?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Не, пожалуй, я посижу еще."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "smirk",
+				"text": "Что, испугался?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Конечно нет!..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "…возможно."
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "smile",
+				"text": "Хех, ну оставайся. Вдвоем всяко интереснее."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "…да."
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/set_exit_visible",
+				"method": "set_label_visible"
+			},
+		]
+	}
+}

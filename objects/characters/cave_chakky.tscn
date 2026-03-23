@@ -569,8 +569,8 @@ movement_controller = NodePath("../platformer_movement")
 sound_variants = Array[AudioStream]([ExtResource("16_xt4ql"), ExtResource("17_uwxjx"), ExtResource("18_1yxxy")])
 
 [node name="step_area" type="Area2D" parent="." unique_id=711683650]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("22_lg7pj")
 
 [node name="shape" type="CollisionShape2D" parent="step_area" unique_id=1731622828]

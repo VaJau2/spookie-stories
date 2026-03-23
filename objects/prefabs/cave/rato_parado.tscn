@@ -217,8 +217,9 @@ position = Vector2(0, -16)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_77kpb")
 
-[node name="jump_controller" type="Node" parent="." unique_id=1484100214]
+[node name="jump_controller" type="Node" parent="." unique_id=1484100214 node_paths=PackedStringArray("state_machine")]
 script = ExtResource("3_4dk0i")
+state_machine = NodePath("../state_machine")
 
 [node name="stuck_controller" type="Node" parent="." unique_id=2090020035 node_paths=PackedStringArray("jump_controller")]
 script = ExtResource("4_okgyy")
@@ -285,6 +286,7 @@ stream = ExtResource("10_d0rep")
 [node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=1310112902]
 stream = ExtResource("10_soc8u")
 autoplay = true
+max_distance = 1000.0
 
 [node name="delete_far_away" type="Node" parent="." unique_id=1951580634 node_paths=PackedStringArray("die_controller")]
 script = ExtResource("13_idepp")

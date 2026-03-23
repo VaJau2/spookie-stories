@@ -19,4 +19,5 @@ func enable() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	parent.move_and_slide()
+	if state_machine.may_move:
+		parent.move_and_slide()

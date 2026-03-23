@@ -8,11 +8,17 @@ class_name StateMachine
 signal flip(value: bool)
 
 var current_state: Node
+var may_move: bool = true
+
+var dialogue_menu: DialogueMenu
 
 
 func _ready() -> void:
 	default_state.enable()
 	current_state = default_state
+	
+	dialogue_menu.started_dialogue.connect(_on_started_dialogue)
+	dialogue_menu.finished_dialogue.connect(_on_finished_dialogue)
 
 
 func enable_state(state_name: String) -> void:
@@ -22,3 +28,11 @@ func enable_state(state_name: String) -> void:
 	var new_state: StateBase = get_node(state_name)
 	new_state.enable()
 	current_state = new_state
+
+
+func _on_started_dialogue() -> void:
+	may_move = false
+
+
+func _on_finished_dialogue() -> void:
+	may_move = true

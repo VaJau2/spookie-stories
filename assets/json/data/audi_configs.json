@@ -50,5 +50,15 @@
 		"min_pitch": "1.8",
 		"max_pitch": "2.5",
 		"chars_to_sound": "4",
+	},
+	"chakky": {
+		"sounds": [
+			"beeps/sound_e.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_u.wav",
+		],
+		"min_pitch": "1.9",
+		"max_pitch": "2.4",
+		"chars_to_sound": "3",
 	}
 }

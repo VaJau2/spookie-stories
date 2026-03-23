@@ -14,6 +14,11 @@
 			"eyes_open": 5,
 			"eyes_closed": 6,
 			"mouth_open": 7,
+		},
+		"confused":  {
+			"eyes_open": 8,
+			"eyes_closed": 1,
+			"mouth_open": 9,
 		}
 	},
 	"bowler_hat": {
@@ -63,6 +68,26 @@
 			"eyes_open": 9,
 			"eyes_closed": 1,
 			"mouth_open": 10,
+		},
+		"cry": {
+			"eyes_open": 11,
+			"eyes_closed": 12,
+			"mouth_open": 13,
+		},
+		"cry-2": {
+			"eyes_open": 14,
+			"eyes_closed": 15,
+			"mouth_open": 16,
+		},
+		"smirk": {
+			"eyes_open": 17,
+			"eyes_closed": 18,
+			"mouth_open": 19,
+		},
+		"smile": {
+			"eyes_open": 20,
+			"eyes_closed": 21,
+			"mouth_open": 22,
 		},
 	},
 	"pay": {
@@ -127,6 +152,18 @@
 			"eyes_open": 9,
 			"eyes_closed": 10,
 			"mouth_open": 11,
+		},
+		"happy": {
+			"eyes_open": 12,
+			"eyes_closed": 12,
+			"mouth_open": 13,
+		}
+	},
+	"chakky": {
+		"idle": {
+			"eyes_open": 0,
+			"eyes_closed": 1,
+			"mouth_open": 2,
 		},
 	}
 }

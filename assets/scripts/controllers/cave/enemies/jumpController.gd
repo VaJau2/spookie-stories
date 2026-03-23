@@ -1,11 +1,13 @@
 extends Node
 
 @onready var parent: CharacterBody2D = get_parent()
+@export var state_machine: StateMachine
 
 var velocity_y : float = 100
 
 
 func jump() -> void:
+	if !state_machine.may_move: return
 	velocity_y = -150
 
 
