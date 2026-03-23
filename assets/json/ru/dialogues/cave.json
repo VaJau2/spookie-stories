@@ -29,5 +29,25 @@
 				"method": "start"
 			},
 		]
+	},
+	"health_lost": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"text": "Примерно вот так бы я умер, если бы позволил крысам загрызть себя.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Но я, конечно, не позволил.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/return_to_scene",
+				"method": "start"
+			},
+		]
 	}
 }

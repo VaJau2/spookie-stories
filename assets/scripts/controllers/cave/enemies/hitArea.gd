@@ -5,6 +5,7 @@ extends Area2D
 @onready var audi: AudioStreamPlayer2D = get_node("audi")
 
 @export var state_machine: StateMachine
+@export var seek_area: SeekArea
 @export var damage: int = 20
 
 
@@ -22,3 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 		audi.play()
 		var health: HealthController = body.get_node("health_controller")
 		health.hit(damage)
+		seek_area.cooldown_timer = 10
+		state_machine.enable_state("idle")

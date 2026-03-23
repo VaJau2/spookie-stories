@@ -1,10 +1,9 @@
 extends StateBase
 
-const WALK_TIME: Array[float] = [1, 5]
+const WALK_TIME: Array[float] = [5, 10]
 
 @export var sprites: Array[Sprite2D]
 @export var speed: float
-@export var seek_area: SeekArea
 
 var walk_timer: float
 var walk_left: bool
@@ -12,6 +11,10 @@ var walk_left: bool
 
 func _update_walk() -> void:
 	parent.velocity.x = -speed if walk_left else speed
+
+
+func _ready() -> void:
+	walk_left = randf() > 0.5
 
 
 func _process(delta: float) -> void:

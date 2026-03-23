@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dtubqwkgrjsg1" path="res://assets/scripts/controllers/cave/enemies/hitArea.gd" id="9_qbwwr"]
 [ext_resource type="AudioStream" uid="uid://rwxhiymixvof" path="res://assets/audio/rat/RatHit.mp3" id="10_d0rep"]
 [ext_resource type="AudioStream" uid="uid://4aa582kmq7x" path="res://assets/audio/rat/RatIdle.mp3" id="10_soc8u"]
+[ext_resource type="Script" uid="uid://do7pfrhugr2ig" path="res://assets/scripts/controllers/cave/enemies/deleteFarAway.gd" id="13_idepp"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7sepi"]
 light_mode = 1
@@ -110,7 +111,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_d0rep"]
 resource_name = "stepped"
-length = 0.1
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -130,7 +131,7 @@ tracks/1/path = NodePath("sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, -60.5), Vector2(0, -2.25)]
@@ -142,7 +143,7 @@ tracks/2/path = NodePath("sprite:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.06666667),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 0.08984375)]
@@ -159,13 +160,42 @@ _data = {
 radius = 16.0
 height = 128.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1buue"]
-size = Vector2(953, 232)
+[sub_resource type="Curve" id="Curve_soc8u"]
+_data = [Vector2(0, 0.5866455), 0.0, 0.0, 0, 0, Vector2(1, 0.007389188), -2.8230731, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_d0rep"]
+curve = SubResource("Curve_soc8u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5nfgj"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.5, 10)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 10, 0)
+color = Color(0.9266873, 0.50162554, 0.4096608, 0.50980395)
+alpha_curve = SubResource("CurveTexture_d0rep")
+
+[sub_resource type="GDScript" id="GDScript_idepp"]
+script/source = "extends GPUParticles2D
+
+
+func _on_platformer_movement_finish_jumping() -> void:
+	restart()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nfgj"]
+size = Vector2(800, 320)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soc8u"]
 size = Vector2(80, 32)
 
 [node name="rato_parado" type="CharacterBody2D" unique_id=205928098]
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+collision_mask = 8
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=273005942]
 position = Vector2(0, -60.5)
@@ -195,42 +225,51 @@ script = ExtResource("4_okgyy")
 jump_controller = NodePath("../jump_controller")
 check_time = 0.1
 
-[node name="stepped_controller" type="Node" parent="." unique_id=1864725812 node_paths=PackedStringArray("anim")]
+[node name="die_controller" type="Node" parent="." unique_id=1864725812 node_paths=PackedStringArray("anim")]
 script = ExtResource("5_5nfgj")
 anim = NodePath("../anim")
+
+[node name="particles" type="GPUParticles2D" parent="die_controller" unique_id=754569450]
+scale = Vector2(4, 4)
+emitting = false
+amount = 30
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5nfgj")
+script = SubResource("GDScript_idepp")
 
 [node name="state_machine" type="Node" parent="." unique_id=793241245 node_paths=PackedStringArray("default_state")]
 script = ExtResource("2_p5qwx")
 default_state = NodePath("idle")
 
-[node name="idle" type="Node" parent="state_machine" unique_id=1009796617 node_paths=PackedStringArray("sprites", "seek_area")]
+[node name="idle" type="Node" parent="state_machine" unique_id=1009796617 node_paths=PackedStringArray("sprites")]
 script = ExtResource("3_065hc")
 sprites = [NodePath("../../sprite"), NodePath("../../eyes")]
-speed = 30.0
-seek_area = NodePath("../../seek_area")
+speed = 90.0
 
-[node name="attack" type="Node" parent="state_machine" unique_id=1827531032 node_paths=PackedStringArray("sprites", "seek_area")]
+[node name="attack" type="Node" parent="state_machine" unique_id=1455225626 node_paths=PackedStringArray("sprites")]
 script = ExtResource("4_ish0f")
 sprites = [NodePath("../../sprite"), NodePath("../../eyes")]
-speed = 80.0
-seek_area = NodePath("../../seek_area")
+speed = 100.0
+follow_distance = 6.0
 
-[node name="seek_area" type="Area2D" parent="." unique_id=594008805 node_paths=PackedStringArray("state_machine")]
+[node name="seek_area" type="Area2D" parent="." unique_id=224915092 node_paths=PackedStringArray("state_machine")]
 script = ExtResource("6_7sepi")
 state_machine = NodePath("../state_machine")
 
-[node name="shape_l" type="CollisionShape2D" parent="seek_area" unique_id=913322917]
-position = Vector2(-371, -120)
-shape = SubResource("RectangleShape2D_1buue")
-disabled = true
+[node name="shape_l" type="CollisionShape2D" parent="seek_area" unique_id=1002004956]
+position = Vector2(-304, -160)
+shape = SubResource("RectangleShape2D_5nfgj")
 
-[node name="shape_r" type="CollisionShape2D" parent="seek_area" unique_id=2053031266]
-position = Vector2(396.5, -120)
-shape = SubResource("RectangleShape2D_1buue")
+[node name="shape_r" type="CollisionShape2D" parent="seek_area" unique_id=604137352]
+position = Vector2(304, -160)
+shape = SubResource("RectangleShape2D_5nfgj")
 
-[node name="hit_area" type="Area2D" parent="." unique_id=198342667 node_paths=PackedStringArray("state_machine")]
+[node name="hit_area" type="Area2D" parent="." unique_id=198342667 node_paths=PackedStringArray("state_machine", "seek_area")]
 script = ExtResource("9_qbwwr")
 state_machine = NodePath("../state_machine")
+seek_area = NodePath("../seek_area")
 
 [node name="shape_l" type="CollisionShape2D" parent="hit_area" unique_id=2131385965]
 position = Vector2(-112, -16)
@@ -246,6 +285,11 @@ stream = ExtResource("10_d0rep")
 [node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=1310112902]
 stream = ExtResource("10_soc8u")
 autoplay = true
+
+[node name="delete_far_away" type="Node" parent="." unique_id=1951580634 node_paths=PackedStringArray("die_controller")]
+script = ExtResource("13_idepp")
+delete_distance = 1500.0
+die_controller = NodePath("../die_controller")
 
 [connection signal="body_entered" from="seek_area" to="seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="seek_area" to="seek_area" method="_on_body_exited"]

@@ -6,7 +6,7 @@ var current_scene: Node
 
 
 func _ready() -> void: 
-	var children_count = get_tree().get_root().get_child_count()
+	var children_count: int = get_tree().get_root().get_child_count()
 	current_scene = get_tree().get_root().get_child(children_count - 1)
 
 
@@ -16,7 +16,7 @@ func goto_scene(scene: String) -> void:
 
 func _deferred_goto_scene(path: String) -> void:
 	current_scene.free()
-	var s = ResourceLoader.load(path)
+	var s: Resource = ResourceLoader.load(path)
 	current_scene = s.instantiate()
 	current_scene.tree_entered.connect(_on_tree_entered)
 	get_tree().get_root().add_child(current_scene)

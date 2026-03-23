@@ -1,14 +1,19 @@
 extends Node
 
 @export var anim: AnimationPlayer
+@onready var particles: GPUParticles2D = get_node("particles")
+
+var manager: RatSpawnersManager
 
 
-func stepped() -> void:
+func die() -> void:
+	particles.restart()
 	var parent = get_parent()
 	delete_children(parent)
 	anim.play("stepped")
 	await anim.animation_finished
 	parent.queue_free()
+	manager.rats_count -= 1
 
 
 func delete_children(parent: Node2D) -> void:

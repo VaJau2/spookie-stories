@@ -451,7 +451,7 @@ run_cooldown = 0.75
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1uak"]
-size = Vector2(6, 3)
+size = Vector2(11, 3)
 
 [node name="chakky" type="CharacterBody2D" unique_id=1723412077]
 collision_layer = 2
@@ -535,8 +535,9 @@ follow_distance = 20.0
 run_distance = 60.0
 teleport_distance = 140.0
 
-[node name="stuck_controller" type="Node" parent="." unique_id=669933737 node_paths=PackedStringArray("jump_controller")]
+[node name="stuck_controller" type="Node" parent="." unique_id=669933737 node_paths=PackedStringArray("movement_controller", "jump_controller")]
 script = ExtResource("6_uwxjx")
+movement_controller = NodePath("../platformer_movement")
 jump_controller = NodePath("../platformer_movement")
 
 [node name="lamp_controller" type="Node" parent="." unique_id=1969400903 node_paths=PackedStringArray("anim_controller", "lamp_l", "lamp_r")]
@@ -573,7 +574,7 @@ collision_mask = 7
 script = ExtResource("22_lg7pj")
 
 [node name="shape" type="CollisionShape2D" parent="step_area" unique_id=1731622828]
-position = Vector2(1, 2.5)
+position = Vector2(1.5, 2.5)
 shape = SubResource("RectangleShape2D_b1uak")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="step_area" unique_id=369302182]

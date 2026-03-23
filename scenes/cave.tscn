@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://bo6tco2dohro4" path="res://assets/sprites/interface/hitted_ui.png" id="17_k7li4"]
 [ext_resource type="PackedScene" uid="uid://bacay471k23b4" path="res://objects/prefabs/cave/rato_parado.tscn" id="17_vemui"]
 [ext_resource type="Script" uid="uid://b2t8sfeuejdei" path="res://assets/scripts/interface/hittedScreen.gd" id="18_b53jv"]
+[ext_resource type="Script" uid="uid://bna0lk0uh6rmu" path="res://assets/scripts/interface/healthBar.gd" id="19_0dfuj"]
+[ext_resource type="Script" uid="uid://de0jx7xxiv7mw" path="res://assets/scripts/controllers/cave/enemies/ratSpawnersManager.gd" id="19_b53jv"]
+[ext_resource type="Script" uid="uid://d1ip6n65e7g5a" path="res://assets/scripts/controllers/cave/enemies/ratSpawner.gd" id="20_f8rtj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3r8b"]
 texture = ExtResource("5_aises")
@@ -35,6 +38,39 @@ tile_size = Vector2i(27, 32)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/1 = SubResource("TileSetAtlasSource_c3r8b")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ow3e"]
+bg_color = Color(0.3963727, 0.053997196, 0, 1)
+shadow_color = Color(0, 0, 0, 0.65882355)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="Theme" id="Theme_0dfuj"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_8ow3e")
+
+[sub_resource type="GDScript" id="GDScript_0dfuj"]
+script/source = "extends Node
+
+@export var black_screen: ColorRect
+@export var player: Node2D
+
+
+func _ready() -> void:
+	set_process(false)
+	var health: HealthController = player.get_node(\"health_controller\")
+	health.die.connect(on_player_die)
+
+
+func on_player_die() -> void:
+	set_process(true)
+
+
+func _process(delta: float) -> void:
+	if black_screen.color.a < 1:
+		black_screen.color.a += 3 * delta
+	else:
+		Scenes.goto_scene(\"cave_health_lost\")
+"
 
 [node name="main" type="Node2D" unique_id=1993016278]
 texture_filter = 1
@@ -83,7 +119,7 @@ tile_set = ExtResource("1_rtd55")
 
 [node name="dynamite" type="TileMapLayer" parent="tiles" unique_id=1921352263]
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AABCAP3/AQAAAAAAAAA9AP3/AQAAAAAAAABAAP3/AQABAAAAAAA4APz/AQACAAAAAAA6APz/AQACAAAAAAALAOn/AQABAAAAAADo////AQAAAAAAAADr////AQACAAAAAABw/wEAAQAAAAAAAABy/wEAAQACAAAAAABu/wEAAQABAAAAAAB0/wEAAQABAAAAAACK/+j/AQACAAAAAACM/+j/AQAAAAAAAACO/+j/AQABAAAAAACQ/+j/AQABAAAAAACS/+j/AQACAAAAAABq/9n/AQABAAAAAAD7/9r/AQABAAAAAAD9/9r/AQABAAAAAAD//9r/AQACAAAAAABNAOD/AQABAAAAAABQAOD/AQABAAAAAABSAOD/AQACAAAAAADk/+3/AQACAAAAAADn/+3/AQABAAAAAACW//D/AQAAAAAAAACY//D/AQACAAAAAABMAPL/AQAAAAAAAABOAPL/AQAAAAAAAAA/APL/AQACAAAAAAAPAOn/AQAAAAAAAABLANv/AQACAAAAAABuAAAAAQACAAAAAABlAPj/AQAAAAAAAABuAPX/AQACAAAAAAA=")
+tile_map_data = PackedByteArray("AABCAP3/AQAAAAAAAAA9AP3/AQAAAAAAAABAAP3/AQABAAAAAAA4APz/AQACAAAAAAA6APz/AQACAAAAAAALAOn/AQABAAAAAADo////AQAAAAAAAADr////AQACAAAAAABw/wEAAQAAAAAAAABy/wEAAQACAAAAAABu/wEAAQABAAAAAAB0/wEAAQABAAAAAACK/+j/AQACAAAAAACM/+j/AQAAAAAAAACO/+j/AQABAAAAAACQ/+j/AQABAAAAAACS/+j/AQACAAAAAABq/9n/AQABAAAAAAD7/9r/AQABAAAAAAD9/9r/AQABAAAAAAD//9r/AQACAAAAAABNAOD/AQABAAAAAABQAOD/AQABAAAAAABSAOD/AQACAAAAAADk/+3/AQACAAAAAADn/+3/AQABAAAAAACW//D/AQAAAAAAAACY//D/AQACAAAAAABMAPL/AQAAAAAAAABOAPL/AQAAAAAAAAA/APL/AQACAAAAAAAPAOn/AQAAAAAAAABLANv/AQACAAAAAABuAAAAAQACAAAAAABlAPj/AQAAAAAAAABuAPX/AQACAAAAAAC0//b/AQABAAAAAAC3//b/AQACAAAAAADN/+L/AQACAAAAAADP/+L/AQAAAAAAAADR/+L/AQABAAAAAAA=")
 tile_set = SubResource("TileSet_5eofc")
 
 [node name="wall-light" type="Node2D" parent="tiles" unique_id=1325110291]
@@ -245,15 +281,6 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("13_4geow")
 
-[node name="explosion" type="ColorRect" parent="menu" unique_id=192017066]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.8629175, 0.48454058, 0.21331519, 1)
-
 [node name="ammo" type="BoxContainer" parent="menu" unique_id=1212532545 node_paths=PackedStringArray("player")]
 modulate = Color(0.573792, 0.5737919, 0.5737919, 1)
 anchors_preset = 3
@@ -261,10 +288,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -48.0
+offset_left = -256.0
+offset_top = -64.0
 offset_right = -8.0
-offset_bottom = -8.0
+offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
 alignment = 2
@@ -284,8 +311,72 @@ texture = ExtResource("17_k7li4")
 script = ExtResource("18_b53jv")
 player = NodePath("../../player")
 
-[node name="rato_parado" parent="." unique_id=205928098 instance=ExtResource("17_vemui")]
-position = Vector2(672, -48)
-scale = Vector2(0.25, 0.25)
-collision_layer = 4
-collision_mask = 4
+[node name="health" type="ProgressBar" parent="menu" unique_id=30430416 node_paths=PackedStringArray("player")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -24.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_0dfuj")
+step = 1.0
+value = 100.0
+rounded = true
+fill_mode = 1
+show_percentage = false
+script = ExtResource("19_0dfuj")
+player = NodePath("../../player")
+
+[node name="explosion" type="ColorRect" parent="menu" unique_id=192017066]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8629175, 0.48454058, 0.21331519, 1)
+
+[node name="rat_spawners" type="Node2D" parent="." unique_id=1418848483]
+script = ExtResource("19_b53jv")
+rat_prefabs = Array[PackedScene]([ExtResource("17_vemui")])
+
+[node name="1" type="Node2D" parent="rat_spawners" unique_id=668992235]
+position = Vector2(472, -32)
+script = ExtResource("20_f8rtj")
+
+[node name="2" type="Node2D" parent="rat_spawners" unique_id=2049710943]
+position = Vector2(-840, -128)
+script = ExtResource("20_f8rtj")
+
+[node name="3" type="Node2D" parent="rat_spawners" unique_id=2132295985]
+position = Vector2(-1528, 48)
+script = ExtResource("20_f8rtj")
+
+[node name="4" type="Node2D" parent="rat_spawners" unique_id=1954073358]
+position = Vector2(-1416, -352)
+script = ExtResource("20_f8rtj")
+
+[node name="5" type="Node2D" parent="rat_spawners" unique_id=1246826829]
+position = Vector2(-1728, -880)
+script = ExtResource("20_f8rtj")
+
+[node name="6" type="Node2D" parent="rat_spawners" unique_id=1089722400]
+position = Vector2(-72, -656)
+script = ExtResource("20_f8rtj")
+
+[node name="7" type="Node2D" parent="rat_spawners" unique_id=331330822]
+position = Vector2(792, -400)
+script = ExtResource("20_f8rtj")
+
+[node name="8" type="Node2D" parent="rat_spawners" unique_id=560228110]
+position = Vector2(1224, 144)
+script = ExtResource("20_f8rtj")
+
+[node name="move_to_lost_scene" type="Node" parent="." unique_id=244461397 node_paths=PackedStringArray("black_screen", "player")]
+script = SubResource("GDScript_0dfuj")
+black_screen = NodePath("../menu/black_screen")
+player = NodePath("../player")

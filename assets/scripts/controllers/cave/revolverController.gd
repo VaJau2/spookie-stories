@@ -126,7 +126,9 @@ func enable_raycast(pos: Vector2) -> void:
 
 func handle_target(target: Node, pos: Vector2) -> void:
 	if target is CharacterBody2D:
-		pass
+		if target.has_node("die_controller"):
+			var die = target.get_node("die_controller")
+			die.die()
 	else:
 		if target.name == "dynamite":
 			animate_explosion()

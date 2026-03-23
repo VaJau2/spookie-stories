@@ -3,7 +3,6 @@ extends StateBase
 @export var sprites: Array[Sprite2D]
 @export var speed: float
 @export var follow_distance: float
-@export var seek_area: SeekArea
 
 @onready var player: CharacterBody2D = get_node("/root/main/player")
 
