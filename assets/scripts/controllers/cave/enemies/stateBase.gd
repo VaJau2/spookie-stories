@@ -2,6 +2,7 @@ extends Node
 
 class_name StateBase
 
+@onready var state_machine: StateMachine = get_parent()
 @onready var parent: CharacterBody2D = get_node("../../")
 
 

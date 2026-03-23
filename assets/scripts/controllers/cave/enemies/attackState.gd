@@ -22,6 +22,6 @@ func _process(_delta: float) -> void:
 	
 	if is_left != walk_left:
 		is_left = walk_left
-		seek_area.set_flip(is_left)
+		state_machine.flip.emit(is_left)
 		for sprite in sprites:
 			sprite.flip_h = walk_left

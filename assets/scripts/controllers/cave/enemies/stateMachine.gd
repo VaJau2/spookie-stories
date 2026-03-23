@@ -4,6 +4,9 @@ class_name StateMachine
 
 @export var default_state: Node
 
+@warning_ignore("unused_signal")
+signal flip(value: bool)
+
 var current_state: Node
 
 func _ready() -> void:

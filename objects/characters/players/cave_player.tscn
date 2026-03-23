@@ -29,6 +29,9 @@
 [ext_resource type="AudioStream" uid="uid://c2uh2m0kssbyf" path="res://assets/audio/revolver/shot_beside.mp3" id="24_8slgg"]
 [ext_resource type="AudioStream" uid="uid://chdyscolkw5j7" path="res://assets/audio/explosions/Explode2.mp3" id="24_11txu"]
 [ext_resource type="AudioStream" uid="uid://crey0vovk1koc" path="res://assets/audio/explosions/Explode3.mp3" id="25_0osec"]
+[ext_resource type="Script" uid="uid://bv4tdnay25ta5" path="res://assets/scripts/controllers/cave/healthController.gd" id="30_c6ter"]
+[ext_resource type="Script" uid="uid://bo1mfwd12jeak" path="res://assets/scripts/controllers/cave/stepOnEnemiesArea.gd" id="31_imru1"]
+[ext_resource type="AudioStream" uid="uid://dqf3pnm7id7n7" path="res://assets/audio/rat/RatHoofHit.mp3" id="32_yasen"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u0ls"]
 radius = 7.0
@@ -308,6 +311,9 @@ metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_o50r0"]
 light_mode = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yasen"]
+size = Vector2(6, 3)
+
 [node name="player" type="CharacterBody2D" unique_id=1723412077]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=599326609]
@@ -452,4 +458,20 @@ volume_db = -2.0
 max_distance = 1000.0
 attenuation = 2.6390162
 
+[node name="health_controller" type="Node" parent="." unique_id=220487447]
+script = ExtResource("30_c6ter")
+
+[node name="step_area" type="Area2D" parent="." unique_id=1789635220]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("31_imru1")
+
+[node name="shape" type="CollisionShape2D" parent="step_area" unique_id=731255784]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_yasen")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="step_area" unique_id=1256467634]
+stream = ExtResource("32_yasen")
+
 [connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
+[connection signal="body_entered" from="step_area" to="step_area" method="_on_body_entered"]

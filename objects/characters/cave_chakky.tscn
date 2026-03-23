@@ -21,6 +21,8 @@
 [ext_resource type="AudioStream" uid="uid://dv6rv2vau1d0k" path="res://assets/audio/steps/jump/chakky_jump_1.mp3" id="16_xt4ql"]
 [ext_resource type="AudioStream" uid="uid://71ps68inb6g6" path="res://assets/audio/steps/jump/chakky_jump_2.mp3" id="17_uwxjx"]
 [ext_resource type="AudioStream" uid="uid://butaobvrqibm7" path="res://assets/audio/steps/jump/chakky_jump_3.mp3" id="18_1yxxy"]
+[ext_resource type="Script" uid="uid://bo1mfwd12jeak" path="res://assets/scripts/controllers/cave/stepOnEnemiesArea.gd" id="22_lg7pj"]
+[ext_resource type="AudioStream" uid="uid://dqf3pnm7id7n7" path="res://assets/audio/rat/RatHoofHit.mp3" id="23_cdbex"]
 
 [sub_resource type="Animation" id="Animation_1jjkp"]
 length = 0.001
@@ -448,6 +450,9 @@ run_sounds = Array[AudioStream]([ExtResource("8_enxtb"), ExtResource("9_ympdi"),
 run_cooldown = 0.75
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1uak"]
+size = Vector2(6, 3)
+
 [node name="chakky" type="CharacterBody2D" unique_id=1723412077]
 collision_layer = 2
 collision_mask = 2
@@ -530,9 +535,9 @@ follow_distance = 20.0
 run_distance = 60.0
 teleport_distance = 140.0
 
-[node name="stuck_controller" type="Node" parent="." unique_id=669933737 node_paths=PackedStringArray("movement_controller")]
+[node name="stuck_controller" type="Node" parent="." unique_id=669933737 node_paths=PackedStringArray("jump_controller")]
 script = ExtResource("6_uwxjx")
-movement_controller = NodePath("../platformer_movement")
+jump_controller = NodePath("../platformer_movement")
 
 [node name="lamp_controller" type="Node" parent="." unique_id=1969400903 node_paths=PackedStringArray("anim_controller", "lamp_l", "lamp_r")]
 script = ExtResource("8_1jjkp")
@@ -562,4 +567,17 @@ script = ExtResource("15_enxtb")
 movement_controller = NodePath("../platformer_movement")
 sound_variants = Array[AudioStream]([ExtResource("16_xt4ql"), ExtResource("17_uwxjx"), ExtResource("18_1yxxy")])
 
+[node name="step_area" type="Area2D" parent="." unique_id=711683650]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("22_lg7pj")
+
+[node name="shape" type="CollisionShape2D" parent="step_area" unique_id=1731622828]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_b1uak")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="step_area" unique_id=369302182]
+stream = ExtResource("23_cdbex")
+
 [connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
+[connection signal="body_entered" from="step_area" to="step_area" method="_on_body_entered"]

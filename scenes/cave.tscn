@@ -16,7 +16,9 @@
 [ext_resource type="Script" uid="uid://cda44q040yc17" path="res://assets/scripts/background/backScreenDissapear.gd" id="13_4geow"]
 [ext_resource type="Script" uid="uid://b1grwogfh0udx" path="res://assets/scripts/interface/ammoCount.gd" id="14_4geow"]
 [ext_resource type="PackedScene" uid="uid://b1yu2s7f7x5gi" path="res://objects/interface/ammo_count_item.tscn" id="15_4geow"]
+[ext_resource type="Texture2D" uid="uid://bo6tco2dohro4" path="res://assets/sprites/interface/hitted_ui.png" id="17_k7li4"]
 [ext_resource type="PackedScene" uid="uid://bacay471k23b4" path="res://objects/prefabs/cave/rato_parado.tscn" id="17_vemui"]
+[ext_resource type="Script" uid="uid://b2t8sfeuejdei" path="res://assets/scripts/interface/hittedScreen.gd" id="18_b53jv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c3r8b"]
 texture = ExtResource("5_aises")
@@ -268,6 +270,18 @@ grow_vertical = 0
 alignment = 2
 script = ExtResource("14_4geow")
 ammo_icon_prefab = ExtResource("15_4geow")
+player = NodePath("../../player")
+
+[node name="hitted_screen" type="TextureRect" parent="menu" unique_id=400278407 node_paths=PackedStringArray("player")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_k7li4")
+script = ExtResource("18_b53jv")
 player = NodePath("../../player")
 
 [node name="rato_parado" parent="." unique_id=205928098 instance=ExtResource("17_vemui")]

@@ -21,6 +21,6 @@ func _process(delta: float) -> void:
 	else:
 		walk_timer = randf_range(WALK_TIME[0], WALK_TIME[1])
 		walk_left = !walk_left
-		seek_area.set_flip(walk_left)
+		state_machine.flip.emit(walk_left)
 		for sprite in sprites:
 			sprite.flip_h = walk_left

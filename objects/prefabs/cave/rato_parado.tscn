@@ -6,7 +6,12 @@
 [ext_resource type="Script" uid="uid://bx42hvkglxoja" path="res://assets/scripts/controllers/cave/enemies/jumpController.gd" id="3_4dk0i"]
 [ext_resource type="Script" uid="uid://db1656p4dffkv" path="res://assets/scripts/controllers/cave/enemies/idleState.gd" id="3_065hc"]
 [ext_resource type="Script" uid="uid://dj1lcxrr7u0c1" path="res://assets/scripts/controllers/cave/enemies/attackState.gd" id="4_ish0f"]
+[ext_resource type="Script" uid="uid://borc24ulmg2tk" path="res://assets/scripts/controllers/cave/npcStuckController.gd" id="4_okgyy"]
+[ext_resource type="Script" uid="uid://c5afv7afv7dqm" path="res://assets/scripts/controllers/cave/enemies/steppedController.gd" id="5_5nfgj"]
 [ext_resource type="Script" uid="uid://clwtykxen13er" path="res://assets/scripts/controllers/cave/enemies/seekArea.gd" id="6_7sepi"]
+[ext_resource type="Script" uid="uid://dtubqwkgrjsg1" path="res://assets/scripts/controllers/cave/enemies/hitArea.gd" id="9_qbwwr"]
+[ext_resource type="AudioStream" uid="uid://rwxhiymixvof" path="res://assets/audio/rat/RatHit.mp3" id="10_d0rep"]
+[ext_resource type="AudioStream" uid="uid://4aa582kmq7x" path="res://assets/audio/rat/RatIdle.mp3" id="10_soc8u"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7sepi"]
 light_mode = 1
@@ -36,6 +41,42 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("eyes:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -60.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("sprite:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_065hc"]
@@ -67,10 +108,51 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_d0rep"]
+resource_name = "stepped"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eyes:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -60.5), Vector2(0, -2.25)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.08984375)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ish0f"]
 _data = {
 &"RESET": SubResource("Animation_p5qwx"),
-&"run": SubResource("Animation_065hc")
+&"run": SubResource("Animation_065hc"),
+&"stepped": SubResource("Animation_d0rep")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77kpb"]
@@ -79,6 +161,9 @@ height = 128.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1buue"]
 size = Vector2(953, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soc8u"]
+size = Vector2(80, 32)
 
 [node name="rato_parado" type="CharacterBody2D" unique_id=205928098]
 
@@ -104,6 +189,15 @@ shape = SubResource("CapsuleShape2D_77kpb")
 
 [node name="jump_controller" type="Node" parent="." unique_id=1484100214]
 script = ExtResource("3_4dk0i")
+
+[node name="stuck_controller" type="Node" parent="." unique_id=2090020035 node_paths=PackedStringArray("jump_controller")]
+script = ExtResource("4_okgyy")
+jump_controller = NodePath("../jump_controller")
+check_time = 0.1
+
+[node name="stepped_controller" type="Node" parent="." unique_id=1864725812 node_paths=PackedStringArray("anim")]
+script = ExtResource("5_5nfgj")
+anim = NodePath("../anim")
 
 [node name="state_machine" type="Node" parent="." unique_id=793241245 node_paths=PackedStringArray("default_state")]
 script = ExtResource("2_p5qwx")
@@ -134,5 +228,25 @@ disabled = true
 position = Vector2(396.5, -120)
 shape = SubResource("RectangleShape2D_1buue")
 
+[node name="hit_area" type="Area2D" parent="." unique_id=198342667 node_paths=PackedStringArray("state_machine")]
+script = ExtResource("9_qbwwr")
+state_machine = NodePath("../state_machine")
+
+[node name="shape_l" type="CollisionShape2D" parent="hit_area" unique_id=2131385965]
+position = Vector2(-112, -16)
+shape = SubResource("RectangleShape2D_soc8u")
+
+[node name="shape_r" type="CollisionShape2D" parent="hit_area" unique_id=126882430]
+position = Vector2(104, -16)
+shape = SubResource("RectangleShape2D_soc8u")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="hit_area" unique_id=585274421]
+stream = ExtResource("10_d0rep")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=1310112902]
+stream = ExtResource("10_soc8u")
+autoplay = true
+
 [connection signal="body_entered" from="seek_area" to="seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="seek_area" to="seek_area" method="_on_body_exited"]
+[connection signal="body_entered" from="hit_area" to="hit_area" method="_on_body_entered"]
