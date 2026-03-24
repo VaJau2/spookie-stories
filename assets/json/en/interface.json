@@ -18,5 +18,8 @@
 	"exit": {
 		"label": "Thank you for playing с:
 Press Escape to exit",
+	},
+	"exit_web": {
+		"label": "Thank you for playing с:",
 	}
 }

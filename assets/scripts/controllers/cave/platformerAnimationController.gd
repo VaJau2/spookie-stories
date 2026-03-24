@@ -16,3 +16,7 @@ func _on_stop_falling() -> void:
 
 func _on_jump() -> void:
 	anim.play("jump")
+
+
+func play_hit() -> void:
+	anim.play("hit")

@@ -469,10 +469,11 @@ stream = ExtResource("31_jfbih")
 volume_db = 1.0
 bus = &"Sound"
 
-[node name="step_area" type="Area2D" parent="." unique_id=639099065]
+[node name="step_area" type="Area2D" parent="." unique_id=639099065 node_paths=PackedStringArray("audi")]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("31_imru1")
+audi = NodePath("audi")
 
 [node name="shape" type="CollisionShape2D" parent="step_area" unique_id=1745953734]
 position = Vector2(1.5, 2.5)

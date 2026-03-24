@@ -23,6 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://butaobvrqibm7" path="res://assets/audio/steps/jump/chakky_jump_3.mp3" id="18_1yxxy"]
 [ext_resource type="Script" uid="uid://bo1mfwd12jeak" path="res://assets/scripts/controllers/cave/stepOnEnemiesArea.gd" id="22_lg7pj"]
 [ext_resource type="AudioStream" uid="uid://dqf3pnm7id7n7" path="res://assets/audio/rat/RatHoofHit.mp3" id="23_cdbex"]
+[ext_resource type="Script" uid="uid://drs1qrt3okmvg" path="res://assets/scripts/controllers/cave/chakkyHitArea.gd" id="24_cdbex"]
+[ext_resource type="AudioStream" uid="uid://20o336ohudv3" path="res://assets/audio/rat/ChakkyHoofTryHit.mp3" id="25_b1uak"]
 
 [sub_resource type="Animation" id="Animation_1jjkp"]
 length = 0.001
@@ -453,6 +455,9 @@ metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1uak"]
 size = Vector2(11, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80ubi"]
+size = Vector2(27, 26)
+
 [node name="chakky" type="CharacterBody2D" unique_id=1723412077]
 collision_layer = 2
 collision_mask = 2
@@ -569,18 +574,41 @@ script = ExtResource("15_enxtb")
 movement_controller = NodePath("../platformer_movement")
 sound_variants = Array[AudioStream]([ExtResource("16_xt4ql"), ExtResource("17_uwxjx"), ExtResource("18_1yxxy")])
 
-[node name="step_area" type="Area2D" parent="." unique_id=711683650]
+[node name="hit_audi" type="AudioStreamPlayer2D" parent="." unique_id=369302182]
+stream = ExtResource("23_cdbex")
+bus = &"Sound"
+
+[node name="step_area" type="Area2D" parent="." unique_id=711683650 node_paths=PackedStringArray("audi")]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("22_lg7pj")
+audi = NodePath("../hit_audi")
 
 [node name="shape" type="CollisionShape2D" parent="step_area" unique_id=1731622828]
 position = Vector2(1.5, 2.5)
 shape = SubResource("RectangleShape2D_b1uak")
 
-[node name="audi" type="AudioStreamPlayer2D" parent="step_area" unique_id=369302182]
-stream = ExtResource("23_cdbex")
+[node name="hit_area" type="Area2D" parent="." unique_id=863575075 node_paths=PackedStringArray("anim_controller", "try_hit_audi", "hit_audi")]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("24_cdbex")
+anim_controller = NodePath("../animation_controller")
+try_hit_audi = NodePath("try_hit_audi")
+hit_audi = NodePath("../hit_audi")
+
+[node name="shape_l" type="CollisionShape2D" parent="hit_area" unique_id=513740488]
+position = Vector2(-24.5, -14)
+shape = SubResource("RectangleShape2D_80ubi")
+
+[node name="shape_r" type="CollisionShape2D" parent="hit_area" unique_id=1098607214]
+position = Vector2(24, -14)
+shape = SubResource("RectangleShape2D_80ubi")
+disabled = true
+
+[node name="try_hit_audi" type="AudioStreamPlayer2D" parent="hit_area" unique_id=1864146442]
+stream = ExtResource("25_b1uak")
 bus = &"Sound"
 
 [connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
 [connection signal="body_entered" from="step_area" to="step_area" method="_on_body_entered"]
+[connection signal="body_entered" from="hit_area" to="hit_area" method="_on_body_entered"]

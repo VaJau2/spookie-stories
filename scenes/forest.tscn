@@ -994,6 +994,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0.8, 0.8)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ponies/dusk:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ponies/bowler_hat:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_2f3dj"]
 resource_name = "idle"
@@ -1177,6 +1201,30 @@ tracks/12/keys = {
 "method": &"on_stop"
 }]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ponies/dusk:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(2.8666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ponies/bowler_hat:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(3.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yq6so"]
 _data = {
@@ -1262,6 +1310,7 @@ script = ExtResource("7_7q4h0")
 anim = NodePath("../anim")
 
 [node name="dusk" type="CharacterBody2D" parent="ponies" unique_id=663760292]
+visible = false
 texture_filter = 1
 position = Vector2(195, -292)
 
@@ -1325,6 +1374,7 @@ script = ExtResource("7_7q4h0")
 anim = NodePath("../anim")
 
 [node name="bowler_hat" type="CharacterBody2D" parent="ponies" unique_id=853310757]
+visible = false
 texture_filter = 1
 position = Vector2(-71, -210)
 

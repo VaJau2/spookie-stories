@@ -25,7 +25,6 @@ var is_autoskip: bool = false
 signal started_dialogue
 signal finished_dialogue
 
-
 enum TypeEnum {
 	phrase,
 	new_state,

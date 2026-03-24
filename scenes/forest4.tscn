@@ -1297,7 +1297,7 @@ script/source = "extends Label
 func _process(_delta: float) -> void:
 	if !visible: return
 	
-	if Input.is_action_just_pressed(\"ui_cancel\"):
+	if OS.get_name() != \"Web\" and Input.is_action_just_pressed(\"ui_cancel\"):
 		get_tree().quit()
 "
 
@@ -1305,6 +1305,12 @@ func _process(_delta: float) -> void:
 script = ExtResource("22_8yhwk")
 node_path = NodePath("../exit_label")
 code = "exit.label"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_8yhwk"]
+script = ExtResource("22_8yhwk")
+node_path = NodePath("../exit_label_web")
+code = "exit_web.label"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Animation" id="Animation_75mkt"]
@@ -1577,10 +1583,13 @@ func start() -> void:
 script/source = "extends Node
 
 @export var exit_label: Label
+@export var exit_label_web: Label
+@export var pause_menu: PauseMenu
 
 
 func set_label_visible() -> void:
-	exit_label.visible = true
+	pause_menu.may_pause = false
+	get_label().visible = true
 	set_process(true)
 
 
@@ -1589,8 +1598,14 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if exit_label.modulate.a < 1:
-		exit_label.modulate.a += delta
+	if get_label().modulate.a < 1:
+		get_label().modulate.a += delta
+
+
+func get_label() -> Label:
+	if OS.get_name() == \"Web\":
+		return exit_label_web
+	return exit_label
 "
 
 [node name="main" type="Node2D" unique_id=634973638]
@@ -1794,6 +1809,7 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("19_uelm5")
 
 [node name="exit_label" type="Label" parent="menu" unique_id=1601609069]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 64.0
 offset_top = 64.0
@@ -1805,9 +1821,20 @@ text = "Спасибо за прохождение с:
 Чтобы выйти, нажмите Escape"
 script = SubResource("GDScript_wfie0")
 
+[node name="exit_label_web" type="Label" parent="menu" unique_id=1533768665]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 363.0
+offset_bottom = 119.0
+theme = ExtResource("20_3p0n3")
+theme_override_font_sizes/font_size = 17
+text = "Спасибо за прохождение с:"
+
 [node name="translate" type="Node" parent="menu" unique_id=1934432551]
 script = ExtResource("21_emqnb")
-nodes = Array[ExtResource("22_8yhwk")]([SubResource("Resource_75mkt")])
+nodes = Array[ExtResource("22_8yhwk")]([SubResource("Resource_75mkt"), SubResource("Resource_8yhwk")])
 
 [node name="start_dialogue" type="Node" parent="." unique_id=1219113416 node_paths=PackedStringArray("dialogue_menu")]
 script = ExtResource("20_raeci")
@@ -1827,6 +1854,8 @@ anim = NodePath("../scenario_anim")
 script = SubResource("GDScript_3p0n3")
 anim = NodePath("../scenario_anim")
 
-[node name="set_exit_visible" type="Node" parent="." unique_id=1109165442 node_paths=PackedStringArray("exit_label")]
+[node name="set_exit_visible" type="Node" parent="." unique_id=1109165442 node_paths=PackedStringArray("exit_label", "exit_label_web", "pause_menu")]
 script = SubResource("GDScript_emqnb")
 exit_label = NodePath("../menu/exit_label")
+exit_label_web = NodePath("../menu/exit_label_web")
+pause_menu = NodePath("../menu/pause_menu")

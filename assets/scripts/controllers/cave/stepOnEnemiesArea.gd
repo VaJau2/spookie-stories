@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var parent: CharacterBody2D = get_parent()
-@onready var audi: AudioStreamPlayer2D = get_node("audi")
+@export var audi: AudioStreamPlayer2D
 
 
 func _on_body_entered(body: Node2D) -> void:

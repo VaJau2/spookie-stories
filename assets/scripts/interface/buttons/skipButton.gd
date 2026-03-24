@@ -6,5 +6,5 @@ extends Node
 func _process(_delta: float) -> void:
 	if Engine.time_scale == 0: return
 	if anim_to_skip.is_playing():
-		if Input.is_action_just_pressed("ui_select"): 
+		if Input.is_action_just_pressed("ui_jump"): 
 			anim_to_skip.advance(anim_to_skip.current_animation_length - 1)

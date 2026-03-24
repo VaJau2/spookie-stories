@@ -17,6 +17,7 @@ func _ready() -> void:
 	default_state.enable()
 	current_state = default_state
 	
+	if !dialogue_menu: return
 	dialogue_menu.started_dialogue.connect(_on_started_dialogue)
 	dialogue_menu.finished_dialogue.connect(_on_finished_dialogue)
 

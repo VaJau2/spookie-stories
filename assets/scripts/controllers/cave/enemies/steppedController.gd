@@ -9,7 +9,7 @@ var manager: RatSpawnersManager
 func die() -> void:
 	particles.restart()
 	var parent = get_parent()
-	manager.rats.erase(parent)
+	if manager: manager.rats.erase(parent)
 	delete_children(parent)
 	anim.play("stepped")
 	await anim.animation_finished

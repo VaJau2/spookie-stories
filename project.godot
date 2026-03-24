@@ -14,6 +14,7 @@ config/name="Spookie Stories"
 run/main_scene="uid://djp0w40wncpty"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://bfhecfuox7kt"
 config/icon="uid://bh4ah317wndoo"
 config/macos_native_icon="uid://bh4ah317wndoo"
 config/windows_native_icon="res://assets/sprites/icon/tree.ico"

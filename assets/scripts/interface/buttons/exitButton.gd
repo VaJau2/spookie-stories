@@ -2,4 +2,5 @@ extends Button
 
 
 func _pressed() -> void:
-	get_tree().quit()
+	if OS.get_name() != "Web":
+		get_tree().quit()
