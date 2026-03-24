@@ -1446,7 +1446,7 @@ offset_bottom = 351.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("19_dn1w7")
 theme_override_font_sizes/font_size = 50
-text = "Spookie Stories"
+text = "Spooky Stories"
 
 [node name="start_button" type="Button" parent="menu/main_menu" unique_id=1903705571 node_paths=PackedStringArray("scenario_anim", "main_menu_panel", "pause_menu")]
 layout_mode = 0
