@@ -19,6 +19,8 @@ signal shoot(pos: Vector2)
 
 
 func _process(_delta: float) -> void:
+	if Engine.time_scale == 0: return
+	
 	if Input.is_action_just_pressed("ui_run"):
 		start_running.emit()
 	if Input.is_action_just_released("ui_run"):

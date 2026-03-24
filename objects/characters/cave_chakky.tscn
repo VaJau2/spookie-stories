@@ -556,6 +556,7 @@ process_material = SubResource("ParticleProcessMaterial_gext2")
 script = SubResource("GDScript_iwt4h")
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=743895726 node_paths=PackedStringArray("movement_controller")]
+bus = &"Sound"
 script = ExtResource("6_4rag3")
 movement_controller = NodePath("../platformer_movement")
 steps_data = Array[ExtResource("7_4aro2")]([SubResource("Resource_enxtb")])
@@ -579,6 +580,7 @@ shape = SubResource("RectangleShape2D_b1uak")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="step_area" unique_id=369302182]
 stream = ExtResource("23_cdbex")
+bus = &"Sound"
 
 [connection signal="finish_jumping" from="platformer_movement" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
 [connection signal="body_entered" from="step_area" to="step_area" method="_on_body_entered"]

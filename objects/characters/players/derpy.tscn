@@ -170,6 +170,7 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=673726631 node_paths=PackedStringArray("movement_controller")]
+bus = &"Sound"
 script = ExtResource("7_iprlk")
 movement_controller = NodePath("../movement_controller")
 steps_data = Array[ExtResource("8_6nike")]([SubResource("Resource_hbxcp")])

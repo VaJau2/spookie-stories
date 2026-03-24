@@ -1,9 +1,32 @@
 [gd_scene format=3 uid="uid://b1x3f1iix06ug"]
 
 [ext_resource type="Script" uid="uid://dviuuaexudh6e" path="res://assets/scripts/interface/menus/pauseMenu.gd" id="1_ddohv"]
+[ext_resource type="PackedScene" uid="uid://opyl7udmvaa5" path="res://objects/interface/settings.tscn" id="2_1ei50"]
+[ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="3_jhdtf"]
+[ext_resource type="Script" uid="uid://uctf86vuwugf" path="res://assets/scripts/interface/buttons/startButton.gd" id="4_cx6o6"]
+[ext_resource type="Script" uid="uid://kchc4jq4p0j2" path="res://assets/scripts/interface/buttons/exitButton.gd" id="5_wsji1"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="6_fkvh4"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="7_xvru8"]
+
+[sub_resource type="Resource" id="Resource_1ei50"]
+script = ExtResource("7_xvru8")
+node_path = NodePath("../continue_button")
+code = "main_menu.continue"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_jhdtf"]
+script = ExtResource("7_xvru8")
+node_path = NodePath("../exit_button")
+code = "main_menu.exit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_cx6o6"]
+script = ExtResource("7_xvru8")
+node_path = NodePath("../title")
+code = "main_menu.pause"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [node name="pauseMenu" type="Control" unique_id=357530029 groups=["pause_menu"]]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,3 +34,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ddohv")
+
+[node name="back" type="ColorRect" parent="." unique_id=625466192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="settings" parent="." unique_id=1978741120 instance=ExtResource("2_1ei50")]
+layout_mode = 1
+offset_left = 64.0
+offset_right = 424.0
+
+[node name="title" type="Label" parent="." unique_id=1612692234]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -184.0
+offset_top = 296.0
+offset_right = -48.0
+offset_bottom = 335.0
+grow_horizontal = 0
+theme = ExtResource("3_jhdtf")
+theme_override_font_sizes/font_size = 26
+text = "Пауза"
+horizontal_alignment = 2
+
+[node name="continue_button" type="Button" parent="." unique_id=498171578]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 360.0
+offset_right = 1128.0
+offset_bottom = 392.0
+theme = ExtResource("3_jhdtf")
+text = "Продолжить >   "
+alignment = 2
+script = ExtResource("4_cx6o6")
+
+[node name="exit_button" type="Button" parent="." unique_id=1958834477]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 408.0
+offset_right = 1128.0
+offset_bottom = 440.0
+theme = ExtResource("3_jhdtf")
+text = "Выход X   "
+alignment = 2
+script = ExtResource("5_wsji1")
+
+[node name="translate" type="Node" parent="." unique_id=614899330]
+script = ExtResource("6_fkvh4")
+nodes = Array[ExtResource("7_xvru8")]([SubResource("Resource_1ei50"), SubResource("Resource_jhdtf"), SubResource("Resource_cx6o6")])

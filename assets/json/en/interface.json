@@ -1,6 +1,8 @@
 {
 	"main_menu": {
+		"pause": "Pause",
 		"start": "Start >   ",
+		"continue": "Continue >   ",
 		"exit": "Exit X   ",
 	},
 	"settings": {
@@ -12,5 +14,9 @@
 	},
 	"dialogue": {
 		"skip": "to continue"
+	},
+	"exit": {
+		"label": "Thank you for playing с:
+Press Escape to exit",
 	}
 }

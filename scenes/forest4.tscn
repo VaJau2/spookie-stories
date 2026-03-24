@@ -21,6 +21,8 @@
 [ext_resource type="Script" uid="uid://cda44q040yc17" path="res://assets/scripts/background/backScreenDissapear.gd" id="19_uelm5"]
 [ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="20_3p0n3"]
 [ext_resource type="Script" uid="uid://jmky0f50vv00" path="res://assets/scripts/background/startDialogue.gd" id="20_raeci"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="21_emqnb"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="22_8yhwk"]
 
 [sub_resource type="Animation" id="Animation_3p0n3"]
 length = 0.001
@@ -440,6 +442,12 @@ _data = {
 &"idle": SubResource("Animation_fv21b"),
 &"talk": SubResource("Animation_tel4y")
 }
+
+[sub_resource type="Resource" id="Resource_5he1u"]
+script = ExtResource("11_wsm5p")
+material_name = 2
+walk_sounds = Array[AudioStream]([ExtResource("12_rtkma"), ExtResource("13_o73u0"), ExtResource("14_ourt8")])
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Animation" id="Animation_qkpxi"]
 length = 0.001
@@ -1022,7 +1030,7 @@ _data = {
 &"walk": SubResource("Animation_fuf3a")
 }
 
-[sub_resource type="Resource" id="Resource_5he1u"]
+[sub_resource type="Resource" id="Resource_emqnb"]
 script = ExtResource("11_wsm5p")
 material_name = 2
 walk_sounds = Array[AudioStream]([ExtResource("12_rtkma"), ExtResource("13_o73u0"), ExtResource("14_ourt8")])
@@ -1293,6 +1301,12 @@ func _process(_delta: float) -> void:
 		get_tree().quit()
 "
 
+[sub_resource type="Resource" id="Resource_75mkt"]
+script = ExtResource("22_8yhwk")
+node_path = NodePath("../exit_label")
+code = "exit.label"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
 [sub_resource type="Animation" id="Animation_75mkt"]
 length = 0.001
 tracks/0/type = "value"
@@ -1433,6 +1447,23 @@ tracks/3/keys = {
 "method": &"start_dialogue"
 }]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ponies/dusk/sound_steps")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.8666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"on_move"
+}, {
+"args": [],
+"method": &"on_stop"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_m36lr"]
 resource_name = "strikely_walk_away"
@@ -1497,6 +1528,23 @@ tracks/4/keys = {
 "values": [{
 "args": ["forest4", "talk_finish"],
 "method": &"start_dialogue"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ponies/strikely/sound_steps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.0666666),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"on_move"
+}, {
+"args": [],
+"method": &"on_stop"
 }]
 }
 
@@ -1592,7 +1640,7 @@ texture = ExtResource("5_75mkt")
 flip_h = true
 hframes = 8
 vframes = 6
-frame = 8
+frame = 24
 
 [node name="shadow" type="Sprite2D" parent="ponies/strikely" unique_id=1938735809]
 modulate = Color(1, 1, 1, 0.45882353)
@@ -1612,6 +1660,12 @@ autoplay = &"idle"
 [node name="anim_controller" type="Node" parent="ponies/strikely" unique_id=1763901183 node_paths=PackedStringArray("anim")]
 script = ExtResource("7_si03q")
 anim = NodePath("../anim")
+
+[node name="sound_steps" type="AudioStreamPlayer2D" parent="ponies/strikely" unique_id=841636837]
+bus = &"Sound"
+script = ExtResource("10_sd13o")
+steps_data = Array[ExtResource("11_wsm5p")]([SubResource("Resource_5he1u")])
+default_material = 2
 
 [node name="serious_tale" type="CharacterBody2D" parent="ponies" unique_id=337367767]
 texture_filter = 1
@@ -1652,7 +1706,6 @@ position = Vector2(1, -31)
 texture = ExtResource("9_sarpj")
 hframes = 8
 vframes = 6
-frame = 8
 
 [node name="shadow" type="Sprite2D" parent="ponies/dusk" unique_id=1520429101]
 modulate = Color(1, 1, 1, 0.45882353)
@@ -1675,7 +1728,7 @@ anim = NodePath("../anim")
 [node name="sound_steps" type="AudioStreamPlayer2D" parent="ponies/dusk" unique_id=533277531]
 bus = &"Sound"
 script = ExtResource("10_sd13o")
-steps_data = Array[ExtResource("11_wsm5p")]([SubResource("Resource_5he1u")])
+steps_data = Array[ExtResource("11_wsm5p")]([SubResource("Resource_emqnb")])
 default_material = 2
 
 [node name="bowler_hat" type="CharacterBody2D" parent="ponies" unique_id=1783717015]
@@ -1710,7 +1763,7 @@ anim = NodePath("../anim")
 position = Vector2(274, -61)
 bus = &"Sound"
 script = ExtResource("10_sd13o")
-steps_data = Array[ExtResource("11_wsm5p")]([SubResource("Resource_5he1u")])
+steps_data = Array[ExtResource("11_wsm5p")]([SubResource("Resource_emqnb")])
 default_material = 2
 
 [node name="directional_light" type="DirectionalLight2D" parent="." unique_id=68490882]
@@ -1728,6 +1781,7 @@ texture_filter = 1
 ponies_parent = NodePath("../../ponies")
 
 [node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("18_8qp18")]
+visible = false
 
 [node name="black_screen" type="ColorRect" parent="menu" unique_id=1772898688]
 anchors_preset = 15
@@ -1750,6 +1804,10 @@ theme_override_font_sizes/font_size = 17
 text = "Спасибо за прохождение с:
 Чтобы выйти, нажмите Escape"
 script = SubResource("GDScript_wfie0")
+
+[node name="translate" type="Node" parent="menu" unique_id=1934432551]
+script = ExtResource("21_emqnb")
+nodes = Array[ExtResource("22_8yhwk")]([SubResource("Resource_75mkt")])
 
 [node name="start_dialogue" type="Node" parent="." unique_id=1219113416 node_paths=PackedStringArray("dialogue_menu")]
 script = ExtResource("20_raeci")

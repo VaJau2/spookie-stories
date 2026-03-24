@@ -10,29 +10,29 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"text": "Возвращаться обратно кстати пришлось потом тем же путем."
+				"text": "By the way, I had to go back the same way later."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Благо с картой это было гораздо проще."
+				"text": "Fortunately, it was much easier with the map."
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "scared",
-				"text": "Боюсь, после такой истории, ни одна другая не покажется хоть близко такой же страшной."
+				"text": "I'm afraid, after such a story, no other one will seem even close to as scary."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "С этим трудно поспорить."
+				"text": "It's hard to argue with that."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Эта история, думается мне, даже страшнее истории про маффины."
+				"text": "This story, I think, is even scarier than the muffin story."
 			},
 			{
 				"type": "new_state",
@@ -47,31 +47,31 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Кстати, про маффины. А где Пей?"
+				"text": "Speaking of muffins. Where's the Pay?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "idle",
-				"text": "Ушла спать."
+				"text": "She went to sleep."
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "idle",
-				"text": "Думаю, мне тоже пора."
+				"text": "I think I should go too."
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "happy",
-				"text": "Спасибо вам за истории, они были очень интересные."
+				"text": "Thank you for the stories, they were very interesting."
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "happy",
-				"text": "Спокойной ночи."
+				"text": "Good night."
 			},
 			{
 				"type": "new_state",
@@ -90,30 +90,30 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я…"
+				"text": "I…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "confused",
-				"text": "Я бы хотела рассказать свою историю…"
+				"text": "I wanted to tell my story…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "sad",
-				"text": "…Но у нашего разраба не хватило на неё времени…"
+				"text": "…But our developer didn't have enough time for it…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "…Поэтому я тоже пойду спать."
+				"text": "…So I'm going to sleep too."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "happy",
-				"text": "Спокойной ночи!"
+				"text": "Good night!"
 			},
 			{
 				"type": "new_state",
@@ -132,29 +132,29 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "А ты идешь? Ты же вроде спать хотел."
+				"text": "Are you coming too? You said you wanted to sleep."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sad",
-				"text": "Хотелось бы."
+				"text": "I would like."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "look-down",
-				"text": "Но теперь после того как я вспомнил, что там было…"
+				"text": "But now that I remember what was there…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "…Хрен я усну."
+				"text": "…I won't sleep a damn."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Понимаю."
+				"text": "I see."
 			},
 			{
 				"type": "phrase",
@@ -169,31 +169,31 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "А ты сам спать не хочешь?"
+				"text": "Don't you want to sleep yourself?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Не, пожалуй, я посижу еще."
+				"text": "Nuh, I think I'll stay a little longer."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "smirk",
-				"text": "Что, испугался?"
+				"text": "Are you scared?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Конечно нет!..."
+				"text": "Of couse not!..."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "goofy",
-				"text": "…возможно."
+				"text": "…maybe."
 			},
 			{
 				"type": "new_state",
@@ -204,12 +204,12 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "smile",
-				"text": "Хех, ну оставайся. Вдвоем всяко интереснее."
+				"text": "Heh, well, stay if you want. It's always more interesting together."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "…да."
+				"text": "…yep."
 			},
 			{
 				"type": "new_state",

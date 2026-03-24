@@ -4,12 +4,12 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "We need to explore the mines and find the cause of the explosions.",
+				"text": "We needed to explore the mines and to find the cause of the explosions.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "We found this very reason pretty quickly - someone had planted a lot of dynamite in the mines.",
+				"text": "We found this very reason pretty quickly - somepony had planted a lot of dynamite in the mines.",
 			},
 			{
 				"type": "phrase",
@@ -71,7 +71,7 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "But of course I wouldn't let them.",
+				"text": "But of course I wouldn't let them do it.",
 			},
 			{
 				"type": "script",
@@ -164,7 +164,7 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "In the end, I got to the end of this shaft with an incredible effort of will.",
+				"text": "At last, I got to the end of this shaft with an incredible effort of will.",
 			},
 			{
 				"type": "phrase",

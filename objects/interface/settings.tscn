@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://opyl7udmvaa5"]
+
+[ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="1_36pnu"]
+[ext_resource type="FontFile" uid="uid://t21pgqonhslq" path="res://assets/materials/fonts/centuryGothic/CenturyGhotic.TTF" id="2_6w7xc"]
+[ext_resource type="Script" uid="uid://d326s2faw7wm5" path="res://assets/scripts/interface/buttons/volumeSlider.gd" id="3_s3l3g"]
+[ext_resource type="AudioStream" uid="uid://b60lvi8m5jeqs" path="res://assets/audio/dialogue/beeps/sound_a.wav" id="4_utevo"]
+[ext_resource type="Script" uid="uid://r3llylg2jb7i" path="res://assets/scripts/interface/buttons/fullscreenButton.gd" id="5_pskk3"]
+[ext_resource type="Script" uid="uid://c70une7os5brx" path="res://assets/scripts/interface/buttons/languageButton.gd" id="6_vshvn"]
+[ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="7_afnln"]
+[ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="8_088mo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pibwh"]
+bg_color = Color(0, 0, 0.011764706, 0.98039216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="Resource" id="Resource_txyw0"]
+script = ExtResource("8_088mo")
+node_path = NodePath("../settings_title")
+code = "settings.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_vc5cj"]
+script = ExtResource("8_088mo")
+node_path = NodePath("../volume_label")
+code = "settings.volume"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_nvyfr"]
+script = ExtResource("8_088mo")
+node_path = NodePath("../fullscreen_label")
+code = "settings.fullscreen"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_ty1g6"]
+script = ExtResource("8_088mo")
+node_path = NodePath("../languale_label")
+code = "settings.language_label"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_j2jfr"]
+script = ExtResource("8_088mo")
+node_path = NodePath("../language_button")
+code = "settings.language"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[node name="settings" type="Panel" unique_id=1978741120]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -68.0
+offset_right = 400.0
+offset_bottom = 132.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pibwh")
+
+[node name="settings_title" type="Label" parent="." unique_id=230124008]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 8.0
+offset_right = 45.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme = ExtResource("1_36pnu")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("2_6w7xc")
+text = "Настройки"
+vertical_alignment = 1
+
+[node name="volume_label" type="Label" parent="." unique_id=1490936707]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 208.0
+offset_bottom = 87.0
+theme = ExtResource("1_36pnu")
+text = "Громкость звука:"
+vertical_alignment = 1
+
+[node name="volume" type="HSlider" parent="." unique_id=1591961608]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 72.0
+offset_right = 344.0
+offset_bottom = 88.0
+theme = ExtResource("1_36pnu")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("3_s3l3g")
+
+[node name="sample" type="AudioStreamPlayer" parent="volume" unique_id=2129398260]
+stream = ExtResource("4_utevo")
+bus = &"Sound"
+
+[node name="fullscreen_label" type="Label" parent="." unique_id=1283297082]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 202.0
+offset_bottom = 127.0
+theme = ExtResource("1_36pnu")
+text = "Полноэкранный режим:"
+vertical_alignment = 1
+
+[node name="fullscreen" type="CheckBox" parent="." unique_id=472776279]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 104.0
+offset_right = 240.0
+offset_bottom = 128.0
+theme = ExtResource("1_36pnu")
+script = ExtResource("5_pskk3")
+
+[node name="languale_label" type="Label" parent="." unique_id=499500289]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 144.0
+offset_right = 202.0
+offset_bottom = 176.0
+theme = ExtResource("1_36pnu")
+text = "Язык:"
+vertical_alignment = 1
+
+[node name="language_button" type="Button" parent="." unique_id=1553488314]
+layout_mode = 1
+offset_left = 216.0
+offset_top = 144.0
+offset_right = 344.0
+offset_bottom = 175.0
+theme = ExtResource("1_36pnu")
+text = "Русский"
+script = ExtResource("6_vshvn")
+
+[node name="translate" type="Node" parent="." unique_id=127882533]
+script = ExtResource("7_afnln")
+nodes = Array[ExtResource("8_088mo")]([SubResource("Resource_txyw0"), SubResource("Resource_vc5cj"), SubResource("Resource_nvyfr"), SubResource("Resource_ty1g6"), SubResource("Resource_j2jfr")])
