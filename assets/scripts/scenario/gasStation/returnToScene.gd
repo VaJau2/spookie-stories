@@ -20,5 +20,4 @@ func _process(delta: float) -> void:
 
 
 func start() -> void:
-	G.scene_vars.set(scene_var, 1)
 	Scenes.goto_scene(scene_name)

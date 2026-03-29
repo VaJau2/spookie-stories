@@ -10,6 +10,8 @@ var spawned_wolfs: Array[CharacterBody2D]
 
 
 func spawn_wolfs() -> void:
+	G.scene_vars.set("gas_station", 1)
+	
 	for index in range(len(spawn_points)):
 		var point = spawn_points[index]
 		var walk_point = point.get_node("walk")

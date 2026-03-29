@@ -5,6 +5,8 @@ extends Node
 @export var land_anim: AnimationPlayer
 @export var smoke: GPUParticles2D
 @export var car_sound: AudioStreamPlayer2D
+@export var background_station: Node2D
+@export var background_forest: Node2D
 
 @export_category("starting")
 @export var dir_light: DirectionalLight2D
@@ -57,6 +59,8 @@ func get_out_of_car() -> void:
 	car_sound.stop()
 	car_sound.emit_signal("finished")
 	starting_engine = false
+	background_station.visible = false
+	background_forest.visible = true
 	
 	while black_screen.color.a < 1:
 		black_screen.color.a += 0.01

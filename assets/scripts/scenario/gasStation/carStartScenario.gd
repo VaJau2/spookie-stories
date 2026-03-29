@@ -39,6 +39,7 @@ func start() -> void:
 
 
 func move() -> void:
+	G.scene_vars.set("gas_station", 2)
 	_finish_starting()
 	car_moving.start()
 

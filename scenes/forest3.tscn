@@ -1455,3 +1455,4 @@ start_timer = 1.0
 script = ExtResource("21_1td4k")
 black_screen = NodePath("../menu/black_screen")
 next_level = "cave"
+save_level_num = 3

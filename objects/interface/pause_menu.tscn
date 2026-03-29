@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dviuuaexudh6e" path="res://assets/scripts/interface/menus/pauseMenu.gd" id="1_ddohv"]
 [ext_resource type="PackedScene" uid="uid://opyl7udmvaa5" path="res://objects/interface/settings.tscn" id="2_1ei50"]
 [ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="3_jhdtf"]
-[ext_resource type="Script" uid="uid://uctf86vuwugf" path="res://assets/scripts/interface/buttons/startButton.gd" id="4_cx6o6"]
+[ext_resource type="Script" uid="uid://1w7ie5m4ufhw" path="res://assets/scripts/interface/buttons/continueButton.gd" id="4_1ei50"]
 [ext_resource type="Script" uid="uid://kchc4jq4p0j2" path="res://assets/scripts/interface/buttons/exitButton.gd" id="5_wsji1"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="6_fkvh4"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="7_xvru8"]
@@ -51,14 +51,10 @@ offset_right = 424.0
 
 [node name="title" type="Label" parent="." unique_id=1612692234]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -184.0
-offset_top = 296.0
-offset_right = -48.0
-offset_bottom = 335.0
-grow_horizontal = 0
+offset_left = 976.0
+offset_top = 304.0
+offset_right = 1112.0
+offset_bottom = 343.0
 theme = ExtResource("3_jhdtf")
 theme_override_font_sizes/font_size = 26
 text = "Пауза"
@@ -73,7 +69,7 @@ offset_bottom = 392.0
 theme = ExtResource("3_jhdtf")
 text = "Продолжить >   "
 alignment = 2
-script = ExtResource("4_cx6o6")
+script = ExtResource("4_1ei50")
 
 [node name="exit_button" type="Button" parent="." unique_id=1958834477]
 layout_mode = 0
@@ -89,3 +85,5 @@ script = ExtResource("5_wsji1")
 [node name="translate" type="Node" parent="." unique_id=614899330]
 script = ExtResource("6_fkvh4")
 nodes = Array[ExtResource("7_xvru8")]([SubResource("Resource_1ei50"), SubResource("Resource_jhdtf"), SubResource("Resource_cx6o6")])
+
+[connection signal="pressed" from="continue_button" to="continue_button" method="_on_pressed"]

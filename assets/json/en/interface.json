@@ -3,7 +3,19 @@
 		"pause": "Pause",
 		"start": "Start >   ",
 		"continue": "Continue >   ",
+		"load": "Load level >   ",
 		"exit": "Exit X   ",
+	},
+	"load_menu": {
+		"title": "Load level",
+		"levels": {
+			"shop": "Shop",
+			"gas_station": "Gas Station",
+			"cave": "Cave",
+		},
+		"no_level": "Level not passed",
+		"cancel": "Cancel",
+		"hint": "The game saves automatically when exit"
 	},
 	"settings": {
 		"title": "Settings",

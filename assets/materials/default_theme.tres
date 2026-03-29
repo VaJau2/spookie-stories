@@ -1,16 +1,12 @@
 [gd_resource type="Theme" format=3 uid="uid://cb3k2wmln4chv"]
 
-[ext_resource type="FontFile" uid="uid://c1uabun56g5hm" path="res://assets/materials/fonts/joefinSans/JosefinSans-Regular.ttf" id="1_b4om0"]
-[ext_resource type="FontFile" uid="uid://dh7j8o2l35way" path="res://assets/materials/fonts/joefinSans/JosefinSans-Bold.ttf" id="2_2kmwp"]
-[ext_resource type="FontFile" uid="uid://dxlv06rby4f2f" path="res://assets/materials/fonts/joefinSans/JosefinSans-SemiBoldItalic.ttf" id="3_pstah"]
-[ext_resource type="FontFile" uid="uid://duysilqa3elny" path="res://assets/materials/fonts/joefinSans/JosefinSans-Thin.ttf" id="4_qsmqm"]
 [ext_resource type="FontFile" uid="uid://t21pgqonhslq" path="res://assets/materials/fonts/centuryGothic/CenturyGhotic.TTF" id="5_2kmwp"]
 
 [resource]
 default_font = ExtResource("5_2kmwp")
 Label/fonts/font = ExtResource("5_2kmwp")
-RichTextLabel/fonts/bold_font = ExtResource("2_2kmwp")
-RichTextLabel/fonts/bold_italics_font = ExtResource("3_pstah")
-RichTextLabel/fonts/italics_font = ExtResource("3_pstah")
-RichTextLabel/fonts/mono_font = ExtResource("4_qsmqm")
-RichTextLabel/fonts/normal_font = ExtResource("1_b4om0")
+RichTextLabel/fonts/bold_font = ExtResource("5_2kmwp")
+RichTextLabel/fonts/bold_italics_font = ExtResource("5_2kmwp")
+RichTextLabel/fonts/italics_font = ExtResource("5_2kmwp")
+RichTextLabel/fonts/mono_font = ExtResource("5_2kmwp")
+RichTextLabel/fonts/normal_font = ExtResource("5_2kmwp")

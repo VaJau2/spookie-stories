@@ -1357,3 +1357,4 @@ start_timer = 1.0
 script = ExtResource("21_v306o")
 black_screen = NodePath("../menu/black_screen")
 next_level = "gas_station"
+save_level_num = 2

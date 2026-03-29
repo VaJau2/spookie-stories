@@ -6,6 +6,7 @@ extends Button
 
 
 func _pressed() -> void:
+	G.scene_vars.clear()
 	main_menu_panel.visible = false
 	pause_menu.may_pause = true
 	scenario_anim.play("idle")

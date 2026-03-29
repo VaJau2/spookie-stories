@@ -282,11 +282,13 @@ shape = SubResource("RectangleShape2D_soc8u")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="hit_area" unique_id=585274421]
 stream = ExtResource("10_d0rep")
+bus = &"Sound"
 
 [node name="audi" type="AudioStreamPlayer2D" parent="." unique_id=1310112902]
 stream = ExtResource("10_soc8u")
 autoplay = true
 max_distance = 1000.0
+bus = &"Sound"
 
 [node name="delete_far_away" type="Node" parent="." unique_id=1951580634 node_paths=PackedStringArray("die_controller")]
 script = ExtResource("13_idepp")

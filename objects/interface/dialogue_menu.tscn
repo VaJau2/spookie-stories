@@ -9,6 +9,21 @@
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="6_hlvh2"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="7_sg52v"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg52v"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.87058824)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_2x3gq"]
+Panel/styles/panel = SubResource("StyleBoxFlat_sg52v")
+
 [sub_resource type="Resource" id="Resource_2x3gq"]
 script = ExtResource("7_sg52v")
 node_path = NodePath("../skip")
@@ -27,6 +42,7 @@ offset_right = -80.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_2x3gq")
 script = ExtResource("1_prful")
 
 [node name="text" type="RichTextLabel" parent="." unique_id=473439137]
@@ -41,7 +57,6 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_fs0q5")
-bbcode_enabled = true
 text = "Тестовый [b]диалоговый[/b] текст"
 
 [node name="skip" type="Label" parent="." unique_id=1200783727]

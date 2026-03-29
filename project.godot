@@ -23,6 +23,7 @@ config/windows_native_icon="res://assets/sprites/icon/tree.ico"
 
 G="*uid://h3phtdmelbel"
 Scenes="*uid://b3at64sfs5we3"
+Save="*uid://ca7lpltidcmlk"
 
 [display]
 

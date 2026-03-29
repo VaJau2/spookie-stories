@@ -21,10 +21,13 @@
 [ext_resource type="FontFile" uid="uid://dwiqxpak0w7cd" path="res://assets/materials/fonts/rubikMonoOne/RubikMonoOne-Regular.ttf" id="19_dn1w7"]
 [ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="20_6sryq"]
 [ext_resource type="Script" uid="uid://uctf86vuwugf" path="res://assets/scripts/interface/buttons/startButton.gd" id="21_2arrk"]
+[ext_resource type="Script" uid="uid://qtp33lw13ax7" path="res://assets/scripts/interface/buttons/loadButton.gd" id="22_bjond"]
 [ext_resource type="Script" uid="uid://kchc4jq4p0j2" path="res://assets/scripts/interface/buttons/exitButton.gd" id="22_bqum3"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="23_vbuu3"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="24_xqxf2"]
 [ext_resource type="PackedScene" uid="uid://opyl7udmvaa5" path="res://objects/interface/settings.tscn" id="25_37aet"]
+[ext_resource type="Script" uid="uid://b40kg6vosouij" path="res://assets/scripts/interface/buttons/loadLevelButton.gd" id="25_soql2"]
+[ext_resource type="Script" uid="uid://bkx5t6juehst6" path="res://assets/scripts/interface/buttons/cancelButton.gd" id="27_g34gq"]
 [ext_resource type="Script" uid="uid://cnsf3tw1jch1e" path="res://assets/scripts/interface/buttons/skipButton.gd" id="30_62wul"]
 [ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="31_iaogd"]
 
@@ -920,6 +923,13 @@ _data = {
 &"walk": SubResource("Animation_5poiv")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soql2"]
+bg_color = Color(0, 0, 0.011764706, 0.98039216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [sub_resource type="Resource" id="Resource_vchkt"]
 script = ExtResource("24_xqxf2")
 node_path = NodePath("../start_button")
@@ -930,6 +940,30 @@ metadata/_custom_type_script = "uid://kbfv44blqaag"
 script = ExtResource("24_xqxf2")
 node_path = NodePath("../exit_button")
 code = "main_menu.exit"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_g34gq"]
+script = ExtResource("24_xqxf2")
+node_path = NodePath("../load_button")
+code = "main_menu.load"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_soql2"]
+script = ExtResource("24_xqxf2")
+node_path = NodePath("../load/titile")
+code = "load_menu.title"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_u01n2"]
+script = ExtResource("24_xqxf2")
+node_path = NodePath("../load/cancel")
+code = "load_menu.cancel"
+metadata/_custom_type_script = "uid://kbfv44blqaag"
+
+[sub_resource type="Resource" id="Resource_qu0hn"]
+script = ExtResource("24_xqxf2")
+node_path = NodePath("../load/hint")
+code = "load_menu.hint"
 metadata/_custom_type_script = "uid://kbfv44blqaag"
 
 [sub_resource type="Animation" id="Animation_vxglm"]
@@ -1451,9 +1485,9 @@ text = "Spooky Stories"
 [node name="start_button" type="Button" parent="menu/main_menu" unique_id=1903705571 node_paths=PackedStringArray("scenario_anim", "main_menu_panel", "pause_menu")]
 layout_mode = 0
 offset_left = 872.0
-offset_top = 360.0
+offset_top = 400.0
 offset_right = 1128.0
-offset_bottom = 392.0
+offset_bottom = 432.0
 theme = ExtResource("20_6sryq")
 text = "Играть >   "
 alignment = 2
@@ -1462,27 +1496,132 @@ scenario_anim = NodePath("../../../scenario")
 main_menu_panel = NodePath("..")
 pause_menu = NodePath("../../pause_menu")
 
+[node name="load_button" type="Button" parent="menu/main_menu" unique_id=859157278 node_paths=PackedStringArray("load_panel")]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 352.0
+offset_right = 1128.0
+offset_bottom = 384.0
+theme = ExtResource("20_6sryq")
+disabled = true
+text = "Загрузить уровень >   "
+alignment = 2
+script = ExtResource("22_bjond")
+load_panel = NodePath("../load")
+
 [node name="exit_button" type="Button" parent="menu/main_menu" unique_id=591724696]
 layout_mode = 0
 offset_left = 872.0
-offset_top = 408.0
+offset_top = 448.0
 offset_right = 1128.0
-offset_bottom = 440.0
+offset_bottom = 480.0
 theme = ExtResource("20_6sryq")
 text = "Выход X   "
 alignment = 2
 script = ExtResource("22_bqum3")
-
-[node name="translate" type="Node" parent="menu/main_menu" unique_id=1150022051]
-script = ExtResource("23_vbuu3")
-nodes = Array[ExtResource("24_xqxf2")]([SubResource("Resource_vchkt"), SubResource("Resource_bjg73")])
 
 [node name="settings" parent="menu/main_menu" unique_id=1978741120 instance=ExtResource("25_37aet")]
 layout_mode = 1
 offset_left = 64.0
 offset_right = 424.0
 
+[node name="load" type="Panel" parent="menu/main_menu" unique_id=937732528]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -84.0
+offset_right = -296.0
+offset_bottom = 220.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("20_6sryq")
+theme_override_styles/panel = SubResource("StyleBoxFlat_soql2")
+
+[node name="titile" type="Label" parent="menu/main_menu/load" unique_id=732539574]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_right = 204.0
+offset_bottom = 48.0
+grow_horizontal = 2
+text = "Загрузить уровень"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="container" type="VBoxContainer" parent="menu/main_menu/load" unique_id=75573200]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -204.0
+offset_top = 65.0
+offset_right = 204.0
+offset_bottom = 160.0
+grow_horizontal = 2
+
+[node name="shop" type="Button" parent="menu/main_menu/load/container" unique_id=935891234]
+layout_mode = 2
+text = "Магазин"
+script = ExtResource("25_soql2")
+level_num = 1
+
+[node name="gas_station" type="Button" parent="menu/main_menu/load/container" unique_id=121257697]
+layout_mode = 2
+text = "Заправка"
+script = ExtResource("25_soql2")
+level_num = 2
+
+[node name="cave" type="Button" parent="menu/main_menu/load/container" unique_id=1471753581]
+layout_mode = 2
+text = "Шахта"
+script = ExtResource("25_soql2")
+level_num = 3
+
+[node name="cancel" type="Button" parent="menu/main_menu/load" unique_id=1442872170 node_paths=PackedStringArray("panel_to_close")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -40.0
+offset_right = -24.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Отмена"
+script = ExtResource("27_g34gq")
+panel_to_close = NodePath("..")
+
+[node name="hint" type="Label" parent="menu/main_menu/load" unique_id=1594535621]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 360.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.73333335)
+theme_override_font_sizes/font_size = 10
+text = "Игра автоматически сохраняется при выходе"
+vertical_alignment = 1
+
+[node name="translate" type="Node" parent="menu/main_menu" unique_id=1150022051]
+script = ExtResource("23_vbuu3")
+nodes = Array[ExtResource("24_xqxf2")]([SubResource("Resource_vchkt"), SubResource("Resource_bjg73"), SubResource("Resource_g34gq"), SubResource("Resource_soql2"), SubResource("Resource_u01n2"), SubResource("Resource_qu0hn")])
+
 [node name="black_screen" type="ColorRect" parent="menu" unique_id=357954745]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1502,3 +1641,10 @@ anim_to_skip = NodePath("..")
 script = ExtResource("31_iaogd")
 black_screen = NodePath("../../menu/black_screen")
 next_level = "shop"
+save_level_num = 1
+
+[connection signal="pressed" from="menu/main_menu/load_button" to="menu/main_menu/load_button" method="_on_pressed"]
+[connection signal="pressed" from="menu/main_menu/load/container/shop" to="menu/main_menu/load/container/shop" method="_on_pressed"]
+[connection signal="pressed" from="menu/main_menu/load/container/gas_station" to="menu/main_menu/load/container/gas_station" method="_on_pressed"]
+[connection signal="pressed" from="menu/main_menu/load/container/cave" to="menu/main_menu/load/container/cave" method="_on_pressed"]
+[connection signal="pressed" from="menu/main_menu/load/cancel" to="menu/main_menu/load/cancel" method="_on_pressed"]
