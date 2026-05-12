@@ -10,5 +10,6 @@ enum Materials {
 	Dirt,
 	Grass,
 	Water,
-	Wood
+	Wood,
+	Soft
 }
