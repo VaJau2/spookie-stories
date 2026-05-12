@@ -78,6 +78,8 @@ func _process(delta: float) -> void:
 
 
 func _on_shoot(pos: Vector2) -> void:
+	if !moving_controller.may_move: return
+	
 	if ammo_count <= 0: 
 		audi.stream = no_ammo_sound
 		audi.play()

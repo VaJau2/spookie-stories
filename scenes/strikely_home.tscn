@@ -1,0 +1,680 @@
+[gd_scene format=3 uid="uid://cpqdbe1lntqbt"]
+
+[ext_resource type="Texture2D" uid="uid://bcyya3ttxd3tm" path="res://assets/sprites/props/strikely-home/room_back.png" id="1_fkov3"]
+[ext_resource type="Texture2D" uid="uid://ujmvgescm3p0" path="res://assets/sprites/props/strikely-home/bed.png" id="2_h7bjg"]
+[ext_resource type="Texture2D" uid="uid://bxo1qdd72avt1" path="res://assets/sprites/props/strikely-home/bed_table.png" id="3_tir7i"]
+[ext_resource type="Texture2D" uid="uid://h7kajoo3xa5p" path="res://assets/sprites/props/strikely-home/cabinet.png" id="4_u1r7d"]
+[ext_resource type="Texture2D" uid="uid://fwx6x6alxjqs" path="res://assets/sprites/props/strikely-home/floor_lamp.png" id="5_wujoc"]
+[ext_resource type="Texture2D" uid="uid://5mj2cqjpt1uq" path="res://assets/sprites/props/strikely-home/suitcase.png" id="6_hymxt"]
+[ext_resource type="Texture2D" uid="uid://bv77qdws2giik" path="res://assets/sprites/props/strikely-home/strikely-table.png" id="7_v3bfj"]
+[ext_resource type="Texture2D" uid="uid://ijllttw8t2wc" path="res://assets/sprites/props/strikely-home/door.png" id="8_y4xsm"]
+[ext_resource type="Texture2D" uid="uid://bx47r7h0rydte" path="res://assets/sprites/props/strikely-home/pillow.png" id="9_7y7dn"]
+[ext_resource type="Texture2D" uid="uid://lk8uskvvb6g" path="res://assets/sprites/props/strikely-home/poster.png" id="10_vmj86"]
+[ext_resource type="Texture2D" uid="uid://sumkdj7pgbq3" path="res://assets/sprites/props/strikely-home/corridor-2-floor.png" id="11_7y7dn"]
+[ext_resource type="Script" uid="uid://h3usbdgn6og7" path="res://assets/scripts/background/teleportArea.gd" id="11_87wk1"]
+[ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/players/player.tscn" id="11_h7bjg"]
+[ext_resource type="Texture2D" uid="uid://vc1xl4ckrj0x" path="res://assets/sprites/props/strikely-home/stairs_fence.png" id="12_5l7pm"]
+[ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="12_hymxt"]
+[ext_resource type="AudioStream" uid="uid://dtj0dkgj2mv3u" path="res://assets/audio/furniture/doorOpen.wav" id="12_u6pfn"]
+[ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="12_y4xsm"]
+[ext_resource type="Texture2D" uid="uid://cxfuaobj8lgq" path="res://assets/sprites/props/strikely-home/wall-clock.png" id="13_5f00d"]
+[ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="13_v3bfj"]
+[ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="14_y4xsm"]
+[ext_resource type="Script" uid="uid://cda44q040yc17" path="res://assets/scripts/background/backScreenDissapear.gd" id="15_7y7dn"]
+[ext_resource type="Texture2D" uid="uid://b3yhwneyhhim3" path="res://assets/sprites/props/strikely-home/corridor-1-floor.png" id="16_1rnhy"]
+[ext_resource type="Script" uid="uid://dnjqvmvhhavte" path="res://assets/scripts/scenario/gasStation/changeLight.gd" id="17_7y7dn"]
+[ext_resource type="Texture2D" uid="uid://ce6h6sn2piiea" path="res://assets/sprites/props/strikely-home/stairs.png" id="17_podny"]
+[ext_resource type="Texture2D" uid="uid://ci02h0c8uu385" path="res://assets/sprites/props/strikely-home/flower.png" id="18_en6tw"]
+[ext_resource type="Texture2D" uid="uid://tk450turnp57" path="res://assets/sprites/props/strikely-home/kitchen.png" id="19_rr13i"]
+[ext_resource type="Texture2D" uid="uid://bmwim06or0y2x" path="res://assets/sprites/props/strikely-home/fireplace.png" id="20_dw1t4"]
+[ext_resource type="Texture2D" uid="uid://7ju3h3f2sevb" path="res://assets/sprites/props/strikely-home/sofa.png" id="21_tgejo"]
+[ext_resource type="Texture2D" uid="uid://bccrelgfg7bn3" path="res://assets/sprites/props/strikely-home/kitchen-table.png" id="22_l3m3e"]
+[ext_resource type="Texture2D" uid="uid://bluqs7yefjncq" path="res://assets/sprites/props/strikely-home/kitchen-furniture.png" id="23_v4y63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5l7pm"]
+size = Vector2(384, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f00d"]
+size = Vector2(16, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87wk1"]
+size = Vector2(133, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4xsm"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6pfn"]
+size = Vector2(37, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gtxk"]
+size = Vector2(39, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rnhy"]
+size = Vector2(21.5, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_podny"]
+size = Vector2(23, 17.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_en6tw"]
+size = Vector2(94, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3m3e"]
+size = Vector2(47, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfn2"]
+size = Vector2(443, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12shk"]
+size = Vector2(443, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr13i"]
+size = Vector2(11.5, 145.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw1t4"]
+size = Vector2(167, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgejo"]
+size = Vector2(11, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg2p7"]
+size = Vector2(151, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78fna"]
+size = Vector2(129, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y63"]
+size = Vector2(209, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvy3r"]
+size = Vector2(233, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q03yp"]
+size = Vector2(12, 279)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_255ji"]
+size = Vector2(436, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wv0sm"]
+size = Vector2(9, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgqt4"]
+size = Vector2(38, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og7rt"]
+size = Vector2(180.56638, 6.117218)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3ky8"]
+size = Vector2(221.0512, 16.338867)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtpjm"]
+size = Vector2(71, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buj78"]
+size = Vector2(57.451233, 34.89875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqukg"]
+size = Vector2(224, 63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv42n"]
+size = Vector2(446, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yojis"]
+size = Vector2(13, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce3ou"]
+size = Vector2(201, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hppya"]
+size = Vector2(233, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgrem"]
+size = Vector2(92, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbp25"]
+size = Vector2(44, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmvdn"]
+size = Vector2(83, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f81xj"]
+size = Vector2(112, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om7f1"]
+size = Vector2(40, 178)
+
+[node name="main" type="Node2D" unique_id=660872533]
+y_sort_enabled = true
+
+[node name="strikely_room" type="Node2D" parent="." unique_id=1286438506]
+y_sort_enabled = true
+
+[node name="back" type="StaticBody2D" parent="strikely_room" unique_id=1576183204]
+z_index = -1
+
+[node name="RoomBack" type="Sprite2D" parent="strikely_room/back" unique_id=1812158750]
+position = Vector2(40, 160)
+texture = ExtResource("1_fkov3")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/back" unique_id=1615961583]
+position = Vector2(39, 114)
+shape = SubResource("RectangleShape2D_5l7pm")
+
+[node name="shape2" type="CollisionShape2D" parent="strikely_room/back" unique_id=1779048903]
+position = Vector2(40, 318)
+shape = SubResource("RectangleShape2D_5l7pm")
+
+[node name="shape3" type="CollisionShape2D" parent="strikely_room/back" unique_id=1167112948]
+position = Vector2(237, 216)
+shape = SubResource("RectangleShape2D_5f00d")
+
+[node name="shape4" type="CollisionShape2D" parent="strikely_room/back" unique_id=637823717]
+position = Vector2(-152, 216)
+shape = SubResource("RectangleShape2D_5f00d")
+
+[node name="bed" type="StaticBody2D" parent="strikely_room" unique_id=974750540]
+position = Vector2(164, 221)
+
+[node name="Bed" type="Sprite2D" parent="strikely_room/bed" unique_id=941293908]
+position = Vector2(0, -14)
+texture = ExtResource("2_h7bjg")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/bed" unique_id=1716259044]
+position = Vector2(-2.5, -10)
+shape = SubResource("RectangleShape2D_87wk1")
+
+[node name="shape2" type="CollisionShape2D" parent="strikely_room/bed" unique_id=1674256195]
+position = Vector2(-57, -40)
+shape = SubResource("RectangleShape2D_y4xsm")
+
+[node name="shape3" type="CollisionShape2D" parent="strikely_room/bed" unique_id=514620623]
+position = Vector2(59, -42)
+shape = SubResource("RectangleShape2D_y4xsm")
+
+[node name="bed_table" type="StaticBody2D" parent="strikely_room" unique_id=1985888793]
+position = Vector2(207, 257)
+
+[node name="sprite" type="Sprite2D" parent="strikely_room/bed_table" unique_id=367669767]
+position = Vector2(1, 7)
+texture = ExtResource("3_tir7i")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/bed_table" unique_id=391153296]
+position = Vector2(2.5, 10)
+shape = SubResource("RectangleShape2D_u6pfn")
+
+[node name="cabinet" type="StaticBody2D" parent="strikely_room" unique_id=1156803473]
+position = Vector2(-126, 277)
+
+[node name="sprite" type="Sprite2D" parent="strikely_room/cabinet" unique_id=670188435]
+position = Vector2(1, -50)
+texture = ExtResource("4_u1r7d")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/cabinet" unique_id=305512303]
+position = Vector2(-1, -4)
+shape = SubResource("RectangleShape2D_7gtxk")
+
+[node name="floor_lamp" type="StaticBody2D" parent="strikely_room" unique_id=1097528811]
+position = Vector2(199, 130)
+
+[node name="sprite" type="Sprite2D" parent="strikely_room/floor_lamp" unique_id=1634945852]
+position = Vector2(0, -39)
+texture = ExtResource("5_wujoc")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/floor_lamp" unique_id=182421647]
+position = Vector2(0.25, -0.5)
+shape = SubResource("RectangleShape2D_1rnhy")
+
+[node name="suitcase" type="StaticBody2D" parent="strikely_room" unique_id=489261512]
+position = Vector2(109, 125)
+
+[node name="sprite" type="Sprite2D" parent="strikely_room/suitcase" unique_id=1247783703]
+position = Vector2(0, -9)
+texture = ExtResource("6_hymxt")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/suitcase" unique_id=71689115]
+position = Vector2(0, -6.625)
+shape = SubResource("RectangleShape2D_podny")
+
+[node name="table" type="StaticBody2D" parent="strikely_room" unique_id=550370591]
+position = Vector2(-57, 145)
+
+[node name="sprite" type="Sprite2D" parent="strikely_room/table" unique_id=475398053]
+position = Vector2(-1, -22)
+texture = ExtResource("7_v3bfj")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/table" unique_id=787250961]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_en6tw")
+
+[node name="Door" type="Sprite2D" parent="strikely_room" unique_id=916600427]
+position = Vector2(36, 81)
+texture = ExtResource("8_y4xsm")
+
+[node name="door_audi" type="AudioStreamPlayer2D" parent="strikely_room/Door" unique_id=692670010]
+position = Vector2(0, -1)
+bus = &"Sound"
+
+[node name="spawn" type="Node2D" parent="strikely_room/Door" unique_id=1346689140]
+position = Vector2(44, 71)
+
+[node name="Poster" type="Sprite2D" parent="strikely_room" unique_id=54037807]
+position = Vector2(144, 61)
+texture = ExtResource("10_vmj86")
+
+[node name="pillow" type="Node2D" parent="strikely_room" unique_id=833470230]
+position = Vector2(-64, 0)
+
+[node name="Pillow" type="Sprite2D" parent="strikely_room/pillow" unique_id=39091092]
+z_as_relative = false
+position = Vector2(5, 163)
+texture = ExtResource("9_7y7dn")
+
+[node name="teleport_area" type="Area2D" parent="strikely_room" unique_id=731775901 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable")]
+position = Vector2(37, 125)
+script = ExtResource("11_87wk1")
+trigger_button = "ui_up"
+spawn_point = NodePath("../../corridor_2_floor/Door1/spawn")
+player_name = "strikey"
+door_audi = NodePath("../../corridor_2_floor/Door1/door_audi")
+door_sound = ExtResource("12_u6pfn")
+room_to_enable = NodePath("../../corridor_2_floor")
+room_to_disable = NodePath("..")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/teleport_area" unique_id=133898955]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_l3m3e")
+
+[node name="corridor_2_floor" type="Node2D" parent="." unique_id=811182389]
+y_sort_enabled = true
+position = Vector2(1441, 109)
+
+[node name="back" type="StaticBody2D" parent="corridor_2_floor" unique_id=667160603]
+z_index = -1
+
+[node name="sprite" type="Sprite2D" parent="corridor_2_floor/back" unique_id=319478773]
+position = Vector2(-3, 19)
+texture = ExtResource("11_7y7dn")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_2_floor/back" unique_id=1855557294]
+position = Vector2(-3.5, -22.5)
+shape = SubResource("RectangleShape2D_2sfn2")
+
+[node name="shape2" type="CollisionShape2D" parent="corridor_2_floor/back" unique_id=1057289948]
+position = Vector2(-2, 154.25)
+shape = SubResource("RectangleShape2D_12shk")
+
+[node name="shape3" type="CollisionShape2D" parent="corridor_2_floor/back" unique_id=2068162034]
+position = Vector2(216.25, 74.125)
+shape = SubResource("RectangleShape2D_rr13i")
+
+[node name="shape4" type="CollisionShape2D" parent="corridor_2_floor/back" unique_id=382291981]
+position = Vector2(-222, 74)
+shape = SubResource("RectangleShape2D_rr13i")
+
+[node name="fence" type="StaticBody2D" parent="corridor_2_floor" unique_id=1741754558]
+position = Vector2(-65, 101)
+
+[node name="sprite" type="Sprite2D" parent="corridor_2_floor/fence" unique_id=1030548329]
+position = Vector2(1, 0)
+texture = ExtResource("12_5l7pm")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_2_floor/fence" unique_id=116271139]
+position = Vector2(1.5, -33.5)
+shape = SubResource("RectangleShape2D_dw1t4")
+
+[node name="shape2" type="CollisionShape2D" parent="corridor_2_floor/fence" unique_id=537056670]
+position = Vector2(79.5, 12)
+shape = SubResource("RectangleShape2D_tgejo")
+
+[node name="shape3" type="CollisionShape2D" parent="corridor_2_floor/fence" unique_id=951943095]
+position = Vector2(-3.5, -4)
+shape = SubResource("RectangleShape2D_wg2p7")
+
+[node name="Door1" type="Sprite2D" parent="corridor_2_floor" unique_id=493044591]
+position = Vector2(-99, -41)
+texture = ExtResource("8_y4xsm")
+
+[node name="door_audi" type="AudioStreamPlayer2D" parent="corridor_2_floor/Door1" unique_id=963051335]
+position = Vector2(0, -1)
+bus = &"Sound"
+
+[node name="spawn" type="Node2D" parent="corridor_2_floor/Door1" unique_id=531677624]
+position = Vector2(46, 67)
+
+[node name="Door" type="Sprite2D" parent="corridor_2_floor" unique_id=580137535]
+position = Vector2(100, -41)
+texture = ExtResource("8_y4xsm")
+
+[node name="floor_lamp2" type="StaticBody2D" parent="corridor_2_floor" unique_id=1050236203]
+position = Vector2(168, 11)
+
+[node name="sprite" type="Sprite2D" parent="corridor_2_floor/floor_lamp2" unique_id=962108645]
+position = Vector2(0, -39)
+texture = ExtResource("5_wujoc")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_2_floor/floor_lamp2" unique_id=335687292]
+position = Vector2(0.25, -0.5)
+shape = SubResource("RectangleShape2D_1rnhy")
+
+[node name="clock" type="Sprite2D" parent="corridor_2_floor" unique_id=1141109806]
+position = Vector2(4, -59)
+texture = ExtResource("13_5f00d")
+
+[node name="teleport_to_room" type="Area2D" parent="corridor_2_floor" unique_id=2139484283 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable")]
+position = Vector2(-99, 4)
+script = ExtResource("11_87wk1")
+trigger_button = "ui_up"
+spawn_point = NodePath("../../strikely_room/Door/spawn")
+player_name = "strikey"
+door_audi = NodePath("../../strikely_room/Door/door_audi")
+door_sound = ExtResource("12_u6pfn")
+room_to_enable = NodePath("../../strikely_room")
+room_to_disable = NodePath("..")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_2_floor/teleport_to_room" unique_id=1463732895]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_l3m3e")
+
+[node name="teleport_to_1_floor" type="Area2D" parent="corridor_2_floor" unique_id=2077851984 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable")]
+position = Vector2(-115, 134)
+script = ExtResource("11_87wk1")
+trigger_button = "ui_right"
+spawn_point = NodePath("../../corridor_1_floor/stairs_spawn")
+player_name = "strikey"
+door_audi = NodePath("../../corridor_1_floor/stairs/stairs_audi")
+room_to_enable = NodePath("../../corridor_1_floor")
+room_to_disable = NodePath("..")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_2_floor/teleport_to_1_floor" unique_id=1913663558]
+position = Vector2(59.5, -21)
+shape = SubResource("RectangleShape2D_78fna")
+
+[node name="stairs_spawn" type="Node2D" parent="corridor_2_floor" unique_id=383569063]
+position = Vector2(-187, 130)
+
+[node name="stairs_audi2" type="AudioStreamPlayer2D" parent="corridor_2_floor/stairs_spawn" unique_id=586062028]
+position = Vector2(-1352, 647)
+bus = &"Sound"
+
+[node name="corridor_1_floor" type="Node2D" parent="." unique_id=1191003283]
+y_sort_enabled = true
+position = Vector2(5, 832)
+
+[node name="back" type="StaticBody2D" parent="corridor_1_floor" unique_id=515376387]
+z_index = -1
+
+[node name="sprite" type="Sprite2D" parent="corridor_1_floor/back" unique_id=1105750141]
+position = Vector2(18, 29)
+texture = ExtResource("16_1rnhy")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_1_floor/back" unique_id=2141975714]
+position = Vector2(-99.5, -55.5)
+shape = SubResource("RectangleShape2D_v4y63")
+
+[node name="shape2" type="CollisionShape2D" parent="corridor_1_floor/back" unique_id=80393542]
+position = Vector2(121.5, -104.5)
+shape = SubResource("RectangleShape2D_rvy3r")
+
+[node name="shape3" type="CollisionShape2D" parent="corridor_1_floor/back" unique_id=874203719]
+position = Vector2(236, 28.5)
+shape = SubResource("RectangleShape2D_q03yp")
+
+[node name="shape4" type="CollisionShape2D" parent="corridor_1_floor/back" unique_id=175896987]
+position = Vector2(13, 163)
+shape = SubResource("RectangleShape2D_255ji")
+
+[node name="shape5" type="CollisionShape2D" parent="corridor_1_floor/back" unique_id=232573120]
+position = Vector2(-199.5, 78)
+shape = SubResource("RectangleShape2D_wv0sm")
+
+[node name="shape6" type="CollisionShape2D" parent="corridor_1_floor/back" unique_id=395252808]
+position = Vector2(211, -74)
+shape = SubResource("RectangleShape2D_xgqt4")
+
+[node name="stairs" type="StaticBody2D" parent="corridor_1_floor" unique_id=216627458]
+position = Vector2(-2, 71)
+
+[node name="sprite" type="Sprite2D" parent="corridor_1_floor/stairs" unique_id=1177362203]
+position = Vector2(-97, -42)
+texture = ExtResource("17_podny")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_1_floor/stairs" unique_id=1591885569]
+position = Vector2(-85.08699, -20.320984)
+rotation = 0.37478614
+shape = SubResource("RectangleShape2D_og7rt")
+
+[node name="shape3" type="CollisionShape2D" parent="corridor_1_floor/stairs" unique_id=1195574000]
+position = Vector2(-82, 18)
+rotation = 0.6361253
+shape = SubResource("RectangleShape2D_m3ky8")
+
+[node name="shape2" type="CollisionShape2D" parent="corridor_1_floor/stairs" unique_id=1495782561]
+position = Vector2(-158.5, -87)
+shape = SubResource("RectangleShape2D_qtpjm")
+
+[node name="stairs_audi" type="AudioStreamPlayer2D" parent="corridor_1_floor/stairs" unique_id=1628115901]
+position = Vector2(-101, -17)
+bus = &"Sound"
+
+[node name="floor_lamp3" type="StaticBody2D" parent="corridor_1_floor" unique_id=926047320]
+position = Vector2(209, 33)
+
+[node name="sprite" type="Sprite2D" parent="corridor_1_floor/floor_lamp3" unique_id=195200460]
+position = Vector2(0, -39)
+texture = ExtResource("5_wujoc")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_1_floor/floor_lamp3" unique_id=509802239]
+position = Vector2(0.25, -0.5)
+shape = SubResource("RectangleShape2D_1rnhy")
+
+[node name="flower" type="StaticBody2D" parent="corridor_1_floor" unique_id=2023018654]
+position = Vector2(214, 144)
+
+[node name="sprite" type="Sprite2D" parent="corridor_1_floor/flower" unique_id=442729929]
+position = Vector2(-1, -17)
+scale = Vector2(0.6536244, 0.6536244)
+texture = ExtResource("18_en6tw")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_1_floor/flower" unique_id=600043600]
+position = Vector2(0.25, -0.5)
+shape = SubResource("RectangleShape2D_1rnhy")
+
+[node name="stairs_spawn" type="Node2D" parent="corridor_1_floor" unique_id=1973691578]
+position = Vector2(-3, 114)
+
+[node name="kitchen_spawn" type="Node2D" parent="corridor_1_floor" unique_id=1876676940]
+position = Vector2(122, 3)
+
+[node name="teleport_to_2_floor" type="Area2D" parent="corridor_1_floor" unique_id=898121501 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable")]
+z_index = 1
+z_as_relative = false
+position = Vector2(-118, 64)
+script = ExtResource("11_87wk1")
+trigger_button = "ui_left"
+spawn_point = NodePath("../../corridor_2_floor/stairs_spawn")
+player_name = "strikey"
+door_audi = NodePath("../../corridor_2_floor/stairs_spawn/stairs_audi2")
+room_to_enable = NodePath("../../corridor_2_floor")
+room_to_disable = NodePath("..")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_1_floor/teleport_to_2_floor" unique_id=1499592553]
+position = Vector2(32.393047, 3.5342407)
+rotation = 0.44219851
+shape = SubResource("RectangleShape2D_buj78")
+
+[node name="teleport_to_kitchen" type="Area2D" parent="corridor_1_floor" unique_id=327241281 node_paths=PackedStringArray("spawn_point", "room_to_enable", "room_to_disable")]
+z_index = 1
+z_as_relative = false
+position = Vector2(108, -25)
+script = ExtResource("11_87wk1")
+trigger_button = "ui_up"
+spawn_point = NodePath("../../kitchen/spawn")
+player_name = "strikey"
+room_to_enable = NodePath("../../kitchen")
+room_to_disable = NodePath("..")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_1_floor/teleport_to_kitchen" unique_id=1716164444]
+position = Vector2(11, -38.5)
+shape = SubResource("RectangleShape2D_lqukg")
+
+[node name="kitchen" type="Node2D" parent="." unique_id=808291526]
+y_sort_enabled = true
+position = Vector2(1452, 683)
+
+[node name="back" type="StaticBody2D" parent="kitchen" unique_id=1950177958]
+z_index = -1
+
+[node name="sprite" type="Sprite2D" parent="kitchen/back" unique_id=814779647]
+position = Vector2(11, 26)
+texture = ExtResource("19_rr13i")
+
+[node name="shape" type="CollisionShape2D" parent="kitchen/back" unique_id=797828166]
+position = Vector2(13, -20.5)
+shape = SubResource("RectangleShape2D_iv42n")
+
+[node name="shape2" type="CollisionShape2D" parent="kitchen/back" unique_id=127820728]
+position = Vector2(231.5, 79)
+shape = SubResource("RectangleShape2D_yojis")
+
+[node name="shape3" type="CollisionShape2D" parent="kitchen/back" unique_id=516311896]
+position = Vector2(-209, 79)
+shape = SubResource("RectangleShape2D_yojis")
+
+[node name="shape4" type="CollisionShape2D" parent="kitchen/back" unique_id=1498581946]
+position = Vector2(-100.5, 156.5)
+shape = SubResource("RectangleShape2D_ce3ou")
+
+[node name="shape5" type="CollisionShape2D" parent="kitchen/back" unique_id=1753643557]
+position = Vector2(114.5, 162)
+shape = SubResource("RectangleShape2D_hppya")
+
+[node name="fireplace" type="StaticBody2D" parent="kitchen" unique_id=485317266]
+position = Vector2(179, 23)
+
+[node name="sprite" type="Sprite2D" parent="kitchen/fireplace" unique_id=286586035]
+position = Vector2(0, -55)
+texture = ExtResource("20_dw1t4")
+
+[node name="shape" type="CollisionShape2D" parent="kitchen/fireplace" unique_id=1360974992]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_sgrem")
+
+[node name="sofa" type="StaticBody2D" parent="kitchen" unique_id=1200520014]
+position = Vector2(203, 125)
+
+[node name="sprite" type="Sprite2D" parent="kitchen/sofa" unique_id=1349169414]
+position = Vector2(-1, -41)
+texture = ExtResource("21_tgejo")
+
+[node name="shape" type="CollisionShape2D" parent="kitchen/sofa" unique_id=414227740]
+position = Vector2(0, -34.5)
+shape = SubResource("RectangleShape2D_wbp25")
+
+[node name="table" type="StaticBody2D" parent="kitchen" unique_id=861329394]
+position = Vector2(36, 36)
+
+[node name="sprite" type="Sprite2D" parent="kitchen/table" unique_id=1801999894]
+position = Vector2(1, -18)
+texture = ExtResource("22_l3m3e")
+
+[node name="shape" type="CollisionShape2D" parent="kitchen/table" unique_id=1173584318]
+position = Vector2(0.5, -4)
+shape = SubResource("RectangleShape2D_hmvdn")
+
+[node name="furniture" type="StaticBody2D" parent="kitchen" unique_id=871717271]
+position = Vector2(-111, 26)
+
+[node name="sprite" type="Sprite2D" parent="kitchen/furniture" unique_id=2124166352]
+position = Vector2(-16, -4)
+texture = ExtResource("23_v4y63")
+
+[node name="shape" type="CollisionShape2D" parent="kitchen/furniture" unique_id=147208015]
+position = Vector2(5, -28.5)
+shape = SubResource("RectangleShape2D_f81xj")
+
+[node name="shape2" type="CollisionShape2D" parent="kitchen/furniture" unique_id=1384012856]
+position = Vector2(-72, 34)
+shape = SubResource("RectangleShape2D_om7f1")
+
+[node name="pillow2" type="Node2D" parent="kitchen" unique_id=757947788]
+position = Vector2(-35, -123)
+
+[node name="Pillow" type="Sprite2D" parent="kitchen/pillow2" unique_id=1613205708]
+z_as_relative = false
+position = Vector2(5, 163)
+texture = ExtResource("9_7y7dn")
+
+[node name="pillow3" type="Node2D" parent="kitchen" unique_id=485247001]
+position = Vector2(97, -125)
+
+[node name="Pillow" type="Sprite2D" parent="kitchen/pillow3" unique_id=1336206504]
+z_as_relative = false
+position = Vector2(5, 163)
+texture = ExtResource("9_7y7dn")
+
+[node name="spawn" type="Node2D" parent="kitchen" unique_id=964260293]
+position = Vector2(92, 135)
+
+[node name="teleport_area" type="Area2D" parent="kitchen" unique_id=1509983518 node_paths=PackedStringArray("spawn_point", "room_to_enable", "room_to_disable")]
+z_index = 1
+z_as_relative = false
+position = Vector2(102, 214)
+script = ExtResource("11_87wk1")
+trigger_button = "ui_down"
+spawn_point = NodePath("../../corridor_1_floor/kitchen_spawn")
+player_name = "strikey"
+room_to_enable = NodePath("../../corridor_1_floor")
+room_to_disable = NodePath("..")
+
+[node name="shape" type="CollisionShape2D" parent="kitchen/teleport_area" unique_id=2018263725]
+position = Vector2(11, -43.5)
+shape = SubResource("RectangleShape2D_lqukg")
+
+[node name="strikey" parent="." unique_id=301655442 instance=ExtResource("11_h7bjg")]
+position = Vector2(13, 222)
+
+[node name="light" type="PointLight2D" parent="strikey" unique_id=1974879021]
+energy = 0.6
+texture = ExtResource("12_y4xsm")
+texture_scale = 0.9
+
+[node name="input" type="Node" parent="." unique_id=1809801128]
+script = ExtResource("12_hymxt")
+
+[node name="menu" type="CanvasLayer" parent="." unique_id=380110619]
+visible = false
+
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("13_v3bfj")]
+texture_filter = 1
+
+[node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("14_y4xsm")]
+visible = false
+
+[node name="black_screen" type="ColorRect" parent="menu" unique_id=805926266]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("15_7y7dn")
+
+[node name="directional_light" type="DirectionalLight2D" parent="." unique_id=273689749]
+color = Color(0.6392157, 0.36078432, 0.32941177, 1)
+blend_mode = 2
+script = ExtResource("17_7y7dn")
+new_color = Color(0.13074094, 0.33328545, 0.71041954, 1)
+speed = 0.1
+
+[connection signal="body_entered" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_entered"]
+[connection signal="body_exited" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_exited"]
+[connection signal="body_entered" from="corridor_2_floor/teleport_to_room" to="corridor_2_floor/teleport_to_room" method="_on_body_entered"]
+[connection signal="body_exited" from="corridor_2_floor/teleport_to_room" to="corridor_2_floor/teleport_to_room" method="_on_body_exited"]
+[connection signal="body_entered" from="corridor_2_floor/teleport_to_1_floor" to="corridor_2_floor/teleport_to_1_floor" method="_on_body_entered"]
+[connection signal="body_exited" from="corridor_2_floor/teleport_to_1_floor" to="corridor_2_floor/teleport_to_1_floor" method="_on_body_exited"]
+[connection signal="body_entered" from="corridor_1_floor/teleport_to_2_floor" to="corridor_1_floor/teleport_to_2_floor" method="_on_body_entered"]
+[connection signal="body_exited" from="corridor_1_floor/teleport_to_2_floor" to="corridor_1_floor/teleport_to_2_floor" method="_on_body_exited"]
+[connection signal="body_entered" from="corridor_1_floor/teleport_to_kitchen" to="corridor_1_floor/teleport_to_kitchen" method="_on_body_entered"]
+[connection signal="body_exited" from="corridor_1_floor/teleport_to_kitchen" to="corridor_1_floor/teleport_to_kitchen" method="_on_body_exited"]
+[connection signal="body_entered" from="kitchen/teleport_area" to="kitchen/teleport_area" method="_on_body_entered"]
+[connection signal="body_exited" from="kitchen/teleport_area" to="kitchen/teleport_area" method="_on_body_exited"]

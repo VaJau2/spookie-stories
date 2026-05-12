@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="4_cameo"]
 [ext_resource type="Texture2D" uid="uid://brt5qydc1sdwq" path="res://assets/sprites/tiles/cave/dynamite.png" id="5_aises"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="5_uonky"]
+[ext_resource type="Script" uid="uid://bplrisr5k7son" path="res://assets/scripts/scenario/cave/lightBlindArea.gd" id="7_4edis"]
 [ext_resource type="PackedScene" uid="uid://c8wecbc3f3d3p" path="res://objects/prefabs/cave/ammo.tscn" id="7_do11t"]
 [ext_resource type="PackedScene" uid="uid://r0wnvqtifeeq" path="res://objects/prefabs/cave/heal_potion.tscn" id="8_dkwia"]
 [ext_resource type="Script" uid="uid://bwr5h4bkupibq" path="res://assets/scripts/scenario/cave/caveDirLight.gd" id="9_l4upw"]
@@ -44,6 +45,9 @@ tile_size = Vector2i(27, 32)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/1 = SubResource("TileSetAtlasSource_c3r8b")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kntxa"]
+radius = 48.373547
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ow3e"]
 bg_color = Color(0.3963727, 0.053997196, 0, 1)
@@ -176,11 +180,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area" type="Area2D" parent="tiles/wall-light/wall-light" unique_id=1489620892]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light/light-blind-area" unique_id=428348740]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light2" type="PointLight2D" parent="tiles/wall-light" unique_id=1875561053]
 position = Vector2(-224, -2)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.6
+
+[node name="light-blind-area2" type="Area2D" parent="tiles/wall-light/wall-light2" unique_id=628218694]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light2/light-blind-area2" unique_id=843987163]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="wall-light3" type="PointLight2D" parent="tiles/wall-light" unique_id=259281825]
 position = Vector2(-392, -180)
@@ -188,11 +204,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area3" type="Area2D" parent="tiles/wall-light/wall-light3" unique_id=788079005]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light3/light-blind-area3" unique_id=999215311]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light4" type="PointLight2D" parent="tiles/wall-light" unique_id=1616547343]
 position = Vector2(-1224, -244)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
+
+[node name="light-blind-area4" type="Area2D" parent="tiles/wall-light/wall-light4" unique_id=1449509172]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light4/light-blind-area4" unique_id=240908674]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="wall-light5" type="PointLight2D" parent="tiles/wall-light" unique_id=343370198]
 position = Vector2(-1145, -579)
@@ -200,11 +228,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area5" type="Area2D" parent="tiles/wall-light/wall-light5" unique_id=1789404360]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light5/light-blind-area5" unique_id=1618144246]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light6" type="PointLight2D" parent="tiles/wall-light" unique_id=921080506]
 position = Vector2(-1816, -659)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
+
+[node name="light-blind-area6" type="Area2D" parent="tiles/wall-light/wall-light6" unique_id=1505803717]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light6/light-blind-area6" unique_id=1558255363]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="wall-light7" type="PointLight2D" parent="tiles/wall-light" unique_id=117861462]
 position = Vector2(-1289, -900)
@@ -212,11 +252,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area7" type="Area2D" parent="tiles/wall-light/wall-light7" unique_id=1474578288]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light7/light-blind-area7" unique_id=2009043444]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light8" type="PointLight2D" parent="tiles/wall-light" unique_id=1597380946]
 position = Vector2(-1097, -899)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
+
+[node name="light-blind-area8" type="Area2D" parent="tiles/wall-light/wall-light8" unique_id=1700066932]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light8/light-blind-area8" unique_id=906904907]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="wall-light9" type="PointLight2D" parent="tiles/wall-light" unique_id=1426991005]
 position = Vector2(-489, -675)
@@ -224,11 +276,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area9" type="Area2D" parent="tiles/wall-light/wall-light9" unique_id=1601964305]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light9/light-blind-area9" unique_id=1022329053]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light10" type="PointLight2D" parent="tiles/wall-light" unique_id=276326698]
 position = Vector2(-265, -676)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
+
+[node name="light-blind-area10" type="Area2D" parent="tiles/wall-light/wall-light10" unique_id=794937020]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light10/light-blind-area10" unique_id=1562416260]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="wall-light11" type="PointLight2D" parent="tiles/wall-light" unique_id=552700839]
 position = Vector2(87, -674)
@@ -236,11 +300,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area11" type="Area2D" parent="tiles/wall-light/wall-light11" unique_id=1354552716]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light11/light-blind-area11" unique_id=1629038254]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light12" type="PointLight2D" parent="tiles/wall-light" unique_id=1406680704]
 position = Vector2(2, -338)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.6
+
+[node name="light-blind-area12" type="Area2D" parent="tiles/wall-light/wall-light12" unique_id=987925849]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light12/light-blind-area12" unique_id=1198037639]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="wall-light13" type="PointLight2D" parent="tiles/wall-light" unique_id=1114055090]
 position = Vector2(-833, -893)
@@ -254,11 +330,23 @@ color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
 
+[node name="light-blind-area14" type="Area2D" parent="tiles/wall-light/wall-light14" unique_id=1044698090]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light14/light-blind-area14" unique_id=1962822568]
+shape = SubResource("CircleShape2D_kntxa")
+
 [node name="wall-light15" type="PointLight2D" parent="tiles/wall-light" unique_id=1033369533]
 position = Vector2(1288, -259)
 color = Color(0.93787456, 0.7557918, 0.60107577, 1)
 texture = ExtResource("2_ip074")
 texture_scale = 0.4
+
+[node name="light-blind-area15" type="Area2D" parent="tiles/wall-light/wall-light15" unique_id=1271132142]
+script = ExtResource("7_4edis")
+
+[node name="shape" type="CollisionShape2D" parent="tiles/wall-light/wall-light15/light-blind-area15" unique_id=250393316]
+shape = SubResource("CircleShape2D_kntxa")
 
 [node name="ammo" type="Node2D" parent="tiles" unique_id=906752900]
 
@@ -308,11 +396,11 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1104, -8)
 scale = Vector2(0.5, 0.5)
 
-[node name="dir_light" type="DirectionalLight2D" parent="." unique_id=2070729886]
+[node name="cave_dir_light" type="DirectionalLight2D" parent="." unique_id=2070729886]
 color = Color(0, 0, 0, 1)
 blend_mode = 2
 script = ExtResource("9_l4upw")
-target_color = Color(0.1882353, 0.16470589, 0.20392157, 1)
+light_color = Color(0.1882353, 0.16470589, 0.20392157, 1)
 
 [node name="player" parent="." unique_id=1723412077 instance=ExtResource("2_6sqbx")]
 position = Vector2(1067, -2)
@@ -483,11 +571,11 @@ player_node = NodePath("../player")
 dialogue_file = "cave"
 dialogue_code = "chakky_leave"
 dialogue_code_short = "chakky_leave_short"
-dir_light = NodePath("../dir_light")
+dir_light = NodePath("../cave_dir_light")
 creepy_audi = NodePath("../audi_creepy_ambient")
 
 [node name="chakky_leave_timer" type="Timer" parent="chakky_leave" unique_id=330596068]
-wait_time = 90.0
+wait_time = 80.0
 one_shot = true
 
 [node name="finish_dialogue" type="Area2D" parent="." unique_id=170969135 node_paths=PackedStringArray("player_node", "dialogue_menu")]
@@ -508,6 +596,34 @@ script = ExtResource("28_kbaxk")
 black_screen = NodePath("../menu/black_screen")
 next_level = "forest4"
 
+[connection signal="body_entered" from="tiles/wall-light/wall-light/light-blind-area" to="tiles/wall-light/wall-light/light-blind-area" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light/light-blind-area" to="tiles/wall-light/wall-light/light-blind-area" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light2/light-blind-area2" to="tiles/wall-light/wall-light2/light-blind-area2" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light2/light-blind-area2" to="tiles/wall-light/wall-light2/light-blind-area2" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light3/light-blind-area3" to="tiles/wall-light/wall-light3/light-blind-area3" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light3/light-blind-area3" to="tiles/wall-light/wall-light3/light-blind-area3" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light4/light-blind-area4" to="tiles/wall-light/wall-light4/light-blind-area4" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light4/light-blind-area4" to="tiles/wall-light/wall-light4/light-blind-area4" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light5/light-blind-area5" to="tiles/wall-light/wall-light5/light-blind-area5" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light5/light-blind-area5" to="tiles/wall-light/wall-light5/light-blind-area5" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light6/light-blind-area6" to="tiles/wall-light/wall-light6/light-blind-area6" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light6/light-blind-area6" to="tiles/wall-light/wall-light6/light-blind-area6" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light7/light-blind-area7" to="tiles/wall-light/wall-light7/light-blind-area7" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light7/light-blind-area7" to="tiles/wall-light/wall-light7/light-blind-area7" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light8/light-blind-area8" to="tiles/wall-light/wall-light8/light-blind-area8" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light8/light-blind-area8" to="tiles/wall-light/wall-light8/light-blind-area8" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light9/light-blind-area9" to="tiles/wall-light/wall-light9/light-blind-area9" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light9/light-blind-area9" to="tiles/wall-light/wall-light9/light-blind-area9" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light10/light-blind-area10" to="tiles/wall-light/wall-light10/light-blind-area10" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light10/light-blind-area10" to="tiles/wall-light/wall-light10/light-blind-area10" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light11/light-blind-area11" to="tiles/wall-light/wall-light11/light-blind-area11" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light11/light-blind-area11" to="tiles/wall-light/wall-light11/light-blind-area11" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light12/light-blind-area12" to="tiles/wall-light/wall-light12/light-blind-area12" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light12/light-blind-area12" to="tiles/wall-light/wall-light12/light-blind-area12" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light14/light-blind-area14" to="tiles/wall-light/wall-light14/light-blind-area14" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light14/light-blind-area14" to="tiles/wall-light/wall-light14/light-blind-area14" method="_on_body_exited"]
+[connection signal="body_entered" from="tiles/wall-light/wall-light15/light-blind-area15" to="tiles/wall-light/wall-light15/light-blind-area15" method="_on_body_entered"]
+[connection signal="body_exited" from="tiles/wall-light/wall-light15/light-blind-area15" to="tiles/wall-light/wall-light15/light-blind-area15" method="_on_body_exited"]
 [connection signal="body_entered" from="start_dialogue" to="start_dialogue" method="_on_body_entered"]
 [connection signal="timeout" from="chakky_leave/chakky_leave_timer" to="chakky_leave" method="_on_timeout"]
 [connection signal="body_entered" from="finish_dialogue" to="finish_dialogue" method="_on_body_entered"]

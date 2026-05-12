@@ -21,4 +21,5 @@ func _process(delta: float) -> void:
 		if save_level_num > 0:
 			if Save.data["level_num"] < save_level_num:
 				Save.data["level_num"] = save_level_num
+				Save.save_data()
 		Scenes.goto_scene(next_level)

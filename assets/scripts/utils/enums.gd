@@ -9,5 +9,6 @@ enum Materials {
 	Stone,
 	Dirt,
 	Grass,
-	Water
+	Water,
+	Wood
 }

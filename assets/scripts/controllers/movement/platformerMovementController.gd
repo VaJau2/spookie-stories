@@ -24,13 +24,15 @@ func emit_move_signals() -> void:
 	super()
 
 
-func jump() -> void:
+func jump(dir_x: float = 0) -> void:
 	if !may_move: return
 	if !on_floor && on_floor_cooldown <= 0: return
 	on_floor_cooldown = 0
 	jumping.emit()
 	is_jumping = true
 	dir.y = -jump_force + 0.6 if is_running else -jump_force
+	if dir_x != 0:
+		dir.x = dir_x
 
 
 func _on_floor_changed() -> void:

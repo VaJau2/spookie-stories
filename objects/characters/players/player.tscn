@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://c6j5nqwe7x4v3"]
 
 [ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_s7pd4"]
+[ext_resource type="Texture2D" uid="uid://dts6m4gpnv8u4" path="res://assets/sprites/characters/strikely.png" id="2_l43oi"]
 [ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="2_qmg4u"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_up0fu"]
 [ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="4_3tm56"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="5_qmg4u"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s7pd4"]
-load_path = "res://.godot/imported/strikely.png-ade98236007b464835c325179fcf4896.ctex"
+[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="7_nyttx"]
+[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="8_a2g0u"]
+[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="9_lt0jn"]
+[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="10_s717i"]
+[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="11_xc67m"]
+[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="12_2aabm"]
+[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="13_3khfa"]
+[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="14_fb0o0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -104,6 +110,13 @@ _data = {
 &"walk": SubResource("Animation_b8q40")
 }
 
+[sub_resource type="Resource" id="Resource_iqgwf"]
+script = ExtResource("8_a2g0u")
+walk_sounds = Array[AudioStream]([ExtResource("12_2aabm"), ExtResource("13_3khfa"), ExtResource("14_fb0o0")])
+run_sounds = Array[AudioStream]([ExtResource("9_lt0jn"), ExtResource("10_s717i"), ExtResource("11_xc67m")])
+run_cooldown = 0.75
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
 [node name="pony" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 
@@ -116,7 +129,7 @@ texture = ExtResource("1_s7pd4")
 [node name="sprite" type="Sprite2D" parent="." unique_id=1857052420]
 texture_filter = 1
 position = Vector2(1, -32)
-texture = SubResource("CompressedTexture2D_s7pd4")
+texture = ExtResource("2_l43oi")
 hframes = 8
 vframes = 6
 
@@ -158,3 +171,9 @@ movement_controller = NodePath("../movementController")
 [node name="camera" type="Camera2D" parent="." unique_id=1899412962]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
+bus = &"Sound"
+script = ExtResource("7_nyttx")
+movement_controller = NodePath("../movementController")
+steps_data = Array[ExtResource("8_a2g0u")]([SubResource("Resource_iqgwf")])

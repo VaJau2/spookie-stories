@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		_save_data()
+		save_data()
 
 
 func _load_data() -> void:
@@ -30,7 +30,7 @@ func _load_data() -> void:
 		file.close()
 
 
-func _save_data() -> void:
+func save_data() -> void:
 	var file = FileAccess.open("user://save.dat", FileAccess.WRITE)
 	if file:
 		data["scene_vars"] = G.scene_vars

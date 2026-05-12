@@ -12,6 +12,6 @@ func _ready() -> void:
 	set_process(false)
 
 
-func _process(_delta: float) -> void:
-	car.global_position.y += input.get_dir().y * 2.5
+func _process(delta: float) -> void:
+	car.global_position.y += input.get_dir().y * 300 * delta
 	car.global_position.y = clamp(car.global_position.y, min_up_pos, max_up_pos)

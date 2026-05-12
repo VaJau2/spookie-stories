@@ -21,8 +21,9 @@ func _process(_delta: float) -> void:
 		player.global_position = spawn_point.global_position
 		var player_camera: Camera2D = player.get_node("camera")
 		player_camera.reset_smoothing()
-		door_audi.stream = door_sound
-		door_audi.play()
+		if door_audi:
+			door_audi.stream = door_sound
+			door_audi.play()
 		if room_to_disable: room_to_disable.visible = false
 		if room_to_enable: room_to_enable.visible = true
 		set_process(false)

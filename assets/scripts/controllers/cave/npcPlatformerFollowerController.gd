@@ -12,7 +12,7 @@ class_name NpcPlatformerFollowerController
 
 var player: CharacterBody2D
 var temp_jump_pos: Vector2
-var jump_poses: Array[Vector2]
+var jump_poses: Array[PlayerJumpData]
 var is_jumping: bool
 
 
@@ -29,7 +29,9 @@ func on_player_jump() -> void:
 
 func on_player_finish_jump() -> void:
 	if temp_jump_pos == Vector2.ZERO: return
-	jump_poses.append(temp_jump_pos)
+	var is_left = temp_jump_pos.x < player.global_position.x
+	var jump_data = PlayerJumpData.new(temp_jump_pos, is_left)
+	jump_poses.append(jump_data)
 	temp_jump_pos = Vector2.ZERO
 	is_jumping = true
 
@@ -82,8 +84,14 @@ func _process(_delta: float) -> void:
 			is_jumping = false
 			return
 		
-		if go_to_point(jump_poses[0], 6):
-			movement_controller.jump()
+		if go_to_point(jump_poses[0].pos, 6):
+			movement_controller.jump(_get_jump_speed())
 			jump_poses.remove_at(0)
 			if len(jump_poses) <= 0:
 				is_jumping = false
+
+
+func _get_jump_speed() -> int:
+	var temp_distance_x = abs(parent.global_position.x - player.global_position.x)
+	var speed = 2 if temp_distance_x > run_distance else 1
+	return speed if jump_poses[0].is_left else -speed
