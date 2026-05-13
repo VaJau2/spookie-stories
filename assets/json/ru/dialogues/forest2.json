@@ -69,21 +69,39 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "smirk",
-				"text": "Теперь моя очередь. Я расскажу вам по-настоящему жуткую историю!"
+				"speaker": "strikely",
+				"state": "look-back",
+				"text": "Твоя фраза про призраков напомнила мне об одной недавней истории…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "Ставлю 10 бит, что это будет история про призраков."
+				"text": "Ты же расскажешь нам эту историю?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "idle",
+				"text": "Да, конечно."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "Благо в ней нет никаких гостайн…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"state": "smirk",
-				"text": "Ну тогда готовь кошелек, потому что в моей истории точно не будет никаких призраков!",
+				"state": "confused",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "idle",
+				"text": "Недавно мне приснился сон…"
 			},
 			{
 				"type": "script",

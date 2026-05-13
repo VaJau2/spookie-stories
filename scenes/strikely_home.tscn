@@ -889,7 +889,7 @@ position = Vector2(15.5, -638)
 shape = SubResource("RectangleShape2D_upiqi")
 
 [node name="strikey" parent="." unique_id=301655442 instance=ExtResource("11_h7bjg")]
-position = Vector2(-6023, 707)
+position = Vector2(-6344, 921)
 
 [node name="light" type="PointLight2D" parent="strikey" unique_id=1974879021]
 energy = 0.3

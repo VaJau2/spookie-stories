@@ -104,6 +104,53 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_4qi1y"]
+resource_name = "look-back"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.76666665, 0.8666667, 0.9666667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 36, 27, 36, 36]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8ei2s"]
+resource_name = "look-back-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [37, 36]
+}
+
 [sub_resource type="Animation" id="Animation_yq6so"]
 resource_name = "talk"
 length = 0.1
@@ -142,6 +189,8 @@ _data = {
 &"happy": SubResource("Animation_2cjbq"),
 &"happy-talk": SubResource("Animation_chjal"),
 &"idle": SubResource("Animation_og1vs"),
+&"look-back": SubResource("Animation_4qi1y"),
+&"look-back-talk": SubResource("Animation_8ei2s"),
 &"talk": SubResource("Animation_yq6so"),
 &"walk": SubResource("Animation_2wyq8")
 }
@@ -1356,5 +1405,5 @@ start_timer = 1.0
 [node name="next_level" type="Node" parent="." unique_id=549581676 node_paths=PackedStringArray("black_screen")]
 script = ExtResource("21_v306o")
 black_screen = NodePath("../menu/black_screen")
-next_level = "gas_station"
+next_level = "strikely_home"
 save_level_num = 2

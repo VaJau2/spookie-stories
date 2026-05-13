@@ -90,24 +90,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "confused",
-				"text": "Я бы хотела рассказать свою историю…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "sad",
-				"text": "…Но у нашего разраба не хватило на неё времени…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"text": "…Поэтому я тоже пойду спать."
+				"text": "Пожалуй я тоже пойду спать."
 			},
 			{
 				"type": "phrase",

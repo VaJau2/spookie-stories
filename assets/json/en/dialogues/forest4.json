@@ -90,24 +90,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "I…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "confused",
-				"text": "I wanted to tell my story…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "sad",
-				"text": "…But our developer didn't have enough time for it…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"text": "…So I'm going to sleep too."
+				"text": "I think I'll go to bed too."
 			},
 			{
 				"type": "phrase",

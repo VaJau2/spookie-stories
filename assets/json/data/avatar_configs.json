@@ -19,7 +19,12 @@
 			"eyes_open": 8,
 			"eyes_closed": 1,
 			"mouth_open": 9,
-		}
+		},
+		"look-back": {
+			"eyes_open": 10,
+			"eyes_closed": 1,
+			"mouth_open": 11,
+		},
 	},
 	"bowler_hat": {
 		"idle": {
