@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://brn53vy7gyd1o"]
+
+[ext_resource type="Texture2D" uid="uid://cu0fj0cgriyvc" path="res://assets/sprites/props/strikely-home/street-light.png" id="1_hhy07"]
+[ext_resource type="Texture2D" uid="uid://ba5fervqmnv52" path="res://assets/sprites/light/512x512 textures (40).png" id="2_lnhyo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uobwu"]
+size = Vector2(9, 17)
+
+[node name="street-light" type="StaticBody2D" unique_id=1633664133]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=529412597]
+position = Vector2(-1, -62)
+texture = ExtResource("1_hhy07")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1460815672]
+position = Vector2(-0.5, -8.5)
+shape = SubResource("RectangleShape2D_uobwu")
+
+[node name="light" type="PointLight2D" parent="." unique_id=1564972554]
+position = Vector2(0, -107)
+color = Color(0.7550866, 0.62724745, 0.14271128, 1)
+texture = ExtResource("2_lnhyo")
