@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ujmvgescm3p0"
-path="res://.godot/imported/bed.png-1129e982d553eb0184d0ec3c6e87f1b1.ctex"
+uid="uid://71l3o6iaw3dn"
+path="res://.godot/imported/strikely&mother.png-4301a66452de4662e2dc262785bc3fa3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/props/strikely-home/bed.png"
-dest_files=["res://.godot/imported/bed.png-1129e982d553eb0184d0ec3c6e87f1b1.ctex"]
+source_file="res://assets/sprites/characters/strikely&mother.png"
+dest_files=["res://.godot/imported/strikely&mother.png-4301a66452de4662e2dc262785bc3fa3.ctex"]
 
 [params]
 

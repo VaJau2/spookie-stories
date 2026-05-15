@@ -30,7 +30,7 @@ func load_avatar(character_name: String, state: String, anim: DialogueAnimContro
 
 
 func close_connections() -> void:
-	if temp_anim:
+	if temp_anim and temp_anim.blink.has_connections():
 		temp_anim.blink.disconnect(_on_blink_emitted)
 
 

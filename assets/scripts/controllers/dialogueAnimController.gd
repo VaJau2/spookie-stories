@@ -30,6 +30,7 @@ func set_state(new_state: String) -> void:
 
 
 func animate_mouth() -> void:
+	if !anim.has_animation(talk_state): return
 	anim.play(talk_state)
 	await anim.animation_finished
 	anim.play(state)

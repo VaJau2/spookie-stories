@@ -26,6 +26,7 @@
 			"mouth_open": 11,
 		},
 	},
+	
 	"bowler_hat": {
 		"idle": {
 			"eyes_open": 0,
@@ -165,6 +166,25 @@
 		}
 	},
 	"chakky": {
+		"idle": {
+			"eyes_open": 0,
+			"eyes_closed": 1,
+			"mouth_open": 2,
+		},
+	},
+	"strikely-mother": {
+		"idle": {
+			"eyes_open": 0,
+			"eyes_closed": 1,
+			"mouth_open": 2,
+		},
+		"scared": {
+			"eyes_open": 5,
+			"eyes_closed": 1,
+			"mouth_open": 6,
+		},
+	},
+	"strikely-mother-clone-dark": {
 		"idle": {
 			"eyes_open": 0,
 			"eyes_closed": 1,

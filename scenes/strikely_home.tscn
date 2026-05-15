@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cpqdbe1lntqbt"]
 
 [ext_resource type="Texture2D" uid="uid://bcyya3ttxd3tm" path="res://assets/sprites/props/strikely-home/room_back.png" id="1_fkov3"]
-[ext_resource type="Texture2D" uid="uid://ujmvgescm3p0" path="res://assets/sprites/props/strikely-home/bed.png" id="2_h7bjg"]
+[ext_resource type="Texture2D" uid="uid://ujmvgescm3p0" path="res://assets/sprites/props/strikely-home/bed/bed.png" id="2_h7bjg"]
 [ext_resource type="Texture2D" uid="uid://bxo1qdd72avt1" path="res://assets/sprites/props/strikely-home/bed_table.png" id="3_tir7i"]
 [ext_resource type="Texture2D" uid="uid://h7kajoo3xa5p" path="res://assets/sprites/props/strikely-home/cabinet.png" id="4_u1r7d"]
 [ext_resource type="Texture2D" uid="uid://fwx6x6alxjqs" path="res://assets/sprites/props/strikely-home/floor_lamp.png" id="5_wujoc"]
@@ -21,15 +21,18 @@
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="13_v3bfj"]
 [ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="14_y4xsm"]
 [ext_resource type="Script" uid="uid://cda44q040yc17" path="res://assets/scripts/background/backScreenDissapear.gd" id="15_7y7dn"]
+[ext_resource type="Texture2D" uid="uid://71l3o6iaw3dn" path="res://assets/sprites/characters/strikely&mother.png" id="15_om7f1"]
 [ext_resource type="Texture2D" uid="uid://b3yhwneyhhim3" path="res://assets/sprites/props/strikely-home/corridor-1-floor.png" id="16_1rnhy"]
 [ext_resource type="AudioStream" uid="uid://cyqfxa0ewc0b8" path="res://assets/audio/clock/clock_normal_1.mp3" id="16_dw1t4"]
-[ext_resource type="Script" uid="uid://dnjqvmvhhavte" path="res://assets/scripts/scenario/gasStation/changeLight.gd" id="17_7y7dn"]
 [ext_resource type="Texture2D" uid="uid://ce6h6sn2piiea" path="res://assets/sprites/props/strikely-home/stairs.png" id="17_podny"]
 [ext_resource type="Script" uid="uid://bo4codtn0ig75" path="res://assets/scripts/controllers/steps/materialArea.gd" id="17_tgejo"]
 [ext_resource type="Texture2D" uid="uid://ci02h0c8uu385" path="res://assets/sprites/props/strikely-home/flower.png" id="18_en6tw"]
+[ext_resource type="Texture2D" uid="uid://b66s2fywf2tx1" path="res://assets/sprites/characters/mother.png" id="19_f81xj"]
 [ext_resource type="Texture2D" uid="uid://tk450turnp57" path="res://assets/sprites/props/strikely-home/kitchen.png" id="19_rr13i"]
 [ext_resource type="Texture2D" uid="uid://bmwim06or0y2x" path="res://assets/sprites/props/strikely-home/fireplace.png" id="20_dw1t4"]
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="20_om7f1"]
 [ext_resource type="Texture2D" uid="uid://7ju3h3f2sevb" path="res://assets/sprites/props/strikely-home/sofa.png" id="21_tgejo"]
+[ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="21_wg2p7"]
 [ext_resource type="Texture2D" uid="uid://bccrelgfg7bn3" path="res://assets/sprites/props/strikely-home/kitchen-table.png" id="22_l3m3e"]
 [ext_resource type="Texture2D" uid="uid://bluqs7yefjncq" path="res://assets/sprites/props/strikely-home/kitchen-furniture.png" id="23_v4y63"]
 [ext_resource type="TileSet" uid="uid://d2r2jwkrcjpjw" path="res://objects/background/grass_tileset.tres" id="26_v4y63"]
@@ -45,6 +48,12 @@
 [ext_resource type="Texture2D" uid="uid://conpqtrvsp8ks" path="res://assets/sprites/props/strikely-home/trees/tree6.1.png" id="36_ce3ou"]
 [ext_resource type="Texture2D" uid="uid://crx8c04kmpik5" path="res://assets/sprites/props/strikely-home/trees/tree6.png" id="37_hppya"]
 [ext_resource type="Texture2D" uid="uid://ufu5y8ujqa82" path="res://assets/sprites/props/strikely-home/trees/tree7.png" id="38_sgrem"]
+[ext_resource type="Script" uid="uid://pe0dwvkln6s" path="res://assets/scripts/background/dialogueArea.gd" id="39_iv42n"]
+[ext_resource type="Texture2D" uid="uid://dw4wxcokmasc3" path="res://assets/sprites/props/strikely-home/bed/bed-sleep.png" id="47_ce3ou"]
+[ext_resource type="Texture2D" uid="uid://3dpcwnupqynx" path="res://assets/sprites/props/strikely-home/bed/bed-open-eyes-2.png" id="48_ce3ou"]
+[ext_resource type="Texture2D" uid="uid://cy8j8ctpmfky5" path="res://assets/sprites/props/strikely-home/bed/bed-open-eyes.png" id="48_hppya"]
+[ext_resource type="AudioStream" uid="uid://3nrsd8ni8w6v" path="res://assets/audio/clock/clock_normal.mp3" id="49_hppya"]
+[ext_resource type="AudioStream" uid="uid://bc0axi4onh23q" path="res://assets/audio/background/night_back.ogg" id="50_sgrem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l7pm"]
 size = Vector2(384, 16)
@@ -79,6 +88,179 @@ size = Vector2(47, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5xai"]
 size = Vector2(44, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2h3o"]
+size = Vector2(56, 97)
+
+[sub_resource type="Animation" id="Animation_wg2p7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -28)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("shadow2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-17, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_era8b"]
+resource_name = "shake-low"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -28), Vector2(1, -28), Vector2(-1, -28)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(14, -1), Vector2(16, -1), Vector2(14, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("shadow2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-18, -1), Vector2(-16, -1), Vector2(-18, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_tnalq"]
+resource_name = "shake-middle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -28), Vector2(1, -28), Vector2(-1, -28)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(14, -1), Vector2(16, -1), Vector2(14, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("shadow2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-18, -1), Vector2(-16, -1), Vector2(-18, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_eup8v"]
+resource_name = "shake-strong"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -28), Vector2(1, -28), Vector2(-1, -28)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(14, -1), Vector2(16, -1), Vector2(14, -1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("shadow2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-18, -1), Vector2(-16, -1), Vector2(-18, -1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r2f8u"]
+_data = {
+&"RESET": SubResource("Animation_wg2p7"),
+&"shake-low": SubResource("Animation_era8b"),
+&"shake-middle": SubResource("Animation_tnalq"),
+&"shake-strong": SubResource("Animation_eup8v")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2sfn2"]
 size = Vector2(443, 47)
 
@@ -102,6 +284,12 @@ size = Vector2(129, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2fv3w"]
 size = Vector2(109, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv8vb"]
+size = Vector2(306, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihlqo"]
+size = Vector2(67, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y63"]
 size = Vector2(209, 107)
@@ -286,11 +474,280 @@ size = Vector2(47, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hyhmr"]
 size = Vector2(11.5, 13.166687)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpyvw"]
+size = Vector2(142, 362)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihc3w"]
+size = Vector2(28, 6)
+
+[sub_resource type="Animation" id="Animation_2fv3w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [26]
+}
+
+[sub_resource type="Animation" id="Animation_k5xai"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.43333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_f81xj"]
+resource_name = "scared"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 1, 3]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("anim_controller")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.43333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_blink_signal"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_om7f1"]
+resource_name = "scared-talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_rb5c1"]
+resource_name = "talk"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_sc41l"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_era8b"]
+_data = {
+&"RESET": SubResource("Animation_2fv3w"),
+&"idle": SubResource("Animation_k5xai"),
+&"scared": SubResource("Animation_f81xj"),
+&"scared-talk": SubResource("Animation_om7f1"),
+&"talk": SubResource("Animation_rb5c1"),
+&"walk": SubResource("Animation_sc41l")
+}
+
+[sub_resource type="GDScript" id="GDScript_iv42n"]
+script/source = "extends Node
+
+@export var bed_sprite: Sprite2D
+
+@export var bed_textures: Dictionary[String, Texture2D] = {
+	\"empty\": null,
+	\"closed_eyes\": null,
+	\"open_eyes\": null,
+	\"open_eyes_2\": null
+}
+
+@export var player: CharacterBody2D
+@export var black_screen: ColorRect
+
+@export var directional_light: DirectionalLight2D
+@export var night_color: Color
+
+@export var clock_audi: AudioStreamPlayer2D
+@export var clock_night_sound: AudioStream
+
+@export var outside_audi: AudioStreamPlayer2D
+@export var outside_night_sound: AudioStream
+
+@export var get_up_point: Node2D
+@export var night_dialogue_area: DialogueArea
+
+@export var dialogue_menu: DialogueMenu
+
+
+func start() -> void:
+	var movement: MovementController = player.get_node(\"movement_controller\")
+	movement.may_move = false
+	player.visible = false
+	bed_sprite.texture = bed_textures.closed_eyes
+
+
+func anim_black_screen() -> void:
+	while black_screen.color.a < 1:
+		black_screen.color.a += 0.1
+		await get_tree().process_frame
+	
+	await get_tree().create_timer(1).timeout
+	change_to_night()
+	
+	while black_screen.color.a > 0:
+		black_screen.color.a -= 0.1
+		await get_tree().process_frame
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	dialogue_menu.start_dialogue(\"strikely_home\", \"failed_to_sleep\")
+
+
+func change_to_night() -> void:
+	directional_light.color = night_color
+	clock_audi.stream = clock_night_sound
+	clock_audi.play()
+	outside_audi.stream = outside_night_sound
+	outside_audi.play()
+
+
+func set_open_eyes_texture() -> void:
+	bed_sprite.texture = bed_textures.open_eyes
+
+
+func set_open_eyes_texture_2() -> void:
+	bed_sprite.texture = bed_textures.open_eyes_2
+
+
+func get_up() -> void:
+	var movement: MovementController = player.get_node(\"movement_controller\")
+	movement.may_move = true
+	player.global_position = get_up_point.global_position
+	player.visible = true
+	bed_sprite.texture = bed_textures.empty
+	night_dialogue_area.is_active = true
+"
+
+[sub_resource type="GDScript" id="GDScript_f81xj"]
+script/source = "extends Node
+
+@export var mother: CharacterBody2D
+
+@export var door_audi: AudioStreamPlayer2D
+@export var door_sound: AudioStream
+
+@export var player: CharacterBody2D
+@export var black_screen: ColorRect
+@export var middle_room_point: Node2D
+@export var strikely_and_mother: Node2D
+@export var strikely_room: Node2D
+
+ 
+func show_mother() -> void:
+	var player_anim: AnimationController = player.get_node(\"animation_controller\")
+	if player_anim.sprites[0].flip_h:
+		player_anim.set_flip(false)
+	door_audi.stream = door_sound
+	door_audi.play()
+	mother.visible = true
+
+
+func anim_black_screen() -> void:
+	while black_screen.color.a < 1:
+		black_screen.color.a += 0.1
+		await get_tree().process_frame
+	
+	move_back_to_room()
+	await get_tree().create_timer(0.5).timeout
+	
+	while black_screen.color.a > 0:
+		black_screen.color.a -= 0.1
+		await get_tree().process_frame
+	
+	await get_tree().create_timer(0.5).timeout
+
+
+func move_back_to_room() -> void:
+	strikely_room.visible = true
+	player.global_position = middle_room_point.global_position
+	var movement: MovementController = player.get_node(\"movement_controller\")
+	movement.may_move = false
+	player.visible = false
+	strikely_and_mother.visible = true
+	var anim: AnimationPlayer = strikely_and_mother.get_node(\"anim\")
+	anim.play(\"shake-strong\")
+	
+"
+
 [node name="main" type="Node2D" unique_id=660872533]
 y_sort_enabled = true
 
 [node name="strikely_room" type="Node2D" parent="." unique_id=1286438506]
-visible = false
 y_sort_enabled = true
 
 [node name="back" type="StaticBody2D" parent="strikely_room" unique_id=1576183204]
@@ -319,7 +776,7 @@ shape = SubResource("RectangleShape2D_5f00d")
 [node name="bed" type="StaticBody2D" parent="strikely_room" unique_id=974750540]
 position = Vector2(164, 221)
 
-[node name="Bed" type="Sprite2D" parent="strikely_room/bed" unique_id=941293908]
+[node name="bed_sprite" type="Sprite2D" parent="strikely_room/bed" unique_id=941293908]
 position = Vector2(0, -14)
 texture = ExtResource("2_h7bjg")
 
@@ -334,6 +791,9 @@ shape = SubResource("RectangleShape2D_y4xsm")
 [node name="shape3" type="CollisionShape2D" parent="strikely_room/bed" unique_id=514620623]
 position = Vector2(59, -42)
 shape = SubResource("RectangleShape2D_y4xsm")
+
+[node name="get_up_point" type="Node2D" parent="strikely_room/bed" unique_id=180239336]
+position = Vector2(-18, 35)
 
 [node name="bed_table" type="StaticBody2D" parent="strikely_room" unique_id=1985888793]
 position = Vector2(207, 257)
@@ -418,7 +878,7 @@ position = Vector2(37, 125)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_up"
 spawn_point = NodePath("../../corridor_2_floor/Door1/spawn")
-player_name = "strikey"
+player_name = "strikely"
 door_audi = NodePath("../../corridor_2_floor/Door1/door_audi")
 door_sound = ExtResource("12_u6pfn")
 room_to_enable = NodePath("../../corridor_2_floor")
@@ -439,8 +899,47 @@ out_material = 4
 position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_k5xai")
 
-[node name="corridor_2_floor" type="Node2D" parent="." unique_id=811182389]
+[node name="start_sleep_area" type="Area2D" parent="strikely_room" unique_id=824289012 node_paths=PackedStringArray("player_node", "dialogue_menu")]
+position = Vector2(149, 207)
+script = ExtResource("39_iv42n")
+player_node = NodePath("../../ponies/strikely")
+player_name = "strikely"
+move_player_after = false
+dialogue_file = "strikely_home"
+dialogue_code = "start_sleep"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="strikely_room/start_sleep_area" unique_id=1725325659]
+position = Vector2(52, 6.5)
+shape = SubResource("RectangleShape2D_a2h3o")
+
+[node name="strikely&mother" type="Node2D" parent="strikely_room" unique_id=1681398665]
 visible = false
+z_index = 1
+position = Vector2(156, 206)
+
+[node name="shadow" type="Sprite2D" parent="strikely_room/strikely&mother" unique_id=1430707501]
+modulate = Color(1, 1, 1, 0.45882353)
+position = Vector2(15, -1)
+texture = ExtResource("20_om7f1")
+
+[node name="shadow2" type="Sprite2D" parent="strikely_room/strikely&mother" unique_id=1475915500]
+modulate = Color(1, 1, 1, 0.45882353)
+position = Vector2(-17, -1)
+texture = ExtResource("20_om7f1")
+
+[node name="sprite" type="Sprite2D" parent="strikely_room/strikely&mother" unique_id=262334328]
+position = Vector2(0, -28)
+texture = ExtResource("15_om7f1")
+hframes = 4
+
+[node name="anim" type="AnimationPlayer" parent="strikely_room/strikely&mother" unique_id=1875566178]
+libraries/ = SubResource("AnimationLibrary_r2f8u")
+
+[node name="middle_room" type="Node2D" parent="strikely_room" unique_id=2124958590]
+position = Vector2(52, 170)
+
+[node name="corridor_2_floor" type="Node2D" parent="." unique_id=811182389]
 y_sort_enabled = true
 position = Vector2(1441, 109)
 
@@ -501,6 +1000,10 @@ position = Vector2(0, 68)
 position = Vector2(100, -41)
 texture = ExtResource("8_y4xsm")
 
+[node name="door_audi" type="AudioStreamPlayer2D" parent="corridor_2_floor/Door" unique_id=1238677287]
+position = Vector2(0, -1)
+bus = &"Sound"
+
 [node name="floor_lamp2" type="StaticBody2D" parent="corridor_2_floor" unique_id=1050236203]
 position = Vector2(168, 11)
 
@@ -527,7 +1030,7 @@ position = Vector2(-99, 4)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_up"
 spawn_point = NodePath("../../strikely_room/Door/spawn")
-player_name = "strikey"
+player_name = "strikely"
 door_audi = NodePath("../../strikely_room/Door/door_audi")
 door_sound = ExtResource("12_u6pfn")
 room_to_enable = NodePath("../../strikely_room")
@@ -543,7 +1046,7 @@ position = Vector2(-115, 134)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_right"
 spawn_point = NodePath("../../corridor_1_floor/stairs_spawn")
-player_name = "strikey"
+player_name = "strikely"
 room_to_enable = NodePath("../../corridor_1_floor")
 room_to_disable = NodePath("..")
 material_area = NodePath("../stone_area")
@@ -568,7 +1071,26 @@ out_material = 4
 position = Vector2(14.5, -10)
 shape = SubResource("RectangleShape2D_2fv3w")
 
+[node name="night_dialogue_area" type="Area2D" parent="corridor_2_floor" unique_id=1639645895 node_paths=PackedStringArray("player_node", "dialogue_menu")]
+position = Vector2(-106, 80)
+script = ExtResource("39_iv42n")
+is_active = false
+player_node = NodePath("../../ponies/strikely")
+player_name = "strikely"
+dialogue_file = "strikely_home"
+dialogue_code = "night1"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="corridor_2_floor/night_dialogue_area" unique_id=868025141]
+position = Vector2(43, -20)
+shape = SubResource("RectangleShape2D_fv8vb")
+
+[node name="shape2" type="CollisionShape2D" parent="corridor_2_floor/night_dialogue_area" unique_id=801147570]
+position = Vector2(163.5, 31)
+shape = SubResource("RectangleShape2D_ihlqo")
+
 [node name="corridor_1_floor" type="Node2D" parent="." unique_id=1191003283]
+visible = false
 y_sort_enabled = true
 position = Vector2(5, 832)
 
@@ -667,7 +1189,7 @@ position = Vector2(-118, 64)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_left"
 spawn_point = NodePath("../../corridor_2_floor/stairs_spawn")
-player_name = "strikey"
+player_name = "strikely"
 door_audi = NodePath("../../corridor_2_floor/stairs_spawn/stairs_audi2")
 room_to_enable = NodePath("../../corridor_2_floor")
 room_to_disable = NodePath("..")
@@ -685,7 +1207,7 @@ position = Vector2(108, -25)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_up"
 spawn_point = NodePath("../../kitchen/spawn")
-player_name = "strikey"
+player_name = "strikely"
 room_to_enable = NodePath("../../kitchen")
 room_to_disable = NodePath("..")
 
@@ -693,18 +1215,19 @@ room_to_disable = NodePath("..")
 position = Vector2(11, -38.5)
 shape = SubResource("RectangleShape2D_lqukg")
 
-[node name="teleport_to_outside" type="Area2D" parent="corridor_1_floor" unique_id=506131406 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable")]
+[node name="teleport_to_outside" type="Area2D" parent="corridor_1_floor" unique_id=506131406 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable", "other_teleport_area")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-82, 52)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_left"
 spawn_point = NodePath("../../outside/house/spawn")
-player_name = "strikey"
+player_name = "strikely"
 door_audi = NodePath("../../outside/house/door_audi")
 door_sound = ExtResource("12_u6pfn")
 room_to_enable = NodePath("../../outside")
 room_to_disable = NodePath("..")
+other_teleport_area = NodePath("../../outside/house/teleport_to_inside")
 
 [node name="shape" type="CollisionShape2D" parent="corridor_1_floor/teleport_to_outside" unique_id=1423492194]
 position = Vector2(-33, -49)
@@ -826,7 +1349,7 @@ position = Vector2(102, 214)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_down"
 spawn_point = NodePath("../../corridor_1_floor/kitchen_spawn")
-player_name = "strikey"
+player_name = "strikely"
 room_to_enable = NodePath("../../corridor_1_floor")
 room_to_disable = NodePath("..")
 
@@ -897,18 +1420,19 @@ shape = SubResource("RectangleShape2D_era8b")
 [node name="spawn" type="Node2D" parent="outside/house" unique_id=558887956]
 position = Vector2(-77, 94)
 
-[node name="teleport_to_inside" type="Area2D" parent="outside/house" unique_id=1749339874 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable")]
+[node name="teleport_to_inside" type="Area2D" parent="outside/house" unique_id=1749339874 node_paths=PackedStringArray("spawn_point", "door_audi", "room_to_enable", "room_to_disable", "other_teleport_area")]
 z_index = 1
 z_as_relative = false
 position = Vector2(-81, 74)
 script = ExtResource("11_87wk1")
 trigger_button = "ui_up"
 spawn_point = NodePath("../../../corridor_1_floor/outside_spawn")
-player_name = "strikey"
+player_name = "strikely"
 door_audi = NodePath("../../../corridor_1_floor/door_audi")
 door_sound = ExtResource("12_u6pfn")
 room_to_enable = NodePath("../../../corridor_1_floor")
 room_to_disable = NodePath("../..")
+other_teleport_area = NodePath("../../../corridor_1_floor/teleport_to_outside")
 
 [node name="shape" type="CollisionShape2D" parent="outside/house/teleport_to_inside" unique_id=793081511]
 position = Vector2(1, -4)
@@ -1132,7 +1656,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 3.322876, 100.37564, 156.36984)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree9" unique_id=1491057869]
 position = Vector2(0, 1)
@@ -1146,7 +1670,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 7.0549355, 100.37564, 152.63779)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree10" unique_id=1746852027]
 position = Vector2(0, 1)
@@ -1160,7 +1684,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 6.123554, 100.37564, 153.56917)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree11" unique_id=1624402774]
 position = Vector2(0, 1)
@@ -1174,7 +1698,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 6.7156563, 100.37564, 152.97707)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree12" unique_id=1413811465]
 position = Vector2(0, 1)
@@ -1188,7 +1712,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 8.412048, 100.37564, 151.28067)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree13" unique_id=1453521529]
 position = Vector2(0, 1)
@@ -1202,7 +1726,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 8.7513275, 100.37564, 150.94139)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree14" unique_id=745608820]
 position = Vector2(0, 1)
@@ -1216,7 +1740,7 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-14, -66)
 texture = ExtResource("35_yojis")
 region_enabled = true
-region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
+region_rect = Rect2(32.948166, 6.376381, 100.37564, 153.31635)
 
 [node name="shape" type="CollisionShape2D" parent="outside/trees/tree15" unique_id=1275752173]
 position = Vector2(0, 1)
@@ -1534,10 +2058,57 @@ region_rect = Rect2(32.948166, 15.459793, 100.37564, 144.23293)
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_hyhmr")
 
-[node name="strikey" parent="." unique_id=301655442 instance=ExtResource("11_h7bjg")]
+[node name="start_dialogue_area" type="Area2D" parent="outside" unique_id=2025500651 node_paths=PackedStringArray("player_node", "dialogue_menu")]
+position = Vector2(-166, 950)
+script = ExtResource("39_iv42n")
+player_node = NodePath("../../ponies/strikely")
+player_name = "strikely"
+dialogue_file = "strikely_home"
+dialogue_code = "start"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="outside/start_dialogue_area" unique_id=1612222393]
+position = Vector2(84, 62)
+shape = SubResource("RectangleShape2D_bpyvw")
+
+[node name="ponies" type="Node2D" parent="." unique_id=226154608]
+y_sort_enabled = true
+
+[node name="strikely-mother" type="CharacterBody2D" parent="ponies" unique_id=313933421]
+visible = false
+texture_filter = 1
+position = Vector2(1540, 120)
+
+[node name="sprite" type="Sprite2D" parent="ponies/strikely-mother" unique_id=753855264]
+position = Vector2(1, -31)
+texture = ExtResource("19_f81xj")
+flip_h = true
+hframes = 8
+vframes = 6
+frame = 26
+
+[node name="shadow" type="Sprite2D" parent="ponies/strikely-mother" unique_id=55808321]
+modulate = Color(1, 1, 1, 0.45882353)
+z_index = -1
+position = Vector2(-2, 0)
+texture = ExtResource("20_om7f1")
+
+[node name="shape" type="CollisionShape2D" parent="ponies/strikely-mother" unique_id=855696353]
+position = Vector2(3, -1)
+shape = SubResource("RectangleShape2D_ihc3w")
+
+[node name="anim_controller" type="Node" parent="ponies/strikely-mother" unique_id=1354915667 node_paths=PackedStringArray("anim")]
+script = ExtResource("21_wg2p7")
+anim = NodePath("../anim")
+
+[node name="anim" type="AnimationPlayer" parent="ponies/strikely-mother" unique_id=1163698823]
+libraries/ = SubResource("AnimationLibrary_era8b")
+autoplay = &"scared"
+
+[node name="strikely" parent="ponies" unique_id=301655442 instance=ExtResource("11_h7bjg")]
 position = Vector2(-6344, 921)
 
-[node name="light" type="PointLight2D" parent="strikey" unique_id=1974879021]
+[node name="light" type="PointLight2D" parent="ponies/strikely" unique_id=1974879021]
 energy = 0.3
 texture = ExtResource("12_y4xsm")
 texture_scale = 0.9
@@ -1547,8 +2118,9 @@ script = ExtResource("12_hymxt")
 
 [node name="menu" type="CanvasLayer" parent="." unique_id=380110619]
 
-[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("13_v3bfj")]
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 node_paths=PackedStringArray("ponies_parent") instance=ExtResource("13_v3bfj")]
 texture_filter = 1
+ponies_parent = NodePath("../../ponies")
 
 [node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("14_y4xsm")]
 visible = false
@@ -1566,20 +2138,51 @@ script = ExtResource("15_7y7dn")
 [node name="directional_light" type="DirectionalLight2D" parent="." unique_id=273689749]
 color = Color(0.6392157, 0.36078432, 0.32941177, 1)
 blend_mode = 2
-script = ExtResource("17_7y7dn")
-new_color = Color(0.13074094, 0.33328545, 0.71041954, 1)
-speed = 0.1
+
+[node name="try_sleep_anim" type="Node" parent="." unique_id=1642268629 node_paths=PackedStringArray("bed_sprite", "player", "black_screen", "directional_light", "clock_audi", "outside_audi", "get_up_point", "night_dialogue_area", "dialogue_menu")]
+script = SubResource("GDScript_iv42n")
+bed_sprite = NodePath("../strikely_room/bed/bed_sprite")
+bed_textures = Dictionary[String, Texture2D]({
+"closed_eyes": ExtResource("47_ce3ou"),
+"empty": ExtResource("2_h7bjg"),
+"open_eyes": ExtResource("48_hppya"),
+"open_eyes_2": ExtResource("48_ce3ou")
+})
+player = NodePath("../ponies/strikely")
+black_screen = NodePath("../menu/black_screen")
+directional_light = NodePath("../directional_light")
+night_color = Color(0.13333334, 0.2509804, 0.5647059, 1)
+clock_audi = NodePath("../corridor_2_floor/clock/audi")
+clock_night_sound = ExtResource("49_hppya")
+outside_audi = NodePath("../outside/ambient_audi")
+outside_night_sound = ExtResource("50_sgrem")
+get_up_point = NodePath("../strikely_room/bed/get_up_point")
+night_dialogue_area = NodePath("../corridor_2_floor/night_dialogue_area")
+dialogue_menu = NodePath("../menu/dialogue_menu")
+
+[node name="scared_mother" type="Node" parent="." unique_id=1437275901 node_paths=PackedStringArray("mother", "door_audi", "player", "black_screen", "middle_room_point", "strikely_and_mother", "strikely_room")]
+script = SubResource("GDScript_f81xj")
+mother = NodePath("../ponies/strikely-mother")
+door_audi = NodePath("../corridor_2_floor/Door/door_audi")
+door_sound = ExtResource("12_u6pfn")
+player = NodePath("../ponies/strikely")
+black_screen = NodePath("../menu/black_screen")
+middle_room_point = NodePath("../strikely_room/middle_room")
+strikely_and_mother = NodePath("../strikely_room/strikely&mother")
+strikely_room = NodePath("../strikely_room")
 
 [connection signal="body_entered" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_entered"]
 [connection signal="body_exited" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_exited"]
 [connection signal="body_entered" from="strikely_room/soft_step_area" to="strikely_room/soft_step_area" method="_on_body_entered"]
 [connection signal="body_exited" from="strikely_room/soft_step_area" to="strikely_room/soft_step_area" method="_on_body_exited"]
+[connection signal="body_entered" from="strikely_room/start_sleep_area" to="strikely_room/start_sleep_area" method="_on_body_entered"]
 [connection signal="body_entered" from="corridor_2_floor/teleport_to_room" to="corridor_2_floor/teleport_to_room" method="_on_body_entered"]
 [connection signal="body_exited" from="corridor_2_floor/teleport_to_room" to="corridor_2_floor/teleport_to_room" method="_on_body_exited"]
 [connection signal="body_entered" from="corridor_2_floor/teleport_to_1_floor" to="corridor_2_floor/teleport_to_1_floor" method="_on_body_entered"]
 [connection signal="body_exited" from="corridor_2_floor/teleport_to_1_floor" to="corridor_2_floor/teleport_to_1_floor" method="_on_body_exited"]
 [connection signal="body_entered" from="corridor_2_floor/stone_area" to="corridor_2_floor/stone_area" method="_on_body_entered"]
 [connection signal="body_exited" from="corridor_2_floor/stone_area" to="corridor_2_floor/stone_area" method="_on_body_exited"]
+[connection signal="body_entered" from="corridor_2_floor/night_dialogue_area" to="corridor_2_floor/night_dialogue_area" method="_on_body_entered"]
 [connection signal="body_entered" from="corridor_1_floor/teleport_to_2_floor" to="corridor_1_floor/teleport_to_2_floor" method="_on_body_entered"]
 [connection signal="body_exited" from="corridor_1_floor/teleport_to_2_floor" to="corridor_1_floor/teleport_to_2_floor" method="_on_body_exited"]
 [connection signal="body_entered" from="corridor_1_floor/teleport_to_kitchen" to="corridor_1_floor/teleport_to_kitchen" method="_on_body_entered"]
@@ -1598,3 +2201,4 @@ speed = 0.1
 [connection signal="body_exited" from="outside/house/teleport_to_inside" to="outside/house/teleport_to_inside" method="_on_body_exited"]
 [connection signal="body_entered" from="outside/grass_area" to="outside/grass_area" method="_on_body_entered"]
 [connection signal="body_exited" from="outside/grass_area" to="outside/grass_area" method="_on_body_exited"]
+[connection signal="body_entered" from="outside/start_dialogue_area" to="outside/start_dialogue_area" method="_on_body_entered"]

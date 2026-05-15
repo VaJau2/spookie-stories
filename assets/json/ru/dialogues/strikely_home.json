@@ -1,0 +1,151 @@
+{
+	"start": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я возвращалась поздно вечером домой после тяжелой работы."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я чувствовала себя сильно уставшей и хотела поскорее лечь на кровать."
+			},
+		]
+	},
+	"start_sleep": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/try_sleep_anim",
+				"method": "start",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Дойдя наконец до кровати, я завалилась на неё, все еще чувствуя усталость и желание спать."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/try_sleep_anim",
+				"method": "anim_black_screen",
+			},
+		]
+	},
+	"failed_to_sleep": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/try_sleep_anim",
+				"method": "set_open_eyes_texture",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я лежала так довольно долго, но сон никак не приходил."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "За окном была уже ночь."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Погоди, ты что пыталась уснуть, будучи во сне?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "А у тебя разве не было таких снов, когда ты просыпаешься, но оказываешься все еще во сне?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "idle",
+				"text": "Это был один из таких снов."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "idle",
+				"text": "Внезапно я услышала, как мама зовет меня из кухни на первом этаже:"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/try_sleep_anim",
+				"method": "set_open_eyes_texture_2",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely-mother-clone-dark",
+				"text": "Доча иди ужинать!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "look-back",
+				"text": "Я немного смутилась - какой ужин может быть посреди ночи?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "idle",
+				"text": "Но я не придала этому значения."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "idle",
+				"text": "Обрадовавшись поводу побродить и отвлечься от бессонницы, я встала и лениво побрела в сторону коридора."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/try_sleep_anim",
+				"method": "get_up",
+			},
+		]
+	},
+	"night1": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Когда я вышла в коридор, я услышала, как позади меня открылась дверь из комнаты брата."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "show_mother",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я посмотрела в её сторону и тут же уставилась на широко распахнутые испуганные глаза своей мамы."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Она прошептала мне:"
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikely",
+				"state": "scared"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely-mother",
+				"state": "scared",
+				"text": "Страйкли, не ходи туда, я тоже это слышала!"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "anim_black_screen",
+			},
+		]
+	}
+}

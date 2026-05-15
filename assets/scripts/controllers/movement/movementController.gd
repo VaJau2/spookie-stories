@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func set_may_move(value: bool) -> void:
 	may_move = value
+	emit_move_signals()
 	if !may_move:
 		stop.emit()
 

@@ -60,5 +60,35 @@
 		"min_pitch": "1.9",
 		"max_pitch": "2.4",
 		"chars_to_sound": "3",
-	}
+	},
+	"dusk": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_i.wav",
+			"beeps/sound_o.wav",
+		],
+		"min_pitch": "1.8",
+		"max_pitch": "2.5",
+		"chars_to_sound": "4",
+	},
+	"strikely-mother-clone-dark": {
+		"sounds": [
+			"beeps_wall/sound_a.mp3",
+			"beeps_wall/sound_e.mp3",
+			"beeps_wall/sound_i.mp3",
+		],
+		"min_pitch": "1.7",
+		"max_pitch": "2.0",
+		"chars_to_sound": "3",
+	},
+	"strikely-mother": {
+		"sounds": [
+			"beeps/sound_a.wav",
+			"beeps/sound_e.wav",
+			"beeps/sound_i.wav",
+		],
+		"min_pitch": "1.9",
+		"max_pitch": "2.2",
+		"chars_to_sound": "4",
+	},
 }

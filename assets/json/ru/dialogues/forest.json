@@ -4,7 +4,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Ну что ж, теперь, когда мы полностью расположились и закончили с обустройством палаток, можно наконец расслабиться."
+				"text": "Ну что ж, теперь, когда мы закончили с обустройством палаток, можно наконец расслабиться."
 			},
 			{
 				"type": "phrase",
@@ -76,16 +76,31 @@
 				"text": "Я предпочитаю спать в компании знакомых мне пони, чем в компании незнакомых."
 			},
 			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "shy",
+			},
+			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
 				"text": "Так спится крепче."
 			},
 			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "confused",
+			},
+			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"text": "Некоторые из нас уже знакомы, но не все знают друг друга."
-			}, 
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
@@ -213,52 +228,19 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "strikely",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "confused",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
 				"speaker": "pay",
-				"text": "Окей, давайте я начну."
+				"text": "Давайте я начну."
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "Это история про одну пегаску…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "shy",
-				"text": "..?"
+				"text": "Это история про одну пегаску, которая очень любила маффины."
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
-				"state": "smirk",
-				"text": "…которая очень любила маффины."
-			},
-			{
-				"type": "new_state",
-				"speaker": "dusk",
-				"state": "confused",
-			},
-			{
-				"type": "phrase",
-				"speaker": "pay",
-				"text": "И вот однажды она обнаружила, что её маффины закончились, и отправилась в магазин, чтобы купить ещё…"
+				"text": "Однажды она обнаружила, что её маффины закончились, и отправилась в магазин, чтобы купить ещё…"
 			},
 			{
 				"type": "script",

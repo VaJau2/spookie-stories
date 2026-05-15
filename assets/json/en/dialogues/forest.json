@@ -4,7 +4,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Well, now that we're fully settled in and have finished setting up the tents, we can finally relax."
+				"text": "Well, now that we've finished setting up the tents, we can finally relax."
 			},
 			{
 				"type": "phrase",
@@ -76,16 +76,31 @@
 				"text": "I prefer sleeping in the company of ponies I know rather than in the company of strangers."
 			},
 			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "shy",
+			},
+			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
 				"text": "It makes me sleep better."
 			},
 			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "confused",
+			},
+			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"text": "Some of us have already met, but not all of us know each other."
 			}, 
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
@@ -213,52 +228,19 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "strikely",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "confused",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
 				"speaker": "pay",
-				"text": "Okay, I'll start."
+				"text": "I'll start."
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "This story is about one pegasus…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "shy",
-				"text": "..?"
+				"text": "This story is about one pegasus who was very fond of muffins."
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
-				"state": "smirk",
-				"text": "…who was very fond of muffins."
-			},
-			{
-				"type": "new_state",
-				"speaker": "dusk",
-				"state": "confused",
-			},
-			{
-				"type": "phrase",
-				"speaker": "pay",
-				"text": "And then one day she discovered that her muffins were out, and went to the store to buy more…"
+				"text": "One day she discovered that her muffins were out, and went to the store to buy more…"
 			},
 			{
 				"type": "script",
