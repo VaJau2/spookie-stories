@@ -1482,12 +1482,28 @@ theme_override_fonts/font = ExtResource("19_dn1w7")
 theme_override_font_sizes/font_size = 50
 text = "Spooky Stories"
 
+[node name="load_button" type="Button" parent="menu/main_menu" unique_id=859157278 node_paths=PackedStringArray("load_panel")]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 352.0
+offset_right = 1128.0
+offset_bottom = 384.0
+focus_neighbor_bottom = NodePath("../start_button")
+theme = ExtResource("20_6sryq")
+disabled = true
+text = "Загрузить уровень >   "
+alignment = 2
+script = ExtResource("22_bjond")
+load_panel = NodePath("../load")
+
 [node name="start_button" type="Button" parent="menu/main_menu" unique_id=1903705571 node_paths=PackedStringArray("scenario_anim", "main_menu_panel", "pause_menu")]
 layout_mode = 0
 offset_left = 872.0
 offset_top = 400.0
 offset_right = 1128.0
 offset_bottom = 432.0
+focus_neighbor_top = NodePath("../load_button")
+focus_neighbor_bottom = NodePath("../exit_button")
 theme = ExtResource("20_6sryq")
 text = "Играть >   "
 alignment = 2
@@ -1496,25 +1512,13 @@ scenario_anim = NodePath("../../../scenario")
 main_menu_panel = NodePath("..")
 pause_menu = NodePath("../../pause_menu")
 
-[node name="load_button" type="Button" parent="menu/main_menu" unique_id=859157278 node_paths=PackedStringArray("load_panel")]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 352.0
-offset_right = 1128.0
-offset_bottom = 384.0
-theme = ExtResource("20_6sryq")
-disabled = true
-text = "Загрузить уровень >   "
-alignment = 2
-script = ExtResource("22_bjond")
-load_panel = NodePath("../load")
-
 [node name="exit_button" type="Button" parent="menu/main_menu" unique_id=591724696]
 layout_mode = 0
 offset_left = 872.0
 offset_top = 448.0
 offset_right = 1128.0
 offset_bottom = 480.0
+focus_neighbor_top = NodePath("../start_button")
 theme = ExtResource("20_6sryq")
 text = "Выход X   "
 alignment = 2
@@ -1568,23 +1572,28 @@ grow_horizontal = 2
 
 [node name="shop" type="Button" parent="menu/main_menu/load/container" unique_id=935891234]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../gas_station")
 text = "Магазин"
 script = ExtResource("25_soql2")
 level_num = 1
 
 [node name="gas_station" type="Button" parent="menu/main_menu/load/container" unique_id=121257697]
 layout_mode = 2
+focus_neighbor_top = NodePath("../shop")
+focus_neighbor_bottom = NodePath("../cave")
 text = "Заправка"
 script = ExtResource("25_soql2")
 level_num = 2
 
 [node name="cave" type="Button" parent="menu/main_menu/load/container" unique_id=1471753581]
 layout_mode = 2
+focus_neighbor_top = NodePath("../gas_station")
+focus_neighbor_bottom = NodePath("../../cancel")
 text = "Шахта"
 script = ExtResource("25_soql2")
 level_num = 3
 
-[node name="cancel" type="Button" parent="menu/main_menu/load" unique_id=1442872170 node_paths=PackedStringArray("panel_to_close")]
+[node name="cancel" type="Button" parent="menu/main_menu/load" unique_id=1442872170 node_paths=PackedStringArray("panel_to_close", "load_button")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1600,6 +1609,7 @@ grow_vertical = 0
 text = "Отмена"
 script = ExtResource("27_g34gq")
 panel_to_close = NodePath("..")
+load_button = NodePath("../../load_button")
 
 [node name="hint" type="Label" parent="menu/main_menu/load" unique_id=1594535621]
 layout_mode = 1

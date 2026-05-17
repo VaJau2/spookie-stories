@@ -33,6 +33,8 @@
 [ext_resource type="Script" uid="uid://bo1mfwd12jeak" path="res://assets/scripts/controllers/cave/stepOnEnemiesArea.gd" id="31_imru1"]
 [ext_resource type="AudioStream" uid="uid://dxsspx6l1ls7j" path="res://assets/audio/healPotion.wav" id="31_jfbih"]
 [ext_resource type="AudioStream" uid="uid://dqf3pnm7id7n7" path="res://assets/audio/rat/RatHoofHit.mp3" id="32_yasen"]
+[ext_resource type="Script" uid="uid://1uf35u0ae77m" path="res://assets/scripts/controllers/cave/gamepadAutoaimArea.gd" id="34_rd06m"]
+[ext_resource type="Texture2D" uid="uid://dwyblf58qcg8o" path="res://assets/sprites/interface/autoaim.png" id="35_pemov"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8u0ls"]
 radius = 7.0
@@ -315,6 +317,12 @@ light_mode = 1
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yasen"]
 size = Vector2(11, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pemov"]
+size = Vector2(400, 119)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pemov"]
+light_mode = 1
+
 [node name="player" type="CharacterBody2D" unique_id=1723412077]
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=599326609]
@@ -397,10 +405,11 @@ script = ExtResource("14_qopx2")
 movement_controller = NodePath("../movement_controller")
 sound_variants = Array[AudioStream]([ExtResource("8_qopx2"), ExtResource("16_pgpb6"), ExtResource("17_r32il")])
 
-[node name="revolver_controller" type="Node2D" parent="." unique_id=1850719081 node_paths=PackedStringArray("moving_controller", "animation_controller", "pony_sprite", "gun")]
+[node name="revolver_controller" type="Node2D" parent="." unique_id=1850719081 node_paths=PackedStringArray("moving_controller", "animation_controller", "autoaim_area", "pony_sprite", "gun")]
 script = ExtResource("19_y54q8")
 moving_controller = NodePath("../movement_controller")
 animation_controller = NodePath("../animation_controller")
+autoaim_area = NodePath("../gamepad_autoaim_area")
 pony_sprite = NodePath("../sprite")
 gun = NodePath("../gun")
 shoot_sound = ExtResource("20_qo0i8")
@@ -483,5 +492,25 @@ shape = SubResource("RectangleShape2D_yasen")
 stream = ExtResource("32_yasen")
 bus = &"Sound"
 
+[node name="gamepad_autoaim_area" type="Area2D" parent="." unique_id=1947814667]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("34_rd06m")
+
+[node name="shape" type="CollisionShape2D" parent="gamepad_autoaim_area" unique_id=1555136949]
+position = Vector2(-3, -16.5)
+shape = SubResource("RectangleShape2D_pemov")
+
+[node name="aim_point" type="Node2D" parent="gamepad_autoaim_area" unique_id=2060372997]
+visible = false
+
+[node name="sprite" type="Sprite2D" parent="gamepad_autoaim_area/aim_point" unique_id=1708438022]
+material = SubResource("CanvasItemMaterial_pemov")
+position = Vector2(0, -3.145)
+scale = Vector2(0.24193548, 0.1784375)
+texture = ExtResource("35_pemov")
+
 [connection signal="finish_jumping" from="movement_controller" to="fall_dust" method="_on_platformer_movement_finish_jumping"]
 [connection signal="body_entered" from="step_area" to="step_area" method="_on_body_entered"]
+[connection signal="body_entered" from="gamepad_autoaim_area" to="gamepad_autoaim_area" method="_on_body_entered"]
+[connection signal="body_exited" from="gamepad_autoaim_area" to="gamepad_autoaim_area" method="_on_body_exited"]

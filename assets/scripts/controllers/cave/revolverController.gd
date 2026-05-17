@@ -4,6 +4,7 @@ class_name RevolverController
 
 @export var moving_controller: MovementController
 @export var animation_controller: AnimationController
+@export var autoaim_area: GamepadAutoAimArea
 @export var pony_sprite: Sprite2D
 @export var gun: Sprite2D
 @export var shoot_sound: AudioStream
@@ -86,6 +87,10 @@ func _on_shoot(pos: Vector2) -> void:
 		return
 	
 	if cooldown_timer > 0: return
+	
+	if autoaim_area.closest_enemy != null:
+		pos = autoaim_area.closest_enemy.global_position
+	
 	audi.stream = shoot_sound
 	audi.play()
 	show_gun_timer = SHOW_GUN_TIME

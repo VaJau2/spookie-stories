@@ -147,5 +147,59 @@
 				"method": "anim_black_screen",
 			},
 		]
+	},
+	"night2": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Мы обе тихо прокрались ко мне в спальню, сели на кровать и обнявшись тупо уставились на дверь."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "shake_middle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Даже разговаривать не было сил от страха."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "shake_middle2",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Спустя какое-то время мы более-менее расслабились и уже засыпали."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "shake_low",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "И тут снова мамин голос из-за двери:"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "shake_strong",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely-mother-clone-dark",
+				"text": "Доча ужин стынет!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Сон как копытом сняло."
+			},
+		]
 	}
 }

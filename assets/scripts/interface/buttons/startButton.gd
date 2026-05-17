@@ -5,6 +5,10 @@ extends Button
 @export var pause_menu: PauseMenu
 
 
+func _ready() -> void:
+	grab_focus()
+
+
 func _pressed() -> void:
 	G.scene_vars.clear()
 	main_menu_panel.visible = false

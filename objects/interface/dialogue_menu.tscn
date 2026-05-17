@@ -4,8 +4,10 @@
 [ext_resource type="Theme" uid="uid://cb3k2wmln4chv" path="res://assets/materials/default_theme.tres" id="2_fs0q5"]
 [ext_resource type="Texture2D" uid="uid://c4soggtd70lwq" path="res://assets/sprites/characters/dialogue/strikely.png" id="3_hlvh2"]
 [ext_resource type="Texture2D" uid="uid://t0vtmskdwqdh" path="res://assets/sprites/interface/space.png" id="3_sg52v"]
+[ext_resource type="Script" uid="uid://cmwdwsv23bg06" path="res://assets/scripts/interface/dialogue/buttonIcon.gd" id="4_2x3gq"]
 [ext_resource type="Script" uid="uid://d1owaqv0af01v" path="res://assets/scripts/interface/dialogue/dialogueAvatar.gd" id="4_sg52v"]
 [ext_resource type="Script" uid="uid://c6lwrwysonfvw" path="res://assets/scripts/interface/dialogue/dialogueAudi.gd" id="5_2x3gq"]
+[ext_resource type="Texture2D" uid="uid://dn5t30i1be2xk" path="res://assets/sprites/interface/A.png" id="5_dl60q"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="6_hlvh2"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="7_sg52v"]
 
@@ -84,6 +86,10 @@ offset_right = -5.0
 offset_bottom = 19.0
 texture = ExtResource("3_sg52v")
 expand_mode = 2
+stretch_mode = 5
+script = ExtResource("4_2x3gq")
+gamepad_texture = ExtResource("5_dl60q")
+keyboard_texture = ExtResource("3_sg52v")
 
 [node name="avatar_point" type="Control" parent="." unique_id=629659834]
 anchors_preset = 0

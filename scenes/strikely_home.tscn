@@ -707,7 +707,9 @@ script/source = "extends Node
 @export var strikely_and_mother: Node2D
 @export var strikely_room: Node2D
 
- 
+@export var dialogue_menu: DialogueMenu
+
+
 func show_mother() -> void:
 	var player_anim: AnimationController = player.get_node(\"animation_controller\")
 	if player_anim.sprites[0].flip_h:
@@ -730,6 +732,8 @@ func anim_black_screen() -> void:
 		await get_tree().process_frame
 	
 	await get_tree().create_timer(0.5).timeout
+	
+	dialogue_menu.start_dialogue(\"strikely_home\", \"night2\")
 
 
 func move_back_to_room() -> void:
@@ -741,7 +745,32 @@ func move_back_to_room() -> void:
 	strikely_and_mother.visible = true
 	var anim: AnimationPlayer = strikely_and_mother.get_node(\"anim\")
 	anim.play(\"shake-strong\")
-	
+
+
+func shake_middle() -> void:
+	var anim: AnimationPlayer = strikely_and_mother.get_node(\"anim\")
+	anim.play(\"shake-middle\")
+	var sprite: Sprite2D = strikely_and_mother.get_node(\"sprite\")
+	sprite.frame = 1
+
+
+func shake_middle2() -> void:
+	var sprite: Sprite2D = strikely_and_mother.get_node(\"sprite\")
+	sprite.frame = 2
+
+
+func shake_low() -> void:
+	var anim: AnimationPlayer = strikely_and_mother.get_node(\"anim\")
+	anim.play(\"shake-low\")
+	var sprite: Sprite2D = strikely_and_mother.get_node(\"sprite\")
+	sprite.frame = 3
+
+
+func shake_strong() -> void:
+	var anim: AnimationPlayer = strikely_and_mother.get_node(\"anim\")
+	anim.play(\"shake-strong\")
+	var sprite: Sprite2D = strikely_and_mother.get_node(\"sprite\")
+	sprite.frame = 0
 "
 
 [node name="main" type="Node2D" unique_id=660872533]
@@ -2160,7 +2189,7 @@ get_up_point = NodePath("../strikely_room/bed/get_up_point")
 night_dialogue_area = NodePath("../corridor_2_floor/night_dialogue_area")
 dialogue_menu = NodePath("../menu/dialogue_menu")
 
-[node name="scared_mother" type="Node" parent="." unique_id=1437275901 node_paths=PackedStringArray("mother", "door_audi", "player", "black_screen", "middle_room_point", "strikely_and_mother", "strikely_room")]
+[node name="scared_mother" type="Node" parent="." unique_id=1437275901 node_paths=PackedStringArray("mother", "door_audi", "player", "black_screen", "middle_room_point", "strikely_and_mother", "strikely_room", "dialogue_menu")]
 script = SubResource("GDScript_f81xj")
 mother = NodePath("../ponies/strikely-mother")
 door_audi = NodePath("../corridor_2_floor/Door/door_audi")
@@ -2170,6 +2199,7 @@ black_screen = NodePath("../menu/black_screen")
 middle_room_point = NodePath("../strikely_room/middle_room")
 strikely_and_mother = NodePath("../strikely_room/strikely&mother")
 strikely_room = NodePath("../strikely_room")
+dialogue_menu = NodePath("../menu/dialogue_menu")
 
 [connection signal="body_entered" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_entered"]
 [connection signal="body_exited" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_exited"]

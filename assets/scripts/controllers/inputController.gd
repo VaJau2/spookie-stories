@@ -41,6 +41,8 @@ func _on_jump() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if Engine.time_scale == 0: return
+	
 	if input_handler.get_dir().length() > 0:
 		if is_sitting:
 			is_sitting = false
