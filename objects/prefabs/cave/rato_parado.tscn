@@ -2,12 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://c0aeqms2j8kb7" path="res://assets/sprites/characters/cave/rato_parado.png" id="1_77kpb"]
 [ext_resource type="Texture2D" uid="uid://c66k6oqmwcg1f" path="res://assets/sprites/characters/cave/rato_parado-eyes.png" id="2_1buue"]
-[ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/cave/enemies/stateMachine.gd" id="2_p5qwx"]
+[ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="2_p5qwx"]
 [ext_resource type="Script" uid="uid://bx42hvkglxoja" path="res://assets/scripts/controllers/cave/enemies/jumpController.gd" id="3_4dk0i"]
-[ext_resource type="Script" uid="uid://db1656p4dffkv" path="res://assets/scripts/controllers/cave/enemies/idleState.gd" id="3_065hc"]
-[ext_resource type="Script" uid="uid://dj1lcxrr7u0c1" path="res://assets/scripts/controllers/cave/enemies/attackState.gd" id="4_ish0f"]
+[ext_resource type="Script" uid="uid://db1656p4dffkv" path="res://assets/scripts/controllers/cave/enemies/ratStates/idleState.gd" id="3_065hc"]
+[ext_resource type="Script" uid="uid://dj1lcxrr7u0c1" path="res://assets/scripts/controllers/cave/enemies/ratStates/attackState.gd" id="4_ish0f"]
 [ext_resource type="Script" uid="uid://borc24ulmg2tk" path="res://assets/scripts/controllers/cave/npcStuckController.gd" id="4_okgyy"]
 [ext_resource type="Script" uid="uid://c5afv7afv7dqm" path="res://assets/scripts/controllers/cave/enemies/steppedController.gd" id="5_5nfgj"]
+[ext_resource type="Script" uid="uid://cj457b3ggyh1x" path="res://assets/scripts/controllers/cave/enemies/ratMovementController.gd" id="5_wi8op"]
 [ext_resource type="Script" uid="uid://clwtykxen13er" path="res://assets/scripts/controllers/cave/enemies/seekArea.gd" id="6_7sepi"]
 [ext_resource type="Script" uid="uid://dtubqwkgrjsg1" path="res://assets/scripts/controllers/cave/enemies/hitArea.gd" id="9_qbwwr"]
 [ext_resource type="AudioStream" uid="uid://rwxhiymixvof" path="res://assets/audio/rat/RatHit.mp3" id="10_d0rep"]
@@ -187,10 +188,10 @@ func _on_platformer_movement_finish_jumping() -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5nfgj"]
-size = Vector2(800, 320)
+size = Vector2(800, 160)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soc8u"]
-size = Vector2(80, 32)
+size = Vector2(117.333336, 32)
 
 [node name="rato_parado" type="CharacterBody2D" unique_id=205928098]
 scale = Vector2(0.3, 0.3)
@@ -217,14 +218,19 @@ position = Vector2(0, -16)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_77kpb")
 
-[node name="jump_controller" type="Node" parent="." unique_id=1484100214 node_paths=PackedStringArray("state_machine")]
+[node name="jump_controller" type="Node" parent="." unique_id=1484100214 node_paths=PackedStringArray("state_machine", "movement_controller")]
 script = ExtResource("3_4dk0i")
 state_machine = NodePath("../state_machine")
+movement_controller = NodePath("../movement_controller")
 
-[node name="stuck_controller" type="Node" parent="." unique_id=2090020035 node_paths=PackedStringArray("jump_controller")]
+[node name="stuck_controller" type="Node" parent="." unique_id=2090020035 node_paths=PackedStringArray("movement_controller", "jump_controller")]
 script = ExtResource("4_okgyy")
+movement_controller = NodePath("../movement_controller")
 jump_controller = NodePath("../jump_controller")
 check_time = 0.1
+
+[node name="movement_controller" type="Node" parent="." unique_id=75932749]
+script = ExtResource("5_wi8op")
 
 [node name="die_controller" type="Node" parent="." unique_id=1864725812 node_paths=PackedStringArray("anim")]
 script = ExtResource("5_5nfgj")
@@ -240,31 +246,32 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5nfgj")
 script = SubResource("GDScript_idepp")
 
-[node name="state_machine" type="Node" parent="." unique_id=793241245 node_paths=PackedStringArray("default_state")]
+[node name="state_machine" type="Node" parent="." unique_id=793241245 node_paths=PackedStringArray("default_state", "movement_controller")]
 script = ExtResource("2_p5qwx")
 default_state = NodePath("idle")
+movement_controller = NodePath("../movement_controller")
 
 [node name="idle" type="Node" parent="state_machine" unique_id=1009796617 node_paths=PackedStringArray("sprites")]
 script = ExtResource("3_065hc")
 sprites = [NodePath("../../sprite"), NodePath("../../eyes")]
-speed = 90.0
+speed = 200.0
 
 [node name="attack" type="Node" parent="state_machine" unique_id=1455225626 node_paths=PackedStringArray("sprites")]
 script = ExtResource("4_ish0f")
 sprites = [NodePath("../../sprite"), NodePath("../../eyes")]
-speed = 100.0
-follow_distance = 6.0
+speed = 220.0
+follow_distance = 4.0
 
 [node name="seek_area" type="Area2D" parent="." unique_id=224915092 node_paths=PackedStringArray("state_machine")]
 script = ExtResource("6_7sepi")
 state_machine = NodePath("../state_machine")
 
 [node name="shape_l" type="CollisionShape2D" parent="seek_area" unique_id=1002004956]
-position = Vector2(-304, -160)
+position = Vector2(-304, -80)
 shape = SubResource("RectangleShape2D_5nfgj")
 
 [node name="shape_r" type="CollisionShape2D" parent="seek_area" unique_id=604137352]
-position = Vector2(304, -160)
+position = Vector2(293.3333, -80)
 shape = SubResource("RectangleShape2D_5nfgj")
 
 [node name="hit_area" type="Area2D" parent="." unique_id=198342667 node_paths=PackedStringArray("state_machine", "seek_area")]
@@ -273,11 +280,11 @@ state_machine = NodePath("../state_machine")
 seek_area = NodePath("../seek_area")
 
 [node name="shape_l" type="CollisionShape2D" parent="hit_area" unique_id=2131385965]
-position = Vector2(-112, -16)
+position = Vector2(-80, -16)
 shape = SubResource("RectangleShape2D_soc8u")
 
 [node name="shape_r" type="CollisionShape2D" parent="hit_area" unique_id=126882430]
-position = Vector2(104, -16)
+position = Vector2(85.333336, -16)
 shape = SubResource("RectangleShape2D_soc8u")
 
 [node name="audi" type="AudioStreamPlayer2D" parent="hit_area" unique_id=585274421]

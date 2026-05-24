@@ -10,7 +10,7 @@ var walk_left: bool
 
 
 func _update_walk() -> void:
-	parent.velocity.x = -speed if walk_left else speed
+	movement_controller.dir.x = -speed if walk_left else speed
 
 
 func _ready() -> void:

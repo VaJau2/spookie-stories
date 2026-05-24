@@ -200,6 +200,36 @@
 				"speaker": "strikely",
 				"text": "Сон как копытом сняло."
 			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "anim_black_screen_2",
+			},
+		]
+	},
+	"night3": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Через некоторое время звук затихающих копыт оповестил нас о том, что оно вернулось на кухню."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я решила прокрасться на улицу, чтобы позвать помощь."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "get_up",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely-mother",
+				"state": "scared",
+				"text": "Только будь осторожнее, пожалуйста"
+			},
 		]
 	}
 }

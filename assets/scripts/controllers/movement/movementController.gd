@@ -1,4 +1,4 @@
-extends Node
+extends BaseMovementController
 
 class_name MovementController
 
@@ -8,8 +8,7 @@ class_name MovementController
 
 @onready var parent: CharacterBody2D = get_parent()
 
-var may_move: bool = true
-var dir: Vector2
+
 var current_state: MovementState
 
 signal move
@@ -50,6 +49,7 @@ func load_state(state_name: String = 'default') -> void:
 func set_current_state(new_state: MovementState) -> void:
 	current_state = new_state
 	state_changed.emit(new_state.name)
+	emit_move_signals()
 
 
 func set_velocity(new_velocity: Vector2) -> void:
@@ -59,7 +59,7 @@ func set_velocity(new_velocity: Vector2) -> void:
 
 
 func emit_move_signals() -> void:
-	if parent.velocity.length() > 0:
+	if may_move and parent.velocity.length() > 0:
 		move.emit()
 	else:
 		stop.emit()

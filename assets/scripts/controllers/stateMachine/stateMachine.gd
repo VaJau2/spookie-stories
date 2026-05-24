@@ -2,7 +2,8 @@ extends Node
 
 class_name StateMachine
 
-@export var default_state: Node
+@export var default_state: StateBase
+@export var movement_controller: BaseMovementController
 
 @warning_ignore("unused_signal")
 signal flip(value: bool)

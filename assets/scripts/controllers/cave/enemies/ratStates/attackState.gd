@@ -11,13 +11,16 @@ var is_left: bool
 
 func _process(_delta: float) -> void:
 	var walk_left = parent.global_position.x > player.global_position.x
-	
 	var distance = abs(parent.global_position.x - player.global_position.x)
 	
+	var dir_x = 0
+	
 	if distance > follow_distance:
-		parent.velocity.x = -speed if walk_left else speed
+		dir_x = -speed if walk_left else speed
 	else:
-		parent.velocity.x = 0
+		state_machine.enable_state("idle")
+	
+	movement_controller.dir.x = dir_x
 	
 	if is_left != walk_left:
 		is_left = walk_left

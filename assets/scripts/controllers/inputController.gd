@@ -4,9 +4,16 @@ class_name InputController
 
 @export var movement_controller: MovementController
 @export var may_move_vertical: bool = true
+@export var sit_mode: SitMode
+
 var input_handler: InputHandler
 var is_moving: bool = false
 var is_sitting: bool = false
+
+enum SitMode {
+	Sit,
+	Stealth
+}
 
 
 func _ready() -> void:
@@ -31,8 +38,12 @@ func _on_stop_running() -> void:
 
 
 func _on_start_sitting() -> void:
-	is_sitting = true
-	movement_controller.load_state("sit")
+	if sit_mode == SitMode.Stealth:
+		is_sitting = !is_sitting
+		movement_controller.load_state("sit" if is_sitting else "walk")
+	else:
+		is_sitting = true
+		movement_controller.load_state("sit")
 
 
 func _on_jump() -> void:
@@ -44,7 +55,7 @@ func _physics_process(_delta: float) -> void:
 	if Engine.time_scale == 0: return
 	
 	if input_handler.get_dir().length() > 0:
-		if is_sitting:
+		if is_sitting and sit_mode == SitMode.Sit:
 			is_sitting = false
 			movement_controller.load_state("walk")
 		

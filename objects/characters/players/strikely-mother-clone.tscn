@@ -1,32 +1,32 @@
-[gd_scene format=3 uid="uid://c6j5nqwe7x4v3"]
+[gd_scene format=3 uid="uid://bttjt3em66gsv"]
 
-[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_s7pd4"]
-[ext_resource type="Texture2D" uid="uid://dts6m4gpnv8u4" path="res://assets/sprites/characters/strikely.png" id="2_l43oi"]
-[ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="2_qmg4u"]
-[ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_up0fu"]
-[ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="4_3tm56"]
-[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="5_qmg4u"]
-[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="7_nyttx"]
-[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="8_a2g0u"]
-[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="9_lt0jn"]
-[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="10_s717i"]
-[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="11_xc67m"]
-[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="12_2aabm"]
-[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="13_3khfa"]
-[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="14_fb0o0"]
-[ext_resource type="AudioStream" uid="uid://sk36g5jc2esa" path="res://assets/audio/steps/wood/stepWoodFast1.wav" id="15_s717i"]
-[ext_resource type="AudioStream" uid="uid://cyfvml5e8ylwk" path="res://assets/audio/steps/wood/stepWoodFast2.wav" id="16_xc67m"]
-[ext_resource type="AudioStream" uid="uid://wb31d5a7ycbr" path="res://assets/audio/steps/wood/stepWoodFast3.wav" id="17_2aabm"]
-[ext_resource type="AudioStream" uid="uid://c8rhf87m1iy14" path="res://assets/audio/steps/grass/stepGrass1.wav" id="18_3khfa"]
-[ext_resource type="AudioStream" uid="uid://jaao0wjaahpu" path="res://assets/audio/steps/grass/stepGrass2.wav" id="19_fb0o0"]
-[ext_resource type="AudioStream" uid="uid://bvfvf3jj5qpa0" path="res://assets/audio/steps/grass/stepGrass3.wav" id="20_5qvrp"]
-[ext_resource type="AudioStream" uid="uid://eboptg1tanj7" path="res://assets/audio/steps/grass/stepGrassRun1.wav" id="21_cw71g"]
-[ext_resource type="AudioStream" uid="uid://btewlbhb7pgl8" path="res://assets/audio/steps/grass/stepGrassRun2.wav" id="22_dmae2"]
-[ext_resource type="AudioStream" uid="uid://pabf605iukvp" path="res://assets/audio/steps/grass/stepGrassRun3.wav" id="23_ds5oh"]
-[ext_resource type="AudioStream" uid="uid://crmv88h734dyx" path="res://assets/audio/steps/grass/stepGrassFast1.wav" id="24_bw2op"]
-[ext_resource type="AudioStream" uid="uid://ddvswa6c7beio" path="res://assets/audio/steps/grass/stepGrassFast2.wav" id="25_4td4c"]
-[ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="26_mgb1j"]
-[ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="27_dmae2"]
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_qfbke"]
+[ext_resource type="Texture2D" uid="uid://dts6m4gpnv8u4" path="res://assets/sprites/characters/strikely.png" id="2_m0kfm"]
+[ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="3_nsrsj"]
+[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_51bfj"]
+[ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="5_ta1td"]
+[ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="6_3fi43"]
+[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="7_3fk4f"]
+[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="8_olpmj"]
+[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="9_28vtn"]
+[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="10_65pww"]
+[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="11_5rdkx"]
+[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="12_odm6v"]
+[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="13_ljrkw"]
+[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="14_m7kes"]
+[ext_resource type="AudioStream" uid="uid://sk36g5jc2esa" path="res://assets/audio/steps/wood/stepWoodFast1.wav" id="15_eafva"]
+[ext_resource type="AudioStream" uid="uid://cyfvml5e8ylwk" path="res://assets/audio/steps/wood/stepWoodFast2.wav" id="16_ofcpx"]
+[ext_resource type="AudioStream" uid="uid://wb31d5a7ycbr" path="res://assets/audio/steps/wood/stepWoodFast3.wav" id="17_3g2g5"]
+[ext_resource type="AudioStream" uid="uid://c8rhf87m1iy14" path="res://assets/audio/steps/grass/stepGrass1.wav" id="18_g3fgs"]
+[ext_resource type="AudioStream" uid="uid://jaao0wjaahpu" path="res://assets/audio/steps/grass/stepGrass2.wav" id="19_xekfv"]
+[ext_resource type="AudioStream" uid="uid://bvfvf3jj5qpa0" path="res://assets/audio/steps/grass/stepGrass3.wav" id="20_cumpd"]
+[ext_resource type="AudioStream" uid="uid://eboptg1tanj7" path="res://assets/audio/steps/grass/stepGrassRun1.wav" id="21_w5ehu"]
+[ext_resource type="AudioStream" uid="uid://btewlbhb7pgl8" path="res://assets/audio/steps/grass/stepGrassRun2.wav" id="22_3v74r"]
+[ext_resource type="AudioStream" uid="uid://pabf605iukvp" path="res://assets/audio/steps/grass/stepGrassRun3.wav" id="23_rq2o7"]
+[ext_resource type="AudioStream" uid="uid://crmv88h734dyx" path="res://assets/audio/steps/grass/stepGrassFast1.wav" id="24_w1723"]
+[ext_resource type="AudioStream" uid="uid://ddvswa6c7beio" path="res://assets/audio/steps/grass/stepGrassFast2.wav" id="25_nhsxk"]
+[ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="26_vo7c5"]
+[ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="27_4quwc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -178,34 +178,34 @@ _data = {
 }
 
 [sub_resource type="Resource" id="Resource_iqgwf"]
-script = ExtResource("8_a2g0u")
-walk_sounds = Array[AudioStream]([ExtResource("12_2aabm"), ExtResource("13_3khfa"), ExtResource("14_fb0o0")])
-run_sounds = Array[AudioStream]([ExtResource("9_lt0jn"), ExtResource("10_s717i"), ExtResource("11_xc67m")])
+script = ExtResource("8_olpmj")
+walk_sounds = Array[AudioStream]([ExtResource("12_odm6v"), ExtResource("13_ljrkw"), ExtResource("14_m7kes")])
+run_sounds = Array[AudioStream]([ExtResource("9_28vtn"), ExtResource("10_65pww"), ExtResource("11_5rdkx")])
 run_cooldown = 0.75
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Resource" id="Resource_3khfa"]
-script = ExtResource("8_a2g0u")
+script = ExtResource("8_olpmj")
 material_name = 4
-walk_sounds = Array[AudioStream]([ExtResource("15_s717i"), ExtResource("16_xc67m"), ExtResource("17_2aabm")])
+walk_sounds = Array[AudioStream]([ExtResource("15_eafva"), ExtResource("16_ofcpx"), ExtResource("17_3g2g5")])
 walk_cooldown = 0.5
-run_sounds = Array[AudioStream]([ExtResource("15_s717i"), ExtResource("16_xc67m"), ExtResource("17_2aabm")])
+run_sounds = Array[AudioStream]([ExtResource("15_eafva"), ExtResource("16_ofcpx"), ExtResource("17_3g2g5")])
 run_cooldown = 0.2
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Resource" id="Resource_s717i"]
-script = ExtResource("8_a2g0u")
+script = ExtResource("8_olpmj")
 material_name = 5
-walk_sounds = Array[AudioStream]([ExtResource("18_3khfa"), ExtResource("19_fb0o0"), ExtResource("20_5qvrp")])
-run_sounds = Array[AudioStream]([ExtResource("18_3khfa"), ExtResource("19_fb0o0"), ExtResource("20_5qvrp")])
+walk_sounds = Array[AudioStream]([ExtResource("18_g3fgs"), ExtResource("19_xekfv"), ExtResource("20_cumpd")])
+run_sounds = Array[AudioStream]([ExtResource("18_g3fgs"), ExtResource("19_xekfv"), ExtResource("20_cumpd")])
 run_cooldown = 0.2
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Resource" id="Resource_lr2p7"]
-script = ExtResource("8_a2g0u")
+script = ExtResource("8_olpmj")
 material_name = 2
-walk_sounds = Array[AudioStream]([ExtResource("24_bw2op"), ExtResource("25_4td4c"), ExtResource("26_mgb1j")])
-run_sounds = Array[AudioStream]([ExtResource("21_cw71g"), ExtResource("22_dmae2"), ExtResource("23_ds5oh")])
+walk_sounds = Array[AudioStream]([ExtResource("24_w1723"), ExtResource("25_nhsxk"), ExtResource("26_vo7c5")])
+run_sounds = Array[AudioStream]([ExtResource("21_w5ehu"), ExtResource("22_3v74r"), ExtResource("23_rq2o7")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [node name="pony" type="CharacterBody2D" unique_id=301655442]
@@ -215,12 +215,12 @@ texture_filter = 1
 modulate = Color(1, 1, 1, 0.33333334)
 position = Vector2(-1.4999995, -2)
 scale = Vector2(0.81395346, 1)
-texture = ExtResource("1_s7pd4")
+texture = ExtResource("1_qfbke")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1857052420]
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("2_l43oi")
+texture = ExtResource("2_m0kfm")
 hframes = 8
 vframes = 6
 
@@ -235,29 +235,29 @@ libraries/ = SubResource("AnimationLibrary_b8q40")
 autoplay = &"idle"
 
 [node name="movement_controller" type="Node" parent="." unique_id=1950806343]
-script = ExtResource("4_3tm56")
+script = ExtResource("3_nsrsj")
 
 [node name="walk" type="Node" parent="movement_controller" unique_id=5973867]
-script = ExtResource("5_qmg4u")
+script = ExtResource("4_51bfj")
 default = true
 
 [node name="run" type="Node" parent="movement_controller" unique_id=147852670]
-script = ExtResource("5_qmg4u")
+script = ExtResource("4_51bfj")
 anim = "run"
 speed = 300
 
 [node name="sit" type="Node" parent="movement_controller" unique_id=732522925]
-script = ExtResource("5_qmg4u")
+script = ExtResource("4_51bfj")
 idle_anim = "stealth"
 anim = "stealth-walk"
 
 [node name="input_controller" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
-script = ExtResource("3_up0fu")
+script = ExtResource("5_ta1td")
 movement_controller = NodePath("../movement_controller")
 sit_mode = 1
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
-script = ExtResource("2_qmg4u")
+script = ExtResource("6_3fi43")
 sprites = [NodePath("../sprite")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movement_controller")
@@ -268,11 +268,11 @@ position_smoothing_enabled = true
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
 bus = &"Sound"
-script = ExtResource("7_nyttx")
+script = ExtResource("7_3fk4f")
 movement_controller = NodePath("../movement_controller")
-steps_data = Array[ExtResource("8_a2g0u")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
+steps_data = Array[ExtResource("8_olpmj")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
 
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
-script = ExtResource("27_dmae2")
+script = ExtResource("27_4quwc")
 anim = NodePath("../anim")
 talk_state = ""
