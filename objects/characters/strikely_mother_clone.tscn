@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_u0pbs"]
 [ext_resource type="Texture2D" uid="uid://cg26ifbmqxcmt" path="res://assets/sprites/characters/mother-clone.png" id="2_majeu"]
-[ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="3_aenfv"]
+[ext_resource type="Script" uid="uid://6gu4rfslrt2r" path="res://assets/scripts/controllers/movement/navigationMovementController.gd" id="3_fhfti"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_gognt"]
 [ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="5_fhfti"]
 [ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="6_vc754"]
@@ -30,6 +30,9 @@
 [ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/strikelyHome/cloneStates/idleState.gd" id="28_aenfv"]
 [ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/strikelyHome/cloneStates/attackState.gd" id="29_gognt"]
 [ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/strikelyHome/cloneStates/searchState.gd" id="30_fhfti"]
+[ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_vc754"]
+[ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_84sis"]
+[ext_resource type="Texture2D" uid="uid://iu3p04cb6yfe" path="res://assets/sprites/interface/seek_signs.png" id="33_r3p24"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -212,13 +215,13 @@ run_sounds = Array[AudioStream]([ExtResource("20_pygho"), ExtResource("21_ub7h7"
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pbs"]
-size = Vector2(159, 81)
+size = Vector2(306, 157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_majeu"]
-size = Vector2(168, 81)
+size = Vector2(318, 156)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aenfv"]
-size = Vector2(509, 224)
+size = Vector2(678, 393)
 
 [node name="strikely-mother-clone" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
@@ -248,8 +251,9 @@ root_node = NodePath("../sprite")
 libraries/ = SubResource("AnimationLibrary_b8q40")
 autoplay = &"idle"
 
-[node name="movement_controller" type="Node" parent="." unique_id=1950806343]
-script = ExtResource("3_aenfv")
+[node name="movement_controller" type="Node" parent="." unique_id=1950806343 node_paths=PackedStringArray("nav_agent")]
+script = ExtResource("3_fhfti")
+nav_agent = NodePath("../nav_agent")
 
 [node name="walk" type="Node" parent="movement_controller" unique_id=5973867]
 script = ExtResource("4_gognt")
@@ -259,11 +263,6 @@ default = true
 script = ExtResource("4_gognt")
 anim = "run"
 speed = 300
-
-[node name="sit" type="Node" parent="movement_controller" unique_id=732522925]
-script = ExtResource("4_gognt")
-idle_anim = "stealth"
-anim = "stealth-walk"
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("5_fhfti")
@@ -282,31 +281,61 @@ script = ExtResource("26_70h7w")
 anim = NodePath("../anim")
 talk_state = ""
 
-[node name="state_machine" type="Node" parent="." unique_id=2080883300 node_paths=PackedStringArray("default_state")]
+[node name="state_machine" type="Node" parent="." unique_id=2080883300 node_paths=PackedStringArray("default_state", "movement_controller")]
 script = ExtResource("27_majeu")
 default_state = NodePath("idle")
+movement_controller = NodePath("../movement_controller")
 
-[node name="idle" type="Node" parent="state_machine" unique_id=396007561]
+[node name="idle" type="Node" parent="state_machine" unique_id=396007561 node_paths=PackedStringArray("seek_sign")]
 script = ExtResource("28_aenfv")
+seek_sign = NodePath("../../seek_sign")
 
-[node name="attack" type="Node" parent="state_machine" unique_id=1455317754]
+[node name="attack" type="Node" parent="state_machine" unique_id=1455317754 node_paths=PackedStringArray("seek_sign", "seek_areas")]
 script = ExtResource("29_gognt")
+seek_sign = NodePath("../../seek_sign")
+seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 
-[node name="search" type="Node" parent="state_machine" unique_id=925214597]
+[node name="search" type="Node" parent="state_machine" unique_id=925214597 node_paths=PackedStringArray("seek_sign", "seek_areas", "anim_controller")]
 script = ExtResource("30_fhfti")
+seek_sign = NodePath("../../seek_sign")
+seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
+anim_controller = NodePath("../../animation_controller")
 
-[node name="close_seek_area" type="Area2D" parent="." unique_id=1048299164]
+[node name="close_seek_area" type="Area2D" parent="." unique_id=1048299164 node_paths=PackedStringArray("state_machine", "anim_controller")]
+monitorable = false
+script = ExtResource("31_vc754")
+state_machine = NodePath("../state_machine")
+anim_controller = NodePath("../animation_controller")
 
 [node name="shape_l" type="CollisionShape2D" parent="close_seek_area" unique_id=2010900258]
-position = Vector2(-79.5, -35.5)
+position = Vector2(-153, -38.5)
 shape = SubResource("RectangleShape2D_u0pbs")
+disabled = true
 
 [node name="shape_r" type="CollisionShape2D" parent="close_seek_area" unique_id=1894323426]
-position = Vector2(84, -35.5)
+position = Vector2(159, -38)
 shape = SubResource("RectangleShape2D_majeu")
 
-[node name="far_seek_area" type="Area2D" parent="." unique_id=1086742387]
+[node name="ray" type="RayCast2D" parent="close_seek_area" unique_id=924487170]
+
+[node name="far_seek_area" type="Area2D" parent="." unique_id=1086742387 node_paths=PackedStringArray("state_machine")]
+monitorable = false
+script = ExtResource("32_84sis")
+state_machine = NodePath("../state_machine")
 
 [node name="shape" type="CollisionShape2D" parent="far_seek_area" unique_id=498995470]
-position = Vector2(6.5, -36)
+position = Vector2(8, -36.5)
 shape = SubResource("RectangleShape2D_aenfv")
+
+[node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
+
+[node name="seek_sign" type="Sprite2D" parent="." unique_id=9199080]
+visible = false
+position = Vector2(28, -64)
+texture = ExtResource("33_r3p24")
+hframes = 2
+
+[connection signal="body_entered" from="close_seek_area" to="close_seek_area" method="_on_body_entered"]
+[connection signal="body_exited" from="close_seek_area" to="close_seek_area" method="_on_body_exited"]
+[connection signal="body_entered" from="far_seek_area" to="far_seek_area" method="_on_body_entered"]
+[connection signal="body_exited" from="far_seek_area" to="far_seek_area" method="_on_body_exited"]

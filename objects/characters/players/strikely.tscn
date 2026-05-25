@@ -208,7 +208,7 @@ walk_sounds = Array[AudioStream]([ExtResource("24_bw2op"), ExtResource("25_4td4c
 run_sounds = Array[AudioStream]([ExtResource("21_cw71g"), ExtResource("22_dmae2"), ExtResource("23_ds5oh")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
-[node name="pony" type="CharacterBody2D" unique_id=301655442]
+[node name="strikely" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 
 [node name="shadow" type="Sprite2D" parent="." unique_id=1258215825]

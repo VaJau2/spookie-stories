@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://lk8uskvvb6g" path="res://assets/sprites/props/strikely-home/poster.png" id="10_vmj86"]
 [ext_resource type="Texture2D" uid="uid://sumkdj7pgbq3" path="res://assets/sprites/props/strikely-home/corridor-2-floor.png" id="11_7y7dn"]
 [ext_resource type="Script" uid="uid://h3usbdgn6og7" path="res://assets/scripts/background/teleportArea.gd" id="11_87wk1"]
-[ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/players/player.tscn" id="11_h7bjg"]
+[ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/players/strikely.tscn" id="11_h7bjg"]
 [ext_resource type="Texture2D" uid="uid://vc1xl4ckrj0x" path="res://assets/sprites/props/strikely-home/stairs_fence.png" id="12_5l7pm"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="12_hymxt"]
 [ext_resource type="AudioStream" uid="uid://dtj0dkgj2mv3u" path="res://assets/audio/furniture/doorOpen.wav" id="12_u6pfn"]
@@ -134,7 +134,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_era8b"]
 resource_name = "shake-low"
-length = 1.2
+length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -143,7 +143,7 @@ tracks/0/path = NodePath("sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2),
+"times": PackedFloat32Array(0, 1.4, 2.9333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-1, -28), Vector2(1, -28), Vector2(-1, -28)]
@@ -155,7 +155,7 @@ tracks/1/path = NodePath("shadow:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2),
+"times": PackedFloat32Array(0, 1.4, 2.9333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(14, -1), Vector2(16, -1), Vector2(14, -1)]
@@ -167,7 +167,7 @@ tracks/2/path = NodePath("shadow2:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2),
+"times": PackedFloat32Array(0, 1.4, 2.9333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-18, -1), Vector2(-16, -1), Vector2(-18, -1)]

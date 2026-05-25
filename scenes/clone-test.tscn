@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://conpqtrvsp8ks" path="res://assets/sprites/props/strikely-home/trees/tree6.1.png" id="13_3in4l"]
 [ext_resource type="Texture2D" uid="uid://crx8c04kmpik5" path="res://assets/sprites/props/strikely-home/trees/tree6.png" id="14_ixudf"]
 [ext_resource type="Texture2D" uid="uid://ufu5y8ujqa82" path="res://assets/sprites/props/strikely-home/trees/tree7.png" id="15_ce16p"]
-[ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/players/player.tscn" id="16_y6365"]
+[ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/players/strikely.tscn" id="16_y6365"]
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="17_4a82d"]
 [ext_resource type="PackedScene" uid="uid://bk4ilh1kxa716" path="res://objects/characters/strikely_mother_clone.tscn" id="18_cf5ci"]
 
@@ -135,6 +135,11 @@ size = Vector2(47, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hr3t"]
 size = Vector2(11.5, 13.166687)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cf5ci"]
+vertices = PackedVector2Array(-5666.8125, 660, -5490.5234, 656.2578, -5504.0234, 717.03906, -5676.25, 717.96875, -6033.0234, 666, -6028.1016, 715.96875, -6316.758, 716.96094, -6310.117, 660.1875, -5674.8906, 842.15625, -5243.242, 835.15625, -5247.758, 1025.0313, -6367.75, 1028.9609, -6363.2266, 841.96875, -6026.8984, 840.96875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(5, 6, 7, 4), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(8, 11, 12, 13), PackedInt32Array(13, 5, 3, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6373, 832, -6037, 831, -6038, 726, -6328, 727, -6319, 650, -6033, 656, -5667, 650, -5478, 646, -5496, 727, -5666.143, 727.92523, -5665, 832, -5233, 825, -5238, 1035, -6378, 1039)])
 
 [node name="main" type="Node2D" unique_id=1197070492]
 y_sort_enabled = true
@@ -816,9 +821,23 @@ texture_scale = 0.9
 [node name="strikely-mother-clone" parent="." unique_id=2018991134 instance=ExtResource("18_cf5ci")]
 position = Vector2(-5731, 939)
 
+[node name="patrol_points" type="Node2D" parent="strikely-mother-clone" unique_id=252550022]
+
+[node name="1" type="Node2D" parent="strikely-mother-clone/patrol_points" unique_id=88969543]
+position = Vector2(-94, -169)
+
+[node name="2" type="Node2D" parent="strikely-mother-clone/patrol_points" unique_id=1439074265]
+position = Vector2(227, -24)
+
+[node name="3" type="Node2D" parent="strikely-mother-clone/patrol_points" unique_id=638673933]
+position = Vector2(49, 71)
+
 [node name="directional_light" type="DirectionalLight2D" parent="." unique_id=90118627]
 color = Color(0.6392157, 0.36078432, 0.32941177, 1)
 blend_mode = 2
+
+[node name="nav_region" type="NavigationRegion2D" parent="." unique_id=1168133445]
+navigation_polygon = SubResource("NavigationPolygon_cf5ci")
 
 [connection signal="body_entered" from="outside/grass_area" to="outside/grass_area" method="_on_body_entered"]
 [connection signal="body_exited" from="outside/grass_area" to="outside/grass_area" method="_on_body_exited"]
