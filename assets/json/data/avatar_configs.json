@@ -25,6 +25,16 @@
 			"eyes_closed": 1,
 			"mouth_open": 11,
 		},
+		"judge": {
+			"eyes_open": 12,
+			"eyes_closed": 12,
+			"mouth_open": 12,
+		},
+		"serious": {
+			"eyes_open": 13,
+			"eyes_closed": 1,
+			"mouth_open": 14,
+		},
 	},
 	
 	"bowler_hat": {

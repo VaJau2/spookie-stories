@@ -123,7 +123,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я посмотрела в её сторону и тут же уставилась на широко распахнутые испуганные глаза своей мамы."
+				"text": "Я посмотрела в её сторону и тут же уставилась на широко распахнутые испуганные глаза мамы."
 			},
 			{
 				"type": "phrase",
@@ -229,6 +229,78 @@
 				"speaker": "strikely-mother",
 				"state": "scared",
 				"text": "Только будь осторожнее, пожалуйста"
+			}, 
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "set_may_move",
+			},
+		]
+	},
+	"night3_repeat": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely-mother",
+				"state": "scared",
+				"text": "Будь осторожнее, пожалуйста"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/scared_mother",
+				"method": "set_may_move",
+			},
+		]
+	},
+	"outside_call": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Выйдя из дома, я принялась лихорадочно думать, что делать дальше."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/outside_phone",
+				"method": "ring",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Внезапно я услышала телефонный звонок неподалеку - звонили из телефонной будки."
+			},
+		]
+	},
+	"lost": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Так, значит, тебя поймали…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "…И что было дальше?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "judge",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "Вы меня не правильно поняли, все было не так. Давайте я перескажу."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/return_to_scene",
+				"method": "start"
 			},
 		]
 	}

@@ -27,6 +27,12 @@
 [ext_resource type="AudioStream" uid="uid://ddvswa6c7beio" path="res://assets/audio/steps/grass/stepGrassFast2.wav" id="25_4td4c"]
 [ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="26_mgb1j"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="27_dmae2"]
+[ext_resource type="AudioStream" uid="uid://dxfnfcphtrnyt" path="res://assets/audio/steps/dirt/stepDirtRun1.wav" id="27_gq7pk"]
+[ext_resource type="AudioStream" uid="uid://dycqxerp73kqm" path="res://assets/audio/steps/dirt/stepDirtRun2.wav" id="28_cho7j"]
+[ext_resource type="AudioStream" uid="uid://d046fxbdaaptb" path="res://assets/audio/steps/dirt/stepDirtRun3.wav" id="29_m1lf7"]
+[ext_resource type="AudioStream" uid="uid://drqaooh0882tk" path="res://assets/audio/steps/dirt/stepDirt1.wav" id="30_2ang3"]
+[ext_resource type="AudioStream" uid="uid://u4wk74h8stpb" path="res://assets/audio/steps/dirt/stepDirt2.wav" id="31_o1tw5"]
+[ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="32_may7m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -208,6 +214,13 @@ walk_sounds = Array[AudioStream]([ExtResource("24_bw2op"), ExtResource("25_4td4c
 run_sounds = Array[AudioStream]([ExtResource("21_cw71g"), ExtResource("22_dmae2"), ExtResource("23_ds5oh")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
+[sub_resource type="Resource" id="Resource_m4lni"]
+script = ExtResource("8_a2g0u")
+material_name = 1
+walk_sounds = Array[AudioStream]([ExtResource("30_2ang3"), ExtResource("31_o1tw5"), ExtResource("32_may7m")])
+run_sounds = Array[AudioStream]([ExtResource("27_gq7pk"), ExtResource("28_cho7j"), ExtResource("29_m1lf7")])
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
 [node name="strikely" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 
@@ -270,7 +283,7 @@ position_smoothing_enabled = true
 bus = &"Sound"
 script = ExtResource("7_nyttx")
 movement_controller = NodePath("../movement_controller")
-steps_data = Array[ExtResource("8_a2g0u")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
+steps_data = Array[ExtResource("8_a2g0u")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7"), SubResource("Resource_m4lni")])
 
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
 script = ExtResource("27_dmae2")

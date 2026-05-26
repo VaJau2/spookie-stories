@@ -58,7 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="33_v0bth"]
 [ext_resource type="Texture2D" uid="uid://b8h01q713fl6h" path="res://assets/sprites/characters/ghosts/ghost2.png" id="33_vqsn6"]
 [ext_resource type="Texture2D" uid="uid://ckxcv3ohexraj" path="res://assets/sprites/characters/ghosts/ghost3.png" id="34_5lah5"]
-[ext_resource type="AudioStream" uid="uid://ct7ut33b50mar" path="res://assets/audio/pop.mp3" id="44_vqsn6"]
+[ext_resource type="AudioStream" uid="uid://ct7ut33b50mar" path="res://assets/audio/pops/pop.mp3" id="44_vqsn6"]
 [ext_resource type="Texture2D" uid="uid://ywv0qeq7a05a" path="res://assets/sprites/props/gas-station/pump-working.png" id="48_3qfvt"]
 [ext_resource type="AudioStream" uid="uid://dtv6c3yj7svcy" path="res://assets/audio/car/refuel/refuel_start.mp3" id="49_qr47d"]
 [ext_resource type="AudioStream" uid="uid://bljbyjxkvoxad" path="res://assets/audio/car/refuel/refuel_process.mp3" id="50_i7u8q"]

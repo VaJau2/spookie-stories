@@ -5,6 +5,7 @@ extends StateBase
 
 var player: CharacterBody2D = null
 
+
 func enable() -> void:
 	super.enable()
 	_find_player()
@@ -25,6 +26,7 @@ func _process(_delta: float) -> void:
 
 
 func _find_player() -> void:
+	if player != null: return
 	for seek_area in seek_areas:
 		if seek_area.player != null:
 			player = seek_area.player

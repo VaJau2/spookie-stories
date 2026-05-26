@@ -33,6 +33,8 @@
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_vc754"]
 [ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_84sis"]
 [ext_resource type="Texture2D" uid="uid://iu3p04cb6yfe" path="res://assets/sprites/interface/seek_signs.png" id="33_r3p24"]
+[ext_resource type="Script" uid="uid://t2h1nx74g3b" path="res://assets/scripts/scenario/lostArea.gd" id="34_e3ofm"]
+[ext_resource type="AudioStream" uid="uid://ct7ut33b50mar" path="res://assets/audio/pops/pop.mp3" id="35_ake3u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -223,6 +225,9 @@ size = Vector2(318, 156)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aenfv"]
 size = Vector2(678, 393)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3p24"]
+size = Vector2(41, 14)
+
 [node name="strikely-mother-clone" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 collision_layer = 2
@@ -335,7 +340,22 @@ position = Vector2(28, -64)
 texture = ExtResource("33_r3p24")
 hframes = 2
 
+[node name="lost_area" type="Area2D" parent="." unique_id=1914835]
+monitorable = false
+script = ExtResource("34_e3ofm")
+player_name = "strikely"
+scene_name = "strikely_home_lost"
+variable_name = "strikely_home"
+
+[node name="shape" type="CollisionShape2D" parent="lost_area" unique_id=182671850]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_r3p24")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="lost_area" unique_id=2002007164]
+stream = ExtResource("35_ake3u")
+
 [connection signal="body_entered" from="close_seek_area" to="close_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="close_seek_area" to="close_seek_area" method="_on_body_exited"]
 [connection signal="body_entered" from="far_seek_area" to="far_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="far_seek_area" to="far_seek_area" method="_on_body_exited"]
+[connection signal="body_entered" from="lost_area" to="lost_area" method="_on_body_entered"]
