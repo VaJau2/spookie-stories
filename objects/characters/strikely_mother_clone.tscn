@@ -231,7 +231,7 @@ size = Vector2(41, 14)
 [node name="strikely-mother-clone" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="shadow" type="Sprite2D" parent="." unique_id=1258215825]
 modulate = Color(1, 1, 1, 0.33333334)
@@ -276,6 +276,7 @@ anim = NodePath("../anim")
 movement_controller = NodePath("../movement_controller")
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
+max_distance = 1000.0
 bus = &"Sound"
 script = ExtResource("6_vc754")
 movement_controller = NodePath("../movement_controller")

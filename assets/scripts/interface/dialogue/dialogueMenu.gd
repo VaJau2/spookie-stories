@@ -2,7 +2,7 @@ extends Panel
 
 class_name DialogueMenu
 
-const DEFAULT_TIMER: float = 0.03
+const DEFAULT_TIMER: float = 0.02
 
 @export var ponies_parent: Node2D
 
@@ -131,7 +131,7 @@ func _animate_text(delta: float) -> void:
 
 func _get_timer(timer: float, new_symbol: String):
 	match new_symbol:
-		".", "!", "?": return timer + 0.4
+		".", "!", "?": return timer + 0.3
 		",": return timer + 0.1
 		_: return timer
 

@@ -231,6 +231,7 @@ scale = Vector2(0.81395346, 1)
 texture = ExtResource("1_s7pd4")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1857052420]
+light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
 texture = ExtResource("2_l43oi")

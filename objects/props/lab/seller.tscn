@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dwhfkel4gvbe6"]
+
+[ext_resource type="Texture2D" uid="uid://djo4slmct34bl" path="res://assets/sprites/tiles/labs/Inside_D.png" id="1_jsjw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2ple"]
+size = Vector2(53, 73.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r2hop"]
+polygon = PackedVector2Array(28, 46, -27, 46, -26, -45, 28, -44)
+
+[node name="seller" type="StaticBody2D" unique_id=1441053715]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=472576283]
+texture = ExtResource("1_jsjw5")
+region_enabled = true
+region_rect = Rect2(259, 100, 57, 93)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1290792675]
+position = Vector2(0.5, 8.75)
+shape = SubResource("RectangleShape2D_s2ple")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=516449238]
+occluder = SubResource("OccluderPolygon2D_r2hop")

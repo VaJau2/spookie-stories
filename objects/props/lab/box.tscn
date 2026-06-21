@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dv6u625bhglwf"]
+
+[ext_resource type="Texture2D" uid="uid://ugvtergpa8a3" path="res://assets/sprites/tiles/labs/Inside_C.png" id="1_0c66u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_infor"]
+size = Vector2(45, 42)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y8hg0"]
+polygon = PackedVector2Array(22, 2, -22, 2, -22, -23, 22, -23)
+
+[node name="box" type="StaticBody2D" unique_id=1925853551]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1671140517]
+position = Vector2(0, -23)
+texture = ExtResource("1_0c66u")
+region_enabled = true
+region_rect = Rect2(20, 213, 46, 51)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1070256219]
+position = Vector2(-0.5, -19)
+shape = SubResource("RectangleShape2D_infor")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=1026848511]
+occluder = SubResource("OccluderPolygon2D_y8hg0")

@@ -56,8 +56,7 @@ func anim_black_screen() -> void:
 func move_back_to_room() -> void:
 	strikely_room.visible = true
 	player.global_position = middle_room_point.global_position
-	var movement: MovementController = player.get_node("movement_controller")
-	movement.may_move = false
+	set_may_move(false)
 	player.visible = false
 	strikely_and_mother.visible = true
 	var anim: AnimationPlayer = strikely_and_mother.get_node("anim")
@@ -124,6 +123,6 @@ func get_up() -> void:
 	outside_dialogue_area.is_active = true
 
 
-func set_may_move() -> void:
+func set_may_move(value: bool = true) -> void:
 	var movement: MovementController = player.get_node("movement_controller")
-	movement.may_move = true
+	movement.may_move = value

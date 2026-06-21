@@ -8,6 +8,7 @@ extends Node
 
 
 func _ready() -> void:
+	print(G.scene_vars)
 	if G.scene_vars.has("strikely_home"):
 		var saved_var = G.scene_vars.strikely_home
 		if saved_var == 1:

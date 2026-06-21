@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bo4codtn0ig75" path="res://assets/scripts/controllers/steps/materialArea.gd" id="6_ktbaj"]
 [ext_resource type="AudioStream" uid="uid://tof441ys6i4r" path="res://assets/audio/background/evening_forest.mp3" id="7_egovh"]
 [ext_resource type="PackedScene" uid="uid://brn53vy7gyd1o" path="res://objects/props/street_light.tscn" id="8_v83uc"]
-[ext_resource type="Texture2D" uid="uid://efgqsutlpbew" path="res://assets/sprites/props/strikely-home/street-phone.png" id="9_bcf15"]
+[ext_resource type="Texture2D" uid="uid://efgqsutlpbew" path="res://assets/sprites/props/strikely-home/street-phone/street-phone.png" id="9_bcf15"]
 [ext_resource type="Texture2D" uid="uid://bb8qpbdj24vj2" path="res://assets/sprites/props/strikely-home/trees/apple-tree.png" id="10_uynkn"]
 [ext_resource type="Texture2D" uid="uid://dta4oe2nv45m2" path="res://assets/sprites/props/strikely-home/trees/tree3.png" id="11_8xens"]
 [ext_resource type="Texture2D" uid="uid://hs14tb0o7nei" path="res://assets/sprites/props/strikely-home/trees/tree4.png" id="12_j38qu"]

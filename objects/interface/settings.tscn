@@ -113,9 +113,9 @@ vertical_alignment = 1
 
 [node name="fullscreen" type="CheckBox" parent="." unique_id=472776279]
 layout_mode = 1
-offset_left = 216.0
+offset_left = 232.0
 offset_top = 104.0
-offset_right = 240.0
+offset_right = 256.0
 offset_bottom = 128.0
 focus_neighbor_top = NodePath("../volume")
 focus_neighbor_bottom = NodePath("../language_button")

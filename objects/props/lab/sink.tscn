@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bqllhsx0apyos"]
+
+[ext_resource type="Texture2D" uid="uid://djo4slmct34bl" path="res://assets/sprites/tiles/labs/Inside_D.png" id="1_jagx4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3x0d"]
+size = Vector2(55, 52)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kgyhf"]
+polygon = PackedVector2Array(27, 27, -28, 27, -28, -25, 27, -25)
+
+[node name="sink" type="StaticBody2D" unique_id=1025588252]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=305841684]
+texture = ExtResource("1_jagx4")
+region_enabled = true
+region_rect = Rect2(111, 179, 58, 63)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1863827316]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_f3x0d")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=1102642292]
+occluder = SubResource("OccluderPolygon2D_kgyhf")

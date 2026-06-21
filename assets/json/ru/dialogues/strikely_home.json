@@ -271,6 +271,46 @@
 			},
 		]
 	},
+	"outside_phone": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/outside_phone",
+				"method": "take",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я взяла трубку и услышала знакомый голос:"
+			},
+			{
+				"type": "phrase",
+				"speaker": "coronel_phone",
+				"text": "Страйкли у нас проблема."
+			},
+			{
+				"type": "phrase",
+				"speaker": "coronel_phone",
+				"text": "Кто-то по ошибке использовал для экспериментов днк твоей мамы вместо твоего, и теперь клоны твоей мамы заполонили всю лабораторию!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "coronel_phone",
+				"text": "Тебе нужно прокрасться и отключить машину клонирования, пока клоны твоей мамы не захватили весь мир!"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Времени на раздумья не было, и я поспешила"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "… куда-то … "
+			},
+		]
+	},
 	"lost": {
 		"nodes": [
 			{

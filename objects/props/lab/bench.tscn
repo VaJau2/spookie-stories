@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bfomfgtq7vd1b"]
+
+[ext_resource type="Texture2D" uid="uid://djo4slmct34bl" path="res://assets/sprites/tiles/labs/Inside_D.png" id="1_pvr0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lod75"]
+size = Vector2(73, 25)
+
+[node name="bench" type="StaticBody2D" unique_id=1151513364]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1879105092]
+light_mask = 2
+texture = ExtResource("1_pvr0b")
+region_enabled = true
+region_rect = Rect2(252, 405, 75, 28)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=318449158]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_lod75")

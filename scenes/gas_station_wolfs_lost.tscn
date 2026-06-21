@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://r6isgj5vixxe"]
 
-[ext_resource type="Script" uid="uid://3ijgx887muqy" path="res://assets/scripts/scenario/gasStation/returnToScene.gd" id="3_4h1g3"]
+[ext_resource type="Script" uid="uid://3ijgx887muqy" path="res://assets/scripts/scenario/returnToScene.gd" id="3_4h1g3"]
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="40_qqx4a"]
 
 [node name="main" type="Node2D" unique_id=1484113463]
