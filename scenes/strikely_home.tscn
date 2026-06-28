@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://b3nwm85fi80um" path="res://assets/sprites/props/strikely-home/house.png" id="28_rvy3r"]
 [ext_resource type="AudioStream" uid="uid://tof441ys6i4r" path="res://assets/audio/background/evening_forest.mp3" id="29_q03yp"]
 [ext_resource type="PackedScene" uid="uid://brn53vy7gyd1o" path="res://objects/props/street_light.tscn" id="30_255ji"]
-[ext_resource type="Texture2D" uid="uid://efgqsutlpbew" path="res://assets/sprites/props/strikely-home/street-phone/street-phone.png" id="31_wv0sm"]
 [ext_resource type="Texture2D" uid="uid://c1clmhcrwnjfd" path="res://assets/sprites/props/strikely-home/street-fence.png" id="32_xgqt4"]
 [ext_resource type="Texture2D" uid="uid://bb8qpbdj24vj2" path="res://assets/sprites/props/strikely-home/trees/apple-tree.png" id="33_lqukg"]
 [ext_resource type="Texture2D" uid="uid://dta4oe2nv45m2" path="res://assets/sprites/props/strikely-home/trees/tree3.png" id="34_iv42n"]
@@ -497,7 +496,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("strikely_sprite:frame")
+tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -507,6 +506,21 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_x8pt8"]
+resource_name = "empty"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
 [sub_resource type="Animation" id="Animation_mg88n"]
 resource_name = "idle"
 length = 1.4
@@ -514,7 +528,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("strikely_sprite:frame")
+tracks/0/path = NodePath("sprite:frame")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -527,6 +541,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_upiqi"]
 _data = {
 &"RESET": SubResource("Animation_rb84v"),
+&"empty": SubResource("Animation_x8pt8"),
 &"idle": SubResource("Animation_mg88n")
 }
 
@@ -1496,20 +1511,14 @@ position = Vector2(870, 797)
 position = Vector2(825, 1078)
 
 [node name="phone" type="StaticBody2D" parent="outside" unique_id=626504203]
-position = Vector2(652, 823)
+position = Vector2(652, 815)
 scale = Vector2(1.4, 1.2)
 
-[node name="sprite" type="Sprite2D" parent="outside/phone" unique_id=1318198254]
-position = Vector2(0, -38)
-scale = Vector2(0.75164735, 0.75164735)
-texture = ExtResource("31_wv0sm")
-
-[node name="strikely_sprite" type="Sprite2D" parent="outside/phone" unique_id=1530299825]
-visible = false
-position = Vector2(0, -38)
-scale = Vector2(0.75164735, 0.75164735)
+[node name="sprite" type="Sprite2D" parent="outside/phone" unique_id=1530299825]
+position = Vector2(-1.0468531, -39.032276)
+scale = Vector2(0.6653624, 0.768297)
 texture = ExtResource("36_x8pt8")
-hframes = 2
+hframes = 3
 
 [node name="shape" type="CollisionShape2D" parent="outside/phone" unique_id=686907108]
 position = Vector2(0.35717773, -7.499939)
@@ -1522,7 +1531,7 @@ bus = &"Sound"
 
 [node name="anim" type="AnimationPlayer" parent="outside/phone" unique_id=2118548060]
 libraries/ = SubResource("AnimationLibrary_upiqi")
-autoplay = &"idle"
+autoplay = &"empty"
 
 [node name="walls" type="StaticBody2D" parent="outside" unique_id=1636420385]
 
@@ -2251,13 +2260,12 @@ shape = SubResource("RectangleShape2D_1ig4m")
 [node name="corridor_point" type="Node2D" parent="kitchen_spawner" unique_id=1835759939]
 position = Vector2(-1227, 63)
 
-[node name="outside_phone" type="Node" parent="." unique_id=1772396924 node_paths=PackedStringArray("phone_audi", "take_dialogue_area", "player", "phone", "phone_pony", "next_level")]
+[node name="outside_phone" type="Node" parent="." unique_id=1772396924 node_paths=PackedStringArray("phone_audi", "take_dialogue_area", "player", "phone_anim", "next_level")]
 script = ExtResource("62_r2f8u")
 phone_audi = NodePath("../outside/phone/audi")
 take_dialogue_area = NodePath("../outside/phone_take_dialogue_area")
 player = NodePath("../ponies/strikely")
-phone = NodePath("../outside/phone/sprite")
-phone_pony = NodePath("../outside/phone/strikely_sprite")
+phone_anim = NodePath("../outside/phone/anim")
 next_level = NodePath("../next_level")
 
 [node name="scene_reloader" type="Node" parent="." unique_id=47575595 node_paths=PackedStringArray("player", "start_dialogue", "try_sleep_anim", "scared_mother", "dialogue_menu")]

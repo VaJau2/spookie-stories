@@ -281,6 +281,8 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
+volume_db = -6.0
+max_distance = 1000.0
 bus = &"Sound"
 script = ExtResource("7_nyttx")
 movement_controller = NodePath("../movement_controller")
