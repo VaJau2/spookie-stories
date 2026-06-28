@@ -64,6 +64,7 @@
 [ext_resource type="Script" uid="uid://4qcr2kx2dvse" path="res://assets/scripts/scenario/strikelyHome/corridorArea.gd" id="60_era8b"]
 [ext_resource type="Script" uid="uid://cqwj8vri0bag4" path="res://assets/scripts/scenario/strikelyHome/sceneReloader.gd" id="61_tnalq"]
 [ext_resource type="Script" uid="uid://dpl5qbb63dy12" path="res://assets/scripts/scenario/strikelyHome/outsidePhone.gd" id="62_r2f8u"]
+[ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="65_rb84v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l7pm"]
 size = Vector2(384, 16)
@@ -2250,13 +2251,14 @@ shape = SubResource("RectangleShape2D_1ig4m")
 [node name="corridor_point" type="Node2D" parent="kitchen_spawner" unique_id=1835759939]
 position = Vector2(-1227, 63)
 
-[node name="outside_phone" type="Node" parent="." unique_id=1772396924 node_paths=PackedStringArray("phone_audi", "take_dialogue_area", "player", "phone", "phone_pony")]
+[node name="outside_phone" type="Node" parent="." unique_id=1772396924 node_paths=PackedStringArray("phone_audi", "take_dialogue_area", "player", "phone", "phone_pony", "next_level")]
 script = ExtResource("62_r2f8u")
 phone_audi = NodePath("../outside/phone/audi")
 take_dialogue_area = NodePath("../outside/phone_take_dialogue_area")
 player = NodePath("../ponies/strikely")
 phone = NodePath("../outside/phone/sprite")
 phone_pony = NodePath("../outside/phone/strikely_sprite")
+next_level = NodePath("../next_level")
 
 [node name="scene_reloader" type="Node" parent="." unique_id=47575595 node_paths=PackedStringArray("player", "start_dialogue", "try_sleep_anim", "scared_mother", "dialogue_menu")]
 script = ExtResource("61_tnalq")
@@ -2265,6 +2267,11 @@ start_dialogue = NodePath("../outside/start_dialogue_area")
 try_sleep_anim = NodePath("../try_sleep_anim")
 scared_mother = NodePath("../scared_mother")
 dialogue_menu = NodePath("../menu/dialogue_menu")
+
+[node name="next_level" type="Node" parent="." unique_id=446925770 node_paths=PackedStringArray("black_screen")]
+script = ExtResource("65_rb84v")
+black_screen = NodePath("../menu/black_screen")
+next_level = "clone_lab"
 
 [connection signal="body_entered" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_entered"]
 [connection signal="body_exited" from="strikely_room/teleport_area" to="strikely_room/teleport_area" method="_on_body_exited"]

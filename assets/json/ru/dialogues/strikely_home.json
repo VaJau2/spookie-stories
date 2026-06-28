@@ -309,6 +309,11 @@
 				"state": "confused",
 				"text": "… куда-то … "
 			},
+			{
+				"type": "script",
+				"path": "/root/main/outside_phone",
+				"method": "move_to_lab",
+			},
 		]
 	},
 	"lost": {
