@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c26uobqlm5pmf" path="res://assets/sprites/tiles/labs/A4.png" id="3_vchbl"]
 [ext_resource type="PackedScene" uid="uid://tda5rlwh8f1g" path="res://objects/props/lab/table.tscn" id="4_l1fxv"]
 [ext_resource type="PackedScene" uid="uid://vo4u0j1kbnl0" path="res://objects/props/lab/plant.tscn" id="5_wgpf6"]
+[ext_resource type="Texture2D" uid="uid://b8v7xa6qa8lmd" path="res://assets/sprites/props/strikely-home/access-card.png" id="6_l1fxv"]
 [ext_resource type="Texture2D" uid="uid://fwnrbfkpahe2" path="res://assets/sprites/tiles/labs/Inside_C(1).png" id="6_siuuy"]
 [ext_resource type="PackedScene" uid="uid://dv6u625bhglwf" path="res://objects/props/lab/box.tscn" id="7_sddn8"]
 [ext_resource type="PackedScene" uid="uid://pj0p14y203uf" path="res://objects/props/lab/cabinet.tscn" id="8_2y48i"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="16_fbnov"]
 [ext_resource type="PackedScene" uid="uid://bu3blvpw5ekuk" path="res://objects/props/lab/clone_flask.tscn" id="16_t5uh3"]
 [ext_resource type="PackedScene" uid="uid://c6j5nqwe7x4v3" path="res://objects/characters/players/strikely.tscn" id="17_qua1u"]
+[ext_resource type="PackedScene" uid="uid://bdg126476teqq" path="res://objects/props/lab/clone_computer.tscn" id="17_vchbl"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="18_6wkif"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="19_yi5f7"]
 [ext_resource type="PackedScene" uid="uid://bk4ilh1kxa716" path="res://objects/characters/strikely_mother_clone.tscn" id="20_wh6ob"]
@@ -365,6 +367,12 @@ polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ypsvt"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l1fxv"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wgpf6"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2yqw"]
 texture = ExtResource("3_vchbl")
 texture_region_size = Vector2i(48, 48)
@@ -501,7 +509,9 @@ texture_region_size = Vector2i(48, 48)
 0:10/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_o2yqw")
 0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 13:9/0 = 0
+13:9/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wgpf6")
 13:8/0 = 0
+13:8/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l1fxv")
 
 [sub_resource type="TileSet" id="TileSet_3xi3w"]
 tile_size = Vector2i(48, 48)
@@ -574,6 +584,11 @@ position = Vector2(-14, -55)
 
 [node name="table2" parent="nav_region/props" unique_id=1392897058 instance=ExtResource("4_l1fxv")]
 position = Vector2(-3905, 377)
+
+[node name="access-card" type="Sprite2D" parent="nav_region/props/table2" unique_id=537980479]
+position = Vector2(2, -36)
+rotation = -0.3358572
+texture = ExtResource("6_l1fxv")
 
 [node name="table3" parent="nav_region/props" unique_id=1824841033 instance=ExtResource("4_l1fxv")]
 position = Vector2(-2445, 387)
@@ -939,31 +954,35 @@ position = Vector2(1314, 242)
 position = Vector2(1392, 242)
 
 [node name="clone-flask" parent="nav_region/props" unique_id=271083077 instance=ExtResource("16_t5uh3")]
-position = Vector2(743, 9)
+position = Vector2(729, 24)
 
 [node name="clone-flask2" parent="nav_region/props" unique_id=293662747 instance=ExtResource("16_t5uh3")]
-position = Vector2(939, 8)
+position = Vector2(961, 21)
 
 [node name="clone-flask3" parent="nav_region/props" unique_id=1516732305 instance=ExtResource("16_t5uh3")]
-position = Vector2(748, -83)
+position = Vector2(739, -81)
 
 [node name="clone-flask4" parent="nav_region/props" unique_id=687042194 instance=ExtResource("16_t5uh3")]
 position = Vector2(944, -84)
 
 [node name="clone-flask5" parent="nav_region/props" unique_id=1367394593 instance=ExtResource("16_t5uh3")]
-position = Vector2(739, -167)
+position = Vector2(753, -168)
 
 [node name="clone-flask6" parent="nav_region/props" unique_id=575050026 instance=ExtResource("16_t5uh3")]
 position = Vector2(935, -168)
 
 [node name="clone-flask7" parent="nav_region/props" unique_id=1710663045 instance=ExtResource("16_t5uh3")]
-position = Vector2(2214, 745)
+position = Vector2(2214, 727)
 
 [node name="clone-flask8" parent="nav_region/props" unique_id=909684600 instance=ExtResource("16_t5uh3")]
 position = Vector2(2341, 728)
 
 [node name="clone-flask9" parent="nav_region/props" unique_id=823944301 instance=ExtResource("16_t5uh3")]
 position = Vector2(2468, 725)
+
+[node name="clone-computer" parent="nav_region/props" unique_id=717067169 instance=ExtResource("17_vchbl")]
+position = Vector2(3004, 518)
+scale = Vector2(1.3, 1.3)
 
 [node name="lighs" type="Node2D" parent="." unique_id=815013958]
 
@@ -1271,7 +1290,6 @@ position = Vector2(86, 1265)
 position = Vector2(-49, -12)
 
 [node name="menu" type="CanvasLayer" parent="." unique_id=1425660107]
-visible = false
 
 [node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("21_el4ck")]
 texture_filter = 1
