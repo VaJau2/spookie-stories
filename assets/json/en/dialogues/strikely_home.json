@@ -4,12 +4,12 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я возвращалась поздно вечером домой после тяжелой работы."
+				"text": "I was returning home late at evening after a hard day's work."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я чувствовала себя сильно уставшей и хотела поскорее лечь на кровать."
+				"text": "I felt very tired and wanted to get on the bed as soon as possible."
 			},
 		]
 	},
@@ -23,7 +23,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Дойдя наконец до кровати, я завалилась на неё, все еще чувствуя усталость и желание спать."
+				"text": "When I finally reached the bed, I collapsed onto it, still feeling tired and sleepy."
 			},
 			{
 				"type": "script",
@@ -42,36 +42,36 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я лежала так довольно долго, но сон никак не приходил."
+				"text": "I lay like that for quite a long time, but sleep did not come."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "За окном была уже ночь."
+				"text": "It was already night outside."
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "confused",
-				"text": "Погоди, ты что пыталась уснуть, будучи во сне?"
+				"text": "Wait, were you trying to fall asleep while in a dream?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "confused",
-				"text": "А у тебя разве не было таких снов, когда ты просыпаешься, но оказываешься все еще во сне?"
+				"text": "Haven't you ever had those dreams where you wake up but still find yourself in a dream?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "idle",
-				"text": "Это был один из таких снов."
+				"text": "It was one of those dreams."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "idle",
-				"text": "Внезапно я услышала, как мама зовет меня из кухни на первом этаже:"
+				"text": "Suddenly I heard my mother calling me from the kitchen on the first floor:"
 			},
 			{
 				"type": "script",
@@ -81,25 +81,25 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely-mother-clone-dark",
-				"text": "Доча иди ужинать!"
+				"text": "Daughter, come have dinner!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "look-back",
-				"text": "Я немного смутилась - какой ужин может быть посреди ночи?"
+				"text": "I was a little confused - what kind of dinner could there be in the middle of the night?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "idle",
-				"text": "Но я не придала этому значения."
+				"text": "But I didn't pay any attention to it."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "idle",
-				"text": "Обрадовавшись поводу побродить и отвлечься от бессонницы, я встала и лениво побрела в сторону коридора."
+				"text": "Glad to have a chance to wander around and take my mind off my insomnia, I got up and lazily wandered towards the corridor."
 			},
 			{
 				"type": "script",
@@ -113,7 +113,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Когда я вышла в коридор, я услышала, как позади меня открылась дверь из комнаты брата."
+				"text": "As I walked out into the hallway, I heard the door from my brother's room open behind me."
 			},
 			{
 				"type": "script",
@@ -123,12 +123,12 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я посмотрела в её сторону и уставилась на широко распахнутые испуганные глаза мамы."
+				"text": "I looked towards the door and stared at my mother's wide, frightened eyes."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Она прошептала мне:"
+				"text": "She whispered to me:"
 			},
 			{
 				"type": "new_state",
@@ -139,7 +139,7 @@
 				"type": "phrase",
 				"speaker": "strikely-mother",
 				"state": "scared",
-				"text": "Страйкли, не ходи туда, я тоже это слышала!"
+				"text": "Strikely, don't ho there, I've heard that too!"
 			},
 			{
 				"type": "script",
@@ -153,7 +153,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Мы обе тихо прокрались ко мне в спальню, сели на кровать и обнявшись тупо уставились на дверь."
+				"text": "We both quietly crept into my bedroom, sat on the bed, hugged each other, and stared blankly at the door."
 			},
 			{
 				"type": "script",
@@ -163,7 +163,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Даже разговаривать не было сил от страха."
+				"text": "I didn't even have the strength to talk because of fear."
 			},
 			{
 				"type": "script",
@@ -173,7 +173,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Спустя какое-то время мы более-менее расслабились и уже засыпали."
+				"text": "After some time, we more or less relaxed and fell asleep."
 			},
 			{
 				"type": "script",
@@ -183,7 +183,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "И тут снова мамин голос из-за двери:"
+				"text": "And then Mom’s voice came from behind the door again:"
 			},
 			{
 				"type": "script",
@@ -193,12 +193,12 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely-mother-clone-dark",
-				"text": "Доча ужин стынет!"
+				"text": "My daughter, dinner is getting cold!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Сон как копытом сняло."
+				"text": "The dream vanished as if by magic."
 			},
 			{
 				"type": "script",
@@ -212,12 +212,12 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Через некоторое время звук затихающих копыт оповестил нас о том, что оно вернулось на кухню."
+				"text": "After a while, the sound of fading hoofsteps alerted us that it had returned to the kitchen."
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я решила прокрасться на улицу, чтобы позвать помощь."
+				"text": "I decided to sneak outside to call for help."
 			},
 			{
 				"type": "script",
@@ -228,7 +228,7 @@
 				"type": "phrase",
 				"speaker": "strikely-mother",
 				"state": "scared",
-				"text": "Только будь осторожнее, пожалуйста"
+				"text": "Just be careful, please"
 			}, 
 			{
 				"type": "script",
@@ -243,7 +243,7 @@
 				"type": "phrase",
 				"speaker": "strikely-mother",
 				"state": "scared",
-				"text": "Будь осторожнее, пожалуйста"
+				"text": "Be careful, please"
 			},
 			{
 				"type": "script",
@@ -257,7 +257,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Выйдя из дома, я принялась лихорадочно думать, что делать дальше."
+				"text": "After leaving the house, I started to frantically think about what to do next."
 			},
 			{
 				"type": "script",
@@ -267,7 +267,7 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Внезапно я услышала телефонный звонок неподалеку - звонили из телефонной будки."
+				"text": "Suddenly I heard a phone ringing nearby - it was a call from a phone booth."
 			},
 		]
 	},
@@ -281,33 +281,33 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Я взяла трубку и услышала знакомый голос:"
+				"text": "I picked up the phone and heard a familiar voice:"
 			},
 			{
 				"type": "phrase",
 				"speaker": "coronel_phone",
-				"text": "Страйкли у нас проблема."
+				"text": "Strikely we have a problem."
 			},
 			{
 				"type": "phrase",
 				"speaker": "coronel_phone",
-				"text": "Кто-то по ошибке использовал для экспериментов днк твоей мамы вместо твоего, и теперь клоны твоей мамы заполонили всю лабораторию!"
+				"text": "Someone mistakenly used your mom's DNA instead of yours for experiments, and now clones of your mom are filling the entire lab!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "coronel_phone",
-				"text": "Тебе нужно прокрасться и отключить машину клонирования, пока клоны твоей мамы не захватили весь мир!"
+				"text": "You need to sneak in and disable the cloning machine before your mom's clones take over the world!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"text": "Времени на раздумья не было, и я поспешила"
+				"text": "There was no time to think, so I hurried"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "confused",
-				"text": "… куда-то … "
+				"text": "… somewhere … "
 			},
 			{
 				"type": "script",
@@ -322,13 +322,13 @@
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "sus",
-				"text": "Так, значит, тебя поймали…"
+				"text": "So, you've been caught…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "…И что было дальше?"
+				"text": "…And what happened next?"
 			},
 			{
 				"type": "phrase",
@@ -340,7 +340,7 @@
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "serious",
-				"text": "Вы меня не правильно поняли, все было не так. Давайте я перескажу."
+				"text": "You misunderstood me, everything was wrong. Let me rephrase it."
 			},
 			{
 				"type": "script",

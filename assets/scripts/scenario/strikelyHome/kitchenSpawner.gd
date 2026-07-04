@@ -17,6 +17,9 @@ func _ready() -> void:
 
 func spawn() -> void:
 	spawned_clone = clone_prefab.instantiate()
+	var lost_area = spawned_clone.get_node("lost_area")
+	lost_area.variable_name = "strikely_home"
+	lost_area.scene_name = "strikely_home_lost"
 	call_deferred("move_clone")
 
 

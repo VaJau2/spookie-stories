@@ -2,208 +2,92 @@
 	"talk": {
 		"nodes": [
 			{
-				"type": "new_state",
-				"speaker": "dusk",
-				"state": "scared",
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Кстати, история основана на реальных событиях.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"text": "Возвращаться обратно кстати пришлось потом тем же путем."
+				"text": "Волки, пфф. Встречал я тварей и пострашнее."
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "Ну расскажи тогда свою историю.",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Благо с картой это было гораздо проще."
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "scared",
-				"text": "Боюсь, после такой истории, ни одна другая не покажется хоть близко такой же страшной."
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"text": "С этим трудно поспорить."
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "smirk",
-				"text": "Эта история, думается мне, даже страшнее истории про маффины."
-			},
-			{
-				"type": "new_state",
-				"speaker": "dusk",
-				"state": "shy",
+				"text": "Что ж, ладно."
 			},
 			{
 				"type": "new_state",
 				"speaker": "bowler_hat",
 				"state": "idle",
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"text": "Кстати, про маффины. А где Пей?"
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "idle",
-				"text": "Ушла спать."
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "idle",
-				"text": "Думаю, мне тоже пора."
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "happy",
-				"text": "Спасибо вам за истории, они были очень интересные."
-			},
-			{
-				"type": "phrase",
-				"speaker": "dusk",
-				"state": "happy",
-				"text": "Спокойной ночи."
-			},
-			{
-				"type": "new_state",
-				"speaker": "dusk",
-				"state": "idle",
-			},
-			{
-				"type": "script",
-				"path": "/root/main/play_dusk",
-				"method": "start"
-			}
-		]
-	},
-	"strikely_walks": {
-		"nodes": [
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"text": "Пожалуй я тоже пойду спать."
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "happy",
-				"text": "Спокойной ночи!"
-			},
-			{
-				"type": "new_state",
-				"speaker": "strikaly",
-				"state": "idle",
-			},
-			{
-				"type": "script",
-				"path": "/root/main/play_strikely",
-				"method": "start"
-			}
-		],
-	},
-	"talk_finish": {
-		"nodes": [
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"text": "А ты идешь? Ты же вроде спать хотел."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sad",
-				"text": "Хотелось бы."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "look-down",
-				"text": "Но теперь после того как я вспомнил, что там было…"
+				"text": "Это было не так давно. Меня до сих пор иногда бросает в дрожь от воспоминаний."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "…Хрен я усну."
+				"text": "Я только-только устроился работать шерифом в своем родном городе после смерти моего отца."
 			},
 			{
 				"type": "phrase",
-				"speaker": "bowler_hat",
-				"text": "Понимаю."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "..."
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"text": "..."
+				"speaker": "strikely",
+				"state": "sad",
+				"text": "О, нам очень жаль…"
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "А ты сам спать не хочешь?"
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "smirk",
-				"text": "Не, пожалуй, я посижу еще."
+				"state": "sad",
+				"text": "Да."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"state": "smirk",
-				"text": "Что, испугался?"
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "smirk",
-				"text": "Конечно нет!..."
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "goofy",
-				"text": "…возможно."
+				"text": "В общем, мне нужно было расследовать загадочные взрывы в шахтах."
 			},
 			{
 				"type": "new_state",
-				"speaker": "bowler_hat",
+				"speaker": "strikely",
 				"state": "idle",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"state": "smile",
-				"text": "Хех, ну оставайся. Вдвоем всяко интереснее."
+				"state": "sarcastic",
+				"text": "Они конечно были не редким явлением, но в то время происходили чуть ли не каждый день."
 			},
 			{
 				"type": "phrase",
-				"speaker": "bowler_hat",
-				"text": "…да."
-			},
-			{
-				"type": "new_state",
 				"speaker": "serious_tale",
-				"state": "idle",
+				"text": "Когда наконец разгребли завалы, мы с моей верной напарницей направились вглубь шахт."
 			},
 			{
 				"type": "script",
-				"path": "/root/main/set_exit_visible",
-				"method": "set_label_visible"
-			},
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
 		]
 	}
 }

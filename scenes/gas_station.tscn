@@ -2162,7 +2162,7 @@ script = ExtResource("20_lj00y")
 [node name="next_level" type="Node" parent="." unique_id=921335069 node_paths=PackedStringArray("black_screen")]
 script = ExtResource("72_t4dah")
 black_screen = NodePath("../menu/black_screen")
-next_level = "forest3"
+next_level = "forest4"
 
 [connection signal="visibility_changed" from="land" to="land" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="land2" to="land2" method="_on_visibility_changed"]

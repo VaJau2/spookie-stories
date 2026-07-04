@@ -1,0 +1,206 @@
+{
+	"card_first": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "На столе лежала какая-то карта."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я решила взять её с собой на всякий случай."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "get_card_first"
+			}
+		]
+	},
+	"card_second": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "Нужная карта лежала в самом начале."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "И каким-то образом я её пропустила."
+			},
+				{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "judge",
+				"text": "..."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "get_card_second"
+			}
+		]
+	},
+	"turn_computer_without_card": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Странный механизм, похожий на мейнфрейм, имел большую красную кнопку выключения."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_switch"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я нажала на кнопку."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "computer_denied"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "На мониторе появился текст, требующий карту доступа."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Мне нужно было найти эту карту."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "change_card_dialogue"
+			}
+		]
+	},
+	"turn_computer_with_card_first": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Странный механизм, похожий на мейнфрейм, имел большую красную кнопку выключения."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_switch"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я нажала на кнопку."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_turn_off"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "computer_off"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Монитор тут же отключился."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"text": "Похоже, я успешно справилась с задачей!"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
+		]
+	},
+	"turn_computer_with_card_second": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_switch"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Я вернулась обратно с картой и попробовала еще раз"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_turn_off"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "computer_off"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Монитор тут же отключился",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"text": "Наконец, я успешно справилась с задачей!"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
+		]
+	},
+	"lost": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Какой-то странный сон…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "…Тебя в нем постоянно ловят"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "judge",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "Давайте еще раз."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/return_to_scene",
+				"method": "start"
+			},
+		]
+	}
+}

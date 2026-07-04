@@ -345,8 +345,8 @@ hframes = 2
 monitorable = false
 script = ExtResource("34_e3ofm")
 player_name = "strikely"
-scene_name = "strikely_home_lost"
-variable_name = "strikely_home"
+scene_name = "clone_lab_lost"
+variable_name = "clone_lab"
 
 [node name="shape" type="CollisionShape2D" parent="lost_area" unique_id=182671850]
 position = Vector2(-0.5, -3)

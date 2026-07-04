@@ -594,7 +594,7 @@ shape = SubResource("RectangleShape2D_6x5n2")
 [node name="next_level" type="Node" parent="." unique_id=1995157826 node_paths=PackedStringArray("black_screen")]
 script = ExtResource("28_kbaxk")
 black_screen = NodePath("../menu/black_screen")
-next_level = "forest4"
+next_level = "forest5"
 
 [connection signal="body_entered" from="tiles/wall-light/wall-light/light-blind-area" to="tiles/wall-light/wall-light/light-blind-area" method="_on_body_entered"]
 [connection signal="body_exited" from="tiles/wall-light/wall-light/light-blind-area" to="tiles/wall-light/wall-light/light-blind-area" method="_on_body_exited"]

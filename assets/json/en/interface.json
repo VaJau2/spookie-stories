@@ -10,6 +10,7 @@
 		"title": "Load level",
 		"levels": {
 			"shop": "Shop",
+			"strikely_home": "Strikely's Dream",
 			"gas_station": "Gas Station",
 			"cave": "Cave",
 		},

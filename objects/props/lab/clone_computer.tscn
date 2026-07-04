@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bdg126476teqq"]
 
-[ext_resource type="Texture2D" uid="uid://cldqqtgsgfajx" path="res://assets/sprites/props/strikely-home/clone-computer.png" id="1_mmhdf"]
+[ext_resource type="Texture2D" uid="uid://cldqqtgsgfajx" path="res://assets/sprites/props/strikely-home/clone-computer/clone-computer.png" id="1_mmhdf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
 size = Vector2(70, 98)
@@ -8,8 +8,8 @@ size = Vector2(70, 98)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i83hm"]
 size = Vector2(146, 97)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ex1gu"]
-polygon = PackedVector2Array(-72, -3, -35, -3, -35, 2, 35, 2, 35, -3, 72, -3, 72, -98, 71, -98, 70, -100, -70, -100, -70, -97, -72, -97)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mmhdf"]
+polygon = PackedVector2Array(-72, -3, -35, -3, -35, 2, 34, 2, 34, -3, 72, -3, 72, -4, 33, -4, 33, 1, -34, 1, -34, -4, -72, -4)
 
 [node name="clone-computer" type="StaticBody2D" unique_id=271083077]
 
@@ -26,5 +26,4 @@ position = Vector2(0, -51.5)
 shape = SubResource("RectangleShape2D_i83hm")
 
 [node name="shadow" type="LightOccluder2D" parent="." unique_id=443162234]
-visible = false
-occluder = SubResource("OccluderPolygon2D_ex1gu")
+occluder = SubResource("OccluderPolygon2D_mmhdf")

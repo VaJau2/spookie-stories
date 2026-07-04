@@ -1,0 +1,206 @@
+{
+	"card_first": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "There was some card on the table."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "I've decided to take it just in case."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "get_card_first"
+			}
+		]
+	},
+	"card_second": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "The card I needed was right at the beginning."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "And somehow I missed it."
+			},
+				{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "judge",
+				"text": "..."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "get_card_second"
+			}
+		]
+	},
+	"turn_computer_without_card": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "The strange mainframe-like mechanism had a large red off button."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_switch"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "I pressed the button."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "computer_denied"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "A text appeared on the monitor requiring an access card."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "I needed to find that card."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "change_card_dialogue"
+			}
+		]
+	},
+	"turn_computer_with_card_first": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "The strange mainframe-like mechanism had a large red off button."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_switch"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "I pressed the button."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_turn_off"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "computer_off"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "The monitor immediately turned off."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"text": "It looks like I've successfully completed the task!"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
+		]
+	},
+	"turn_computer_with_card_second": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_switch"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "I went back with the card and tried again."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "sound_turn_off"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/turn_computer_off",
+				"method": "computer_off"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "The monitor immediately turned off.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"text": "Finally, I successfully completed the task!"
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
+		]
+	},
+	"lost": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "What a strange dream…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "…You get caught in it all the time"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "judge",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "serious",
+				"text": "Let's do it again."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/return_to_scene",
+				"method": "start"
+			},
+		]
+	}
+}

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://br5qkthdlcycf"]
+
+[ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="1_jemtr"]
+[ext_resource type="Script" uid="uid://3ijgx887muqy" path="res://assets/scripts/scenario/returnToScene.gd" id="2_u1inh"]
+
+[node name="main" type="Node2D" unique_id=1484113463]
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="menu" type="CanvasLayer" parent="." unique_id=1113401051]
+
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("1_jemtr")]
+texture_filter = 1
+
+[node name="return_to_scene" type="Node" parent="." unique_id=156088558 node_paths=PackedStringArray("dialogue_menu")]
+script = ExtResource("2_u1inh")
+dialogue_menu = NodePath("../menu/dialogue_menu")
+dialogue_file = "clone_lab"
+dialogue_code = "lost"
+start_timer = 1.0
+scene_var = "clone_lab_lost_dialogue"
+scene_name = "clone_lab"

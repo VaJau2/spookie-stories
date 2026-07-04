@@ -1577,13 +1577,21 @@ text = "Магазин"
 script = ExtResource("25_soql2")
 level_num = 1
 
+[node name="strikely_home" type="Button" parent="menu/main_menu/load/container" unique_id=134588954]
+layout_mode = 2
+focus_neighbor_top = NodePath("../shop")
+focus_neighbor_bottom = NodePath("../cave")
+text = "Сон Страйкли"
+script = ExtResource("25_soql2")
+level_num = 2
+
 [node name="gas_station" type="Button" parent="menu/main_menu/load/container" unique_id=121257697]
 layout_mode = 2
 focus_neighbor_top = NodePath("../shop")
 focus_neighbor_bottom = NodePath("../cave")
 text = "Заправка"
 script = ExtResource("25_soql2")
-level_num = 2
+level_num = 3
 
 [node name="cave" type="Button" parent="menu/main_menu/load/container" unique_id=1471753581]
 layout_mode = 2
@@ -1591,7 +1599,7 @@ focus_neighbor_top = NodePath("../gas_station")
 focus_neighbor_bottom = NodePath("../../cancel")
 text = "Шахта"
 script = ExtResource("25_soql2")
-level_num = 3
+level_num = 4
 
 [node name="cancel" type="Button" parent="menu/main_menu/load" unique_id=1442872170 node_paths=PackedStringArray("panel_to_close", "load_button")]
 layout_mode = 1
@@ -1654,6 +1662,7 @@ save_level_num = 1
 
 [connection signal="pressed" from="menu/main_menu/load_button" to="menu/main_menu/load_button" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/container/shop" to="menu/main_menu/load/container/shop" method="_on_pressed"]
+[connection signal="pressed" from="menu/main_menu/load/container/strikely_home" to="menu/main_menu/load/container/strikely_home" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/container/gas_station" to="menu/main_menu/load/container/gas_station" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/container/cave" to="menu/main_menu/load/container/cave" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/cancel" to="menu/main_menu/load/cancel" method="_on_pressed"]

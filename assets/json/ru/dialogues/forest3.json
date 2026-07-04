@@ -3,69 +3,53 @@
 		"nodes": [
 			{
 				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "А что случилось потом с клонами, которые уже были созданы?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Вы их... того?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "look-back",
+				"text": "…Не знаю."
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "К тому моменту я уже проснулась."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Твоя история, конечно, неплохая."
+			},
+			{
+				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Кстати, история основана на реальных событиях.",
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sarcastic",
-				"text": "Волки, пфф. Встречал я тварей и пострашнее."
+				"text": "Но после телефонного звонка она соверенно перестала быть страшной."
 			},
 			{
 				"type": "new_state",
-				"speaker": "serious_tale",
-				"state": "idle",
-			},
-			{
-				"type": "new_state",
-				"speaker": "dusk",
-				"state": "idle",
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "confused",
-				"text": "Ну расскажи тогда свою историю.",
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "Что ж, ладно."
-			},
-			{
-				"type": "new_state",
-				"speaker": "bowler_hat",
-				"state": "idle",
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "look-down",
-				"text": "Это было не так давно. Меня до сих пор иногда бросает в дрожь от воспоминаний."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "Я только-только устроился работать шерифом в своем родном городе после смерти моего отца."
-			},
-			{
-				"type": "phrase",
 				"speaker": "strikely",
 				"state": "sad",
-				"text": "О, нам очень жаль…"
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sad",
-				"text": "Да."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "В общем, мне нужно было расследовать загадочные взрывы в шахтах."
+				"speaker": "bowler_hat",
+				"text": "Позвольте мне перехватить инициативу и рассказать свою историю."
 			},
 			{
 				"type": "new_state",
@@ -74,14 +58,15 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sarcastic",
-				"text": "Они конечно были не редким явлением, но в то время происходили чуть ли не каждый день."
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Ставлю 10 бит, что это будет история про призраков."
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "Когда наконец разгребли завалы, мы с моей верной напарницей направились вглубь шахт."
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Ну тогда готовь кошелек, потому что в моей истории точно не будет никаких призраков!"
 			},
 			{
 				"type": "script",
