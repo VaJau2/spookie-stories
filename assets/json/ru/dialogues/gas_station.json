@@ -42,14 +42,14 @@
 				"speaker": "bowler_hat",
 				"text": "Он был мощным кабриолетом с восьмицилиндровым двигателем.",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"text": "…У него было целых 142 лошадиных силы и трехступенчатая коробка передач.",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
@@ -57,7 +57,7 @@
 				"state": "smirk",
 				"text": "…Это был первый концепт-кар для всей автомобильной промышленности.",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
@@ -315,6 +315,11 @@
 				"speaker": "bowler_hat",
 				"state": "goofy",
 				"text": "Как вдруг из леса прямо позади меня выскочили волки!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/menu/hint",
+				"method": "show_hint",
 			},
 			{
 				"type": "phrase",

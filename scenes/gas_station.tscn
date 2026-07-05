@@ -65,6 +65,7 @@
 [ext_resource type="AudioStream" uid="uid://cs1r4dixhg3vb" path="res://assets/audio/car/refuel/refuel_end.mp3" id="51_v0bth"]
 [ext_resource type="PackedScene" uid="uid://qlbjod8sul57" path="res://objects/prefabs/gas_station/gas_station_wolf.tscn" id="52_i7u8q"]
 [ext_resource type="Script" uid="uid://ct8fhcwgkqmnj" path="res://assets/scripts/scenario/gasStation/wolfsSpawner.gd" id="53_stlba"]
+[ext_resource type="Script" uid="uid://bmqs2hgutpfj2" path="res://assets/scripts/interface/hintLabel.gd" id="53_ww8o5"]
 [ext_resource type="Script" uid="uid://clqie6sndsdwl" path="res://assets/scripts/scenario/gasStation/sceneReloader.gd" id="55_stlba"]
 [ext_resource type="AudioStream" uid="uid://cne6cdi83doym" path="res://assets/audio/wolf/wolf-growl.mp3" id="60_3mtdj"]
 [ext_resource type="Script" uid="uid://r3u7dojrmlp5" path="res://assets/scripts/scenario/gasStation/carStartScenario.gd" id="63_sccj4"]
@@ -2049,6 +2050,20 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("11_sfy4j")
+
+[node name="hint" type="Label" parent="menu" unique_id=263212940]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "Нажмите Crtl чтобы красться"
+script = ExtResource("53_ww8o5")
+hint_key = "run"
 
 [node name="start_dialogue" type="Node" parent="." unique_id=1023858340 node_paths=PackedStringArray("dialogue_menu")]
 script = ExtResource("12_4o66k")

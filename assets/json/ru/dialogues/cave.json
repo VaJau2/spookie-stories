@@ -23,6 +23,11 @@
 			},
 			{
 				"type": "script",
+				"path": "/root/main/menu/hint",
+				"method": "show_hint",
+			},
+			{
+				"type": "script",
 				"path": "/root/main/skip_start_dialogue",
 				"method": "set_skip"
 			},

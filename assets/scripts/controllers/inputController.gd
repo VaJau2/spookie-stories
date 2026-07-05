@@ -26,18 +26,24 @@ func _ready() -> void:
 
 
 func _on_start_running() -> void:
+	if !movement_controller.may_move: return
+	
 	movement_controller.load_state("run")
 	if movement_controller.has_method("set_is_running"):
 		movement_controller.set_is_running(true)
 
 
 func _on_stop_running() -> void:
+	if !movement_controller.may_move: return
+	
 	movement_controller.load_state("walk")
 	if movement_controller.has_method("set_is_running"):
 		movement_controller.set_is_running(false)
 
 
 func _on_start_sitting() -> void:
+	if !movement_controller.may_move: return
+	
 	if sit_mode == SitMode.Stealth:
 		is_sitting = !is_sitting
 		movement_controller.load_state("sit" if is_sitting else "walk")
@@ -47,6 +53,8 @@ func _on_start_sitting() -> void:
 
 
 func _on_jump() -> void:
+	if !movement_controller.may_move: return
+	
 	if movement_controller.has_method("jump"):
 		movement_controller.jump()
 

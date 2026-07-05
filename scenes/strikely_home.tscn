@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://cy8j8ctpmfky5" path="res://assets/sprites/props/strikely-home/bed/bed-open-eyes.png" id="48_hppya"]
 [ext_resource type="Script" uid="uid://dwe5c4nup6vk4" path="res://assets/scripts/scenario/strikelyHome/trySleepAnim.gd" id="50_om7f1"]
 [ext_resource type="AudioStream" uid="uid://bc0axi4onh23q" path="res://assets/audio/background/night_back.ogg" id="50_sgrem"]
+[ext_resource type="Script" uid="uid://bmqs2hgutpfj2" path="res://assets/scripts/interface/hintLabel.gd" id="51_rb84v"]
 [ext_resource type="Script" uid="uid://cwkomgiiknkrj" path="res://assets/scripts/scenario/strikelyHome/scaredMother.gd" id="55_k5xai"]
 [ext_resource type="AudioStream" uid="uid://kbb3yx6mmgbd" path="res://assets/audio/steps/wood/stepWoodAway.mp3" id="55_wg2p7"]
 [ext_resource type="AudioStream" uid="uid://dsys17uht7i56" path="res://assets/audio/clock/clock_scary.mp3" id="56_2fv3w"]
@@ -2179,6 +2180,20 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("15_7y7dn")
+
+[node name="hint" type="Label" parent="menu" unique_id=561541496]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "Нажмите Crtl чтобы красться"
+script = ExtResource("51_rb84v")
+hint_key = "crouch"
 
 [node name="directional_light" type="DirectionalLight2D" parent="." unique_id=273689749]
 color = Color(0.6392157, 0.36078432, 0.32941177, 1)

@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://bna0lk0uh6rmu" path="res://assets/scripts/interface/healthBar.gd" id="19_0dfuj"]
 [ext_resource type="Script" uid="uid://de0jx7xxiv7mw" path="res://assets/scripts/controllers/cave/enemies/ratSpawnersManager.gd" id="19_b53jv"]
 [ext_resource type="Script" uid="uid://d1ip6n65e7g5a" path="res://assets/scripts/controllers/cave/enemies/ratSpawner.gd" id="20_f8rtj"]
+[ext_resource type="Script" uid="uid://bmqs2hgutpfj2" path="res://assets/scripts/interface/hintLabel.gd" id="23_kntxa"]
 [ext_resource type="Script" uid="uid://pe0dwvkln6s" path="res://assets/scripts/background/dialogueArea.gd" id="24_wkxha"]
 [ext_resource type="Script" uid="uid://lag4iapfhpsg" path="res://assets/scripts/scenario/cave/chakkyLeaveDialogue.gd" id="25_6x5n2"]
 [ext_resource type="AudioStream" uid="uid://dicxfrhggpgus" path="res://assets/audio/background/cave/creepy_cave.mp3" id="26_bb2dv"]
@@ -495,6 +496,21 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.8629175, 0.48454058, 0.21331519, 1)
 
+[node name="hint" type="Label" parent="menu" unique_id=1925010354]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "Нажмите Y чтобы прыгать
+и X чтобы стрелять"
+script = ExtResource("23_kntxa")
+hint_key = "jump_shoot"
+
 [node name="rat_spawners" type="Node2D" parent="." unique_id=1418848483 node_paths=PackedStringArray("dialogue_menu")]
 script = ExtResource("19_b53jv")
 dialogue_menu = NodePath("../menu/dialogue_menu")
@@ -544,7 +560,7 @@ start_dialogue = NodePath("../start_dialogue")
 chakky_leave_timer = NodePath("../chakky_leave/chakky_leave_timer")
 
 [node name="start_dialogue" type="Area2D" parent="." unique_id=1219439681 node_paths=PackedStringArray("player_node", "dialogue_menu")]
-position = Vector2(840, -24)
+position = Vector2(976, 0)
 script = ExtResource("24_wkxha")
 player_node = NodePath("../player")
 dialogue_file = "cave"

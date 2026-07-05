@@ -25,6 +25,22 @@
 		"language_label": "Language:",
 		"language": "English"
 	},
+	"hints": {
+		"crouch": {
+			"keyboard": "Press Crtl to crouch",
+			"gamepad": "Press B to crouch",
+		},
+		"run": {
+			"keyboard": "Press Shift to run",
+			"gamepad": "Press A or LB to run",
+		},
+		"jump_shoot": {
+			"keyboard": "Press Space to jump
+and LMB to shoot",
+			"gamepad": "Press Y to jump
+and X to shoot"
+		}
+	},
 	"dialogue": {
 		"skip": "to continue"
 	},

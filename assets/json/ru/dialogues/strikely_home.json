@@ -235,6 +235,11 @@
 				"path": "/root/main/scared_mother",
 				"method": "set_may_move",
 			},
+			{
+				"type": "script",
+				"path": "/root/main/menu/hint",
+				"method": "show_hint",
+			},
 		]
 	},
 	"night3_repeat": {
@@ -249,6 +254,11 @@
 				"type": "script",
 				"path": "/root/main/scared_mother",
 				"method": "set_may_move",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/menu/hint",
+				"method": "show_hint",
 			},
 		]
 	},

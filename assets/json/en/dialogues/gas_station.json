@@ -42,14 +42,14 @@
 				"speaker": "bowler_hat",
 				"text": "It was a powerful convertible with an eight-cylinder engine.",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"text": "…It had 142 horsepower and a three-speed gearbox.",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
@@ -57,7 +57,7 @@
 				"state": "smirk",
 				"text": "…It was the first concept car for the entire automotive industry.",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
@@ -72,7 +72,7 @@
 				"speaker": "bowler_hat",
 				"text": "…He was just filled to the brim with these technologies…",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
@@ -315,6 +315,11 @@
 				"speaker": "bowler_hat",
 				"state": "goofy",
 				"text": "Suddenly, wolves jumped out of the forest right behind me!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/menu/hint",
+				"method": "show_hint",
 			},
 			{
 				"type": "phrase",
