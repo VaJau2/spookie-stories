@@ -14,6 +14,7 @@ extends Node
 @export var turn_off_sound: AudioStreamMP3
 
 @export var computer_node: Node2D
+@export var working_computer_audi: AudioStreamPlayer2D
 var computer_sprite: Sprite2D
 var computer_audi: AudioStreamPlayer2D
 
@@ -44,6 +45,7 @@ func computer_denied() -> void:
 
 
 func computer_off() -> void:
+	working_computer_audi.stop()
 	computer_sprite.texture = off_texture
 
 

@@ -22,12 +22,16 @@ var load_starting_timer: float = 2.0
 var is_starting: bool
 
 
-func start() -> void:
+func sit_in_car() -> void:
 	station_land.showed_station = true
 	var player = get_node("/root/main/" + player_name)
 	player.queue_free()
 	car_camera.make_current()
 	driving_pony.visible = true
+
+
+func start() -> void:
+	sit_in_car()
 	car_light.visible = true
 	car_audi.stream = car_sound
 	car_audi2.stream = starting_sound

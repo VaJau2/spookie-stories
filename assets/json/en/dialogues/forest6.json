@@ -1,0 +1,209 @@
+{
+	"talk": {
+		"nodes": [
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "scared",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "By the way, I had to go back the same way later."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Fortunately, it was much easier with the map."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "I'm afraid, after such a story, no other one will seem even close to as scary."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "It's hard to argue with that."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "This story, I think, is even scarier than the muffin story."
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "shy",
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "Speaking of muffins. Where's the Pay?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "She went to sleep."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "I think I should go too."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Thank you for the stories, they were very interesting."
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Good night."
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/play_dusk",
+				"method": "start"
+			}
+		]
+	},
+	"strikely_walks": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"text": "I think I'll go to bed too."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "happy",
+				"text": "Good night!"
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikaly",
+				"state": "idle",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/play_strikely",
+				"method": "start"
+			}
+		],
+	},
+	"talk_finish": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "Are you coming too? You said you wanted to sleep."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"text": "I would like."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "But now that I remember what was there…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "…I won't sleep a damn."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "I see."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Don't you want to sleep yourself?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Nuh, I think I'll stay a little longer."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "smirk",
+				"text": "Are you scared?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Of couse not!..."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "…maybe."
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "smile",
+				"text": "Heh, well, stay if you want. It's always more interesting together."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"text": "…yep."
+			},
+			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "idle",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/set_exit_visible",
+				"method": "set_label_visible"
+			},
+		]
+	}
+}

@@ -36,7 +36,6 @@
 			"mouth_open": 14,
 		},
 	},
-	
 	"bowler_hat": {
 		"idle": {
 			"eyes_open": 0,
@@ -173,6 +172,11 @@
 			"eyes_open": 12,
 			"eyes_closed": 12,
 			"mouth_open": 13,
+		},
+		"serious": {
+			"eyes_open": 14,
+			"eyes_closed": 15,
+			"mouth_open": 16,
 		}
 	},
 	"chakky": {

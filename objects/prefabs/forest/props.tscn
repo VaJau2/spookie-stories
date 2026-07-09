@@ -218,6 +218,7 @@ texture = ExtResource("4_qpo0l")
 
 [node name="fire_sound" type="AudioStreamPlayer2D" parent="fire" unique_id=53787184]
 stream = ExtResource("5_rl3hy")
+volume_db = 3.0
 autoplay = true
 bus = &"Sound"
 

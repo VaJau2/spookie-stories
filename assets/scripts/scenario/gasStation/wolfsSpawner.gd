@@ -5,6 +5,7 @@ extends Node
 @export var obstacles: Node2D
 @export var player_name: String
 @export var growl_sound: AudioStream
+@export var delete_wolfs_area: Area2D
 @export var sit_dialogue: DialogueArea
 var spawned_wolfs: Array[CharacterBody2D]
 
@@ -45,6 +46,7 @@ func wolfs_run() -> void:
 		var wolf_follow: FollowController = wolf.get_node("follow_controller")
 		var player = get_parent().get_node(player_name)
 		wolf_follow.set_target(player)
+	#delete_wolfs_area.is_active = true # Закомменчено, т.к. вариант с удалением волков до диалога выглядит неоч
 	sit_dialogue.is_active = true
 
 

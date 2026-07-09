@@ -72,7 +72,7 @@
 				"speaker": "bowler_hat",
 				"text": "…Он был просто до краев заполнен этими технологиями…",
 				"autoskip": 1,
-				"timer": 0.02,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",

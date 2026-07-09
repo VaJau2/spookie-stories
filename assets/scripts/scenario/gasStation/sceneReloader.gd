@@ -16,6 +16,7 @@ extends Node
 func _ready() -> void:
 	if G.scene_vars.has("gas_station"):
 		var station_var = G.scene_vars.gas_station
+		station_var = 1 #TODO убрать
 		if station_var == 1:
 			load_wolfs_run()
 		elif station_var == 2:

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d1hu5n6syo5ym"]
+
+[ext_resource type="Texture2D" uid="uid://b35ly8i8iod2v" path="res://assets/sprites/tiles/labs/pixel-cyberpunk-interior.png" id="1_4rryx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(20, 22)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4kxuq"]
+polygon = PackedVector2Array(12, 10, -11, 10, -11, -4, -5, -11, 6, -11, 12, -4)
+
+[node name="chair" type="StaticBody2D" unique_id=548754668]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1992816139]
+texture = ExtResource("1_4rryx")
+region_enabled = true
+region_rect = Rect2(354, 166, 27, 24)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1708462540]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=2058228489]
+occluder = SubResource("OccluderPolygon2D_4kxuq")

@@ -158,7 +158,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_77kpb"]
-radius = 16.0
+radius = 22.666666
 height = 128.0
 
 [sub_resource type="Curve" id="Curve_soc8u"]
@@ -214,7 +214,7 @@ libraries/ = SubResource("AnimationLibrary_ish0f")
 autoplay = &"run"
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=538878848]
-position = Vector2(0, -16)
+position = Vector2(0, -22)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_77kpb")
 

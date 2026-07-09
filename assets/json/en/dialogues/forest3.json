@@ -1,29 +1,29 @@
 {
 	"talk": {
 		"nodes": [
-			{
+				{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "sus",
-				"text": "Ну мы пожалуй не будем спрашивать, что это за эксперименты с ДНК."
+				"text": "Well, we probably won't ask what kind of DNA experiments these are."
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "Но что случилось потом с клонами, которые уже были созданы?"
+				"text": "What happened to the clones that were already created?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "Вы их... того?"
+				"text": "Did you... well?"
 			},
 			{
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "look-back",
-				"text": "…Не знаю."
+				"text": "…I don't know."
 			},
 			{
 				"type": "new_state",
@@ -34,18 +34,18 @@
 				"type": "phrase",
 				"speaker": "strikely",
 				"state": "confused",
-				"text": "К тому моменту я уже проснулась."
+				"text": "By that time I had already woken up."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Твоя история, конечно, неплохая."
+				"text": "Your story is certainly not bad."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Но после телефонного звонка она соверенно перестала быть страшной."
+				"text": "But after the phone call part it completely stopped being scary."
 			},
 			{
 				"type": "new_state",
@@ -55,7 +55,7 @@
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
-				"text": "Позвольте мне перехватить инициативу и рассказать свою историю."
+				"text": "Let me take the initiative and tell my story."
 			},
 			{
 				"type": "new_state",
@@ -66,19 +66,19 @@
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "idle",
-				"text": "Маэстро страшных историй в деле!"
+				"text": "The maestro of scary stories is in action!"
 			},
 			{
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "Ставлю 10 бит, что это будет история про призраков."
+				"text": "I'll bet 10 bucks that this will be a ghost story."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
-				"text": "Ну тогда готовь кошелек, потому что в моей истории точно не будет никаких призраков!"
+				"text": "Well then, get your wallet ready, because there definitely won't be any ghosts in my story!"
 			},
 			{
 				"type": "script",

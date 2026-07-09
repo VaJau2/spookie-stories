@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b38kjvvoq6io5" path="res://assets/audio/background/cave/cave2.mp3" id="2_aises"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="2_ip074"]
 [ext_resource type="AudioStream" uid="uid://cs565tn4qe6bw" path="res://assets/audio/background/cave/cave3.mp3" id="3_c3r8b"]
-[ext_resource type="PackedScene" uid="uid://6b2jpdixlsa4" path="res://objects/characters/cave_chakky.tscn" id="3_ip074"]
+[ext_resource type="PackedScene" uid="uid://6b2jpdixlsa4" path="res://objects/characters/cave/cave_chakky.tscn" id="3_ip074"]
 [ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="4_cameo"]
 [ext_resource type="Texture2D" uid="uid://brt5qydc1sdwq" path="res://assets/sprites/tiles/cave/dynamite.png" id="5_aises"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="5_uonky"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://b1grwogfh0udx" path="res://assets/scripts/interface/ammoCount.gd" id="14_4geow"]
 [ext_resource type="PackedScene" uid="uid://b1yu2s7f7x5gi" path="res://objects/interface/ammo_count_item.tscn" id="15_4geow"]
 [ext_resource type="Texture2D" uid="uid://bo6tco2dohro4" path="res://assets/sprites/interface/hitted_ui.png" id="17_k7li4"]
-[ext_resource type="PackedScene" uid="uid://bacay471k23b4" path="res://objects/prefabs/cave/rato_parado.tscn" id="17_vemui"]
+[ext_resource type="PackedScene" uid="uid://bacay471k23b4" path="res://objects/characters/cave/rato_parado.tscn" id="17_vemui"]
 [ext_resource type="Script" uid="uid://b2t8sfeuejdei" path="res://assets/scripts/interface/hittedScreen.gd" id="18_b53jv"]
 [ext_resource type="Script" uid="uid://bna0lk0uh6rmu" path="res://assets/scripts/interface/healthBar.gd" id="19_0dfuj"]
 [ext_resource type="Script" uid="uid://de0jx7xxiv7mw" path="res://assets/scripts/controllers/cave/enemies/ratSpawnersManager.gd" id="19_b53jv"]
@@ -610,7 +610,7 @@ shape = SubResource("RectangleShape2D_6x5n2")
 [node name="next_level" type="Node" parent="." unique_id=1995157826 node_paths=PackedStringArray("black_screen")]
 script = ExtResource("28_kbaxk")
 black_screen = NodePath("../menu/black_screen")
-next_level = "forest5"
+next_level = "forest6"
 
 [connection signal="body_entered" from="tiles/wall-light/wall-light/light-blind-area" to="tiles/wall-light/wall-light/light-blind-area" method="_on_body_entered"]
 [connection signal="body_exited" from="tiles/wall-light/wall-light/light-blind-area" to="tiles/wall-light/wall-light/light-blind-area" method="_on_body_exited"]

@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bdg126476teqq" path="res://objects/props/lab/clone_computer.tscn" id="17_vchbl"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="18_6wkif"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="19_yi5f7"]
+[ext_resource type="AudioStream" uid="uid://c2i8sfubjap6f" path="res://assets/audio/furniture/electricity.mp3" id="20_068fc"]
 [ext_resource type="PackedScene" uid="uid://bk4ilh1kxa716" path="res://objects/characters/strikely_mother_clone.tscn" id="20_wh6ob"]
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="21_el4ck"]
 [ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="22_qbpw6"]
@@ -35,6 +36,11 @@
 [ext_resource type="Texture2D" uid="uid://bhptp0k17g78f" path="res://assets/sprites/props/strikely-home/clone-computer/clone-computer-denied.png" id="31_yswsb"]
 [ext_resource type="Texture2D" uid="uid://dmdmtvs53sqx2" path="res://assets/sprites/props/strikely-home/clone-computer/clone-computer-off.png" id="32_p27id"]
 [ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="35_2vi7b"]
+[ext_resource type="AudioStream" uid="uid://sfulbo1diy8n" path="res://assets/audio/background/horror_ambient.mp3" id="36_ruus4"]
+[ext_resource type="AudioStream" uid="uid://3nrsd8ni8w6v" path="res://assets/audio/clock/clock_normal.mp3" id="38_sporb"]
+[ext_resource type="AudioStream" uid="uid://b8ro0qdej646e" path="res://assets/audio/furniture/computer.mp3" id="39_fbnov"]
+[ext_resource type="AudioStream" uid="uid://bry0m5pu3qkhx" path="res://assets/audio/furniture/computer_fan.mp3" id="39_qua1u"]
+[ext_resource type="AudioStream" uid="uid://bogbhqe4cl8hw" path="res://assets/audio/furniture/water_pipe.mp3" id="40_6wkif"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_w8wsv"]
 vertices = PackedVector2Array(-3658, 278, -3734, 278, -3734, 250, -3658, 250, -307, 38, -326, 38, -326, 4.5, -307, 4.5, -2269, 565, -2266, 566, -2698, 566, -2308, 565, -978.4297, 855.15625, -922, 902, -1354, 902, -1080.4063, 855.15625, 1670, 662, 1670, 1190, 1546, 1066, 1546, 374, 775, 1190, 1238, 1066, 1162, 1066, 775, 1146, -1080.4063, 786.65625, -1084.4297, 851.15625, -1084.4297, 782.65625, -922, 758, -978.4297, 786.65625, -1186.4063, 851.15625, -2266, 470, -2269, 510, -2861, 528, -2861, 565.5625, -2870, 564.1797, -2869, 415, 470, 1526, -129.27344, 1526, -131.42969, 1380.5, -24, 1380.5, 18, 1392, -3812, 856, -3874.1563, 856, -3873.5, 807, -3827, 807, 902, -278, 991, -278, 991, -236, 817, -227.5, 1043, -236, 1043, -226, 1037, -169, 1094, -226, 1094, -169, 1037, -139, 1035, -139, 1035, -77, 1094, -77, 1094, -73, 1045, -73, 1045, -38, 1042, -38, 1042, 24, 1046, 24, 1046, 38, 902, 38, 902, 250, 1142, 250, 1142, 278.5, 826, 250, 518, 374, 826, 38, 634, 38, 634, -278, 635, -278, 635, -225.5, 703, -225.5, 703, -227.5, 817, -278, 826, -278, -129, -189, -58, -230, -13, -230, -13, -178.5, -58, 38, 118, -178.5, 118, -230, 134, -230, 134, -154.5, 116.5, -154.5, 116.5, -139.5, 73, -139.5, 73, 0.5, 96, 0.5, 96, 38, 1215, 278.5, 1215, 277.5, 1276, 277.5, 1276, 263, 1439, 263, 1439, 250, 1670, 250, 1738, 586, 1738, 490, 2054, 490, 2054, 586, 2122, 586, 2122, 490, 2179, 490, 2179, 529, 2270, 529, 2270, 490, 2322, 490, 2322, 537.5, 2514, 537.5, 2514, 490, 2534, 490, 2534, 586, 2602, 586, 2602, 490, 2774, 490, 2774, 586, 2842, 586, 2842, 490, 3158, 490, 3158, 758, 2842, 758, 2842, 662, 2534, 662, 2122, 662, 2122, 758, 2534, 758, 1670, 586, -58, 250, 442, 374, 518, 634, 645.59375, 634, 645.59375, 664.15625, 442, 634, 202, 806, 373, 676.5, -250, 374, -182, 250, -250, 634, -233, 634, -233, 677.5, -374, 634, -389, 671.5, -374, 374, -470, 682, -470, 634, -455, 634, -455, 671.5, -389, 634, -167, 677.5, -167, 634, -154, 634, -154, 730, 202, 730, 202, 634, 241, 634, 241, 675.5, 307, 675.5, 307, 676.5, 373, 634, 745, 664.15625, 745, 666, 784, 666, 784, 634, 806, 634, 806, 730, 970, 730, 970, 634, 1023.59375, 634, 1023.59375, 683.15625, 1162, 854, 1125.5703, 683.15625, 1125.5703, 659, 1156, 659, 1247, 685.5, 1238, 854, 1156, 634, 1247, 634, 1315, 685.5, 1315, 682.5, 1370, 682.5, 1370, 634, 1430, 634, 1430, 683.5, 1421.5, 683.5, 1421.5, 698.5, 1378, 698.5, 1378, 838.5, 1430, 838.5, 1430, 854, 970, 854, 970, 806, 806, 806, 806, 854, 202, 854, -154, 806, -154, 854, -470, 854, -470, 758, -634, 1066, 32, 1066, 32, 1090.5, -758, 1066, 230, 1190, 154, 1190, -1017, 1093, -634, 758, -758, 758, -1354, 1066, -1135, 1066, -1135, 1086, -1435, 1084, -1430, 1066, -1082, 1093, -1367, 663, -1430, 902, -1406, 663, -1562, 677, -1862, 902, -1862, 854, -1698, 682.5, -2026, 1066, -1528, 1066, -1528, 1084, -1435, 1066, -1082, 1086, -1017, 1066, 657, 1146, 164, 1090.5, 164, 1085, 247, 1085, 683, 1118, 247, 1066, 748, 1118, 748, 1146, 683, 1146, 657, 1190, 230, 1354, 306, 1354, 306, 1393.5, 374, 1393.5, 374, 1354, 470, 1354, -24, 1380, 18, 1380, 109, 1392, 109, 1354, 154, 1354, -2643.961, 902, -3812, 902, -3974, 610, -3974, 346, -3950, 346, -3950, 388, -3735.2734, 610, -3859, 388, -3754, 394, -3859, 346, -3754, 346, -3638, 394, -3658, 614, -3734, 614, -3638, 346, -3606, 346, -3606, 384, -3515, 384, -3515, 346, -3418, 346, -3418, 570, -3450, 565, -3450, 570, -3515, 565, -3515, 614, -3658, 778, -3028, 778, -3028, 782, -3022, 782, -3022, 812, -2957, 812, -2957, 808, -2909, 808, -2909, 778, -2774, 778, -2774, 566, -2822, 566, -2822, 528, -2804, 415, -2793, 384, -2730, 378, -2719, 384.5, -2870, 346, -2858, 346, -2858, 353, -2869, 353, -2804, 384, -2793, 378, -2730, 346, -2719, 346, -2651, 384.5, -2651, 383.5, -2603, 383.5, -2603, 346, -2583, 346, -2583, 391, -2495.4063, 391, -2495.4063, 398.15625, -2393.4297, 398.15625, -2393.4297, 346, -2380, 346, -2380, 369.5, -2266, 369.5, -2266, 394, -1450, 634, -1406, 634, -1526, 634, -1450, 394, -1526, 470, -2698, 778, -2428, 778, -2428, 804.5, -2368, 804.5, -2368, 805.5, -2295, 805.5, -2295, 778, -2291, 778, -2291, 791, -2118, 791, -2118, 778, -1862, 778, -2026, 854, -1862, 634, -1826, 634, -1826, 682.5, -1698, 634, -1695, 634, -1695, 677, -1562, 634, -1367, 634, -1364, 634, -1364, 662.5, -1243, 662.5, -1243, 634, -1192.4063, 634, -1192.4063, 693.15625, -1090.4297, 693.15625, -1090.4297, 634, -1086.4063, 634, -1086.4063, 697.15625, -984.4297, 697.15625, -984.4297, 634, -970, 634, -970, 667, -931, 667, -931, 634, -922, 634, -922, 682, -182, 38, -268, 38, -268, 4.5, -265, 4.5, -265, -135.5, -308.5, -135.5, -308.5, -150.5, -276, -198, -229, -203, -220, -189, -326, -150.5, -326, -198, -276, -203, -229, -230, -220, -230, -129, -251, -134, -251, -134, -566, -58, -490, -2308, 510, -3734, 778, -3734, 776.8594, -3730.7266, 776.7969, -3827, 778.8125, -3788.1328, 778, -3735.1563, 614, -3734, 656.47656, -2101.8984, 898.9375, -1186.4063, 782.65625, 902, -566, 826, -490, -758, 250, -634, 374, -758, 682, -634, 682, -2102, 909.0625, -2102, 1190)
@@ -1380,7 +1386,7 @@ in_material = 4
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_ytx4t")
 
-[node name="turn_computer_off" type="Node" parent="." unique_id=321231452 node_paths=PackedStringArray("card_sprite", "first_card_dialogue", "second_card_dialogue", "computer_dialogue_without_card", "computer_dialogue_with_card_first", "computer_dialogue_with_card_second", "computer_node")]
+[node name="turn_computer_off" type="Node" parent="." unique_id=321231452 node_paths=PackedStringArray("card_sprite", "first_card_dialogue", "second_card_dialogue", "computer_dialogue_without_card", "computer_dialogue_with_card_first", "computer_dialogue_with_card_second", "computer_node", "working_computer_audi")]
 script = ExtResource("28_wgpf6")
 card_sprite = NodePath("../nav_region/props/table2/access-card")
 first_card_dialogue = NodePath("../card_first_dialogue")
@@ -1392,6 +1398,7 @@ switch_sound = ExtResource("29_2y48i")
 access_denied_sound = ExtResource("30_p27id")
 turn_off_sound = ExtResource("30_j0i0d")
 computer_node = NodePath("../nav_region/props/clone-computer")
+working_computer_audi = NodePath("../sounds/mainframe")
 denied_texture = ExtResource("31_yswsb")
 off_texture = ExtResource("32_p27id")
 
@@ -1462,6 +1469,123 @@ shape = SubResource("RectangleShape2D_2y48i")
 script = ExtResource("35_2vi7b")
 black_screen = NodePath("../menu/black_screen")
 next_level = "forest3"
+
+[node name="ambient" type="AudioStreamPlayer" parent="." unique_id=2019694887]
+stream = ExtResource("36_ruus4")
+volume_db = -10.0
+autoplay = true
+bus = &"Sound"
+
+[node name="sounds" type="Node2D" parent="." unique_id=97117967]
+
+[node name="electricity_audi" type="AudioStreamPlayer2D" parent="sounds" unique_id=307849657]
+position = Vector2(-3809, 729)
+stream = ExtResource("20_068fc")
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="electricity_audi2" type="AudioStreamPlayer2D" parent="sounds" unique_id=36673284]
+position = Vector2(2571, 538)
+stream = ExtResource("20_068fc")
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="clock" type="AudioStreamPlayer2D" parent="sounds" unique_id=1220286981]
+position = Vector2(615, 566)
+stream = ExtResource("38_sporb")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="clock2" type="AudioStreamPlayer2D" parent="sounds" unique_id=1512056245]
+position = Vector2(1115, 566)
+stream = ExtResource("38_sporb")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="clock3" type="AudioStreamPlayer2D" parent="sounds" unique_id=400885333]
+position = Vector2(-237, -290)
+stream = ExtResource("38_sporb")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="clock4" type="AudioStreamPlayer2D" parent="sounds" unique_id=604098692]
+position = Vector2(-978, 583)
+stream = ExtResource("38_sporb")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="clock5" type="AudioStreamPlayer2D" parent="sounds" unique_id=173579024]
+position = Vector2(-2545, 285)
+stream = ExtResource("38_sporb")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="computer" type="AudioStreamPlayer2D" parent="sounds" unique_id=169219323]
+position = Vector2(-1044, 648)
+stream = ExtResource("39_qua1u")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="computer2" type="AudioStreamPlayer2D" parent="sounds" unique_id=1460166346]
+position = Vector2(681, 608)
+stream = ExtResource("39_qua1u")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="computer3" type="AudioStreamPlayer2D" parent="sounds" unique_id=522567791]
+position = Vector2(1064, 619)
+stream = ExtResource("39_qua1u")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="water_pipe" type="AudioStreamPlayer2D" parent="sounds" unique_id=1759877674]
+position = Vector2(-1707, 552)
+stream = ExtResource("40_6wkif")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="water_pipe2" type="AudioStreamPlayer2D" parent="sounds" unique_id=284170480]
+position = Vector2(2175, 411)
+stream = ExtResource("40_6wkif")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="water_pipe3" type="AudioStreamPlayer2D" parent="sounds" unique_id=1336840885]
+position = Vector2(1409, 549)
+stream = ExtResource("40_6wkif")
+volume_db = -2.0
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="mainframe" type="AudioStreamPlayer2D" parent="sounds" unique_id=333483475]
+position = Vector2(3005, 464)
+stream = ExtResource("39_fbnov")
+autoplay = true
+max_distance = 800.0
+bus = &"Sound"
 
 [connection signal="body_entered" from="step_areas/wood_area" to="step_areas/wood_area" method="_on_body_entered"]
 [connection signal="body_exited" from="step_areas/wood_area" to="step_areas/wood_area" method="_on_body_exited"]

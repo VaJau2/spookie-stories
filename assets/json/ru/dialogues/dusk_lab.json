@@ -1,0 +1,54 @@
+{
+	"start": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Эй, а она очень похожа на тебя!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "У нас ничего общего…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Вообще-то она права, вы обе пегаски, обе в очках. Почти как две капли.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Но, в отличие от неё, я не…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Так, это спойлеры.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Не отвлекайте, пожалуйста.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "idle",
+				"text": "Все, все, молчим.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "…в тот день эта ничем не похожая на меня пони работала как обычно.",
+			},
+		]
+	}
+}

@@ -165,7 +165,7 @@
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "happy",
-				"text": "Меня зовут Пей."
+				"text": "Меня зовут Пэй."
 			},
 			{
 				"type": "new_state",
@@ -191,13 +191,13 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Серрьюс Тейл."
+				"text": "Серрьюс Тэйл."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"text": "..Тейл?"
+				"text": "..Тэйл?"
 			},
 			{
 				"type": "phrase",

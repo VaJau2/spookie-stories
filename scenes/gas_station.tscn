@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://q7icux0xakq6" path="res://assets/sprites/props/gas-station/inside/table1.png" id="25_i6evg"]
 [ext_resource type="Script" uid="uid://ddh5y232mrk2k" path="res://assets/scripts/scenario/gasStation/playerCarMovingController.gd" id="26_2o723"]
 [ext_resource type="Texture2D" uid="uid://bicj0a8s2sm5m" path="res://assets/sprites/props/gas-station/inside/cashTable.png" id="26_x68an"]
+[ext_resource type="Script" uid="uid://d0pvghpcof3r8" path="res://assets/scripts/scenario/gasStation/deleteWolfsArea.gd" id="27_gx35r"]
 [ext_resource type="Texture2D" uid="uid://bfytjcyposd27" path="res://assets/sprites/props/gas-station/inside/table2.png" id="27_v33pq"]
 [ext_resource type="Script" uid="uid://ccydspuq4j6qg" path="res://assets/scripts/scenario/gasStation/playerCarCollideWithObstacles.gd" id="29_00tt4"]
 [ext_resource type="Texture2D" uid="uid://0l4hkscjn5mf" path="res://assets/sprites/props/gas-station/inside/cash.png" id="29_oes41"]
@@ -468,6 +469,9 @@ scale_max = 9.0
 scale_curve = SubResource("CurveTexture_2o723")
 color = Color(0.8500505, 0.85005057, 0.8500505, 1)
 alpha_curve = SubResource("CurveTexture_53lc2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(244, 254)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mtdj"]
 size = Vector2(266, 100)
@@ -1242,6 +1246,7 @@ libraries/ = SubResource("AnimationLibrary_nw4yy")
 autoplay = &"idle"
 
 [node name="nav_region" type="NavigationRegion2D" parent="land" unique_id=39099712]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_stlba")
 
 [node name="wood_obstacles" type="Node2D" parent="land" unique_id=930045572]
@@ -1477,6 +1482,15 @@ bus = &"Sound"
 
 [node name="spawn_point" type="Node2D" parent="car" unique_id=779579327]
 position = Vector2(7, 21)
+
+[node name="delete_wolfs_area" type="Area2D" parent="car" unique_id=84640608 node_paths=PackedStringArray("spawn_wolfs_script")]
+position = Vector2(426, 0)
+script = ExtResource("27_gx35r")
+spawn_wolfs_script = NodePath("../../spawn_wolfs")
+
+[node name="shape" type="CollisionShape2D" parent="car/delete_wolfs_area" unique_id=1297127105]
+position = Vector2(-27, 42)
+shape = SubResource("RectangleShape2D_4kxuq")
 
 [node name="sit_area" type="Area2D" parent="car" unique_id=1777237666 node_paths=PackedStringArray("dialogue_menu")]
 script = ExtResource("21_b80e0")
@@ -2123,13 +2137,14 @@ refuel_process = ExtResource("50_i7u8q")
 refuel_end = ExtResource("51_v0bth")
 pump_dialogue_area = NodePath("../station_land/pump_dialogue_area")
 
-[node name="spawn_wolfs" type="Node" parent="." unique_id=1976047241 node_paths=PackedStringArray("spawn_points", "obstacles", "sit_dialogue")]
+[node name="spawn_wolfs" type="Node" parent="." unique_id=1976047241 node_paths=PackedStringArray("spawn_points", "obstacles", "delete_wolfs_area", "sit_dialogue")]
 script = ExtResource("53_stlba")
 wolf_prefab = ExtResource("52_i7u8q")
 spawn_points = [NodePath("../station_land/spawn_points/1"), NodePath("../station_land/spawn_points/2"), NodePath("../station_land/spawn_points/3"), NodePath("../station_land/spawn_points/4")]
 obstacles = NodePath("../station_land/nav_region/wood_obstacles")
 player_name = "bowler_hat"
 growl_sound = ExtResource("60_3mtdj")
+delete_wolfs_area = NodePath("../car/delete_wolfs_area")
 sit_dialogue = NodePath("../car/sit_area")
 
 [node name="car_start" type="Node" parent="." unique_id=592927489 node_paths=PackedStringArray("car_camera", "driving_pony", "bowler_anim", "car_anim", "land_anim", "smoke", "car_audi", "car_audi2", "car_light", "station_land", "car_moving")]
@@ -2181,6 +2196,7 @@ next_level = "forest4"
 
 [connection signal="visibility_changed" from="land" to="land" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="land2" to="land2" method="_on_visibility_changed"]
+[connection signal="body_entered" from="car/delete_wolfs_area" to="car/delete_wolfs_area" method="_on_body_entered"]
 [connection signal="body_entered" from="car/sit_area" to="car/sit_area" method="_on_body_entered"]
 [connection signal="body_entered" from="station_land/nav_region/station/station/teleport_area_inside" to="station_land/nav_region/station/station/teleport_area_inside" method="_on_body_entered"]
 [connection signal="body_exited" from="station_land/nav_region/station/station/teleport_area_inside" to="station_land/nav_region/station/station/teleport_area_inside" method="_on_body_exited"]

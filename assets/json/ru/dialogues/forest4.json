@@ -2,6 +2,11 @@
 	"talk": {
 		"nodes": [
 			{
+				"type": "new_state",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+			},
+			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "smirk",
@@ -9,9 +14,15 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sarcastic",
-				"text": "Волки, пфф. Встречал я тварей и пострашнее."
+				"speaker": "pay",
+				"state": "idle",
+				"text": "Ладно беру свои слова назад, это была и правда страшная история.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "idle",
+				"text": "Благодарю",
 			},
 			{
 				"type": "new_state",
@@ -19,69 +30,97 @@
 				"state": "idle",
 			},
 			{
-				"type": "new_state",
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "idle",
+				"text": "Итак, кто хочет рассказать свою историю?",
+			},
+			{
+				"type": "phrase",
 				"speaker": "dusk",
-				"state": "idle",
-			},
-			{
-				"type": "phrase",
-				"speaker": "bowler_hat",
 				"state": "confused",
-				"text": "Ну расскажи тогда свою историю.",
+				"text": "...",
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "Что ж, ладно."
-			},
-			{
-				"type": "new_state",
 				"speaker": "bowler_hat",
 				"state": "idle",
+				"text": "Что, вообще никто?",
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "look-down",
-				"text": "Это было не так давно. Меня до сих пор иногда бросает в дрожь от воспоминаний."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "Я только-только устроился работать шерифом в своем родном городе после смерти моего отца."
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "sad",
-				"text": "О, нам очень жаль…"
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sad",
-				"text": "Да."
-			},
-			{
-				"type": "phrase",
-				"speaker": "serious_tale",
-				"text": "В общем, мне нужно было расследовать загадочные взрывы в шахтах."
-			},
-			{
-				"type": "new_state",
-				"speaker": "strikely",
-				"state": "idle",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "...",
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "sarcastic",
-				"text": "Они конечно были не редким явлением, но в то время происходили чуть ли не каждый день."
+				"text": "Ну раз уж никто не",
+				"autoskip": 1,
+				"timer": 0.01,
 			},
 			{
 				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Давайте я расскажу!",
+			},
+			{
+				"type": "new_state",
 				"speaker": "serious_tale",
-				"text": "Когда наконец разгребли завалы, мы с моей верной напарницей направились вглубь шахт."
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "idle",
+				"text": "Хорошо, мы слушаем",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Только...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "…не судите, пожалуйста, строго, это моя первая история…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "happy",
+				"text": "Да, конечно, без проблем!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "happy",
+				"text": "Все когда-то начинали!",
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Спасибо",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "В общем, однажды, одна ученая-пони-химик проводила эксперименты у себя в лаборатории...",
 			},
 			{
 				"type": "script",
