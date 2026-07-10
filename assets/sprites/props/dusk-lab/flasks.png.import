@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1f84gp8voe60"
-path="res://.godot/imported/scientist.png-292ffdc461310b894c4160557245f859.ctex"
+uid="uid://wb4ma5gp3g1b"
+path="res://.godot/imported/flasks.png-109b03961575c92117deabeefc6107d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/scientist.png"
-dest_files=["res://.godot/imported/scientist.png-292ffdc461310b894c4160557245f859.ctex"]
+source_file="res://assets/sprites/props/dusk-lab/flasks.png"
+dest_files=["res://.godot/imported/flasks.png-109b03961575c92117deabeefc6107d2.ctex"]
 
 [params]
 

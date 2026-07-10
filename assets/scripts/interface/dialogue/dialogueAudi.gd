@@ -38,6 +38,7 @@ func set_config(code: String) -> void:
 func may_play_dialogue_sound(visible_chars: int, symbol: String) -> bool:
 	if config == null: return false
 	if symbol == ".": return false
+	if symbol == "…": return false
 	return visible_chars % config.chars_to_sound == 0
 
 

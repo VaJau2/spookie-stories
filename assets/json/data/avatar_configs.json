@@ -146,6 +146,11 @@
 			"eyes_closed": 20,
 			"mouth_open": 21,
 		},
+		"confused": {
+			"eyes_open": 22,
+			"eyes_closed": 23,
+			"mouth_open": 24,
+		},
 	},
 	"dusk": {
 		"idle": {
@@ -177,7 +182,12 @@
 			"eyes_open": 14,
 			"eyes_closed": 15,
 			"mouth_open": 16,
-		}
+		},
+		"sad": {
+			"eyes_open": 17,
+			"eyes_closed": 15,
+			"mouth_open": 18,
+		},
 	},
 	"chakky": {
 		"idle": {

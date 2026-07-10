@@ -42,12 +42,496 @@
 				"speaker": "bowler_hat",
 				"state": "idle",
 				"text": "Все, все, молчим.",
+			}
+		]
+	},
+	"empty_bottle": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Пустая склянка выглядела соблазнительно пусто",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Её обязательно нужно было чем-нибудь заполнить",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Для начала нужно было влить основу - дигидрогена монооксид",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "confused",
+				"text": "Эээээ... а что это?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Вода",
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "confused",
+				"text": "Может взять её из раковины?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Вода из раковины слишком загрязнена, она не подходит для экспериментов",
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "idle",
-				"text": "…в тот день эта ничем не похожая на меня пони работала как обычно.",
+				"text": "Нужно найти именно склянку с водой",
+			},
+		]
+	},
+	"first_bottle_take": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Основа для любого эксперимента - дигидрогена монооксид",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Именно то, что нужно для начала",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "take_first"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Теперь нужно влить её в пустую склянку",
+			},
+		]
+	},
+	"first_bottle_fill": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "change_first"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Влитие первого ингредиента послужило официальным началом эксперимента",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Следующим на очереди был торакс натрия",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "confused",
+				"text": "Так а это что?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "Такая большая зеленая склянка",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "second_active"
+			},
+		]
+	},
+	"second_bottle_take": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "take_second"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Зеленая склянка успешно найдена",
+			},
+		]
+	},
+	"second_bottle_fill": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "change_second"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Смешанный с дегидрогеном моноксида торакс натрия давал слабую реакцию",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Жидкость лишь слега приобретает зеленый цвет",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Все из-за недостатка количества электронов в оболочке торакса…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Стой, стой",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Все это очень круто, но",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "idle",
+				"text": "Давай поменьше навуки и побольше истории, хорошо?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "…ладно",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Следующая на очереди - магическая кислота",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Предвосхищая вопрос - фиолетовая бутылочка",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "third_active"
+			},
+		]
+	},
+	"third_bottle_take": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "take_third"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Как удачно, что она все это время стояла на плите и грелась",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Иначе нам пришлось бы греть её и ждать",
+			},
+		],
+	},
+	"third_bottle_fill": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "change_third"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Горячая магическая кислота дает фиолетовую пенку и позволяет реакции протекать гораздо",
+				"autoskip": 1
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Дальше нужен был эфир яблочной кислоты",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "… Красная бутылочка",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "forth_active"
+			},
+		]
+	},
+	"forth_bottle_take": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "take_forth"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Красная бутылочка успешно найдена",
+			},
+		]
+	},
+	"forth_bottle_fill": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "change_forth"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Вся жидкость обрела в основном красный цвет из-за того, что яблочная кислота очень…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "…сильная",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Дальше на очереди был флаттерат омония",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Его можно узнать по горлышку - оно сделано таким образом, чтобы он не испарялся быстро",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "fifth_active"
+			},
+		]
+	},
+	"fifth_bottle_take": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "take_fifth"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Теперь нужно максимально аккуратно донести его до места эксперимента",
+			},
+		]
+	},
+	"fifth_bottle_fill": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "С флаттератом омония нужно быть очень осторожной, потому что при контакте с воздухом он быстро испаряется",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "change_fifth"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Когда жидкость становится разноцветной, можно считать, что реакция прошла успешно",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Какой-то странный суп получается",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Именно такие вещи получаются, когда ученой-пони-химику нечего делать на работе",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "sad",
+				"text": "Она ведь даже не представляет, что создает",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Но не будем о грустном",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Название следующего ингредиента у меня никогда не получалось с первого раза",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "...кхм",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Тирекохлод…",
+				"autoskip": 1,
+				"timer": 0.06,
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Тирекохлоридоав…",
+				"autoskip": 1,
+				"timer": 0.07,
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "Тирекохлоридоамони…",
+				"autoskip": 1,
+				"timer": 0.08,
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Не беспокойся об этом, просто скажи какого он был цвета",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "…черный",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "sixth_active"
+			},
+		]
+	},
+	"sixth_bottle_take": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "take_sixth"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Вот эта вот бутылочка нам нужна",
+			},
+		]
+	},
+	"sixth_bottle_fill": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/change_bottles",
+				"method": "change_sixth"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Это...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "эта жидкость настолько мощная, что моментально окрашивает всю нашу смесь в черный",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "А теперь мы с вами узнаем, что произойдет, если смешать все эти ингредиенты в таком порядке:",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Сначала жидкость начнет резко менять цвета",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Затем слегка подрагивать…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "…В итоге из-за разницы давления произойдет взрыв",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "sad",
+				"text": "И всю комнату постепенно окутает дымка, которой определенно точно не стоит дышать",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "sad",
+				"text": "А наша ученая, которая позволила себе так сильно отойти от техники безопасности, в итоге полностью скрылась в нем",
 			},
 		]
 	}

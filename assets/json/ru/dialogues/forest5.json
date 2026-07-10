@@ -37,13 +37,8 @@
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"state": "sarcastic",
-				"text": "Буп-вирус, пфф. Встречал я вещи и пострашнее."
-			},
-			{
-				"type": "new_state",
-				"speaker": "serious_tale",
 				"state": "idle",
+				"text": "Может история и хороша, но вы же понимаете, что она полностью выдумана?"
 			},
 			{
 				"type": "new_state",
@@ -52,14 +47,21 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "confused",
-				"text": "Ну расскажи тогда свою историю.",
+				"speaker": "serious_tale",
+				"state": "idle",
+				"text": "Я могу рассказать вам действительно страшные вещи"
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Что ж, ладно."
+				"state": "idle",
+				"text": "А страшные они тем, что действительно происходили со мной в прошлом"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "Ну, расскажи",
 			},
 			{
 				"type": "new_state",

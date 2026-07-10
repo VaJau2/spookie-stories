@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmle6ejr0rj02"
-path="res://.godot/imported/scientist-booped.png-1e77d945b90d5db5fb1b6e3878d375ff.ctex"
+uid="uid://bg8xakgbpn3th"
+path="res://.godot/imported/scientist2-booped.png-00117e2995c617923794d89b217bb189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/scientist-booped.png"
-dest_files=["res://.godot/imported/scientist-booped.png-1e77d945b90d5db5fb1b6e3878d375ff.ctex"]
+source_file="res://assets/sprites/characters/dusk_city/scientist2-booped.png"
+dest_files=["res://.godot/imported/scientist2-booped.png-00117e2995c617923794d89b217bb189.ctex"]
 
 [params]
 

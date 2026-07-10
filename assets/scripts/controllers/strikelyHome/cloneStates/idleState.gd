@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func enable() -> void:
 	super.enable()
-	seek_sign.visible = false
+	if seek_sign: seek_sign.visible = false
 	if movement_controller is MovementController:
 		movement_controller.load_state("walk")
 

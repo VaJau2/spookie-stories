@@ -9,14 +9,36 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "serious_tale",
-				"state": "sarcastic",
-				"text": "Boop-virus, pff. I've met scarier things."
+				"speaker": "pay",
+				"state": "happy",
+				"text": "Great story!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Yes, it's true, a quite cute story for the first time.",
 			},
 			{
 				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "idle",
+				"text": "The story may be good, but you understand that it is completely made up?"
 			},
 			{
 				"type": "new_state",
@@ -25,14 +47,21 @@
 			},
 			{
 				"type": "phrase",
-				"speaker": "bowler_hat",
-				"state": "confused",
-				"text": "Well, tell us your story then",
+				"speaker": "serious_tale",
+				"state": "idle",
+				"text": "I can tell you some truly scary things."
 			},
 			{
 				"type": "phrase",
 				"speaker": "serious_tale",
-				"text": "Fine."
+				"state": "idle",
+				"text": "And they're scary because they actually happened to me in the past"
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "Well, tell us",
 			},
 			{
 				"type": "new_state",

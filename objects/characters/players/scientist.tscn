@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boy7l2k612m7b"]
 
 [ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_ypfc1"]
-[ext_resource type="Texture2D" uid="uid://1f84gp8voe60" path="res://assets/sprites/characters/scientist.png" id="2_y0w58"]
+[ext_resource type="Texture2D" uid="uid://1f84gp8voe60" path="res://assets/sprites/characters/dusk_city/scientist.png" id="2_y0w58"]
 [ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="3_ms0y1"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_ks00f"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="5_px1ta"]

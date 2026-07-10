@@ -69,7 +69,7 @@
 		],
 		"min_pitch": "1.8",
 		"max_pitch": "2.5",
-		"chars_to_sound": "4",
+		"chars_to_sound": "3",
 	},
 	"strikely-mother-clone-dark": {
 		"sounds": [

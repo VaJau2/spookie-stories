@@ -5,14 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://fwnrbfkpahe2" path="res://assets/sprites/tiles/labs/Inside_C(1).png" id="2_wwjas"]
 [ext_resource type="PackedScene" uid="uid://dtiujdmc7g70u" path="res://objects/props/dusk_lab/red_chair.tscn" id="3_vnhru"]
 [ext_resource type="PackedScene" uid="uid://crap0bgischa2" path="res://objects/props/dusk_lab/table.tscn" id="4_vnhru"]
+[ext_resource type="Texture2D" uid="uid://wb4ma5gp3g1b" path="res://assets/sprites/props/dusk-lab/flasks.png" id="6_b1pqs"]
+[ext_resource type="PackedScene" uid="uid://dcen43ac1bm1j" path="res://objects/characters/dusk_lab/scientist1.tscn" id="7_aviyr"]
 [ext_resource type="Texture2D" uid="uid://dv044g04wqvca" path="res://assets/sprites/light/512x512 textures (81).png" id="7_wwjas"]
+[ext_resource type="PackedScene" uid="uid://crj1vagqdggry" path="res://objects/characters/dusk_lab/scientist2.tscn" id="7_y6iu0"]
+[ext_resource type="Texture2D" uid="uid://vc6y5281pcww" path="res://assets/sprites/light/512x512 textures (22).png" id="10_oflyp"]
 [ext_resource type="Script" uid="uid://pe0dwvkln6s" path="res://assets/scripts/background/dialogueArea.gd" id="13_d7g43"]
+[ext_resource type="AudioStream" uid="uid://bry0m5pu3qkhx" path="res://assets/audio/furniture/computer_fan.mp3" id="14_mdml6"]
 [ext_resource type="PackedScene" uid="uid://boy7l2k612m7b" path="res://objects/characters/players/scientist.tscn" id="18_xhdsl"]
+[ext_resource type="Script" uid="uid://ss2jlx2oqgjm" path="res://assets/scripts/scenario/duskLab/changeBottles.gd" id="19_g0fub"]
 [ext_resource type="Script" uid="uid://bdj1j6i4rcg7p" path="res://assets/scripts/handlers/inputHandler.gd" id="47_7nd1n"]
 [ext_resource type="PackedScene" uid="uid://b6ifdwyt3avok" path="res://objects/interface/dialogue_menu.tscn" id="48_0yuhq"]
 [ext_resource type="PackedScene" uid="uid://b1x3f1iix06ug" path="res://objects/interface/pause_menu.tscn" id="49_001e8"]
 [ext_resource type="Script" uid="uid://cda44q040yc17" path="res://assets/scripts/background/backScreenDissapear.gd" id="50_ud7d2"]
 [ext_resource type="Script" uid="uid://bmqs2hgutpfj2" path="res://assets/scripts/interface/hintLabel.gd" id="51_yab3b"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y6iu0"]
+vertices = PackedVector2Array(-1609, -237, -1609, -217, -1609.7266, -217, -1614.7266, -227, -1619, -237, -1619, -227, 191, -307, 61, -307, 61, -317, 191, -317, -2299, -477, -2203.211, -477, -2204, -473.85156, -2238.5, -465.75, -2254.7266, -467, -2204, -465.75, -2238.5, -457, -2249.7266, -457, -2279.8125, -467, -2299, -457, -2283.1406, -457, -369, -667, -400.79688, -667, -369, -691.9531, 7, -533, 85, -533, 151, -387, -9, -387, -109, -415.78906, -109, -467, 401.5, -85.5, 438.28906, -85.5, 436, -83.21094, 631, -237, 631, -27, 531, -95.78906, 531, -147, 501, -197, 501, -237, 501.72656, -147, -1769, -517, -1769, -387, -1829, -415.78906, -1829, -467, -1884, -517, -1871.6719, -495.89063, -1882.7891, -507, -139, -557, -139, -597, -129, -597, -129, -557, -138.27344, -467, -19, -557, -19, -597, 7, -597, 85, -597, 151, -597, -143.27344, -457, -152, -457, -152, -483.75, -249, -557, -239.5, -483.75, -299, -517, -239.5, -457, -249.72656, -457, -254.72656, -467, -229, -402, -229, -407.5, -164, -407.5, -164, -402, 261, -157, 261, -237, 356, -237, 356, -207, 391, -207, 391, -197, 261, -107, 496.72656, -137, 489, -137, 489, -161.75, 401.5, -161.75, 496, -42, 496, -82, 517.21094, -82, -409, -107, -409, -27, -475, -27, -475, -99, -584, -167, -553, -99, -553, -27, -968, -27, -968, -79.75, -699, -157, -1122.5, -79.75, -1122.5, -27, -1155, -27, -1155, -99, -1233, -99, -1233, -67, -1619, -67, -1619, -107, -2264, -387, -2264, -402, -2238.5, -402, -2238.5, -389.5, -2059, -387, -2151, -389.5, -2151, -442, -2144, -442, -2162.789, -507, -2184, -507, -2184, -557, -2089, -557, -2089, -517, -2151.6719, -495.89063, -1945.5, -469.75, -2144, -480.53906, -1979, -517, -1915.7109, -507, -1979, -557, -1884, -557, -1858, -467, -1858, -469.75, -1864, -469.75, -1864, -480.53906, -1924, -473.85156, -1924, -469.75, -1858, -393.5, -1858, -402, -1842.7891, -402, -1619, -157, -1619, -162, -1589, -162, -1589, -197, -1507, -197, -1507, -175, -1457, -175, -1457, -197, -1339, -197, -1339, -237, -1329, -237, -1329, -197, -1139, -197, -1139, -237, -1129, -237, -1129, -197, -1110, -197, -1110, -177, -1060, -177, -1060, -197, -1019, -197, -1019, -237, -1009, -237, -1009, -197, -849, -197, -849, -157, -699, -197, -684, -197, -684, -167, -584, -197, -409, -197, -409, -157, -419, -387, -419, -517, -279.8125, -467, -289.60938, -437.60156, -299, -597, -249, -597, -280.71094, -402, -59, -387, -122.78906, -402, -9, -157, -59, -157, 436, -42, 261, -27, -1945.5, -393.5, -2009, -387, -2059, -107, -2009, -157)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(12, 15, 13), PackedInt32Array(13, 16, 17, 14), PackedInt32Array(10, 14, 18), PackedInt32Array(19, 10, 18, 20), PackedInt32Array(21, 22, 23), PackedInt32Array(24, 25, 26, 27, 28, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(37, 38, 33, 36, 39), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(44, 40, 43, 45, 46), PackedInt32Array(47, 48, 49, 50, 51), PackedInt32Array(52, 53, 54, 24), PackedInt32Array(25, 55, 56, 26), PackedInt32Array(50, 52, 24, 29, 51), PackedInt32Array(51, 57, 58, 59, 47), PackedInt32Array(60, 47, 59, 61, 62), PackedInt32Array(61, 63, 64, 65), PackedInt32Array(66, 67, 68, 69), PackedInt32Array(70, 71, 72, 73), PackedInt32Array(73, 74, 75, 76, 70), PackedInt32Array(39, 77, 78, 79, 37), PackedInt32Array(75, 37, 79, 80), PackedInt32Array(81, 82, 83, 34), PackedInt32Array(84, 85, 86, 87), PackedInt32Array(88, 89, 90, 91, 92, 93), PackedInt32Array(94, 95, 96, 97), PackedInt32Array(98, 99, 100, 101), PackedInt32Array(102, 103, 104, 105), PackedInt32Array(106, 102, 105, 107), PackedInt32Array(107, 108, 109, 106), PackedInt32Array(110, 111, 112, 113, 114), PackedInt32Array(115, 110, 114), PackedInt32Array(116, 106, 117, 115, 114, 118, 119), PackedInt32Array(118, 120, 121, 44, 119), PackedInt32Array(43, 122, 123), PackedInt32Array(123, 124, 125), PackedInt32Array(126, 127, 116), PackedInt32Array(128, 129, 130, 41), PackedInt32Array(131, 132, 133, 98), PackedInt32Array(133, 134, 135, 136), PackedInt32Array(137, 138, 139, 98), PackedInt32Array(139, 140, 141, 142), PackedInt32Array(143, 144, 145, 146), PackedInt32Array(146, 147, 148), PackedInt32Array(149, 150, 151, 92), PackedInt32Array(151, 152, 153, 154), PackedInt32Array(154, 155, 156, 92), PackedInt32Array(93, 157, 158, 159), PackedInt32Array(88, 160, 161, 162), PackedInt32Array(163, 164, 62, 165, 166), PackedInt32Array(62, 167, 168, 60), PackedInt32Array(62, 61, 65, 165), PackedInt32Array(163, 166, 169), PackedInt32Array(170, 163, 169, 66), PackedInt32Array(170, 66, 69), PackedInt32Array(170, 69, 171), PackedInt32Array(170, 171, 28, 27), PackedInt32Array(170, 27, 172, 173), PackedInt32Array(30, 32, 174, 175), PackedInt32Array(83, 35, 34), PackedInt32Array(81, 34, 175, 174), PackedInt32Array(80, 30, 175, 76, 75), PackedInt32Array(172, 70, 76, 84), PackedInt32Array(173, 172, 84), PackedInt32Array(162, 173, 84), PackedInt32Array(88, 162, 84, 87, 89), PackedInt32Array(130, 42, 41), PackedInt32Array(119, 126, 116), PackedInt32Array(106, 109, 117), PackedInt32Array(43, 123, 125, 45), PackedInt32Array(97, 143, 146, 148, 94), PackedInt32Array(44, 46, 119), PackedInt32Array(106, 116, 176, 177), PackedInt32Array(128, 41, 177, 176), PackedInt32Array(178, 106, 177, 179), PackedInt32Array(101, 178, 179, 131), PackedInt32Array(98, 101, 131), PackedInt32Array(98, 133, 136, 137), PackedInt32Array(98, 139, 142), PackedInt32Array(98, 142, 143, 97), PackedInt32Array(92, 94, 148, 149), PackedInt32Array(92, 151, 154), PackedInt32Array(93, 159, 88), PackedInt32Array(93, 92, 156)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2343, -664, -2343, -344, -2099, -335, -2106, -66, -1654, -63, -1647, -13, -1309, -11, -1309, 16, -369, 19, -375, -57, 218, -66, 218, 19, 673, 15, 662, -367, 198, -367, 182, -733, -355, -722, -485, -620, -472, -352, -100, -354, -100, -277, -370, -277, -374, -326, -732, -317, -738, -284, -819, -279, -810, -352, -1653, -362, -1655, -296, -1987, -284, -1983, -341, -1728, -341, -1730, -677)])
+agent_radius = 15.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rq6ly"]
 polygon = PackedVector2Array(-12, -8, 12, -8, 12, 16, -12, 16)
@@ -241,135 +253,236 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v4vkr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdml6"]
-size = Vector2(74, 162)
+size = Vector2(74, 205)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1pqs"]
 size = Vector2(72, 205)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aviyr"]
+size = Vector2(91, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oflyp"]
+size = Vector2(25.75, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0fub"]
+size = Vector2(31.5, 28)
+
 [node name="main" type="Node2D" unique_id=660872533]
 y_sort_enabled = true
 
-[node name="props" type="Node2D" parent="." unique_id=1213828831]
+[node name="nav_region" type="NavigationRegion2D" parent="." unique_id=385744785]
+y_sort_enabled = true
+navigation_polygon = SubResource("NavigationPolygon_y6iu0")
+
+[node name="props" type="Node2D" parent="nav_region" unique_id=1213828831]
 y_sort_enabled = true
 position = Vector2(-813, -77)
 
-[node name="blue_comp" type="Sprite2D" parent="props" unique_id=228773265]
+[node name="blue_comp" type="Sprite2D" parent="nav_region/props" unique_id=228773265]
 position = Vector2(-273, -170)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(223, 64, 34, 37)
 
-[node name="red_comp" type="Sprite2D" parent="props" unique_id=1131453818]
+[node name="red_comp" type="Sprite2D" parent="nav_region/props" unique_id=1131453818]
 position = Vector2(-676, -170)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(223, 98, 34, 33)
 
-[node name="sink" type="Sprite2D" parent="props" unique_id=1727655612]
+[node name="sink" type="Sprite2D" parent="nav_region/props" unique_id=1727655612]
 position = Vector2(-121, -165)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(447, 40, 32, 17)
 
-[node name="pizza" type="Sprite2D" parent="props" unique_id=1794080917]
+[node name="pizza" type="Sprite2D" parent="nav_region/props" unique_id=1794080917]
 position = Vector2(-372, 7)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(514, 230, 25, 23)
 
-[node name="coffe" type="Sprite2D" parent="props" unique_id=264602230]
+[node name="coffe" type="Sprite2D" parent="nav_region/props" unique_id=264602230]
 position = Vector2(-390, 12)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(612, 230, 22, 23)
 
-[node name="coffe2" type="Sprite2D" parent="props" unique_id=768056215]
+[node name="coffe2" type="Sprite2D" parent="nav_region/props" unique_id=768056215]
 position = Vector2(-240.00002, -162.99998)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(612, 230, 22, 23)
 
-[node name="coffe3" type="Sprite2D" parent="props" unique_id=1999588911]
+[node name="coffe3" type="Sprite2D" parent="nav_region/props" unique_id=1999588911]
 position = Vector2(626.99994, -375)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_drild")
 region_enabled = true
 region_rect = Rect2(612, 230, 22, 23)
 
-[node name="board" type="Sprite2D" parent="props/coffe3" unique_id=1495869008]
+[node name="board" type="Sprite2D" parent="nav_region/props/coffe3" unique_id=1495869008]
 position = Vector2(-869.6, 164)
 scale = Vector2(0.79999995, 0.79999995)
 texture = ExtResource("2_wwjas")
 region_enabled = true
 region_rect = Rect2(688, 529, 65, 41)
 
-[node name="chair2" parent="props" unique_id=548754668 instance=ExtResource("2_1uadm")]
+[node name="chair2" parent="nav_region/props" unique_id=548754668 instance=ExtResource("2_1uadm")]
 position = Vector2(-669, -123)
 
-[node name="chair" parent="props" unique_id=912655541 instance=ExtResource("3_vnhru")]
+[node name="chair" parent="nav_region/props" unique_id=912655541 instance=ExtResource("3_vnhru")]
 position = Vector2(-272, -125)
 
-[node name="table" parent="props" unique_id=1088134735 instance=ExtResource("4_vnhru")]
+[node name="table" parent="nav_region/props" unique_id=1088134735 instance=ExtResource("4_vnhru")]
 position = Vector2(-200, 36)
 scale = Vector2(1.25, 1.25)
 
-[node name="table2" parent="props" unique_id=1725265220 instance=ExtResource("4_vnhru")]
+[node name="table2" parent="nav_region/props" unique_id=1725265220 instance=ExtResource("4_vnhru")]
 position = Vector2(-267.00003, 35.999992)
 scale = Vector2(1.25, 1.25)
 
-[node name="table3" parent="props" unique_id=1410005648 instance=ExtResource("4_vnhru")]
+[node name="table3" parent="nav_region/props" unique_id=1410005648 instance=ExtResource("4_vnhru")]
 position = Vector2(-1090, -353.99997)
 scale = Vector2(1.25, 1.25)
 
-[node name="table4" parent="props" unique_id=1000693073 instance=ExtResource("4_vnhru")]
+[node name="table4" parent="nav_region/props" unique_id=1000693073 instance=ExtResource("4_vnhru")]
 position = Vector2(-1383, -350.00003)
 scale = Vector2(1.25, 1.25)
 
-[node name="table5" parent="props" unique_id=915542871 instance=ExtResource("4_vnhru")]
+[node name="table5" parent="nav_region/props" unique_id=915542871 instance=ExtResource("4_vnhru")]
 position = Vector2(615.9999, -368.00003)
 scale = Vector2(1.25, 1.25)
 
-[node name="table6" parent="props" unique_id=1646486078 instance=ExtResource("4_vnhru")]
+[node name="table6" parent="nav_region/props" unique_id=1646486078 instance=ExtResource("4_vnhru")]
 position = Vector2(1257, -46.00003)
 scale = Vector2(1.25, 1.25)
 
-[node name="lab" type="Node2D" parent="." unique_id=1094664227]
+[node name="bottles" type="Node2D" parent="nav_region/props" unique_id=277588715]
+y_sort_enabled = true
+
+[node name="1" type="Sprite2D" parent="nav_region/props/bottles" unique_id=454028778]
+position = Vector2(290, -3.999999)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="2" type="Sprite2D" parent="nav_region/props/bottles" unique_id=286900024]
+position = Vector2(1278.0001, -171)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="3" type="Sprite2D" parent="nav_region/props/bottles" unique_id=183008121]
+position = Vector2(-592, -171)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="4" type="Sprite2D" parent="nav_region/props/bottles" unique_id=636255739]
+position = Vector2(-759, -169.00002)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="5" type="Sprite2D" parent="nav_region/props/bottles" unique_id=1836063655]
+position = Vector2(611, -525)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="6" type="Sprite2D" parent="nav_region/props/bottles" unique_id=1458186525]
+position = Vector2(-1202, -494)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="result" type="Sprite2D" parent="nav_region/props/bottles" unique_id=733299578]
+position = Vector2(-80.99999, -169)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("6_b1pqs")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="tiles" type="Node2D" parent="nav_region" unique_id=1094664227]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-6034, -12)
 
-[node name="floor" type="TileMapLayer" parent="lab" unique_id=562512100]
+[node name="floor" type="TileMapLayer" parent="nav_region/tiles" unique_id=562512100]
 scale = Vector2(1.25, 1.25)
 tile_map_data = PackedByteArray("AAB4APr/AAAAAAIAAAB4APv/AAAAAAIAAAB4APz/AAAAAAIAAAB4AP3/AAAAAAIAAAB4AP7/AAAAAAIAAAB4AP//AAAAAAIAAAB5APr/AAAAAAIAAAB5APv/AAAAAAIAAAB5APz/AAAAAAIAAAB5AP3/AAAAAAIAAAB5AP7/AAAAAAIAAAB5AP//AAAAAAIAAAB6APr/AAAAAAIAAAB6APv/AAABAAMAAAB6APz/AAAAAAIAAAB6AP3/AAAAAAIAAAB6AP7/AAAAAAIAAAB6AP//AAAAAAIAAAB7APr/AAAAAAIAAAB7APv/AAAAAAIAAAB7APz/AAAAAAIAAAB7AP3/AAAAAAIAAAB7AP7/AAACAAIAAAB7AP//AAAAAAIAAAB8APr/AAAAAAIAAAB8APv/AAAAAAIAAAB8APz/AAAAAAIAAAB8AP3/AAAAAAIAAAB8AP7/AAAAAAIAAAB8AP//AAAAAAIAAAB9APr/AAAAAAIAAAB9APv/AAAAAAIAAAB9APz/AAACAAIAAAB9AP3/AAAAAAIAAAB9AP7/AAAAAAIAAAB9AP//AAAAAAIAAAB+APr/AAAAAAIAAAB+APv/AAAAAAIAAAB+APz/AAAAAAIAAAB+AP3/AAAAAAIAAAB+AP7/AAAAAAIAAAB+AP//AAAAAAIAAAB/APr/AAAAAAIAAAB/APv/AAAAAAIAAAB/APz/AAAAAAIAAAB/AP3/AAAAAAIAAAB/AP7/AAAAAAIAAAB/AP//AAAAAAIAAACAAPr/AAAAAAIAAACAAPv/AAAAAAIAAACAAPz/AAAAAAIAAACAAP3/AAAAAAIAAACAAP7/AAAAAAIAAACAAP//AAAAAAIAAACBAPr/AAAAAAIAAACBAPv/AAAAAAIAAACBAPz/AAAAAAIAAACBAP3/AAABAAMAAACBAP7/AAAAAAIAAACBAP//AAAAAAIAAAB4APn/AAACAAEAAAB5APn/AAACAAEAAAB6APn/AAACAAEAAAB7APn/AAACAAEAAAB8APn/AAACAAEAAAB9APn/AAACAAEAAAB+APn/AAACAAEAAAB/APn/AAACAAEAAACAAPn/AAACAAEAAACBAPn/AAACAAEAAAB4APj/AAACAAAAAAB5APj/AAACAAAAAAB6APj/AAACAAAAAAB7APj/AAACAAAAAAB8APj/AAACAAAAAAB9APj/AAACAAAAAAB+APj/AAACAAAAAAB/APj/AAACAAAAAACAAPj/AAACAAAAAACBAPj/AAACAAAAAACCAP3/AAAAAAIAAACDAP3/AAAAAAIAAACEAP3/AAAAAAIAAACFAP3/AAAAAAIAAACFAP7/AAACAAIAAACGAP7/AAAAAAIAAACHAP7/AAAAAAIAAACHAP3/AAAAAAIAAACIAP3/AAAAAAIAAACGAP3/AAAAAAIAAACCAPz/AAAAAAIAAACDAPz/AAAAAAIAAACEAPz/AAAAAAIAAACFAPz/AAAAAAIAAACGAPz/AAAAAAIAAACHAPz/AAAAAAIAAACIAPz/AAAAAAIAAACIAP7/AAAAAAIAAACEAP7/AAAAAAIAAACDAP7/AAAAAAIAAACCAP7/AAAAAAIAAACCAP//AAAAAAIAAACDAP//AAAAAAIAAACEAP//AAAAAAIAAACFAP//AAAAAAIAAACGAP//AAAAAAIAAACHAP//AAAAAAIAAACIAP//AAAAAAIAAACFAPv/AAAAAAIAAACGAPv/AAAAAAIAAACHAPv/AAAAAAIAAACIAPv/AAAAAAIAAACJAPv/AAAAAAIAAACKAPv/AAAAAAIAAACLAPv/AAAAAAIAAACMAPv/AAAAAAIAAACMAPz/AAAAAAIAAACLAPz/AAAAAAIAAACKAPz/AAAAAAIAAACJAPz/AAAAAAIAAACJAP3/AAABAAIAAACKAP3/AAAAAAIAAACLAP3/AAAAAAIAAACMAP3/AAAAAAIAAACMAP7/AAAAAAIAAACLAP7/AAAAAAIAAACKAP7/AAAAAAIAAACJAP7/AAAAAAIAAACJAP//AAAAAAIAAACKAP//AAAAAAIAAACLAP//AAAAAAIAAACMAP//AAAAAAIAAAB3APv/AAAAAAIAAAB2APv/AAAAAAIAAAB1APv/AAAAAAIAAAB0APv/AAAAAAIAAABzAPv/AAAAAAIAAAByAPv/AAABAAIAAABxAPv/AAAAAAIAAABwAPv/AAAAAAIAAABvAPv/AAAAAAIAAABuAPv/AAAAAAIAAAB3APz/AAAAAAIAAAB2APz/AAAAAAIAAAB1APz/AAACAAIAAAB0APz/AAAAAAIAAABzAPz/AAAAAAIAAAByAPz/AAAAAAIAAABxAPz/AAAAAAIAAABwAPz/AAAAAAIAAABvAPz/AAAAAAIAAABuAPz/AAAAAAIAAAB3AP3/AAAAAAIAAAB2AP3/AAAAAAIAAAB1AP3/AAAAAAIAAAB0AP3/AAAAAAIAAABzAP3/AAAAAAIAAAByAP3/AAAAAAIAAABxAP3/AAAAAAIAAABwAP3/AAAAAAIAAABvAP3/AAAAAAIAAAB3AP7/AAAAAAIAAAB2AP7/AAAAAAIAAAB1AP7/AAAAAAIAAAB0AP7/AAAAAAIAAABzAP7/AAAAAAIAAABuAP3/AAAAAAIAAABvAP7/AAAAAAIAAABwAP7/AAAAAAIAAABxAP7/AAAAAAIAAAByAP7/AAAAAAIAAABuAP7/AAAAAAIAAAB1APr/AAAAAAIAAAB0APr/AAAAAAIAAABzAPr/AAAAAAIAAAByAPr/AAAAAAIAAABxAPr/AAAAAAIAAABwAPr/AAAAAAIAAABvAPr/AAAAAAIAAABuAPr/AAAAAAIAAABtAPz/AAADAAIAAABsAPz/AAADAAIAAABrAPz/AAADAAIAAABqAPz/AAADAAIAAABpAPz/AAADAAIAAABoAPz/AAADAAIAAABnAPz/AAADAAIAAABmAPz/AAADAAIAAABmAP3/AAADAAIAAABlAP3/AAADAAIAAABkAP3/AAADAAIAAABtAP3/AAADAAIAAABsAP3/AAADAAIAAABrAP3/AAADAAIAAABqAP3/AAADAAIAAABpAP3/AAADAAIAAABoAP3/AAADAAIAAABnAP3/AAADAAIAAABjAP3/AAADAAIAAABjAPz/AAADAAIAAABkAPz/AAADAAIAAABlAPz/AAADAAIAAABkAPv/AAAAAAIAAABkAPr/AAAAAAIAAABjAPr/AAAAAAIAAABjAPn/AAAAAAIAAABjAPj/AAAAAAIAAABkAPj/AAAAAAIAAABkAPf/AAAAAAIAAABkAPn/AAAAAAIAAABjAPv/AAAAAAIAAABjAPf/AAAAAAIAAABeAPP/AAAAAAIAAABeAPT/AAAAAAIAAABeAPX/AAAAAAIAAABeAPb/AAAAAAIAAABfAPP/AAAAAAIAAABfAPT/AAAAAAIAAABfAPX/AAAAAAIAAABfAPb/AAAAAAIAAABgAPP/AAAAAAIAAABgAPT/AAAAAAIAAABgAPX/AAAAAAIAAABgAPb/AAAAAAIAAABhAPP/AAAAAAIAAABhAPT/AAABAAIAAABhAPX/AAAAAAIAAABhAPb/AAAAAAIAAABiAPP/AAAAAAIAAABiAPT/AAAAAAIAAABiAPX/AAAAAAIAAABiAPb/AAAAAAIAAABjAPP/AAAAAAIAAABjAPT/AAAAAAIAAABjAPX/AAAAAAIAAABjAPb/AAAAAAIAAABkAPP/AAAAAAIAAABkAPT/AAAAAAIAAABkAPX/AAAAAAIAAABkAPb/AAAAAAIAAABlAPP/AAACAAIAAABlAPT/AAAAAAIAAABlAPX/AAAAAAIAAABlAPb/AAAAAAIAAABmAPP/AAAAAAIAAABmAPT/AAAAAAIAAABmAPX/AAAAAAIAAABmAPb/AAAAAAIAAABnAPP/AAAAAAIAAABnAPT/AAAAAAIAAABnAPX/AAAAAAIAAABnAPb/AAAAAAIAAABoAPP/AAAAAAIAAABoAPT/AAAAAAIAAABoAPX/AAAAAAIAAABoAPb/AAAAAAIAAABpAPP/AAABAAIAAABpAPT/AAAAAAIAAABpAPX/AAAAAAIAAABpAPb/AAAAAAIAAABqAPP/AAAAAAIAAABqAPT/AAAAAAIAAABqAPX/AAAAAAIAAABqAPb/AAAAAAIAAABdAPL/AAAAAAIAAABdAPP/AAAAAAIAAABdAPT/AAAAAAIAAABdAPX/AAACAAMAAABdAPb/AAAAAAIAAABeAPL/AAAAAAIAAABfAPL/AAAAAAIAAABgAPL/AAAAAAIAAABhAPL/AAAAAAIAAABiAPL/AAAAAAIAAABjAPL/AAAAAAIAAABkAPL/AAAAAAIAAABlAPL/AAAAAAIAAABmAPL/AAAAAAIAAABnAPL/AAAAAAIAAABoAPL/AAAAAAIAAABpAPL/AAAAAAIAAABqAPL/AAAAAAIAAACNAPz/AAADAAIAAACNAP3/AAADAAIAAACOAPz/AAADAAIAAACOAP3/AAADAAIAAACPAPz/AAADAAIAAACPAP3/AAADAAIAAACQAPz/AAADAAIAAACQAP3/AAADAAIAAACRAPz/AAADAAIAAACRAP3/AAADAAIAAACSAPz/AAADAAIAAACSAP3/AAADAAIAAACTAPz/AAADAAIAAACTAP3/AAADAAIAAACUAPz/AAADAAIAAACUAP3/AAADAAIAAACVAPz/AAADAAIAAACVAP3/AAADAAIAAACWAPz/AAADAAIAAACWAP3/AAADAAIAAACXAPz/AAADAAIAAACXAP3/AAADAAIAAACYAPz/AAADAAIAAACYAP3/AAADAAIAAACZAPz/AAADAAIAAACZAP3/AAADAAIAAACaAPz/AAADAAIAAACaAP3/AAADAAIAAACbAPz/AAADAAIAAACbAP3/AAADAAIAAACVAPf/AAAAAAIAAACVAPj/AAAAAAIAAACVAPn/AAAAAAIAAACVAPr/AAAAAAIAAACVAPv/AAAAAAIAAACWAPf/AAAAAAIAAACWAPj/AAAAAAIAAACWAPn/AAAAAAIAAACWAPr/AAAAAAIAAACWAPv/AAAAAAIAAACPAPH/AAAAAAIAAACPAPL/AAAAAAIAAACPAPP/AAAAAAIAAACPAPT/AAAAAAIAAACPAPX/AAAAAAIAAACPAPb/AAAAAAIAAACQAPH/AAAAAAIAAACQAPL/AAAAAAIAAACQAPP/AAAAAAIAAACQAPT/AAAAAAIAAACQAPX/AAAAAAIAAACQAPb/AAAAAAIAAACRAPH/AAAAAAIAAACRAPL/AAAAAAIAAACRAPP/AAAAAAIAAACRAPT/AAAAAAIAAACRAPX/AAAAAAIAAACRAPb/AAAAAAIAAACSAPH/AAAAAAIAAACSAPL/AAAAAAIAAACSAPP/AAAAAAIAAACSAPT/AAABAAIAAACSAPX/AAAAAAIAAACSAPb/AAAAAAIAAACTAPH/AAAAAAIAAACTAPL/AAAAAAIAAACTAPP/AAAAAAIAAACTAPT/AAAAAAIAAACTAPX/AAAAAAIAAACTAPb/AAAAAAIAAACUAPH/AAAAAAIAAACUAPL/AAAAAAIAAACUAPP/AAAAAAIAAACUAPT/AAAAAAIAAACUAPX/AAAAAAIAAACUAPb/AAAAAAIAAACVAPH/AAAAAAIAAACVAPL/AAAAAAIAAACVAPP/AAAAAAIAAACVAPT/AAAAAAIAAACVAPX/AAAAAAIAAACVAPb/AAAAAAIAAACWAPH/AAAAAAIAAACWAPL/AAACAAIAAACWAPP/AAAAAAIAAACWAPT/AAAAAAIAAACWAPX/AAAAAAIAAACWAPb/AAAAAAIAAACXAPH/AAAAAAIAAACXAPL/AAAAAAIAAACXAPP/AAAAAAIAAACXAPT/AAAAAAIAAACXAPX/AAAAAAIAAACXAPb/AAAAAAIAAACYAPH/AAAAAAIAAACYAPL/AAAAAAIAAACYAPP/AAAAAAIAAACYAPT/AAAAAAIAAACYAPX/AAACAAMAAACYAPb/AAAAAAIAAACZAPH/AAAAAAIAAACZAPL/AAAAAAIAAACZAPP/AAAAAAIAAACZAPT/AAAAAAIAAACZAPX/AAAAAAIAAACZAPb/AAAAAAIAAACaAPH/AAAAAAIAAACaAPL/AAAAAAIAAACaAPP/AAAAAAIAAACaAPT/AAAAAAIAAACaAPX/AAAAAAIAAACaAPb/AAAAAAIAAACMAPP/AAAAAAIAAACMAPT/AAAAAAIAAACMAPX/AAAAAAIAAACMAPb/AAAAAAIAAACNAPP/AAAAAAIAAACNAPT/AAAAAAIAAACNAPX/AAAAAAIAAACNAPb/AAAAAAIAAACOAPP/AAAAAAIAAACOAPT/AAAAAAIAAACOAPX/AAAAAAIAAACOAPb/AAAAAAIAAABuAPn/AAACAAEAAABvAPn/AAACAAEAAABwAPn/AAACAAEAAABxAPn/AAACAAEAAAByAPn/AAACAAEAAABzAPn/AAACAAEAAAB0APn/AAACAAEAAAB1APn/AAACAAEAAABuAPj/AAACAAAAAABvAPj/AAACAAAAAABwAPj/AAACAAAAAABxAPj/AAACAAAAAAByAPj/AAACAAAAAABzAPj/AAACAAAAAAB0APj/AAACAAAAAAB1APj/AAACAAAAAACFAPn/AAACAAAAAACGAPn/AAACAAAAAACHAPn/AAACAAAAAACIAPn/AAACAAAAAACJAPn/AAACAAAAAACKAPn/AAACAAAAAACLAPn/AAACAAAAAACMAPn/AAACAAAAAACFAPr/AAACAAEAAACGAPr/AAACAAEAAACHAPr/AAACAAEAAACIAPr/AAACAAEAAACJAPr/AAACAAEAAACKAPr/AAACAAEAAACLAPr/AAACAAEAAACMAPr/AAACAAEAAACCAPv/AAACAAEAAACDAPv/AAACAAEAAACEAPv/AAACAAEAAACCAPr/AAACAAAAAACDAPr/AAACAAAAAACEAPr/AAACAAAAAAB2APr/AAACAAEAAAB3APr/AAACAAEAAAB2APn/AAACAAAAAAB3APn/AAACAAAAAABlAPv/AAAEAAEAAABmAPv/AAAEAAEAAABnAPv/AAAEAAEAAABoAPv/AAAEAAEAAABpAPv/AAAEAAEAAABqAPv/AAAEAAEAAABrAPv/AAAEAAEAAABsAPv/AAAEAAEAAABtAPv/AAAEAAEAAABlAPr/AAAEAAAAAABmAPr/AAAEAAAAAABnAPr/AAAEAAAAAABoAPr/AAAEAAAAAABpAPr/AAAEAAAAAABqAPr/AAAEAAAAAABrAPr/AAAEAAAAAABsAPr/AAAEAAAAAABtAPr/AAAEAAAAAABdAPD/AAACAAAAAABeAPD/AAACAAAAAABfAPD/AAACAAAAAABgAPD/AAACAAAAAABhAPD/AAACAAAAAABiAPD/AAACAAAAAABjAPD/AAACAAAAAABkAPD/AAACAAAAAABlAPD/AAACAAAAAABmAPD/AAACAAAAAABnAPD/AAACAAAAAABoAPD/AAACAAAAAABpAPD/AAACAAAAAABqAPD/AAACAAAAAABdAPH/AAACAAEAAABeAPH/AAACAAEAAABfAPH/AAACAAEAAABgAPH/AAACAAEAAABhAPH/AAACAAEAAABiAPH/AAACAAEAAABjAPH/AAACAAEAAABkAPH/AAACAAEAAABlAPH/AAACAAEAAABmAPH/AAACAAEAAABnAPH/AAACAAEAAABoAPH/AAACAAEAAABpAPH/AAACAAEAAABqAPH/AAACAAEAAACMAPL/AAACAAEAAACNAPL/AAACAAEAAACOAPL/AAACAAEAAACPAPD/AAACAAEAAACQAPD/AAACAAEAAACRAPD/AAACAAEAAACSAPD/AAACAAEAAACTAPD/AAACAAEAAACUAPD/AAACAAEAAACVAPD/AAACAAEAAACWAPD/AAACAAEAAACXAPD/AAACAAEAAACYAPD/AAACAAEAAACZAPD/AAACAAEAAACaAPD/AAACAAEAAACMAPH/AAACAAAAAACNAPH/AAACAAAAAACOAPH/AAACAAAAAACPAO//AAACAAAAAACQAO//AAACAAAAAACRAO//AAACAAAAAACSAO//AAACAAAAAACTAO//AAACAAAAAACUAO//AAACAAAAAACVAO//AAACAAAAAACWAO//AAACAAAAAACXAO//AAACAAAAAACYAO//AAACAAAAAACZAO//AAACAAAAAACaAO//AAACAAAAAACNAPr/AAAEAAAAAACOAPr/AAAEAAAAAACPAPr/AAAEAAAAAACQAPr/AAAEAAAAAACRAPr/AAAEAAAAAACSAPr/AAAEAAAAAACTAPr/AAAEAAAAAACUAPr/AAAEAAAAAACNAPv/AAAEAAEAAACOAPv/AAAEAAEAAACPAPv/AAAEAAEAAACQAPv/AAAEAAEAAACRAPv/AAAEAAEAAACSAPv/AAAEAAEAAACTAPv/AAAEAAEAAACUAPv/AAAEAAEAAACXAPv/AAAEAAEAAACYAPv/AAAEAAEAAACZAPv/AAAEAAEAAACaAPv/AAAEAAEAAACbAPv/AAAEAAEAAACXAPr/AAAEAAAAAACYAPr/AAAEAAAAAACZAPr/AAAEAAAAAACaAPr/AAAEAAAAAACbAPr/AAAEAAAAAACcAPz/AAAAAAIAAACcAP3/AAAAAAIAAACdAPn/AAACAAEAAACdAPr/AAAAAAIAAACdAPv/AAAAAAIAAACdAPz/AAAAAAIAAACdAP3/AAAAAAIAAACdAP7/AAAAAAIAAACdAP//AAAAAAIAAACeAPn/AAACAAEAAACeAPr/AAAAAAIAAACeAPv/AAAAAAIAAACeAPz/AAAAAAIAAACeAP3/AAAAAAIAAACeAP7/AAAAAAIAAACeAP//AAAAAAIAAACfAPn/AAACAAEAAACfAPr/AAAAAAIAAACfAPv/AAAAAAIAAACfAPz/AAAAAAIAAACfAP3/AAAAAAIAAACfAP7/AAAAAAIAAACfAP//AAAAAAIAAACgAPn/AAACAAEAAACgAPr/AAAAAAIAAACgAPv/AAAAAAIAAACgAPz/AAAAAAIAAACgAP3/AAAAAAIAAACgAP7/AAAAAAIAAACgAP//AAAAAAIAAAChAPn/AAACAAEAAAChAPr/AAAAAAIAAAChAPv/AAACAAMAAAChAPz/AAAAAAIAAAChAP3/AAAAAAIAAAChAP7/AAAAAAIAAAChAP//AAAAAAIAAACiAPn/AAACAAEAAACiAPr/AAAAAAIAAACiAPv/AAAAAAIAAACiAPz/AAAAAAIAAACiAP3/AAAAAAIAAACiAP7/AAAAAAIAAACiAP//AAAAAAIAAACjAPn/AAACAAEAAACjAPr/AAAAAAIAAACjAPv/AAAAAAIAAACjAPz/AAAAAAIAAACjAP3/AAABAAIAAACjAP7/AAAAAAIAAACjAP//AAAAAAIAAACkAPn/AAACAAEAAACkAPr/AAAAAAIAAACkAPv/AAAAAAIAAACkAPz/AAAAAAIAAACkAP3/AAAAAAIAAACkAP7/AAAAAAIAAACkAP//AAAAAAIAAAClAPn/AAACAAEAAAClAPr/AAAAAAIAAAClAPv/AAACAAIAAAClAPz/AAAAAAIAAAClAP3/AAAAAAIAAAClAP7/AAAAAAIAAAClAP//AAAAAAIAAACmAPn/AAACAAEAAACmAPr/AAAAAAIAAACmAPv/AAAAAAIAAACmAPz/AAAAAAIAAACmAP3/AAAAAAIAAACmAP7/AAAAAAIAAACmAP//AAAAAAIAAACdAPj/AAACAAAAAACeAPj/AAACAAAAAACfAPj/AAACAAAAAACgAPj/AAACAAAAAAChAPj/AAACAAAAAACiAPj/AAACAAAAAACjAPj/AAACAAAAAACkAPj/AAACAAAAAAClAPj/AAACAAAAAACmAPj/AAACAAAAAACcAPv/AAAEAAEAAACcAPr/AAAEAAAAAAA=")
 tile_set = SubResource("TileSet_r4mcm")
 
-[node name="walls" type="TileMapLayer" parent="lab" unique_id=1983542597]
+[node name="walls" type="TileMapLayer" parent="nav_region/tiles" unique_id=1983542597]
 scale = Vector2(1.25, 1.25)
 tile_map_data = PackedByteArray("AAB4APn/AAAAAAEAAAB4APj/AAAAAAAAAACBAPn/AAABAAEAAACBAPj/AAABAAAAAAB4APf/AAACAAQAAAB5APf/AAACAAQAAAB6APf/AAACAAQAAAB7APf/AAACAAQAAAB8APf/AAACAAQAAAB9APf/AAACAAQAAAB+APf/AAACAAQAAAB/APf/AAACAAQAAACAAPf/AAACAAQAAACBAPf/AAACAAQAAAB3APf/AAABAAQAAAB3APn/AAABAAAAAAB3APj/AAABAAUAAACCAPn/AAADAAUAAACCAPj/AAAEAAYAAACCAPf/AAAEAAUAAACEAPv/AAABAAEAAACEAPr/AAABAAAAAACCAPv/AAAAAAEAAACCAPr/AAAAAAAAAAB4AAAAAAACAAgAAAB5AAAAAAACAAgAAAB6AAAAAAACAAgAAAB7AAAAAAACAAgAAAB8AAAAAAACAAgAAAB9AAAAAAACAAgAAAB+AAAAAAACAAgAAAB/AAAAAAACAAgAAACAAAAAAAACAAgAAACBAAAAAAACAAgAAACCAAAAAAACAAgAAACDAAAAAAACAAgAAACEAAAAAAACAAgAAACFAAAAAAACAAgAAACGAAAAAAACAAgAAACHAAAAAAACAAgAAACIAAAAAAACAAgAAACJAAAAAAACAAgAAACKAAAAAAACAAgAAACLAAAAAAACAAgAAACMAAAAAAACAAgAAACNAP7/AAADAAcAAACOAP7/AAACAAgAAACPAP7/AAACAAgAAACQAP7/AAACAAgAAACRAP7/AAACAAgAAACSAP7/AAACAAgAAACTAP7/AAACAAgAAACUAP7/AAACAAgAAACVAP7/AAACAAgAAACWAP7/AAACAAgAAACXAP7/AAACAAgAAACYAP7/AAACAAgAAACZAP7/AAACAAgAAACaAP7/AAACAAgAAACbAP7/AAACAAgAAABuAP//AAACAAgAAABvAP//AAACAAgAAABwAP//AAACAAgAAABxAP//AAACAAgAAAByAP//AAACAAgAAABzAP//AAACAAgAAAB0AP//AAACAAgAAAB1AP//AAACAAgAAAB2AP//AAACAAgAAAB3AP//AAABAAcAAABjAP7/AAACAAgAAABkAP7/AAACAAgAAABlAP7/AAACAAgAAABmAP7/AAACAAgAAABnAP7/AAACAAgAAABoAP7/AAACAAgAAABpAP7/AAACAAgAAABqAP7/AAACAAgAAABrAP7/AAACAAgAAABsAP7/AAACAAgAAABtAP7/AAABAAcAAABlAPf/AAADAAcAAABmAPf/AAACAAgAAABnAPf/AAACAAgAAABoAPf/AAACAAgAAABpAPf/AAACAAgAAABqAPf/AAACAAgAAABdAPf/AAACAAgAAABeAPf/AAACAAgAAABfAPf/AAACAAgAAABgAPf/AAACAAgAAABhAPf/AAACAAgAAACdAAAAAAACAAgAAACeAAAAAAACAAgAAACfAAAAAAACAAgAAACgAAAAAAACAAgAAAChAAAAAAACAAgAAACiAAAAAAACAAgAAACjAAAAAAACAAgAAACkAAAAAAACAAgAAAClAAAAAAACAAgAAACmAAAAAAACAAgAAACXAPf/AAADAAcAAACYAPf/AAACAAgAAACZAPf/AAACAAgAAACaAPf/AAACAAgAAACMAPf/AAACAAgAAACNAPf/AAACAAgAAACOAPf/AAACAAgAAACPAPf/AAACAAgAAACQAPf/AAACAAgAAACRAPf/AAACAAgAAACSAPf/AAACAAgAAACTAPf/AAACAAgAAACUAPf/AAABAAcAAACnAPj/AAAEAAYAAACnAPn/AAAEAAYAAACnAPr/AAAEAAYAAACnAPv/AAAEAAYAAACnAPz/AAAEAAYAAACnAP3/AAAEAAYAAACnAP7/AAAEAAYAAACnAP//AAAEAAYAAACbAO//AAAEAAYAAACbAPD/AAAEAAYAAACbAPH/AAAEAAYAAACbAPL/AAAEAAYAAACbAPP/AAAEAAYAAACbAPT/AAAEAAYAAACbAPX/AAAEAAYAAACbAPb/AAAEAAYAAABrAPD/AAAEAAYAAABrAPH/AAAEAAYAAABrAPL/AAAEAAYAAABrAPP/AAAEAAYAAABrAPT/AAAEAAYAAABrAPX/AAAEAAYAAABrAPb/AAAEAAYAAABcAPD/AAAAAAYAAABcAPH/AAAAAAYAAABcAPL/AAAAAAYAAABcAPP/AAAAAAYAAABcAPT/AAAAAAYAAABcAPX/AAAAAAYAAABcAPb/AAAAAAYAAABdAO//AAACAAQAAABeAO//AAACAAQAAABfAO//AAACAAQAAABgAO//AAACAAQAAABhAO//AAACAAQAAABiAO//AAACAAQAAABjAO//AAACAAQAAABkAO//AAACAAQAAABlAO//AAACAAQAAABmAO//AAACAAQAAABnAO//AAACAAQAAABoAO//AAACAAQAAABpAO//AAACAAQAAABqAO//AAACAAQAAABcAO//AAABAAQAAABrAO//AAADAAQAAABrAPf/AAAEAAcAAABcAPf/AAAAAAcAAABiAPf/AAABAAcAAABiAPj/AAAAAAYAAABiAPn/AAAAAAYAAABiAPr/AAAAAAYAAABiAPv/AAAAAAYAAABiAPz/AAAAAAYAAABiAP3/AAAAAAYAAABiAP7/AAAAAAcAAABlAPj/AAAEAAYAAABlAPn/AAADAAUAAABmAPn/AAACAAQAAABnAPn/AAACAAQAAABoAPn/AAACAAQAAABpAPn/AAACAAQAAABqAPn/AAACAAQAAABrAPn/AAACAAQAAABsAPn/AAACAAQAAABtAPn/AAABAAUAAABtAPj/AAAAAAYAAABtAPf/AAAAAAUAAABuAPf/AAACAAQAAABvAPf/AAACAAQAAABwAPf/AAACAAQAAABxAPf/AAACAAQAAAByAPf/AAACAAQAAABzAPf/AAACAAQAAAB0APf/AAACAAQAAAB1APf/AAACAAQAAAB2APj/AAADAAUAAAB2APf/AAAEAAUAAABtAP//AAAAAAcAAAB3AAAAAAAAAAcAAAB3APr/AAABAAEAAAB2APr/AAAAAAEAAAB2APn/AAAAAAAAAACNAP//AAAEAAYAAACNAAAAAAAEAAcAAACFAPj/AAACAAQAAACGAPj/AAACAAQAAACHAPj/AAACAAQAAACIAPj/AAACAAQAAACJAPj/AAACAAQAAACKAPj/AAACAAQAAACLAPj/AAACAAQAAACMAPj/AAACAAQAAACNAPn/AAADAAUAAACOAPn/AAACAAQAAACPAPn/AAACAAQAAACQAPn/AAACAAQAAACRAPn/AAACAAQAAACSAPn/AAACAAQAAACTAPn/AAACAAQAAACUAPn/AAABAAUAAACXAPn/AAADAAUAAACYAPn/AAACAAQAAACZAPn/AAACAAQAAACaAPn/AAACAAQAAACbAPn/AAACAAQAAACcAPn/AAABAAUAAACdAPf/AAACAAQAAACeAPf/AAACAAQAAACfAPf/AAACAAQAAACgAPf/AAACAAQAAAChAPf/AAACAAQAAACiAPf/AAACAAQAAACjAPf/AAACAAQAAACkAPf/AAACAAQAAAClAPf/AAACAAQAAACmAPf/AAACAAQAAACnAPf/AAADAAQAAACcAPf/AAABAAQAAACbAPf/AAAEAAcAAACcAPj/AAAAAAYAAACNAPj/AAADAAQAAACEAPj/AAABAAQAAACEAPn/AAABAAUAAACDAPn/AAACAAQAAACcAP7/AAABAAcAAACcAP//AAAAAAYAAACcAAAAAAAAAAcAAACnAAAAAAAEAAcAAACLAPP/AAAAAAYAAACLAPT/AAAAAAYAAACLAPX/AAAAAAYAAACLAPb/AAAAAAYAAACLAPH/AAAAAAYAAACLAPL/AAAAAAYAAACOAO//AAAAAAYAAACOAPD/AAABAAUAAACPAO7/AAACAAQAAACQAO7/AAACAAQAAACRAO7/AAACAAQAAACSAO7/AAACAAQAAACTAO7/AAACAAQAAACUAO7/AAACAAQAAACVAO7/AAACAAQAAACWAO7/AAACAAQAAACXAO7/AAACAAQAAACYAO7/AAACAAQAAACZAO7/AAACAAQAAACaAO7/AAACAAQAAACbAO7/AAADAAQAAACOAO7/AAABAAQAAACMAPD/AAACAAQAAACNAPD/AAACAAQAAACLAPD/AAABAAQAAACLAPf/AAAAAAcAAACXAPj/AAAEAAYAAACUAPj/AAAAAAYAAACSAO//AAAGAAAAAACTAO//AAAHAAAAAACJAPn/AAAIAAAAAACKAPn/AAAJAAAAAACDAPr/AAAHAAEAAAB8APj/AAALAAEAAAB7APr/AAAMAAUAAAB8APr/AAANAAUAAAB+APr/AAANAAIAAAB/APr/AAAOAAIAAACAAPr/AAANAAMAAACBAPr/AAAOAAMAAAB4APr/AAAQAAMAAAB5APr/AAARAAMAAAB0APr/AAAMAAIAAABzAPr/AAAMAAIAAAByAPr/AAANAAUAAABxAPr/AAAMAAUAAABvAPr/AAAOAAMAAABwAPr/AAAOAAMAAABuAPv/AAAKAAMAAACGAPv/AAAGAAYAAACGAPr/AAAGAAUAAACHAPv/AAAHAAYAAACHAPr/AAAHAAUAAACKAP//AAAHAAoAAACJAP//AAAGAAoAAACJAP7/AAAGAAkAAACKAP7/AAAHAAkAAAB4AP//AAAGAAoAAAB5AP//AAAHAAoAAAB5AP7/AAAHAAkAAAB4AP7/AAAGAAkAAACHAPn/AAATAAMAAABlAPv/AAAAAAEAAABlAPr/AAAAAAAAAABtAPr/AAABAAAAAABtAPv/AAABAAEAAACNAPv/AAAAAAEAAACNAPr/AAAAAAAAAACXAPv/AAAAAAEAAACXAPr/AAAAAAAAAACUAPv/AAABAAEAAACUAPr/AAABAAAAAACcAPr/AAABAAAAAACcAPv/AAABAAEAAACOAPL/AAABAAEAAACOAPH/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_r4mcm")
 
-[node name="walls2" type="TileMapLayer" parent="lab" unique_id=1101343748]
+[node name="walls2" type="TileMapLayer" parent="nav_region/tiles" unique_id=1101343748]
 scale = Vector2(1.25, 1.25)
 tile_map_data = PackedByteArray("AAB+APn/AAAPAAAAAAB/APn/AAAQAAAAAACAAPn/AAARAAAAAACeAPj/AAATAAMAAACkAPn/AAATAAUAAACgAPr/AAAHAAYAAACgAPn/AAAHAAUAAAChAPr/AAAMAAIAAACiAPr/AAANAAIAAACjAPr/AAALAAAAAACmAPj/AAALAAEAAACkAPj/AAAGAAAAAACjAP3/AAAKAAQAAACiAP7/AAAKAAUAAACQAPX/AAAKAAMAAACTAPX/AAAKAAQAAACZAPb/AAAKAAAAAACXAPL/AAAGAAoAAACYAPL/AAAHAAoAAACXAPH/AAAGAAkAAACYAPH/AAAHAAkAAACRAPH/AAAMAAUAAACSAPH/AAANAAUAAACUAPH/AAANAAMAAACVAPH/AAAOAAIAAABiAPD/AAAPAAEAAABjAPD/AAAQAAEAAABkAPD/AAAQAAEAAABlAPD/AAAQAAEAAABmAPD/AAARAAEAAABjAPL/AAAQAAMAAABkAPL/AAARAAMAAABdAPP/AAAKAAcAAABdAPL/AAAKAAcAAABeAPL/AAAKAAcAAABeAPP/AAALAAcAAABfAPP/AAAKAAcAAABfAPL/AAAKAAcAAABdAPb/AAAKAAcAAABdAPX/AAAKAAcAAABoAPL/AAAKAAcAAABpAPL/AAAKAAcAAABqAPL/AAALAAcAAABdAPD/AAAMAAYAAABeAPD/AAANAAYAAABnAPT/AAAKAAIAAABoAPX/AAAKAAQAAABeAPX/AAALAAMAAABgAPT/AAALAAIAAAA=")
 tile_set = SubResource("TileSet_r4mcm")
 
-[node name="ponies" type="Node2D" parent="." unique_id=226154608]
+[node name="ponies" type="Node2D" parent="nav_region" unique_id=226154608]
 y_sort_enabled = true
 
-[node name="scientist" parent="ponies" unique_id=301655442 instance=ExtResource("18_xhdsl")]
-position = Vector2(-854, -63)
+[node name="scientist2" parent="nav_region/ponies" unique_id=301655442 instance=ExtResource("7_y6iu0")]
+position = Vector2(-2073, -425)
 
-[node name="point_light" type="PointLight2D" parent="ponies/scientist" unique_id=1648111696]
+[node name="patrol_points" type="Node2D" parent="nav_region/ponies/scientist2" unique_id=767866723]
+
+[node name="1" type="Node2D" parent="nav_region/ponies/scientist2/patrol_points" unique_id=40699899]
+position = Vector2(39, -46)
+
+[node name="2" type="Node2D" parent="nav_region/ponies/scientist2/patrol_points" unique_id=1295491923]
+position = Vector2(799, 345)
+
+[node name="3" type="Node2D" parent="nav_region/ponies/scientist2/patrol_points" unique_id=2046457436]
+position = Vector2(1555, 248)
+
+[node name="4" type="Node2D" parent="nav_region/ponies/scientist2/patrol_points" unique_id=402547894]
+position = Vector2(2463, 360)
+
+[node name="scientist1" parent="nav_region/ponies" unique_id=1260298254 instance=ExtResource("7_aviyr")]
+position = Vector2(-59, -464)
+
+[node name="patrol_points" type="Node2D" parent="nav_region/ponies/scientist1" unique_id=1993478921]
+
+[node name="1" type="Node2D" parent="nav_region/ponies/scientist1/patrol_points" unique_id=1000391941]
+position = Vector2(-5, -71)
+
+[node name="2" type="Node2D" parent="nav_region/ponies/scientist1/patrol_points" unique_id=1615243563]
+position = Vector2(-1327, 299)
+
+[node name="3" type="Node2D" parent="nav_region/ponies/scientist1/patrol_points" unique_id=762297258]
+position = Vector2(496, 283)
+
+[node name="4" type="Node2D" parent="nav_region/ponies/scientist1/patrol_points" unique_id=1343002110]
+position = Vector2(-1973, -21)
+
+[node name="scientist" parent="nav_region/ponies" unique_id=621066804 instance=ExtResource("18_xhdsl")]
+position = Vector2(-1191, -107)
+
+[node name="point_light" type="PointLight2D" parent="nav_region/ponies/scientist" unique_id=1648111696]
 position = Vector2(1, -1)
 color = Color(0.6861467, 0.7707416, 0.8475429, 1)
+energy = 0.5
 shadow_enabled = true
-texture = ExtResource("7_wwjas")
+texture = ExtResource("10_oflyp")
+texture_scale = 0.6
 
-[node name="point_light2" type="PointLight2D" parent="ponies/scientist/point_light" unique_id=414590605]
+[node name="point_light2" type="PointLight2D" parent="nav_region/ponies/scientist/point_light" unique_id=414590605]
 light_mask = 2
 visibility_layer = 2
 position = Vector2(-1, -1)
@@ -385,7 +498,7 @@ script = ExtResource("47_7nd1n")
 
 [node name="dialogue_menu" parent="menu" unique_id=2084497248 node_paths=PackedStringArray("ponies_parent") instance=ExtResource("48_0yuhq")]
 texture_filter = 1
-ponies_parent = NodePath("../../ponies")
+ponies_parent = NodePath("../../nav_region/ponies")
 
 [node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("49_001e8")]
 visible = false
@@ -418,20 +531,237 @@ hint_key = "crouch"
 color = Color(0.81386393, 0.82256854, 0.84644896, 1)
 blend_mode = 2
 
-[node name="start_dialogue_area" type="Area2D" parent="." unique_id=1435651528 node_paths=PackedStringArray("dialogue_menu")]
-position = Vector2(-850, -86)
+[node name="sounds" type="Node2D" parent="." unique_id=326415765]
+
+[node name="computer_audi" type="AudioStreamPlayer2D" parent="sounds" unique_id=972220538]
+position = Vector2(-535, -265)
+stream = ExtResource("14_mdml6")
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="computer_audi2" type="AudioStreamPlayer2D" parent="sounds" unique_id=717526152]
+position = Vector2(-1486, -254)
+stream = ExtResource("14_mdml6")
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="computer_audi3" type="AudioStreamPlayer2D" parent="sounds" unique_id=289201530]
+position = Vector2(628, -305)
+stream = ExtResource("14_mdml6")
+autoplay = true
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="dialogues" type="Node2D" parent="." unique_id=1054333307]
+
+[node name="start_dialogue_area" type="Area2D" parent="dialogues" unique_id=1435651528 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-1186, -74)
 script = ExtResource("13_d7g43")
 player_name = "scientist"
 dialogue_file = "dusk_lab"
 dialogue_code = "start"
-dialogue_menu = NodePath("../menu/dialogue_menu")
+dialogue_menu = NodePath("../../menu/dialogue_menu")
 
-[node name="shape" type="CollisionShape2D" parent="start_dialogue_area" unique_id=141898810]
-position = Vector2(81, -5)
+[node name="shape" type="CollisionShape2D" parent="dialogues/start_dialogue_area" unique_id=141898810]
+position = Vector2(81, -26.5)
 shape = SubResource("RectangleShape2D_mdml6")
 
-[node name="shape2" type="CollisionShape2D" parent="start_dialogue_area" unique_id=1447626157]
+[node name="shape2" type="CollisionShape2D" parent="dialogues/start_dialogue_area" unique_id=1447626157]
 position = Vector2(-84, -25.5)
 shape = SubResource("RectangleShape2D_b1pqs")
 
-[connection signal="body_entered" from="start_dialogue_area" to="start_dialogue_area" method="_on_body_entered"]
+[node name="shape3" type="CollisionShape2D" parent="dialogues/start_dialogue_area" unique_id=1414520806]
+position = Vector2(-1, -109)
+shape = SubResource("RectangleShape2D_aviyr")
+
+[node name="empty_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=1851476172 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-896, -239)
+script = ExtResource("13_d7g43")
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "empty_bottle"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/empty_bottle_dialogue" unique_id=328534646]
+position = Vector2(2.875, 39.5)
+shape = SubResource("RectangleShape2D_oflyp")
+
+[node name="first_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=1426772043 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-524, -74)
+script = ExtResource("13_d7g43")
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "first_bottle_take"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/first_bottle_dialogue" unique_id=2128814632]
+position = Vector2(-3.25, -9)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fill_first_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=177668041 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-896, -239)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "first_bottle_fill"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fill_first_bottle_dialogue" unique_id=280420125]
+position = Vector2(2.875, 39.5)
+shape = SubResource("RectangleShape2D_oflyp")
+
+[node name="second_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=406446564 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(466, -240)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "second_bottle_take"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/second_bottle_dialogue" unique_id=486574380]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fill_second_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=1782705648 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-893, -223)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "second_bottle_fill"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fill_second_bottle_dialogue" unique_id=287413362]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="third_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=167510645 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-1404, -234)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "third_bottle_take"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/third_bottle_dialogue" unique_id=1578113514]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fill_third_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=717945433 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-893, -223)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "third_bottle_fill"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fill_third_bottle_dialogue" unique_id=1782136029]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="forth_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=1649164914 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-1572, -236)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "forth_bottle_take"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/forth_bottle_dialogue" unique_id=1298401855]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fill_forth_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=1939461327 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-893, -223)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "forth_bottle_fill"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fill_forth_bottle_dialogue" unique_id=644870116]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fifth_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=953449945 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-205, -598)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "fifth_bottle_take"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fifth_bottle_dialogue" unique_id=1674846164]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fill_fifth_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=778344313 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-893, -223)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "fifth_bottle_fill"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fill_fifth_bottle_dialogue" unique_id=1183342393]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="sixth_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=733098931 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-2014, -564)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "sixth_bottle_take"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/sixth_bottle_dialogue" unique_id=842170966]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="fill_sixth_bottle_dialogue" type="Area2D" parent="dialogues" unique_id=1807428201 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-893, -223)
+script = ExtResource("13_d7g43")
+is_active = false
+player_name = "scientist"
+dialogue_file = "dusk_lab"
+dialogue_code = "sixth_bottle_fill"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/fill_sixth_bottle_dialogue" unique_id=555014874]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_g0fub")
+
+[node name="change_bottles" type="Node" parent="." unique_id=1241034739 node_paths=PackedStringArray("bottles", "dialogues_to_disable", "dialogues_to_enable", "result")]
+script = ExtResource("19_g0fub")
+bottles = [NodePath("../nav_region/props/bottles/1"), NodePath("../nav_region/props/bottles/2"), NodePath("../nav_region/props/bottles/3"), NodePath("../nav_region/props/bottles/4"), NodePath("../nav_region/props/bottles/5"), NodePath("../nav_region/props/bottles/6")]
+dialogues_to_disable = [NodePath("../dialogues/empty_bottle_dialogue")]
+dialogues_to_enable = [NodePath("../dialogues/fill_first_bottle_dialogue"), NodePath("../dialogues/second_bottle_dialogue"), NodePath("../dialogues/fill_second_bottle_dialogue"), NodePath("../dialogues/third_bottle_dialogue"), NodePath("../dialogues/fill_third_bottle_dialogue"), NodePath("../dialogues/forth_bottle_dialogue"), NodePath("../dialogues/fill_forth_bottle_dialogue"), NodePath("../dialogues/fifth_bottle_dialogue"), NodePath("../dialogues/fill_fifth_bottle_dialogue"), NodePath("../dialogues/sixth_bottle_dialogue"), NodePath("../dialogues/fill_sixth_bottle_dialogue")]
+result = NodePath("../nav_region/props/bottles/result")
+result_parts = Array[Vector2]([Vector2(16, 32), Vector2(32, 32), Vector2(48, 32), Vector2(0, 48), Vector2(16, 48), Vector2(32, 48)])
+
+[connection signal="body_entered" from="dialogues/start_dialogue_area" to="dialogues/start_dialogue_area" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/empty_bottle_dialogue" to="dialogues/empty_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/first_bottle_dialogue" to="dialogues/first_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fill_first_bottle_dialogue" to="dialogues/fill_first_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/second_bottle_dialogue" to="dialogues/second_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fill_second_bottle_dialogue" to="dialogues/fill_second_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/third_bottle_dialogue" to="dialogues/third_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fill_third_bottle_dialogue" to="dialogues/fill_third_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/forth_bottle_dialogue" to="dialogues/forth_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fill_forth_bottle_dialogue" to="dialogues/fill_forth_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fifth_bottle_dialogue" to="dialogues/fifth_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fill_fifth_bottle_dialogue" to="dialogues/fill_fifth_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/sixth_bottle_dialogue" to="dialogues/sixth_bottle_dialogue" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/fill_sixth_bottle_dialogue" to="dialogues/fill_sixth_bottle_dialogue" method="_on_body_entered"]
