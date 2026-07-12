@@ -58,14 +58,8 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"state": "confused",
-				"text": "Haven't you ever had those dreams where you wake up but still find yourself in a dream?"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "idle",
-				"text": "It was one of those dreams."
+				"state": "look-back",
+				"text": "Yes, it was a very strange dream."
 			},
 			{
 				"type": "phrase",

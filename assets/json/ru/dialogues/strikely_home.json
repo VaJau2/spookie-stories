@@ -58,14 +58,8 @@
 			{
 				"type": "phrase",
 				"speaker": "strikely",
-				"state": "confused",
-				"text": "А у тебя разве не было таких снов, когда ты просыпаешься, но оказываешься все еще во сне?"
-			},
-			{
-				"type": "phrase",
-				"speaker": "strikely",
-				"state": "idle",
-				"text": "Это был один из таких снов."
+				"state": "look-back",
+				"text": "Да, это был очень странный сон."
 			},
 			{
 				"type": "phrase",

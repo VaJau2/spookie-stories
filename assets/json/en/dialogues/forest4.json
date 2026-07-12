@@ -22,7 +22,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "idle",
-				"text": "Thanks",
+				"text": "Thanks.",
 			},
 			{
 				"type": "new_state",
@@ -33,7 +33,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "idle",
-				"text": "So, who wants to tell their story?",
+				"text": "So, who wants to tell us next story?",
 			},
 			{
 				"type": "phrase",
@@ -75,7 +75,7 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "idle",
-				"text": "Okay, we're listening",
+				"text": "Okay, we're listening.",
 			},
 			{
 				"type": "phrase",
@@ -115,7 +115,7 @@
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "happy",
-				"text": "Thank you",
+				"text": "Thank you.",
 			},
 			{
 				"type": "phrase",

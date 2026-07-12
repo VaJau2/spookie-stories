@@ -1,10 +1,27 @@
 extends Node
 
+@export_category("bottles")
 @export var bottles: Array[Sprite2D]
 @export var dialogues_to_disable: Array[Area2D]
 @export var dialogues_to_enable: Array[Area2D]
 @export var result: Sprite2D
 @export var result_parts: Array[Vector2]
+
+@export_category("result_anim")
+@export var result_colored: Sprite2D
+@export var shake_anim: AnimationPlayer
+@export var result_audi: AudioStreamPlayer2D
+@export var boiling_sound: AudioStreamMP3
+@export var shake_sound: AudioStreamMP3
+@export var explode_sound: AudioStreamMP3
+@export var white_screen: WhiteScreenAnim
+@export var result_broken: Sprite2D
+@export var scientists: Array[CharacterBody2D]
+@export var lab_smoke: LabSmokeAnim
+
+
+func _ready() -> void:
+	white_screen.screen_is_full.connect(_on_white_screen_full)
 
 
 func take_first() -> void:
@@ -81,3 +98,50 @@ func take_sixth() -> void:
 
 func change_sixth() -> void:
 	result.region_rect = Rect2(result_parts[5], Vector2(16, 16))
+
+
+func anim_color() -> void:
+	result_colored.visible = true
+	var anim = result_colored.get_node("anim")
+	anim.play("color")
+	result_audi.stream = boiling_sound
+	result_audi.play()
+
+
+func anim_shake() -> void:
+	shake_anim.play("shake")
+	result_audi.stream = shake_sound
+	result_audi.play()
+
+
+func anim_explode() -> void:
+	make_scientists_go_to_flask()
+	white_screen.start_anim()
+	result_audi.stream = explode_sound
+	result_audi.play()
+
+
+func _on_white_screen_full() -> void:
+	result.visible = false
+	result_colored.visible = false
+	var anim = result_colored.get_node("anim")
+	anim.stop()
+	shake_anim.stop()
+	result_broken.visible = true
+	var bubbles: GPUParticles2D = result_broken.get_node("bubbles")
+	bubbles.emitting = true
+	lab_smoke.set_color_target(0.2)
+
+
+func anim_smoke1() -> void:
+	lab_smoke.set_color_target(0.5)
+
+
+func anim_smoke2() -> void:
+	lab_smoke.set_color_target(0.95)
+
+
+func make_scientists_go_to_flask() -> void:
+	for scientist in scientists:
+		var state_machine: StateMachine = scientist.get_node("state_machine")
+		state_machine.enable_state("runToFlask")

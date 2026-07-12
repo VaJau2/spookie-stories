@@ -55,13 +55,13 @@
 				"type": "phrase",
 				"speaker": "serious_tale",
 				"state": "idle",
-				"text": "And they're scary because they actually happened to me in the past"
+				"text": "And they're scary because they actually happened to me in the past."
 			},
 			{
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"text": "Well, tell us",
+				"text": "Well, tell us.",
 			},
 			{
 				"type": "new_state",

@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="26_xktro"]
 [ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="27_8qrnc"]
 [ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/strikelyHome/cloneStates/idleState.gd" id="28_xkimj"]
+[ext_resource type="Script" uid="uid://bd4vi422fs4w7" path="res://assets/scripts/controllers/duskLab/states/runToFlaskState.gd" id="29_q4uou"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -277,5 +278,8 @@ movement_controller = NodePath("../movement_controller")
 
 [node name="idle" type="Node" parent="state_machine" unique_id=396007561]
 script = ExtResource("28_xkimj")
+
+[node name="runToFlask" type="Node" parent="state_machine" unique_id=1315294058]
+script = ExtResource("29_q4uou")
 
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
