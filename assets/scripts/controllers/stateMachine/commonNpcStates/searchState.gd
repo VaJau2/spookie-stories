@@ -1,6 +1,5 @@
 extends StateBase
 
-@export var seek_sign: Sprite2D
 @export var seek_areas: Array[Area2D]
 @export var anim_controller: AnimationController
 
@@ -23,8 +22,6 @@ func enable() -> void:
 		movement_controller.load_state("walk")
 		movement_controller.set_target(player.global_position)
 	
-	seek_sign.visible = true
-	seek_sign.frame = 0
 	search_timer = randf_range(SEARCH_TIME[0], SEARCH_TIME[1])
 
 

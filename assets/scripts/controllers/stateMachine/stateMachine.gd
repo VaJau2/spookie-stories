@@ -8,6 +8,8 @@ class_name StateMachine
 @warning_ignore("unused_signal")
 signal flip(value: bool)
 
+signal state_changed(new_state: String)
+
 var current_state: Node
 var may_move: bool = true
 
@@ -30,6 +32,7 @@ func enable_state(state_name: String) -> void:
 	var new_state: StateBase = get_node(state_name)
 	new_state.enable()
 	current_state = new_state
+	state_changed.emit(state_name)
 
 
 func _on_started_dialogue() -> void:

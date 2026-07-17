@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8xtqympmtci3" path="res://assets/sprites/characters/cave/serious_tale.png" id="1_3ru8q"]
 [ext_resource type="Script" uid="uid://cjd1r7nwvured" path="res://assets/scripts/controllers/movement/platformerMovementController.gd" id="2_8u0ls"]
 [ext_resource type="Texture2D" uid="uid://b6m1wq0hnes" path="res://assets/sprites/characters/cave/gun.png" id="2_nfuap"]
+[ext_resource type="Script" uid="uid://gxwcmxqeiks" path="res://assets/scripts/controllers/cameraZoomChange.gd" id="3_572o3"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="3_u0d4t"]
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="4_gext2"]
 [ext_resource type="Script" uid="uid://cjabe2c8sand5" path="res://assets/scripts/controllers/cave/platformerAnimationController.gd" id="5_iwt4h"]
@@ -350,6 +351,8 @@ autoplay = &"idle"
 offset = Vector2(0, -20)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+script = ExtResource("3_572o3")
+max_zoom = 3.0
 
 [node name="movement_controller" type="Node" parent="." unique_id=555073924]
 script = ExtResource("2_8u0ls")

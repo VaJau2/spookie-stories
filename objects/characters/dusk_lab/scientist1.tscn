@@ -27,8 +27,8 @@
 [ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="25_akxca"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="26_xktro"]
 [ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="27_8qrnc"]
-[ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/strikelyHome/cloneStates/idleState.gd" id="28_xkimj"]
-[ext_resource type="Script" uid="uid://bd4vi422fs4w7" path="res://assets/scripts/controllers/duskLab/states/runToFlaskState.gd" id="29_q4uou"]
+[ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="28_xkimj"]
+[ext_resource type="Script" uid="uid://bd4vi422fs4w7" path="res://assets/scripts/controllers/stateMachine/duskLab/runToFlaskState.gd" id="29_q4uou"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0

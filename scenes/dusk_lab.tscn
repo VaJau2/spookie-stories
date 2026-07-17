@@ -1034,7 +1034,7 @@ lab_smoke = NodePath("../menu/smoke")
 [node name="next_level" type="Node" parent="." unique_id=2018285833 node_paths=PackedStringArray("black_screen")]
 script = ExtResource("28_7ji0w")
 black_screen = NodePath("../menu/black_screen")
-next_level = "forest5"
+next_level = "dusk_city"
 
 [connection signal="body_entered" from="dialogues/start_dialogue_area" to="dialogues/start_dialogue_area" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogues/empty_bottle_dialogue" to="dialogues/empty_bottle_dialogue" method="_on_body_entered"]

@@ -1,6 +1,5 @@
 extends StateBase
 
-@export var seek_sign: Sprite2D
 @export var seek_areas: Array[Area2D]
 
 var player: CharacterBody2D = null
@@ -12,9 +11,6 @@ func enable() -> void:
 	if player == null: 
 		state_machine.enable_state("idle")
 		return
-	
-	seek_sign.visible = true
-	seek_sign.frame = 1
 	
 	if movement_controller is MovementController:
 		movement_controller.load_state("run")

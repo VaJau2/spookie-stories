@@ -27,13 +27,14 @@
 [ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="25_1xlex"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="26_70h7w"]
 [ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="27_majeu"]
-[ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/strikelyHome/cloneStates/idleState.gd" id="28_aenfv"]
-[ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/strikelyHome/cloneStates/attackState.gd" id="29_gognt"]
-[ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/strikelyHome/cloneStates/searchState.gd" id="30_fhfti"]
+[ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="28_aenfv"]
+[ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="29_gognt"]
+[ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="30_fhfti"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_vc754"]
 [ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_84sis"]
 [ext_resource type="Texture2D" uid="uid://iu3p04cb6yfe" path="res://assets/sprites/interface/seek_signs.png" id="33_r3p24"]
 [ext_resource type="Script" uid="uid://t2h1nx74g3b" path="res://assets/scripts/scenario/lostArea.gd" id="34_e3ofm"]
+[ext_resource type="Script" uid="uid://bkjc6hqpe28kl" path="res://assets/scripts/interface/seekSign.gd" id="34_j8qhy"]
 [ext_resource type="AudioStream" uid="uid://ct7ut33b50mar" path="res://assets/audio/pops/pop.mp3" id="35_ake3u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
@@ -293,18 +294,15 @@ script = ExtResource("27_majeu")
 default_state = NodePath("idle")
 movement_controller = NodePath("../movement_controller")
 
-[node name="idle" type="Node" parent="state_machine" unique_id=396007561 node_paths=PackedStringArray("seek_sign")]
+[node name="idle" type="Node" parent="state_machine" unique_id=396007561]
 script = ExtResource("28_aenfv")
-seek_sign = NodePath("../../seek_sign")
 
-[node name="attack" type="Node" parent="state_machine" unique_id=1455317754 node_paths=PackedStringArray("seek_sign", "seek_areas")]
+[node name="attack" type="Node" parent="state_machine" unique_id=1455317754 node_paths=PackedStringArray("seek_areas")]
 script = ExtResource("29_gognt")
-seek_sign = NodePath("../../seek_sign")
 seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 
-[node name="search" type="Node" parent="state_machine" unique_id=925214597 node_paths=PackedStringArray("seek_sign", "seek_areas", "anim_controller")]
+[node name="search" type="Node" parent="state_machine" unique_id=925214597 node_paths=PackedStringArray("seek_areas", "anim_controller")]
 script = ExtResource("30_fhfti")
-seek_sign = NodePath("../../seek_sign")
 seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 anim_controller = NodePath("../../animation_controller")
 
@@ -341,6 +339,7 @@ visible = false
 position = Vector2(28, -64)
 texture = ExtResource("33_r3p24")
 hframes = 2
+script = ExtResource("34_j8qhy")
 
 [node name="lost_area" type="Area2D" parent="." unique_id=1914835]
 monitorable = false

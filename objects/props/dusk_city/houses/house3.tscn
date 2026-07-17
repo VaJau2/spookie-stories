@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b2gv568e1hu7x"]
+
+[ext_resource type="Texture2D" uid="uid://dcqb1talbjhbq" path="res://assets/sprites/tiles/dusk-city.png" id="1_1ftrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(156, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o7us"]
+size = Vector2(96, 99)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e8m1b"]
+polygon = PackedVector2Array(126, -5, -126, -4, -126, -253, 29, -253, 31, -190, 126, -190)
+
+[node name="house3" type="StaticBody2D" unique_id=645723691]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=91568638]
+position = Vector2(0, -127)
+scale = Vector2(2, 2)
+texture = ExtResource("1_1ftrn")
+region_enabled = true
+region_rect = Rect2(672, 128, 128, 128)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=968075060]
+position = Vector2(-48, -87.5)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="shape2" type="CollisionShape2D" parent="." unique_id=1275242518]
+position = Vector2(78, -54.5)
+shape = SubResource("RectangleShape2D_1o7us")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=267192882]
+occluder = SubResource("OccluderPolygon2D_e8m1b")

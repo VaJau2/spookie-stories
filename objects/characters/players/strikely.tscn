@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b2cf4nfutuk4f" path="res://assets/scripts/controllers/inputController.gd" id="3_up0fu"]
 [ext_resource type="Script" uid="uid://d1ctisw8kxryp" path="res://assets/scripts/controllers/movement/movementController.gd" id="4_3tm56"]
 [ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="5_qmg4u"]
+[ext_resource type="Script" uid="uid://gxwcmxqeiks" path="res://assets/scripts/controllers/cameraZoomChange.gd" id="7_cho7j"]
 [ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="7_nyttx"]
 [ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="8_a2g0u"]
 [ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="9_lt0jn"]
@@ -279,6 +280,7 @@ movement_controller = NodePath("../movement_controller")
 [node name="camera" type="Camera2D" parent="." unique_id=1899412962]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+script = ExtResource("7_cho7j")
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
 volume_db = -6.0

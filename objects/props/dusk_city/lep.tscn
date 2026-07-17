@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://l8esijx5fuq0"]
+
+[ext_resource type="Texture2D" uid="uid://dcqb1talbjhbq" path="res://assets/sprites/tiles/dusk-city.png" id="1_ig6c7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(11, 24)
+
+[node name="light" type="StaticBody2D" unique_id=2066652557]
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1027678344]
+position = Vector2(0, -74)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ig6c7")
+region_enabled = true
+region_rect = Rect2(384, 134, 31, 90)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1553641497]
+position = Vector2(1.5, -5)
+shape = SubResource("RectangleShape2D_4kxuq")

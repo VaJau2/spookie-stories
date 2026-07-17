@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cwxmxc3vc71yj"]
+
+[ext_resource type="Texture2D" uid="uid://dta4oe2nv45m2" path="res://assets/sprites/props/strikely-home/trees/tree3.png" id="1_3wmiv"]
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_e336t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
+size = Vector2(12, 11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c8ayb"]
+polygon = PackedVector2Array(-6, 4, 5, 4, 5, 3, -6, 3)
+
+[node name="tree" type="StaticBody2D" unique_id=696988678]
+
+[node name="shadow2" type="Sprite2D" parent="." unique_id=998034248]
+modulate = Color(1, 1, 1, 0.40392157)
+position = Vector2(-0.6976743, 2)
+scale = Vector2(0.39534885, 1)
+texture = ExtResource("1_e336t")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1674816820]
+position = Vector2(17, -106)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_3wmiv")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(250, 18, 108, 142)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=522276448]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=1452113154]
+occluder = SubResource("OccluderPolygon2D_c8ayb")

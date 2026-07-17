@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cgynrpelf5agw"]
+
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_3w2di"]
+[ext_resource type="Texture2D" uid="uid://s1ompg8xl4cl" path="res://assets/sprites/props/plants/tree1.png" id="1_rbkmy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
+size = Vector2(23, 12)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c8ayb"]
+polygon = PackedVector2Array(-13, 3, 9, 3, 9, 2, -13, 2)
+
+[node name="tree" type="StaticBody2D" unique_id=696988678]
+
+[node name="shadow2" type="Sprite2D" parent="." unique_id=551983767]
+modulate = Color(1, 1, 1, 0.40392157)
+position = Vector2(-2.906977, 2)
+scale = Vector2(0.8139535, 1)
+texture = ExtResource("1_3w2di")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1674816820]
+position = Vector2(-3, -108.00001)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_rbkmy")
+flip_h = true
+region_rect = Rect2(250, 18, 108, 142)
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=522276448]
+position = Vector2(-2.5, -3)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="shadow" type="LightOccluder2D" parent="." unique_id=1452113154]
+occluder = SubResource("OccluderPolygon2D_c8ayb")

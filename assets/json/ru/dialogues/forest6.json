@@ -195,11 +195,6 @@
 				"text": "…да."
 			},
 			{
-				"type": "new_state",
-				"speaker": "serious_tale",
-				"state": "idle",
-			},
-			{
 				"type": "script",
 				"path": "/root/main/set_exit_visible",
 				"method": "set_label_visible"

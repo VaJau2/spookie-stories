@@ -1,7 +1,5 @@
 extends StateBase
 
-@export var seek_sign: Sprite2D
-
 var patrol_points: Array[Vector2] = []
 var point_i: int = 0
 
@@ -19,7 +17,6 @@ func _ready() -> void:
 
 func enable() -> void:
 	super.enable()
-	if seek_sign: seek_sign.visible = false
 	if movement_controller is MovementController:
 		movement_controller.load_state("walk")
 
