@@ -1,55 +1,50 @@
-[gd_scene format=3 uid="uid://xdmo2wyhtorg"]
+[gd_scene format=3 uid="uid://c5faj4f0omoev"]
 
-[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_onhu7"]
-[ext_resource type="Texture2D" uid="uid://ccyjlmb0nwx27" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_base.png" id="2_onhu7"]
-[ext_resource type="Texture2D" uid="uid://cux4xq0tov3k4" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_eyes.png" id="3_d1b04"]
-[ext_resource type="Texture2D" uid="uid://dre6tm42ha5c0" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_eyes_white.png" id="3_onhu7"]
-[ext_resource type="Script" uid="uid://6gu4rfslrt2r" path="res://assets/scripts/controllers/movement/navigationMovementController.gd" id="3_u8f3l"]
-[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="4_rmnwx"]
-[ext_resource type="Texture2D" uid="uid://c6ple1qoac217" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/bow.png" id="5_hjyyq"]
-[ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="5_ov2xf"]
-[ext_resource type="Texture2D" uid="uid://duvwevswthfi7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_1.png" id="5_u8f3l"]
-[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="6_hjyyq"]
-[ext_resource type="Texture2D" uid="uid://b44bg4lk0n4fw" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_1.png" id="6_rmnwx"]
-[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="7_i7q1o"]
-[ext_resource type="Texture2D" uid="uid://bfr3yi7ur5m8f" path="res://assets/sprites/characters/dusk_city/pony_pie.png" id="7_rmnwx"]
-[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="8_sissc"]
-[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="9_us3ag"]
-[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="10_kwsan"]
-[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="11_ugpi1"]
-[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="12_yhqeh"]
-[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="13_fvgtr"]
-[ext_resource type="AudioStream" uid="uid://sk36g5jc2esa" path="res://assets/audio/steps/wood/stepWoodFast1.wav" id="14_ckk5e"]
-[ext_resource type="AudioStream" uid="uid://cyfvml5e8ylwk" path="res://assets/audio/steps/wood/stepWoodFast2.wav" id="15_5pe4a"]
-[ext_resource type="AudioStream" uid="uid://wb31d5a7ycbr" path="res://assets/audio/steps/wood/stepWoodFast3.wav" id="16_wk0ul"]
-[ext_resource type="AudioStream" uid="uid://c8rhf87m1iy14" path="res://assets/audio/steps/grass/stepGrass1.wav" id="17_trtx1"]
-[ext_resource type="AudioStream" uid="uid://jaao0wjaahpu" path="res://assets/audio/steps/grass/stepGrass2.wav" id="18_n2lpr"]
-[ext_resource type="AudioStream" uid="uid://bvfvf3jj5qpa0" path="res://assets/audio/steps/grass/stepGrass3.wav" id="19_f6iau"]
-[ext_resource type="AudioStream" uid="uid://eboptg1tanj7" path="res://assets/audio/steps/grass/stepGrassRun1.wav" id="20_priol"]
-[ext_resource type="AudioStream" uid="uid://btewlbhb7pgl8" path="res://assets/audio/steps/grass/stepGrassRun2.wav" id="21_3m4ay"]
-[ext_resource type="AudioStream" uid="uid://pabf605iukvp" path="res://assets/audio/steps/grass/stepGrassRun3.wav" id="22_4q4u1"]
-[ext_resource type="AudioStream" uid="uid://crmv88h734dyx" path="res://assets/audio/steps/grass/stepGrassFast1.wav" id="23_eyyl5"]
-[ext_resource type="AudioStream" uid="uid://ddvswa6c7beio" path="res://assets/audio/steps/grass/stepGrassFast2.wav" id="24_wj3on"]
-[ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="25_aefd7"]
-[ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="26_xsjtw"]
-[ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="27_py8k8"]
-[ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="28_oe1x5"]
-[ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="29_onhu7"]
-[ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="30_d1b04"]
-[ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_prc3q"]
-[ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_b3ebb"]
-[ext_resource type="Script" uid="uid://cdyiwfceycem6" path="res://assets/scripts/controllers/duskCity/randomPonyGenerator.gd" id="35_d1b04"]
-[ext_resource type="Texture2D" uid="uid://crsw8rwevcpkn" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_2.png" id="39_ov2xf"]
-[ext_resource type="Texture2D" uid="uid://dasw0d8lc0mvw" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_3.png" id="41_i7q1o"]
-[ext_resource type="Texture2D" uid="uid://buqr8sw5bhslr" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_4.png" id="42_sissc"]
-[ext_resource type="Texture2D" uid="uid://c33yq4yhgrga7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_5.png" id="43_us3ag"]
-[ext_resource type="Texture2D" uid="uid://b4hj8ex4qs4r8" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_2.png" id="44_kwsan"]
-[ext_resource type="Texture2D" uid="uid://cjmbm6vmnstn7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_3.png" id="45_ugpi1"]
-[ext_resource type="Texture2D" uid="uid://cag234mbksbd0" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/glasses.png" id="46_yhqeh"]
-[ext_resource type="Texture2D" uid="uid://bdr1lcwrj815n" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/socks.png" id="47_fvgtr"]
-[ext_resource type="Texture2D" uid="uid://lxtl2tjqwywf" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/uniform.png" id="48_ckk5e"]
-[ext_resource type="Texture2D" uid="uid://bqjexayepa1m" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/shirt.png" id="49_5pe4a"]
-[ext_resource type="Texture2D" uid="uid://buurx2k2rcdrs" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/bag.png" id="50_wk0ul"]
+[ext_resource type="Texture2D" uid="uid://d0ain42gf0fue" path="res://assets/sprites/characters/pony_shadow.png" id="1_c4lym"]
+[ext_resource type="Texture2D" uid="uid://s0jl58thrw8m" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_base.png" id="2_36330"]
+[ext_resource type="Texture2D" uid="uid://ca41v6jqw1yia" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_eyes_white.png" id="3_527jw"]
+[ext_resource type="Texture2D" uid="uid://ivcb3xof2xxx" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_eyes.png" id="4_r0scs"]
+[ext_resource type="Texture2D" uid="uid://cl31maqwywf5g" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_tail_1.png" id="5_7sxn3"]
+[ext_resource type="Texture2D" uid="uid://camdr6qu1abug" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/glasses.png" id="6_226un"]
+[ext_resource type="Texture2D" uid="uid://bfr3yi7ur5m8f" path="res://assets/sprites/characters/dusk_city/pony_pie.png" id="10_hwgpa"]
+[ext_resource type="Script" uid="uid://6gu4rfslrt2r" path="res://assets/scripts/controllers/movement/navigationMovementController.gd" id="11_0fibu"]
+[ext_resource type="Script" uid="uid://dxiwao0oi3jq3" path="res://assets/scripts/controllers/movement/movementState.gd" id="12_sj1i8"]
+[ext_resource type="Script" uid="uid://csp1utd40ubch" path="res://assets/scripts/controllers/animationController.gd" id="13_lq2rc"]
+[ext_resource type="Script" uid="uid://c0avwigavpdu5" path="res://assets/scripts/controllers/steps/stepsController.gd" id="14_yybie"]
+[ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="15_yto47"]
+[ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="16_8auwx"]
+[ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="17_djxwi"]
+[ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="18_xntbo"]
+[ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="19_lic5a"]
+[ext_resource type="AudioStream" uid="uid://v2xdjfcx11sh" path="res://assets/audio/steps/stone/StoneStep2.wav" id="20_1xwlv"]
+[ext_resource type="AudioStream" uid="uid://de0xavehi18va" path="res://assets/audio/steps/stone/StoneStep3.wav" id="21_ak6p0"]
+[ext_resource type="AudioStream" uid="uid://sk36g5jc2esa" path="res://assets/audio/steps/wood/stepWoodFast1.wav" id="22_jpqhc"]
+[ext_resource type="AudioStream" uid="uid://cyfvml5e8ylwk" path="res://assets/audio/steps/wood/stepWoodFast2.wav" id="23_2nmyk"]
+[ext_resource type="AudioStream" uid="uid://wb31d5a7ycbr" path="res://assets/audio/steps/wood/stepWoodFast3.wav" id="24_fphng"]
+[ext_resource type="AudioStream" uid="uid://c8rhf87m1iy14" path="res://assets/audio/steps/grass/stepGrass1.wav" id="25_lwcqb"]
+[ext_resource type="AudioStream" uid="uid://jaao0wjaahpu" path="res://assets/audio/steps/grass/stepGrass2.wav" id="26_fivfv"]
+[ext_resource type="AudioStream" uid="uid://bvfvf3jj5qpa0" path="res://assets/audio/steps/grass/stepGrass3.wav" id="27_jhjbm"]
+[ext_resource type="AudioStream" uid="uid://eboptg1tanj7" path="res://assets/audio/steps/grass/stepGrassRun1.wav" id="28_t2gmv"]
+[ext_resource type="AudioStream" uid="uid://btewlbhb7pgl8" path="res://assets/audio/steps/grass/stepGrassRun2.wav" id="29_ld4rw"]
+[ext_resource type="AudioStream" uid="uid://pabf605iukvp" path="res://assets/audio/steps/grass/stepGrassRun3.wav" id="30_tfcaw"]
+[ext_resource type="AudioStream" uid="uid://crmv88h734dyx" path="res://assets/audio/steps/grass/stepGrassFast1.wav" id="31_k0tbk"]
+[ext_resource type="AudioStream" uid="uid://ddvswa6c7beio" path="res://assets/audio/steps/grass/stepGrassFast2.wav" id="32_ed61l"]
+[ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="33_2kmra"]
+[ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="34_gfluy"]
+[ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="35_683b4"]
+[ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="36_6ccxe"]
+[ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="37_ebhkn"]
+[ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="38_vn0it"]
+[ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="39_w3fk8"]
+[ext_resource type="Texture2D" uid="uid://cqsaxc855i8vx" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_mane_1.png" id="40_ma2jh"]
+[ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="40_y24tg"]
+[ext_resource type="Texture2D" uid="uid://dxjq6qx17ifd7" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_mane_2.png" id="41_dodbk"]
+[ext_resource type="Script" uid="uid://cdyiwfceycem6" path="res://assets/scripts/controllers/duskCity/randomPonyGenerator.gd" id="41_ucays"]
+[ext_resource type="Texture2D" uid="uid://g7asjak2ujq5" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_mane_3.png" id="42_sr7ev"]
+[ext_resource type="Texture2D" uid="uid://beps52ctfgsff" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_tail_2.png" id="43_u5xls"]
+[ext_resource type="Texture2D" uid="uid://c035ltbokn42h" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/bag.png" id="44_c4lym"]
+[ext_resource type="Texture2D" uid="uid://c5ofbqw5eevr8" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/shirt.png" id="45_4ggyd"]
+[ext_resource type="Texture2D" uid="uid://0bnycksfppl0" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/sunglasses.png" id="46_36330"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -124,30 +119,6 @@ tracks/5/path = NodePath("../cloth:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -229,30 +200,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [0, 2, 3, 2, 0]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13158591, 0.36656076, 0.46909526),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 2, 3, 2, 0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.36666667, 0.46909526),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 2, 3, 2, 0]
-}
 
 [sub_resource type="Animation" id="Animation_u8f3l"]
 resource_name = "booped"
@@ -324,30 +271,6 @@ tracks/5/path = NodePath("../cloth:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -430,30 +353,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [0]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
 
 [sub_resource type="Animation" id="Animation_ov2xf"]
 resource_name = "pied"
@@ -526,30 +425,6 @@ tracks/5/path = NodePath("../cloth:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -632,30 +507,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [21]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [21]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [21]
-}
 
 [sub_resource type="Animation" id="Animation_4hpix"]
 resource_name = "run"
@@ -729,30 +580,6 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.099999994, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 15, 16, 17, 18, 19]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.2, 0.3, 0.4, 0.5, 0.59999996, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 15, 16, 17, 18, 19]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.10000001, 0.2, 0.3, 0.4, 0.5, 0.59999996, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [12, 13, 14, 15, 16, 17, 18, 19]
@@ -833,30 +660,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [4, 5, 6, 7, 8, 9, 10, 11]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../cloth2:frame")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8, 9, 10, 11]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../cloth3:frame")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336, 0.6666667, 0.8, 0.93333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8, 9, 10, 11]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b8q40"]
 _data = {
@@ -871,34 +674,34 @@ _data = {
 }
 
 [sub_resource type="Resource" id="Resource_iqgwf"]
-script = ExtResource("7_i7q1o")
-walk_sounds = Array[AudioStream]([ExtResource("11_ugpi1"), ExtResource("12_yhqeh"), ExtResource("13_fvgtr")])
-run_sounds = Array[AudioStream]([ExtResource("8_sissc"), ExtResource("9_us3ag"), ExtResource("10_kwsan")])
+script = ExtResource("15_yto47")
+walk_sounds = Array[AudioStream]([ExtResource("19_lic5a"), ExtResource("20_1xwlv"), ExtResource("21_ak6p0")])
+run_sounds = Array[AudioStream]([ExtResource("16_8auwx"), ExtResource("17_djxwi"), ExtResource("18_xntbo")])
 run_cooldown = 0.75
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Resource" id="Resource_3khfa"]
-script = ExtResource("7_i7q1o")
+script = ExtResource("15_yto47")
 material_name = 4
-walk_sounds = Array[AudioStream]([ExtResource("14_ckk5e"), ExtResource("15_5pe4a"), ExtResource("16_wk0ul")])
+walk_sounds = Array[AudioStream]([ExtResource("22_jpqhc"), ExtResource("23_2nmyk"), ExtResource("24_fphng")])
 walk_cooldown = 0.5
-run_sounds = Array[AudioStream]([ExtResource("14_ckk5e"), ExtResource("15_5pe4a"), ExtResource("16_wk0ul")])
+run_sounds = Array[AudioStream]([ExtResource("22_jpqhc"), ExtResource("23_2nmyk"), ExtResource("24_fphng")])
 run_cooldown = 0.2
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Resource" id="Resource_s717i"]
-script = ExtResource("7_i7q1o")
+script = ExtResource("15_yto47")
 material_name = 5
-walk_sounds = Array[AudioStream]([ExtResource("17_trtx1"), ExtResource("18_n2lpr"), ExtResource("19_f6iau")])
-run_sounds = Array[AudioStream]([ExtResource("17_trtx1"), ExtResource("18_n2lpr"), ExtResource("19_f6iau")])
+walk_sounds = Array[AudioStream]([ExtResource("25_lwcqb"), ExtResource("26_fivfv"), ExtResource("27_jhjbm")])
+run_sounds = Array[AudioStream]([ExtResource("25_lwcqb"), ExtResource("26_fivfv"), ExtResource("27_jhjbm")])
 run_cooldown = 0.2
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="Resource" id="Resource_lr2p7"]
-script = ExtResource("7_i7q1o")
+script = ExtResource("15_yto47")
 material_name = 2
-walk_sounds = Array[AudioStream]([ExtResource("23_eyyl5"), ExtResource("24_wj3on"), ExtResource("25_aefd7")])
-run_sounds = Array[AudioStream]([ExtResource("20_priol"), ExtResource("21_3m4ay"), ExtResource("22_4q4u1")])
+walk_sounds = Array[AudioStream]([ExtResource("31_k0tbk"), ExtResource("32_ed61l"), ExtResource("33_2kmra")])
+run_sounds = Array[AudioStream]([ExtResource("28_t2gmv"), ExtResource("29_ld4rw"), ExtResource("30_tfcaw")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pbs"]
@@ -910,7 +713,7 @@ size = Vector2(318, 156)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aenfv"]
 size = Vector2(678, 393)
 
-[node name="mare" type="CharacterBody2D" unique_id=301655442]
+[node name="colt" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 collision_layer = 2
 collision_mask = 0
@@ -919,13 +722,13 @@ collision_mask = 0
 modulate = Color(1, 1, 1, 0.33333334)
 position = Vector2(-1.4999995, -2)
 scale = Vector2(0.81395346, 1)
-texture = ExtResource("1_onhu7")
+texture = ExtResource("1_c4lym")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1857052420]
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("2_onhu7")
+texture = ExtResource("2_36330")
 hframes = 8
 vframes = 3
 
@@ -933,7 +736,7 @@ vframes = 3
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("3_onhu7")
+texture = ExtResource("3_527jw")
 hframes = 8
 vframes = 3
 frame = 4
@@ -942,7 +745,7 @@ frame = 4
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("3_d1b04")
+texture = ExtResource("4_r0scs")
 hframes = 8
 vframes = 3
 
@@ -950,7 +753,7 @@ vframes = 3
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("5_u8f3l")
+texture = ExtResource("5_7sxn3")
 hframes = 8
 vframes = 3
 
@@ -958,20 +761,7 @@ vframes = 3
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-hframes = 8
-vframes = 3
-
-[node name="cloth2" type="Sprite2D" parent="." unique_id=1225261690]
-light_mask = 2
-texture_filter = 1
-position = Vector2(1, -32)
-hframes = 8
-vframes = 3
-
-[node name="cloth3" type="Sprite2D" parent="." unique_id=168941481]
-light_mask = 2
-texture_filter = 1
-position = Vector2(1, -32)
+texture = ExtResource("6_226un")
 hframes = 8
 vframes = 3
 
@@ -979,7 +769,7 @@ vframes = 3
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("6_rmnwx")
+texture = ExtResource("41_dodbk")
 hframes = 8
 vframes = 3
 
@@ -988,7 +778,7 @@ visible = false
 light_mask = 2
 texture_filter = 1
 position = Vector2(1, -32)
-texture = ExtResource("7_rmnwx")
+texture = ExtResource("10_hwgpa")
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1595805350]
 position = Vector2(-1, -4)
@@ -1001,20 +791,20 @@ libraries/ = SubResource("AnimationLibrary_b8q40")
 autoplay = &"idle"
 
 [node name="movement_controller" type="Node" parent="." unique_id=1950806343 node_paths=PackedStringArray("nav_agent")]
-script = ExtResource("3_u8f3l")
+script = ExtResource("11_0fibu")
 nav_agent = NodePath("../nav_agent")
 
 [node name="walk" type="Node" parent="movement_controller" unique_id=5973867]
-script = ExtResource("4_rmnwx")
+script = ExtResource("12_sj1i8")
 default = true
 
 [node name="run" type="Node" parent="movement_controller" unique_id=147852670]
-script = ExtResource("4_rmnwx")
+script = ExtResource("12_sj1i8")
 anim = "run"
 speed = 300
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
-script = ExtResource("5_ov2xf")
+script = ExtResource("13_lq2rc")
 sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movement_controller")
@@ -1022,29 +812,29 @@ movement_controller = NodePath("../movement_controller")
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
 max_distance = 1000.0
 bus = &"Sound"
-script = ExtResource("6_hjyyq")
+script = ExtResource("14_yybie")
 movement_controller = NodePath("../movement_controller")
-steps_data = Array[ExtResource("7_i7q1o")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
+steps_data = Array[ExtResource("15_yto47")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
 
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
-script = ExtResource("26_xsjtw")
+script = ExtResource("34_gfluy")
 anim = NodePath("../anim")
 talk_state = ""
 
 [node name="state_machine" type="Node" parent="." unique_id=2080883300 node_paths=PackedStringArray("default_state", "movement_controller")]
-script = ExtResource("27_py8k8")
+script = ExtResource("35_683b4")
 default_state = NodePath("idle")
 movement_controller = NodePath("../movement_controller")
 
 [node name="idle" type="Node" parent="state_machine" unique_id=396007561]
-script = ExtResource("28_oe1x5")
+script = ExtResource("36_6ccxe")
 
 [node name="attack" type="Node" parent="state_machine" unique_id=1455317754 node_paths=PackedStringArray("seek_areas")]
-script = ExtResource("29_onhu7")
+script = ExtResource("37_ebhkn")
 seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 
 [node name="search" type="Node" parent="state_machine" unique_id=925214597 node_paths=PackedStringArray("seek_areas", "anim_controller")]
-script = ExtResource("30_d1b04")
+script = ExtResource("38_vn0it")
 seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 anim_controller = NodePath("../../animation_controller")
 
@@ -1052,7 +842,7 @@ anim_controller = NodePath("../../animation_controller")
 visible = false
 monitoring = false
 monitorable = false
-script = ExtResource("31_prc3q")
+script = ExtResource("39_w3fk8")
 state_machine = NodePath("../state_machine")
 anim_controller = NodePath("../animation_controller")
 
@@ -1070,7 +860,7 @@ shape = SubResource("RectangleShape2D_majeu")
 [node name="far_seek_area" type="Area2D" parent="." unique_id=1086742387 node_paths=PackedStringArray("state_machine")]
 monitoring = false
 monitorable = false
-script = ExtResource("32_b3ebb")
+script = ExtResource("40_y24tg")
 state_machine = NodePath("../state_machine")
 
 [node name="shape" type="CollisionShape2D" parent="far_seek_area" unique_id=498995470]
@@ -1081,15 +871,15 @@ shape = SubResource("RectangleShape2D_aenfv")
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
 
 [node name="random_generator" type="Node" parent="." unique_id=682987507 node_paths=PackedStringArray("body_sprite", "eye_sprite", "mane_sprite", "tail_sprite", "cloth_sprites")]
-script = ExtResource("35_d1b04")
+script = ExtResource("41_ucays")
 body_sprite = NodePath("../sprite")
 eye_sprite = NodePath("../eye_sprite")
 mane_sprite = NodePath("../mane")
-mane_variants = Array[Texture2D]([ExtResource("6_rmnwx"), ExtResource("39_ov2xf"), ExtResource("41_i7q1o"), ExtResource("42_sissc"), ExtResource("43_us3ag")])
+mane_variants = Array[Texture2D]([ExtResource("40_ma2jh"), ExtResource("41_dodbk"), ExtResource("42_sr7ev")])
 tail_sprite = NodePath("../tail")
-tail_variants = Array[Texture2D]([ExtResource("5_u8f3l"), ExtResource("44_kwsan"), ExtResource("45_ugpi1")])
-cloth_sprites = [NodePath("../cloth"), NodePath("../cloth2"), NodePath("../cloth3")]
-cloth_variants = Array[Texture2D]([ExtResource("5_hjyyq"), ExtResource("46_yhqeh"), ExtResource("47_fvgtr"), ExtResource("48_ckk5e"), ExtResource("49_5pe4a"), ExtResource("50_wk0ul")])
+tail_variants = Array[Texture2D]([ExtResource("5_7sxn3"), ExtResource("43_u5xls")])
+cloth_sprites = [NodePath("../cloth")]
+cloth_variants = Array[Texture2D]([ExtResource("44_c4lym"), ExtResource("6_226un"), ExtResource("45_4ggyd"), ExtResource("46_36330")])
 
 [connection signal="body_entered" from="close_seek_area" to="close_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="close_seek_area" to="close_seek_area" method="_on_body_exited"]

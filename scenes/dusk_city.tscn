@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cgynrpelf5agw" path="res://objects/props/dusk_city/trees/tree3.tscn" id="10_d1b4e"]
 [ext_resource type="PackedScene" uid="uid://5cdmqur0bpk1" path="res://objects/props/dusk_city/trees/tree.tscn" id="10_xd27s"]
 [ext_resource type="PackedScene" uid="uid://cwxmxc3vc71yj" path="res://objects/props/dusk_city/trees/tree2.tscn" id="12_ucmsh"]
+[ext_resource type="PackedScene" uid="uid://c5faj4f0omoev" path="res://objects/characters/dusk_city/colt.tscn" id="17_6jccf"]
 [ext_resource type="AudioStream" uid="uid://bk7v1ow2bjnrs" path="res://assets/audio/background/town_day.mp3" id="21_ucmsh"]
 [ext_resource type="AudioStream" uid="uid://cdvkyyl7f6pu8" path="res://assets/audio/background/forest_day_3.mp3" id="22_yqyfm"]
 [ext_resource type="AudioStream" uid="uid://bvrxj2xeecrx6" path="res://assets/audio/background/forest_day_2.mp3" id="23_i0p5o"]
@@ -562,17 +563,23 @@ position = Vector2(-897, 431)
 [node name="mare7" parent="ponies" unique_id=1219649056 instance=ExtResource("24_th87y")]
 position = Vector2(-361, 192)
 
-[node name="mare8" parent="ponies" unique_id=17672736 instance=ExtResource("24_th87y")]
-position = Vector2(-546, 465)
+[node name="mare8" parent="ponies" unique_id=1956783878 instance=ExtResource("24_th87y")]
+position = Vector2(-549, 232)
 
-[node name="mare5" parent="ponies" unique_id=1992568442 instance=ExtResource("24_th87y")]
-position = Vector2(-562, 236)
+[node name="mare9" parent="ponies" unique_id=1880831655 instance=ExtResource("24_th87y")]
+position = Vector2(-805, 220)
 
-[node name="mare2" parent="ponies" unique_id=657115313 instance=ExtResource("24_th87y")]
-position = Vector2(-897, 256)
+[node name="mare10" parent="ponies" unique_id=501358832 instance=ExtResource("24_th87y")]
+position = Vector2(-1045, 234)
 
-[node name="mare3" parent="ponies" unique_id=989351878 instance=ExtResource("24_th87y")]
-position = Vector2(-706, 203)
+[node name="colt" parent="ponies" unique_id=407222460 instance=ExtResource("17_6jccf")]
+position = Vector2(-890, 309)
+
+[node name="colt2" parent="ponies" unique_id=187098798 instance=ExtResource("17_6jccf")]
+position = Vector2(-690, 160)
+
+[node name="colt3" parent="ponies" unique_id=2004777152 instance=ExtResource("17_6jccf")]
+position = Vector2(-499, 296)
 
 [node name="input" type="Node" parent="." unique_id=1108986992]
 script = ExtResource("4_tj71r")

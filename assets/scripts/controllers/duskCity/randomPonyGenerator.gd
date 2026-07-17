@@ -32,7 +32,7 @@ func load_hair() -> void:
 func load_clothes() -> void:
 	for cloth in cloth_sprites:
 		if len(cloth_variants) <= 0: return
-		var cloth_visible = randf() < 0.25
+		var cloth_visible = randf() < 0.9 / len(cloth_sprites)
 		cloth.visible = cloth_visible
 		if cloth_visible:
 			cloth.modulate = Color(randf(), randf(), randf())
