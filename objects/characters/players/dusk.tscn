@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://u4wk74h8stpb" path="res://assets/audio/steps/dirt/stepDirt2.wav" id="31_qth0b"]
 [ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="32_5nuhs"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="33_46cq4"]
+[ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="35_r6iao"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -251,3 +252,9 @@ steps_data = Array[ExtResource("8_qhues")]([SubResource("Resource_iqgwf"), SubRe
 script = ExtResource("33_46cq4")
 anim = NodePath("../anim")
 talk_state = ""
+
+[node name="material_checker" type="Node2D" parent="." unique_id=868603525 node_paths=PackedStringArray("parent")]
+script = ExtResource("35_r6iao")
+parent = NodePath("..")
+
+[connection signal="material_changed" from="material_checker" to="audi_steps" method="on_change_material"]

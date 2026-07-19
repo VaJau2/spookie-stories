@@ -28,12 +28,18 @@
 [ext_resource type="AudioStream" uid="uid://btewlbhb7pgl8" path="res://assets/audio/steps/grass/stepGrassRun2.wav" id="29_ld4rw"]
 [ext_resource type="AudioStream" uid="uid://pabf605iukvp" path="res://assets/audio/steps/grass/stepGrassRun3.wav" id="30_tfcaw"]
 [ext_resource type="AudioStream" uid="uid://crmv88h734dyx" path="res://assets/audio/steps/grass/stepGrassFast1.wav" id="31_k0tbk"]
+[ext_resource type="AudioStream" uid="uid://dxfnfcphtrnyt" path="res://assets/audio/steps/dirt/stepDirtRun1.wav" id="32_36330"]
 [ext_resource type="AudioStream" uid="uid://ddvswa6c7beio" path="res://assets/audio/steps/grass/stepGrassFast2.wav" id="32_ed61l"]
 [ext_resource type="AudioStream" uid="uid://vx7p3u8f5il3" path="res://assets/audio/steps/grass/stepGrassFast3.wav" id="33_2kmra"]
+[ext_resource type="AudioStream" uid="uid://dycqxerp73kqm" path="res://assets/audio/steps/dirt/stepDirtRun2.wav" id="33_527jw"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="34_gfluy"]
+[ext_resource type="AudioStream" uid="uid://d046fxbdaaptb" path="res://assets/audio/steps/dirt/stepDirtRun3.wav" id="34_r0scs"]
+[ext_resource type="AudioStream" uid="uid://drqaooh0882tk" path="res://assets/audio/steps/dirt/stepDirt1.wav" id="35_7sxn3"]
 [ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="35_683b4"]
 [ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="36_6ccxe"]
+[ext_resource type="AudioStream" uid="uid://u4wk74h8stpb" path="res://assets/audio/steps/dirt/stepDirt2.wav" id="36_226un"]
 [ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="37_ebhkn"]
+[ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="37_vvji6"]
 [ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="38_vn0it"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="39_w3fk8"]
 [ext_resource type="Texture2D" uid="uid://cqsaxc855i8vx" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/colt_mane_1.png" id="40_ma2jh"]
@@ -45,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://c035ltbokn42h" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/bag.png" id="44_c4lym"]
 [ext_resource type="Texture2D" uid="uid://c5ofbqw5eevr8" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/shirt.png" id="45_4ggyd"]
 [ext_resource type="Texture2D" uid="uid://0bnycksfppl0" path="res://assets/sprites/characters/dusk_city/random_ponies/colts/sunglasses.png" id="46_36330"]
+[ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="46_ma2jh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -704,6 +711,13 @@ walk_sounds = Array[AudioStream]([ExtResource("31_k0tbk"), ExtResource("32_ed61l
 run_sounds = Array[AudioStream]([ExtResource("28_t2gmv"), ExtResource("29_ld4rw"), ExtResource("30_tfcaw")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
+[sub_resource type="Resource" id="Resource_yxoek"]
+script = ExtResource("15_yto47")
+material_name = 1
+walk_sounds = Array[AudioStream]([ExtResource("35_7sxn3"), ExtResource("36_226un"), ExtResource("37_vvji6")])
+run_sounds = Array[AudioStream]([ExtResource("32_36330"), ExtResource("33_527jw"), ExtResource("34_r0scs")])
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pbs"]
 size = Vector2(306, 157)
 
@@ -805,16 +819,16 @@ speed = 300
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("13_lq2rc")
-sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie")]
+sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie"), NodePath("../cloth")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movement_controller")
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
-max_distance = 1000.0
+max_distance = 300.0
 bus = &"Sound"
 script = ExtResource("14_yybie")
 movement_controller = NodePath("../movement_controller")
-steps_data = Array[ExtResource("15_yto47")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
+steps_data = Array[ExtResource("15_yto47")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7"), SubResource("Resource_yxoek")])
 
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
 script = ExtResource("34_gfluy")
@@ -881,7 +895,12 @@ tail_variants = Array[Texture2D]([ExtResource("5_7sxn3"), ExtResource("43_u5xls"
 cloth_sprites = [NodePath("../cloth")]
 cloth_variants = Array[Texture2D]([ExtResource("44_c4lym"), ExtResource("6_226un"), ExtResource("45_4ggyd"), ExtResource("46_36330")])
 
+[node name="material_checker" type="Node2D" parent="." unique_id=905420792 node_paths=PackedStringArray("parent")]
+script = ExtResource("46_ma2jh")
+parent = NodePath("")
+
 [connection signal="body_entered" from="close_seek_area" to="close_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="close_seek_area" to="close_seek_area" method="_on_body_exited"]
 [connection signal="body_entered" from="far_seek_area" to="far_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="far_seek_area" to="far_seek_area" method="_on_body_exited"]
+[connection signal="material_changed" from="material_checker" to="audi_steps" method="on_change_material"]

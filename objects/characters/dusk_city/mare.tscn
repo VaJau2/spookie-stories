@@ -36,9 +36,15 @@
 [ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="28_oe1x5"]
 [ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="29_onhu7"]
 [ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="30_d1b04"]
+[ext_resource type="AudioStream" uid="uid://dxfnfcphtrnyt" path="res://assets/audio/steps/dirt/stepDirtRun1.wav" id="31_eyyl5"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_prc3q"]
 [ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_b3ebb"]
+[ext_resource type="AudioStream" uid="uid://dycqxerp73kqm" path="res://assets/audio/steps/dirt/stepDirtRun2.wav" id="32_wj3on"]
+[ext_resource type="AudioStream" uid="uid://d046fxbdaaptb" path="res://assets/audio/steps/dirt/stepDirtRun3.wav" id="33_aefd7"]
+[ext_resource type="AudioStream" uid="uid://drqaooh0882tk" path="res://assets/audio/steps/dirt/stepDirt1.wav" id="34_xsjtw"]
 [ext_resource type="Script" uid="uid://cdyiwfceycem6" path="res://assets/scripts/controllers/duskCity/randomPonyGenerator.gd" id="35_d1b04"]
+[ext_resource type="AudioStream" uid="uid://u4wk74h8stpb" path="res://assets/audio/steps/dirt/stepDirt2.wav" id="35_py8k8"]
+[ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="36_ifn5j"]
 [ext_resource type="Texture2D" uid="uid://crsw8rwevcpkn" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_2.png" id="39_ov2xf"]
 [ext_resource type="Texture2D" uid="uid://dasw0d8lc0mvw" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_3.png" id="41_i7q1o"]
 [ext_resource type="Texture2D" uid="uid://buqr8sw5bhslr" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_4.png" id="42_sissc"]
@@ -50,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://lxtl2tjqwywf" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/uniform.png" id="48_ckk5e"]
 [ext_resource type="Texture2D" uid="uid://bqjexayepa1m" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/shirt.png" id="49_5pe4a"]
 [ext_resource type="Texture2D" uid="uid://buurx2k2rcdrs" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/bag.png" id="50_wk0ul"]
+[ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="51_trtx1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -901,6 +908,13 @@ walk_sounds = Array[AudioStream]([ExtResource("23_eyyl5"), ExtResource("24_wj3on
 run_sounds = Array[AudioStream]([ExtResource("20_priol"), ExtResource("21_3m4ay"), ExtResource("22_4q4u1")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
+[sub_resource type="Resource" id="Resource_a4mwm"]
+script = ExtResource("7_i7q1o")
+material_name = 1
+walk_sounds = Array[AudioStream]([ExtResource("34_xsjtw"), ExtResource("35_py8k8"), ExtResource("36_ifn5j")])
+run_sounds = Array[AudioStream]([ExtResource("31_eyyl5"), ExtResource("32_wj3on"), ExtResource("33_aefd7")])
+metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pbs"]
 size = Vector2(306, 157)
 
@@ -1015,16 +1029,16 @@ speed = 300
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("5_ov2xf")
-sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie")]
+sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie"), NodePath("../cloth"), NodePath("../cloth2"), NodePath("../cloth3")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movement_controller")
 
 [node name="audi_steps" type="AudioStreamPlayer2D" parent="." unique_id=520565262 node_paths=PackedStringArray("movement_controller")]
-max_distance = 1000.0
+max_distance = 300.0
 bus = &"Sound"
 script = ExtResource("6_hjyyq")
 movement_controller = NodePath("../movement_controller")
-steps_data = Array[ExtResource("7_i7q1o")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7")])
+steps_data = Array[ExtResource("7_i7q1o")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7"), SubResource("Resource_a4mwm")])
 
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
 script = ExtResource("26_xsjtw")
@@ -1091,7 +1105,12 @@ tail_variants = Array[Texture2D]([ExtResource("5_u8f3l"), ExtResource("44_kwsan"
 cloth_sprites = [NodePath("../cloth"), NodePath("../cloth2"), NodePath("../cloth3")]
 cloth_variants = Array[Texture2D]([ExtResource("5_hjyyq"), ExtResource("46_yhqeh"), ExtResource("47_fvgtr"), ExtResource("48_ckk5e"), ExtResource("49_5pe4a"), ExtResource("50_wk0ul")])
 
+[node name="material_checker" type="Node2D" parent="." unique_id=1183068054 node_paths=PackedStringArray("parent")]
+script = ExtResource("51_trtx1")
+parent = NodePath("..")
+
 [connection signal="body_entered" from="close_seek_area" to="close_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="close_seek_area" to="close_seek_area" method="_on_body_exited"]
 [connection signal="body_entered" from="far_seek_area" to="far_seek_area" method="_on_body_entered"]
 [connection signal="body_exited" from="far_seek_area" to="far_seek_area" method="_on_body_exited"]
+[connection signal="material_changed" from="material_checker" to="audi_steps" method="on_change_material"]

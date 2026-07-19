@@ -9,11 +9,17 @@ class_name NavigationMovementController
 const DEFAULT_CAME_DISTANCE: float = 20
 
 @export var nav_agent: NavigationAgent2D
+var loading_cooldown: float = 1
 
 signal came_to_point
 
 
+
 func _physics_process(delta: float) -> void:
+	if loading_cooldown > 0:
+		loading_cooldown -= delta
+		return
+	
 	if !nav_agent.is_target_reachable() or nav_agent.is_navigation_finished():
 		set_velocity(Vector2.ZERO)
 		set_physics_process(false)
