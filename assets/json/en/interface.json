@@ -39,7 +39,8 @@
 and LMB to shoot",
 			"gamepad": "Press Y to jump
 and X to shoot"
-		}
+		},
+		"shop_enter": "Move up to enter the shop"
 	},
 	"dialogue": {
 		"skip": "to continue"

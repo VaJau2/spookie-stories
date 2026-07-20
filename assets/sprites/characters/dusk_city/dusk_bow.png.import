@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0fjay0i6givq"
-path="res://.godot/imported/dusk-booped.png-3529b27f80bc7c5260c0d4c25c72d124.ctex"
+uid="uid://cr64ag82aj74r"
+path="res://.godot/imported/dusk_bow.png-b661261eee3e18522f269eeba7470b75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/dusk-booped.png"
-dest_files=["res://.godot/imported/dusk-booped.png-3529b27f80bc7c5260c0d4c25c72d124.ctex"]
+source_file="res://assets/sprites/characters/dusk_city/dusk_bow.png"
+dest_files=["res://.godot/imported/dusk_bow.png-b661261eee3e18522f269eeba7470b75.ctex"]
 
 [params]
 

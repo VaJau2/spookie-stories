@@ -1,0 +1,137 @@
+{
+	"start": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"text": "В это время, другая пони, у которой в тот день был выходной…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Эй, а она еще больше похожа на тебя!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Да, точно! Признай, это же буквально ты.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Да не было там…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Ладно, если вам так будет проще",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Я, у которой в тот день был выходной",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Прогуливалась по городу и совершенно не подозревала, что её",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "…меня…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "…ждет дальше.",
+			},
+		]
+	},
+	"bow_shop": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "amazed",
+				"text": "ЭТО ЧТО МАГАЗИН БАНТИКОВ?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Ну ... да?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "amazed",
+				"text": "Ты обязана в него зайти!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Зачем?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "idle",
+				"text": "Ты же говорила, что это первая твоя история?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Да, говорила…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Тогда поверь мне как эксперту в историях",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Эта история будет в сотни раз лучше, если ты зайдешь в этот магазин!",
+			},
+		]
+	},
+	"after_bow_shop": {
+		"nodes": [
+			{
+				"type": "script",
+				"path": "/root/main/dialogues/bow_shop_dialogue_script",
+				"method": "blush_on"
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "...",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "amazed",
+				"text": "Идеально!",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/dialogues/bow_shop_dialogue_script",
+				"method": "blush_off"
+			},
+		]
+	}
+}

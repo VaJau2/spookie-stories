@@ -334,12 +334,13 @@ shape = SubResource("RectangleShape2D_aenfv")
 
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
 
-[node name="seek_sign" type="Sprite2D" parent="." unique_id=9199080]
+[node name="seek_sign" type="Sprite2D" parent="." unique_id=9199080 node_paths=PackedStringArray("state_machine")]
 visible = false
 position = Vector2(28, -64)
 texture = ExtResource("33_r3p24")
 hframes = 2
 script = ExtResource("34_j8qhy")
+state_machine = NodePath("../state_machine")
 
 [node name="lost_area" type="Area2D" parent="." unique_id=1914835]
 monitorable = false

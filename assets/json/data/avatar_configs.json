@@ -151,6 +151,11 @@
 			"eyes_closed": 23,
 			"mouth_open": 24,
 		},
+		"amazed": {
+			"eyes_open": 25,
+			"eyes_closed": 26,
+			"mouth_open": 27,
+		},
 	},
 	"dusk": {
 		"idle": {
