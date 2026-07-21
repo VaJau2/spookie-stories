@@ -193,7 +193,7 @@ size = Vector2(800, 160)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soc8u"]
 size = Vector2(117.333336, 32)
 
-[node name="rato_parado" type="CharacterBody2D" unique_id=205928098]
+[node name="rato_parado" type="CharacterBody2D" unique_id=205928098 groups=["aim_target"]]
 scale = Vector2(0.3, 0.3)
 collision_layer = 8
 collision_mask = 8

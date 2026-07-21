@@ -28,13 +28,13 @@
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "serious",
-				"text": "Ладно, если вам так будет проще",
+				"text": "Ладно, если вам так будет проще,",
 			},
 			{
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "serious",
-				"text": "Я, у которой в тот день был выходной",
+				"text": "Я, у которой в тот день был выходной.",
 			},
 			{
 				"type": "phrase",
@@ -98,7 +98,7 @@
 				"type": "phrase",
 				"speaker": "pay",
 				"state": "smirk",
-				"text": "Тогда поверь мне как эксперту в историях",
+				"text": "Тогда поверь мне как эксперту в историях,",
 			},
 			{
 				"type": "phrase",
@@ -131,6 +131,57 @@
 				"type": "script",
 				"path": "/root/main/dialogues/bow_shop_dialogue_script",
 				"method": "blush_off"
+			},
+		]
+	},
+	"pie_shop_before": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Это магазин выпечки, таких в городе несколько.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Я могу купить в нем пирогов.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Прямо сейчас в них не очень много смысла.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "Но в будущем пригодится.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "sus",
+				"text": "Ты как-то странно рассказываешь историю…",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "…как будто ты там прямо сейчас находишься.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "Простите…",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/dialogues/pie_shop_dialogue_script",
+				"method": "disable"
 			},
 		]
 	}

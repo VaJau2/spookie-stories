@@ -29,11 +29,15 @@
 [ext_resource type="AudioStream" uid="uid://cdvkyyl7f6pu8" path="res://assets/audio/background/forest_day_3.mp3" id="22_yqyfm"]
 [ext_resource type="AudioStream" uid="uid://bvrxj2xeecrx6" path="res://assets/audio/background/forest_day_2.mp3" id="23_i0p5o"]
 [ext_resource type="PackedScene" uid="uid://xdmo2wyhtorg" path="res://objects/characters/dusk_city/mare.tscn" id="24_th87y"]
+[ext_resource type="Script" uid="uid://dkvhngecttki4" path="res://assets/scripts/interface/piesAmmoCount.gd" id="27_mjed6"]
+[ext_resource type="Texture2D" uid="uid://6cl2w4bo7s0l" path="res://assets/sprites/interface/pie.png" id="27_yuknr"]
 [ext_resource type="Script" uid="uid://pe0dwvkln6s" path="res://assets/scripts/background/dialogueArea.gd" id="30_wnsja"]
 [ext_resource type="Script" uid="uid://o18dw0hfl55i" path="res://assets/scripts/scenario/duskCity/bowShopDialogueScript.gd" id="31_ppdmc"]
 [ext_resource type="Script" uid="uid://68bd51w5qi5w" path="res://assets/scripts/scenario/duskCity/shop/shopArea.gd" id="31_t4bl7"]
 [ext_resource type="Script" uid="uid://2wnqsl17eqs6" path="res://assets/scripts/scenario/duskCity/shop/bowShop.gd" id="32_brj2o"]
+[ext_resource type="Script" uid="uid://2a8mx8yb4km1" path="res://assets/scripts/scenario/duskCity/pieShopDialogueScript.gd" id="32_dl0ae"]
 [ext_resource type="AudioStream" uid="uid://cw35fbisurtjv" path="res://assets/audio/furniture/buying.mp3" id="32_s8dtr"]
+[ext_resource type="Script" uid="uid://k0xb2p4ofyps" path="res://assets/scripts/scenario/duskCity/shop/pieShop.gd" id="35_8lwec"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6jccf"]
 vertices = PackedVector2Array(1238.3438, 1167, 1238.3438, 1190.3438, 1167, 1190.3438, 1167, 1185, 1161.6563, 1167, 1161.6563, 1185, 278.34375, -201.65625, 201.65625, -201.65625, 201.65625, -225, 278.34375, -225, -86.34375, 543, 3121, 540, 3163, 540, 2444, 599, 2133, 596, 955, -457, 1833, -449, 1516, -449, 119, -452, 914, -457, 981, -202, 2863, -207, 2916, -207, 2542, -44, 2024, -73, -1556, 873, -533, 845, 2450, 800, 2665, 800, 532, 919, 314, 919, 1718, -526, 2491, -529, 2544, -529, 2129, -516, 2088, -516, 1306, -593, -1497, -596, 31, -630, 514, -632, 556, -632, 1348, -593, 2088, -462, 2129, -462, -1566, -306, -266, -312, -213, -312, -123, -283, -307, -280, -360, -280, 1593.6563, 1359, 1689.6563, 1353.6563, 2411, 1342, 2453, 1342, 2783, 1415, 1161.6563, 1359, 2742, 1415, 1017.65625, 1407, 1094.3438, 1359, 556, -673, 514, -673, -1070, -683, -1070, -725, 1806, -73, 921.65625, -81, 928, -202, 1926.3438, 495, 1017.65625, 489.65625, 1034, 428, 1535, 422, 1852, 422, 1926.3438, 459.65625, -1115.6563, 105.65625, -853, 101, -549, 96, -401.71094, 105.65625, -534.34375, 123.65625, -569.65625, 123.65625, -534.34375, 159, 2225, 127, 2542, 127, 2154, 242, 1939, 242, 2929, 105, 3113, 96, 3166, 96, 2703, 245, 2154, 245, -1053, -252, -1094, -252, -1298, -255, -1298, -297, -673, -279, 1162, 1547, 3503.2188, 1679.9063, -1760.8594, 1650.0781, -1019, 1598, -716, 1583, 1121, 1547, -888, -186, -307, -238, -123, -241, -70, -241, 134.34375, -81, 157, -48, -131, -50, -645, -99, 318, 1298, 265, 1298, -534.34375, 1275.6563, -536, 1135, -466, 1130, -149, 1130, 465, 1223, 465, 1277, 1096, -472, 1665, -526, 2024, 126, 1806, 126, 2361.6563, 489.65625, 2818, 500, 1961.6563, 495, 2294.3438, 489.65625, -1071, 101, 2131, 416, 2146.5703, 416, 2142.289, 441.65625, 1961.6563, 459.65625, -74, 1544, 1121, 1493, 2916, -249, 2863, -249, 1833, -278, -850, 845, 744, 53, 1125, 126, 157, 123, 230, 96, 702, 53, 2544, -571, 2491, -571, 3121, 1482, 3163, 1482, 1604, 122, 1343, 126, 2453, 1301, 2411, 1301, 2133, 1289, 2133, 1247, 2315, 1056, -74, 1503, -116, 1503, -188, 1362, 265, 1340, 318, 1340, 603, 1420, 603, 1461, -831, 96, 1622.3438, 1353.6563, 2888, 105, 1763, 1089, 2262, 1056, 2080, 1247, -116, 1544, -1072, 1598, 819, 428, 304, 372, 393.65625, 351, 422.34375, 351, 2742, 1469, 2783, 1469, 1162, 1493, -360, -238, -346, -50, -346, 123, -347.65625, 105.65625, -347.65625, 43.65625, -631, -238, 1043, -472, 9.65625, 447, 124, 433, 134.34375, 433, 134.34375, 495, -11.65625, 489.65625, 2858, 772, 2899, 772, 3163, 1441, 3121, 1441, 704, 789, 57.65625, 783, 304, 716, 704, 618, 3163, 499, 3121, 499, 2871, 458, 2703, 416, -673, -238, -888, -228, 326.34375, 351, 251, 716, -401, 303, -401, 267.65625, -393.65625, 278.34375, -393.65625, 543, 3540.7578, -792, 506, 1277, 758.34375, 1407, 645, 1420, 2444, 798, 2226, 798, 1801, 798, 1586, 798, 1265, 795, 983, 795, 177, 96, 3166, 54, 3113, 54, 2929, 51, -1496, 703, -1549, 703, -1521, 538, -819, 441, -601, 441, -393.65625, 566.34375, -850, 674, -968, 437, -1186, 437, -1471, 356, -1186, 238, -1521, 496, 1467, 713, 1425, 713, 177, 54, 304, 330, 326.34375, 278.34375, 2899, 718, 1586, 625, 1467, 672, 1385.6563, -369, 1385.6563, -404.34375, 1516, -278, 1350.3438, -404.34375, 819, 255, 681.65625, 351, 681.65625, 278.34375, -436.34375, 303, -601, 242, -436.34375, 267.65625, 758.34375, 1115, 506, 1223, 532, 1118, 1265, 666, 1425, 672, -70, -283, 134.34375, -345.65625, -213, -354, 78, -452, 372.34375, -134.34375, 372.34375, -196.34375, 422.34375, -153.65625, 422.34375, -81, -1513, 356, -1574, 496, 57.65625, 566.34375, 251, 674, 2450, 627, -1471, 315, -1738.1328, -793.9922, -853, -98, -831, -99, 251, 330, 251, 372, 153.65625, 351, 153.65625, 278.34375, -818, 940, -818, 1135, -923.65625, 1113.6563, -923.65625, 1051.6563, 1125, -73, 744, 12, 1593.6563, 1286.3438, 1622.3438, 1291.6563, 304, 674, 955, -511, 1043, -514, 2665, 627, 2858, 718, -1185, 945, -1185, 1144, -1523, 1098, -1523, 1044, 9.65625, 374.34375, 124, 392, -1496, 745, -1556, 832, -1549, 745, -1053, -198, -941, -228, -941, -186, -1071, -98, -1115.6563, 43.65625, 230, 54, 702, 12, -536, 1006, -466, 959, 1763, 1047, 2262, 1014, -716, 1529, -241, 1362, 2888, 51, 1348, -552, 1665, -568, 902.34375, 1407, 645, 1461, -188, 1320, -534.34375, 1311, -241, 1320, -1555, 1575, -1555, 1534, -1072, 1556, -1597, 1575, -1597, 1534, -819, 242, -968, 238, 2818, 458, 2361.6563, 427.65625, 1305.6563, 1263, 1305.6563, 1046.3438, 1710, 1089, 2080, 1289, 1689.6563, 1291.6563, -569.65625, 159, -1439, 141, -1169.7109, 105.65625, 1604, -49, 1710, 1047, 1593.6563, 1023, 1593.6563, 950.34375, 2196.3438, 441.65625, 1034, 255, 1535, 251, 1306, -552, 1096, -514, -1497, -554, 914, -511, 119, -506, 78, -506, 2225, -44, -631, -452, -266, -354, -1566, -348, -672, -452, 31, -672, -22, -672, 2871, 500, 2196.3438, 416, 2294.3438, 427.65625, 345.65625, 495, 470.34375, 495, 1718, -568, -1523, 45, -1523, 3, -1159.3594, 43.65625, -1269, 61, -1311, 61, 981, -244, 1350.3438, -369, 1183, -369, 1147.6563, -369, -631, -506, -672, -506, 1183, -404.34375, 1147.6563, -404.34375, 470.34375, -249.65625, 470.34375, -153.65625, 372.34375, -230.34375, 356.34375, -196.34375, 356.34375, -207, 345.65625, -207, 345.65625, -230.34375, 372.34375, -292.34375, 356.34375, -292.34375, 356.34375, -303, 345.65625, -303, 345.65625, -345.65625, -631, -279, 345.65625, -81, 345.65625, -134.34375, 489.65625, -81, 489.65625, -86.34375, 537.65625, -86.34375, 537.65625, -129, 566.34375, -129, 566.34375, -86.34375, 633.65625, -86.34375, 633.65625, -129, 662.34375, -129, 662.34375, -86.34375, 729.65625, -86.34375, 729.65625, -129, 758.34375, -129, 758.34375, -86.34375, 825.65625, -86.34375, 825.65625, -129, 854.34375, -129, 854.34375, -81, 1343, -49, 1343, -73, -131, -48, -549, -33, -645, -33, 1343, 122, -1269, 102, -1311, 102, -1439, 87, 1939, 267.65625, 1915.6563, 267.65625, 1852, 251, 1915.6563, 303, 1939, 303, 1939, 415, 2131, 415, 614.34375, 278.34375, 614.34375, 351, 585.65625, 351, 585.65625, 278.34375, 950.34375, 428, 950.34375, 489.65625, 681.65625, 489.65625, 1017.65625, 428, 681.65625, 427.65625, 633.65625, 427.65625, 633.65625, 422.34375, 633.65625, 495, 633.65625, 489.65625, 470.34375, 422.34375, 470.34375, 427.65625, 422.34375, 427.65625, 345.65625, 422.34375, 166, 392, 86.34375, 351, 422.34375, 489.65625, 470.34375, 489.65625, 166, 422.34375, -11.65625, 374.34375, -11.65625, 331.65625, -27.65625, 331.65625, -27.65625, 321, -63, 393.65625, -57.65625, 393.65625, -57.65625, 417, -63, 417, -11.65625, 447, -249.65625, 447, -278.34375, 470.34375, -321, 470.34375, -321, 465, -249.65625, 374.34375, -326.34375, 465, -326.34375, 351, -196.34375, 351, -196.34375, 374.34375, -182.34375, 447, -182.34375, 399, -153.65625, 399, -153.65625, 470.34375, -249.65625, 470.34375, -278.34375, 543, -249.65625, 543, 2226, 599, 2226, 662, 2133, 662, 1947, 791, 2226, 791, 1801, 625, 1947, 596, 1169, 666, 1169, 600, 983, 600, 983, 618, -182.34375, 710.34375, -321, 710.34375, -321, 705, -278.34375, 687, -57.65625, 639, -57.65625, 687, -326.34375, 705, -326.34375, 687, -278.34375, 639, -9.65625, 687, -9.65625, 710.34375, -153.65625, 710.34375, -182.34375, 783, -153.65625, 783, 983, 789, -393.65625, 783, -533, 674, 1526.3438, 1286.3438, 1526.3438, 1291.6563, 1478.3438, 1291.6563, 1449.6563, 1286.3438, 1478.3438, 1353.6563, 1526.3438, 1353.6563, 1526.3438, 1359, 1449.6563, 1359, 1382.3438, 1286.3438, 1382.3438, 1291.6563, 1334.3438, 1291.6563, 1334.3438, 1353.6563, 1382.3438, 1353.6563, 1382.3438, 1359, 1305.6563, 1359, 1094.3438, 1263, 1238.3438, 1286.3438, 1238.3438, 1291.6563, 1190.3438, 1291.6563, 1161.6563, 1286.3438, 1190.3438, 1353.6563, 1238.3438, 1353.6563, 1238.3438, 1359, 1094.3438, 1286.3438, 1094.3438, 1291.6563, 1046.3438, 1291.6563, 1017.65625, 998.34375, 1046.3438, 1353.6563, 1094.3438, 1353.6563, 787, 998.34375, 787, 944, 1094.3438, 950.34375, 532, 944, 532, 1115, 314, 1118, -149, 959, -632, 1006, -632, 940, -967, 1051.6563, -967, 945, -569.65625, 1311, -757, 1529, -967, 1144, -967, 1113.6563, -569.65625, 1275.6563, 873.65625, 1286.3438, 825.65625, 1286.3438, 825.65625, 1215, 873.65625, 1215, 873.65625, 1142.3438, 825.65625, 1142.3438, 825.65625, 1119, 873.65625, 1119, 873.65625, 1071, 902.34375, 1071, 902.34375, 1119, 902.34375, 1142.3438, 950.34375, 1119, 950.34375, 1142.3438, 902.34375, 1215, 902.34375, 1286.3438, 950.34375, 1215, 950.34375, 1286.3438, 873.65625, 1407, -22, -630, -1123, -683, -1351, -255, -1094, -198, -1576, 3, -391.35938, 43.65625, -1123, -725, -1480, 87, 921.65625, -249.65625, -1550, -554, -1619, -348, -1598, 873, -1598, 832, -1574, 538, -63, 489.65625, -86.34375, 278.34375, -63, 321, -1550, -596, 2315, 1014, 1094.3438, 1023, 518.34375, 278.34375, -757, 1583, -1576, 45, -1480, 141, -1513, 315, -1564, 1098, -1019, 1556, 1094.3438, 1046.3438, 518.34375, 351, 489.65625, 351, 489.65625, 278.34375, 422.34375, 278.34375, -1564, 1044, -1351, -297, -1619, -306, 393.65625, 278.34375, 86.34375, 278.34375, 1305.6563, 1286.3438, 928, -244, 566.34375, 422.34375, 566.34375, 495, 537.65625, 495, 537.65625, 422.34375)
@@ -380,8 +384,11 @@ size = Vector2(72, 205)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8dtr"]
 size = Vector2(91, 38)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl0ae"]
+size = Vector2(215, 130)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnsja"]
-size = Vector2(146, 62)
+size = Vector2(215, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
 
@@ -693,7 +700,7 @@ energy = 0.1
 range_item_cull_mask = 2
 texture = ExtResource("5_8s8pl")
 
-[node name="mare" parent="ponies" unique_id=1902221760 instance=ExtResource("24_th87y")]
+[node name="mare" parent="ponies" unique_id=1902221760 groups=["aim_target"] instance=ExtResource("24_th87y")]
 position = Vector2(-880, 912)
 
 [node name="patrol_points" type="Node2D" parent="ponies/mare" unique_id=352856951]
@@ -720,7 +727,7 @@ position = Vector2(1471, -716)
 [node name="5" type="Node2D" parent="ponies/mare/patrol_points" unique_id=62820497]
 position = Vector2(1513, 236)
 
-[node name="mare2" parent="ponies" unique_id=1597973716 instance=ExtResource("24_th87y")]
+[node name="mare2" parent="ponies" unique_id=1597973716 groups=["aim_target"] instance=ExtResource("24_th87y")]
 position = Vector2(88, -330)
 
 [node name="patrol_points" type="Node2D" parent="ponies/mare2" unique_id=930708753]
@@ -748,7 +755,7 @@ position = Vector2(1773, 1693)
 [node name="5" type="Node2D" parent="ponies/mare2/patrol_points" unique_id=1745144540]
 position = Vector2(-650, 1680)
 
-[node name="mare3" parent="ponies" unique_id=1627372335 instance=ExtResource("24_th87y")]
+[node name="mare3" parent="ponies" unique_id=1627372335 groups=["aim_target"] instance=ExtResource("24_th87y")]
 position = Vector2(129, 766)
 
 [node name="patrol_points" type="Node2D" parent="ponies/mare3" unique_id=1168609888]
@@ -768,7 +775,7 @@ position = Vector2(-616, 631)
 [node name="5" type="Node2D" parent="ponies/mare3/patrol_points" unique_id=263402881]
 position = Vector2(-616, -561)
 
-[node name="mare4" parent="ponies" unique_id=704986426 instance=ExtResource("24_th87y")]
+[node name="mare4" parent="ponies" unique_id=704986426 groups=["aim_target"] instance=ExtResource("24_th87y")]
 position = Vector2(1601, 98)
 
 [node name="patrol_points" type="Node2D" parent="ponies/mare4" unique_id=930291545]
@@ -796,7 +803,7 @@ stream = ExtResource("18_8k0bb")
 max_distance = 1000.0
 bus = &"Sound"
 
-[node name="mare5" parent="ponies" unique_id=1245202623 instance=ExtResource("24_th87y")]
+[node name="mare5" parent="ponies" unique_id=1245202623 groups=["aim_target"] instance=ExtResource("24_th87y")]
 position = Vector2(0, -593)
 
 [node name="patrol_points" type="Node2D" parent="ponies/mare5" unique_id=1761162244]
@@ -824,7 +831,7 @@ stream = ExtResource("19_v6ack")
 max_distance = 1000.0
 bus = &"Sound"
 
-[node name="mare6" parent="ponies" unique_id=1123240762 instance=ExtResource("24_th87y")]
+[node name="mare6" parent="ponies" unique_id=1123240762 groups=["aim_target"] instance=ExtResource("24_th87y")]
 position = Vector2(1202, 205)
 
 [node name="patrol_points" type="Node2D" parent="ponies/mare6" unique_id=374934917]
@@ -852,7 +859,7 @@ stream = ExtResource("19_v6ack")
 max_distance = 1000.0
 bus = &"Sound"
 
-[node name="colt" parent="ponies" unique_id=407222460 instance=ExtResource("17_6jccf")]
+[node name="colt" parent="ponies" unique_id=407222460 groups=["aim_target"] instance=ExtResource("17_6jccf")]
 position = Vector2(-803, 203)
 
 [node name="patrol_points" type="Node2D" parent="ponies/colt" unique_id=1769298413]
@@ -879,7 +886,7 @@ stream = ExtResource("19_v6ack")
 max_distance = 1000.0
 bus = &"Sound"
 
-[node name="colt2" parent="ponies" unique_id=1835714499 instance=ExtResource("17_6jccf")]
+[node name="colt2" parent="ponies" unique_id=1835714499 groups=["aim_target"] instance=ExtResource("17_6jccf")]
 position = Vector2(-784, 1230)
 
 [node name="patrol_points" type="Node2D" parent="ponies/colt2" unique_id=1200456793]
@@ -906,7 +913,7 @@ stream = ExtResource("19_v6ack")
 max_distance = 1000.0
 bus = &"Sound"
 
-[node name="colt3" parent="ponies" unique_id=971036367 instance=ExtResource("17_6jccf")]
+[node name="colt3" parent="ponies" unique_id=971036367 groups=["aim_target"] instance=ExtResource("17_6jccf")]
 position = Vector2(1403, 1125)
 
 [node name="patrol_points" type="Node2D" parent="ponies/colt3" unique_id=251366056]
@@ -944,7 +951,7 @@ stream = ExtResource("19_v6ack")
 max_distance = 1000.0
 bus = &"Sound"
 
-[node name="colt4" parent="ponies" unique_id=231415500 instance=ExtResource("17_6jccf")]
+[node name="colt4" parent="ponies" unique_id=231415500 groups=["aim_target"] instance=ExtResource("17_6jccf")]
 position = Vector2(22, 360)
 
 [node name="patrol_points" type="Node2D" parent="ponies/colt4" unique_id=521051496]
@@ -964,7 +971,7 @@ position = Vector2(182, 510)
 [node name="5" type="Node2D" parent="ponies/colt4/patrol_points" unique_id=266746855]
 position = Vector2(-1256, 834)
 
-[node name="colt5" parent="ponies" unique_id=579111894 instance=ExtResource("17_6jccf")]
+[node name="colt5" parent="ponies" unique_id=579111894 groups=["aim_target"] instance=ExtResource("17_6jccf")]
 position = Vector2(888, 1270)
 
 [node name="patrol_points" type="Node2D" parent="ponies/colt5" unique_id=1115151265]
@@ -1018,6 +1025,99 @@ grow_horizontal = 2
 text = "Нажмите Crtl чтобы красться"
 script = ExtResource("8_lnurw")
 hint_key = "crouch"
+
+[node name="pies" type="Control" parent="menu" unique_id=414550702 node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -288.0
+offset_top = 11.0
+offset_right = -12.0
+offset_bottom = 66.0
+grow_horizontal = 0
+size_flags_stretch_ratio = 0.68
+script = ExtResource("27_mjed6")
+player = NodePath("../../ponies/dusk")
+
+[node name="pie8" type="TextureRect" parent="menu/pies" unique_id=204807148]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 42.497486
+offset_right = 283.0
+offset_bottom = 82.49748
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie7" type="TextureRect" parent="menu/pies" unique_id=287095229]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 42.497486
+offset_right = 257.0
+offset_bottom = 82.49748
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie6" type="TextureRect" parent="menu/pies" unique_id=1653659772]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 42.49748
+offset_right = 225.0
+offset_bottom = 82.497475
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie5" type="TextureRect" parent="menu/pies" unique_id=191235176]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 42.49747
+offset_right = 194.0
+offset_bottom = 82.49747
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie4" type="TextureRect" parent="menu/pies" unique_id=913101995]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 42.49748
+offset_right = 163.0
+offset_bottom = 82.497475
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie3" type="TextureRect" parent="menu/pies" unique_id=906952285]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 40.49748
+offset_right = 132.0
+offset_bottom = 80.497475
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie2" type="TextureRect" parent="menu/pies" unique_id=961874622]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.49748
+offset_right = 100.0
+offset_bottom = 80.497475
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
+
+[node name="pie" type="TextureRect" parent="menu/pies" unique_id=1242029625]
+layout_mode = 0
+offset_top = 40.497475
+offset_right = 70.0
+offset_bottom = 80.497475
+rotation = -0.7853982
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("27_yuknr")
 
 [node name="dir_light" type="DirectionalLight2D" parent="." unique_id=223049557]
 position = Vector2(-367, 309)
@@ -1100,12 +1200,52 @@ dialogue_code = "bow_shop"
 dialogue_menu = NodePath("../../menu/dialogue_menu")
 
 [node name="shape" type="CollisionShape2D" parent="dialogues/bow_shop_dialogue_area" unique_id=1897250187]
-position = Vector2(0, 33)
+position = Vector2(0, -31)
+shape = SubResource("RectangleShape2D_dl0ae")
+
+[node name="pie_shop_dialogue_area" type="Area2D" parent="dialogues" unique_id=1845127582 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-715, 432)
+script = ExtResource("30_wnsja")
+player_name = "dusk"
+dialogue_file = "dusk_city"
+dialogue_code = "pie_shop_before"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/pie_shop_dialogue_area" unique_id=121708207]
+position = Vector2(8.5, -65)
+shape = SubResource("RectangleShape2D_wnsja")
+
+[node name="pie_shop_dialogue_area2" type="Area2D" parent="dialogues" unique_id=1484881283 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(-1079, 1120)
+script = ExtResource("30_wnsja")
+player_name = "dusk"
+dialogue_file = "dusk_city"
+dialogue_code = "pie_shop_before"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/pie_shop_dialogue_area2" unique_id=1803781658]
+position = Vector2(4.5, -65)
+shape = SubResource("RectangleShape2D_wnsja")
+
+[node name="pie_shop_dialogue_area3" type="Area2D" parent="dialogues" unique_id=301796011 node_paths=PackedStringArray("dialogue_menu")]
+position = Vector2(1915, 105)
+script = ExtResource("30_wnsja")
+player_name = "dusk"
+dialogue_file = "dusk_city"
+dialogue_code = "pie_shop_before"
+dialogue_menu = NodePath("../../menu/dialogue_menu")
+
+[node name="shape" type="CollisionShape2D" parent="dialogues/pie_shop_dialogue_area3" unique_id=2129944222]
+position = Vector2(4.5, -65)
 shape = SubResource("RectangleShape2D_wnsja")
 
 [node name="bow_shop_dialogue_script" type="Node" parent="dialogues" unique_id=486701099 node_paths=PackedStringArray("player")]
 script = ExtResource("31_ppdmc")
 player = NodePath("../../ponies/dusk")
+
+[node name="pie_shop_dialogue_script" type="Node" parent="dialogues" unique_id=261262466 node_paths=PackedStringArray("dialogues_to_disable")]
+script = ExtResource("32_dl0ae")
+dialogues_to_disable = [NodePath("../pie_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area2"), NodePath("../pie_shop_dialogue_area3")]
 
 [node name="shops" type="Node2D" parent="." unique_id=1093277994]
 
@@ -1137,7 +1277,94 @@ dialogue_menu = NodePath("../../../menu/dialogue_menu")
 [node name="timer" type="Timer" parent="shops/bow_shop_enter_area" unique_id=1133418401]
 one_shot = true
 
+[node name="pie_shop_enter_area" type="Area2D" parent="shops" unique_id=1020398717 node_paths=PackedStringArray("hint", "player_body", "shop_logic", "shop_timer", "shop_audi")]
+position = Vector2(-710, 432)
+monitorable = false
+script = ExtResource("31_t4bl7")
+hint = NodePath("../../menu/hint")
+player_body = NodePath("../../ponies/dusk")
+shop_logic = NodePath("logic")
+shop_timer = NodePath("timer")
+shop_audi = NodePath("audi")
+door_sound = ExtResource("18_8k0bb")
+buy_sound = ExtResource("32_s8dtr")
+
+[node name="shape" type="CollisionShape2D" parent="shops/pie_shop_enter_area" unique_id=480202409]
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="shops/pie_shop_enter_area" unique_id=179861749]
+stream = ExtResource("18_8k0bb")
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="logic" type="Node" parent="shops/pie_shop_enter_area" unique_id=788880620]
+script = ExtResource("35_8lwec")
+
+[node name="timer" type="Timer" parent="shops/pie_shop_enter_area" unique_id=672172181]
+one_shot = true
+
+[node name="pie_shop_enter_area2" type="Area2D" parent="shops" unique_id=511307058 node_paths=PackedStringArray("hint", "player_body", "shop_logic", "shop_timer", "shop_audi")]
+position = Vector2(-1076, 1131)
+monitorable = false
+script = ExtResource("31_t4bl7")
+hint = NodePath("../../menu/hint")
+player_body = NodePath("../../ponies/dusk")
+shop_logic = NodePath("logic")
+shop_timer = NodePath("timer")
+shop_audi = NodePath("audi")
+door_sound = ExtResource("18_8k0bb")
+buy_sound = ExtResource("32_s8dtr")
+
+[node name="shape" type="CollisionShape2D" parent="shops/pie_shop_enter_area2" unique_id=1923926204]
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="shops/pie_shop_enter_area2" unique_id=633300814]
+stream = ExtResource("18_8k0bb")
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="logic" type="Node" parent="shops/pie_shop_enter_area2" unique_id=731297489]
+script = ExtResource("35_8lwec")
+
+[node name="timer" type="Timer" parent="shops/pie_shop_enter_area2" unique_id=1649859967]
+one_shot = true
+
+[node name="pie_shop_enter_area3" type="Area2D" parent="shops" unique_id=1192961656 node_paths=PackedStringArray("hint", "player_body", "shop_logic", "shop_timer", "shop_audi")]
+position = Vector2(1915, 111)
+monitorable = false
+script = ExtResource("31_t4bl7")
+hint = NodePath("../../menu/hint")
+player_body = NodePath("../../ponies/dusk")
+shop_logic = NodePath("logic")
+shop_timer = NodePath("timer")
+shop_audi = NodePath("audi")
+door_sound = ExtResource("18_8k0bb")
+buy_sound = ExtResource("32_s8dtr")
+
+[node name="shape" type="CollisionShape2D" parent="shops/pie_shop_enter_area3" unique_id=719081039]
+shape = SubResource("RectangleShape2D_mti6b")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="shops/pie_shop_enter_area3" unique_id=1838021684]
+stream = ExtResource("18_8k0bb")
+max_distance = 500.0
+bus = &"Sound"
+
+[node name="logic" type="Node" parent="shops/pie_shop_enter_area3" unique_id=1000248560]
+script = ExtResource("35_8lwec")
+
+[node name="timer" type="Timer" parent="shops/pie_shop_enter_area3" unique_id=1341422104]
+one_shot = true
+
 [connection signal="body_entered" from="dialogues/start_dialogue_area" to="dialogues/start_dialogue_area" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogues/bow_shop_dialogue_area" to="dialogues/bow_shop_dialogue_area" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/pie_shop_dialogue_area" to="dialogues/pie_shop_dialogue_area" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/pie_shop_dialogue_area2" to="dialogues/pie_shop_dialogue_area2" method="_on_body_entered"]
+[connection signal="body_entered" from="dialogues/pie_shop_dialogue_area3" to="dialogues/pie_shop_dialogue_area3" method="_on_body_entered"]
 [connection signal="body_entered" from="shops/bow_shop_enter_area" to="shops/bow_shop_enter_area" method="_on_body_entered"]
 [connection signal="body_exited" from="shops/bow_shop_enter_area" to="shops/bow_shop_enter_area" method="_on_body_exited"]
+[connection signal="body_entered" from="shops/pie_shop_enter_area" to="shops/pie_shop_enter_area" method="_on_body_entered"]
+[connection signal="body_exited" from="shops/pie_shop_enter_area" to="shops/pie_shop_enter_area" method="_on_body_exited"]
+[connection signal="body_entered" from="shops/pie_shop_enter_area2" to="shops/pie_shop_enter_area2" method="_on_body_entered"]
+[connection signal="body_exited" from="shops/pie_shop_enter_area2" to="shops/pie_shop_enter_area2" method="_on_body_exited"]
+[connection signal="body_entered" from="shops/pie_shop_enter_area3" to="shops/pie_shop_enter_area3" method="_on_body_entered"]
+[connection signal="body_exited" from="shops/pie_shop_enter_area3" to="shops/pie_shop_enter_area3" method="_on_body_exited"]

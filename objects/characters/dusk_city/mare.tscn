@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cqrlqmbvhk1x3" path="res://assets/scripts/controllers/steps/stepData.gd" id="7_i7q1o"]
 [ext_resource type="Texture2D" uid="uid://bfr3yi7ur5m8f" path="res://assets/sprites/characters/dusk_city/pony_pie.png" id="7_rmnwx"]
 [ext_resource type="AudioStream" uid="uid://bc7lcoyutfqce" path="res://assets/audio/steps/stone/StoneStepRun1.wav" id="8_sissc"]
+[ext_resource type="Texture2D" uid="uid://dvbo61fqdnll2" path="res://assets/sprites/characters/dusk_city/stun_anim.png" id="8_xsjtw"]
 [ext_resource type="AudioStream" uid="uid://jmk2abtnedvs" path="res://assets/audio/steps/stone/StoneStepRun2.wav" id="9_us3ag"]
 [ext_resource type="AudioStream" uid="uid://doe7x4xtffw0n" path="res://assets/audio/steps/stone/StoneStepRun3.wav" id="10_kwsan"]
 [ext_resource type="AudioStream" uid="uid://bq5ex0ohsh0a0" path="res://assets/audio/steps/stone/StoneStep1.wav" id="11_ugpi1"]
@@ -48,6 +49,8 @@
 [ext_resource type="Texture2D" uid="uid://crsw8rwevcpkn" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_2.png" id="39_ov2xf"]
 [ext_resource type="Texture2D" uid="uid://dasw0d8lc0mvw" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_3.png" id="41_i7q1o"]
 [ext_resource type="Texture2D" uid="uid://buqr8sw5bhslr" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_4.png" id="42_sissc"]
+[ext_resource type="Script" uid="uid://dd2ofhvq4do4o" path="res://assets/scripts/controllers/stateMachine/duskCity/piedState.gd" id="42_wj3on"]
+[ext_resource type="Texture2D" uid="uid://xpifcj0qk8ya" path="res://assets/sprites/characters/dusk_city/pony_pie_2.png" id="43_aefd7"]
 [ext_resource type="Texture2D" uid="uid://c33yq4yhgrga7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_5.png" id="43_us3ag"]
 [ext_resource type="Texture2D" uid="uid://b4hj8ex4qs4r8" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_2.png" id="44_kwsan"]
 [ext_resource type="Texture2D" uid="uid://cjmbm6vmnstn7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_3.png" id="45_ugpi1"]
@@ -58,9 +61,51 @@
 [ext_resource type="Texture2D" uid="uid://buurx2k2rcdrs" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/bag.png" id="50_wk0ul"]
 [ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="51_trtx1"]
 
+[sub_resource type="Animation" id="Animation_226un"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vvji6"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_py8k8"]
+_data = {
+&"RESET": SubResource("Animation_226un"),
+&"idle": SubResource("Animation_vvji6")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
-radius = 4.0
+radius = 13.0
 height = 38.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyyl5"]
+radius = 13.0
+height = 26.0
 
 [sub_resource type="Animation" id="Animation_ofrfb"]
 length = 0.001
@@ -1004,10 +1049,25 @@ texture_filter = 1
 position = Vector2(1, -32)
 texture = ExtResource("7_rmnwx")
 
+[node name="stun" type="Sprite2D" parent="." unique_id=100089976]
+visible = false
+position = Vector2(1, -32)
+texture = ExtResource("8_xsjtw")
+hframes = 3
+
+[node name="anim" type="AnimationPlayer" parent="stun" unique_id=1835862017]
+libraries/ = SubResource("AnimationLibrary_py8k8")
+autoplay = &"idle"
+
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1595805350]
-position = Vector2(-1, -4)
+position = Vector2(-1, -13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_5mxps")
+
+[node name="shape2" type="CollisionShape2D" parent="." unique_id=491161256]
+position = Vector2(7, -40)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_eyyl5")
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=2074218494]
 root_node = NodePath("../sprite")
@@ -1026,6 +1086,18 @@ default = true
 script = ExtResource("4_rmnwx")
 anim = "run"
 speed = 300
+
+[node name="pied" type="Node" parent="movement_controller" unique_id=1582619501]
+script = ExtResource("4_rmnwx")
+idle_anim = "pied"
+anim = "pied"
+speed = 0
+
+[node name="pied2" type="Node" parent="movement_controller" unique_id=204259372]
+script = ExtResource("4_rmnwx")
+idle_anim = "pied2"
+anim = "pied2"
+speed = 0
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("5_ov2xf")
@@ -1061,6 +1133,12 @@ seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")
 script = ExtResource("30_d1b04")
 seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 anim_controller = NodePath("../../animation_controller")
+
+[node name="pied" type="Node" parent="state_machine" unique_id=1141439092 node_paths=PackedStringArray("stun_anim", "pie")]
+script = ExtResource("42_wj3on")
+stun_anim = NodePath("../../stun")
+pie = NodePath("../../pie")
+pie_textures = Array[Texture2D]([ExtResource("7_rmnwx"), ExtResource("43_aefd7")])
 
 [node name="close_seek_area" type="Area2D" parent="." unique_id=1048299164 node_paths=PackedStringArray("state_machine", "anim_controller")]
 visible = false

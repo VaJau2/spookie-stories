@@ -37,6 +37,12 @@
 [ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="32_5nuhs"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="33_46cq4"]
 [ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="35_r6iao"]
+[ext_resource type="Script" uid="uid://cl52jt84mhv75" path="res://assets/scripts/controllers/duskCity/piesController.gd" id="38_74vo3"]
+[ext_resource type="AudioStream" uid="uid://dybw6f2d4ps3m" path="res://assets/audio/pie/throw.wav" id="39_5doxs"]
+[ext_resource type="PackedScene" uid="uid://pwrt2tumt0rw" path="res://objects/prefabs/dusk_city/flying_pie.tscn" id="39_fj1it"]
+[ext_resource type="Script" uid="uid://1uf35u0ae77m" path="res://assets/scripts/controllers/cave/gamepadAutoaimArea.gd" id="39_qhues"]
+[ext_resource type="AudioStream" uid="uid://dgcuischlnqdc" path="res://assets/audio/revolver/shoot.mp3" id="40_fj1it"]
+[ext_resource type="Texture2D" uid="uid://dwyblf58qcg8o" path="res://assets/sprites/interface/autoaim.png" id="40_likot"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -259,6 +265,12 @@ walk_sounds = Array[AudioStream]([ExtResource("30_7i2ih"), ExtResource("31_qth0b
 run_sounds = Array[AudioStream]([ExtResource("27_7i2vi"), ExtResource("28_dpvml"), ExtResource("29_3jqdg")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kxuq"]
+radius = 338.0133
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5doxs"]
+light_mode = 1
+
 [node name="dusk" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 
@@ -345,4 +357,39 @@ talk_state = ""
 script = ExtResource("35_r6iao")
 parent = NodePath("..")
 
+[node name="pies_controller" type="Node2D" parent="." unique_id=1898964790 node_paths=PackedStringArray("autoaim_area", "moving_controller")]
+position = Vector2(0, -25)
+script = ExtResource("38_74vo3")
+pie_prefab = ExtResource("39_fj1it")
+autoaim_area = NodePath("../autoaim_area")
+moving_controller = NodePath("../movement_controller")
+shoot_sound = ExtResource("39_5doxs")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="pies_controller" unique_id=1633030589]
+stream = ExtResource("40_fj1it")
+volume_db = -4.0
+panning_strength = 0.1
+bus = &"Sound"
+
+[node name="autoaim_area" type="Area2D" parent="." unique_id=772845810]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("39_qhues")
+target_point_y_pos = 40
+
+[node name="shape" type="CollisionShape2D" parent="autoaim_area" unique_id=270054665]
+shape = SubResource("CircleShape2D_4kxuq")
+
+[node name="aim_point" type="Node2D" parent="autoaim_area" unique_id=993928704]
+visible = false
+
+[node name="sprite" type="Sprite2D" parent="autoaim_area/aim_point" unique_id=1955112329]
+z_index = 2
+material = SubResource("CanvasItemMaterial_5doxs")
+position = Vector2(0, -3.145)
+scale = Vector2(0.24193548, 0.1784375)
+texture = ExtResource("40_likot")
+
 [connection signal="material_changed" from="material_checker" to="audi_steps" method="on_change_material"]
+[connection signal="body_entered" from="autoaim_area" to="autoaim_area" method="_on_body_entered"]
+[connection signal="body_exited" from="autoaim_area" to="autoaim_area" method="_on_body_exited"]

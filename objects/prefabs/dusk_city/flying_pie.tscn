@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://pwrt2tumt0rw"]
+
+[ext_resource type="Texture2D" uid="uid://6cl2w4bo7s0l" path="res://assets/sprites/interface/pie.png" id="1_5s0lt"]
+[ext_resource type="Script" uid="uid://cagkn5s8ssqm1" path="res://assets/scripts/controllers/duskCity/flyingPie.gd" id="1_esyi5"]
+[ext_resource type="AudioStream" uid="uid://2auidxfn3s0r" path="res://assets/audio/pie/pie_splat.wav" id="3_6nk22"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="Curve" id="Curve_qwqyf"]
+_data = [Vector2(0.0021186434, 1), 0.0, 0.0, 0, 0, Vector2(0.7966102, 0.84337354), -0.722127, -0.722127, 0, 0, Vector2(1, 0), -3.461503, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_62yky"]
+curve = SubResource("Curve_qwqyf")
+
+[sub_resource type="Gradient" id="Gradient_esyi5"]
+colors = PackedColorArray(0.63203454, 0.43769324, 0.16805446, 1, 0.96787757, 0.8059364, 0.61128503, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mm1bc"]
+gradient = SubResource("Gradient_esyi5")
+width = 10
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4kxuq"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.34
+velocity_pivot = Vector3(0, 5, 0)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+angular_velocity_min = -54.640015
+angular_velocity_max = 76.79998
+gravity = Vector3(0, 98, 0)
+scale_min = 3.0
+scale_max = 5.0
+color = Color(0.9575375, 0.7636371, 0.53073555, 1)
+color_initial_ramp = SubResource("GradientTexture1D_mm1bc")
+alpha_curve = SubResource("CurveTexture_62yky")
+
+[sub_resource type="GDScript" id="GDScript_6nk22"]
+script/source = "extends GPUParticles2D
+
+
+func _on_finished() -> void:
+	queue_free()
+"
+
+[node name="flying_pie" type="Area2D" unique_id=342330269]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_esyi5")
+
+[node name="Pie" type="Sprite2D" parent="." unique_id=2120446718]
+texture = ExtResource("1_5s0lt")
+
+[node name="shape" type="CollisionShape2D" parent="." unique_id=1370985625]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4kxuq")
+
+[node name="screen_notifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=1429533849]
+
+[node name="particles" type="GPUParticles2D" parent="." unique_id=1441044019]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_4kxuq")
+script = SubResource("GDScript_6nk22")
+
+[node name="audi" type="AudioStreamPlayer2D" parent="particles" unique_id=1309904617]
+stream = ExtResource("3_6nk22")
+volume_db = -5.0
+max_distance = 500.0
+bus = &"Sound"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="screen_notifier" to="." method="_on_screen_exit"]
+[connection signal="finished" from="particles" to="particles" method="_on_finished"]

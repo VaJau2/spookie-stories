@@ -25,9 +25,16 @@ func update_temp_zoom(delta: float) -> void:
 
 
 func update_target_zoom() -> void:
-	if Input.is_action_just_pressed("ui_scroll_up"):
+	if _is_input("ui_scroll_up"):
 		target_zoom += 0.1
-	elif Input.is_action_just_pressed("ui_scroll_down"):
+	elif _is_input("ui_scroll_down"):
 		target_zoom -= 0.1
 	
 	target_zoom = clamp(target_zoom, min_zoom, max_zoom)
+
+
+func _is_input(event: String) -> bool:
+	if Gamepad.is_gamepad:
+		return Input.is_action_pressed(event)
+	else:
+		return Input.is_action_just_pressed(event)

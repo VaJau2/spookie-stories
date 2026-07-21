@@ -26,8 +26,6 @@ class_name RevolverController
 
 var ammo_count: int = 6
 
-var input_handler: InputHandler
-
 var show_gun_timer: float
 const SHOW_GUN_TIME: float = 2
 
@@ -49,7 +47,7 @@ func add_ammo(count: int) -> void:
 
 
 func _ready() -> void:
-	input_handler = get_node("/root/main/input")
+	var input_handler = get_node("/root/main/input")
 	if !input_handler: return
 	input_handler.shoot.connect(_on_shoot)
 
