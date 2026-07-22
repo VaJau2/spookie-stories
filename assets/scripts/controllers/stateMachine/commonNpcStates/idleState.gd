@@ -12,6 +12,8 @@ var came_to_point: bool = false
 
 func _ready() -> void:
 	_load_patrol_points()
+	if len(patrol_points) == 0: return
+	
 	set_new_target_point()
 	if movement_controller is NavigationMovementController:
 		movement_controller.came_to_point.connect(_on_came_to_point)

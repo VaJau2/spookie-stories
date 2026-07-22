@@ -335,7 +335,7 @@
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "idle",
-				"text": "Next in line was omonium flutterate.",
+				"text": "Next in line was ammonium flutterate.",
 			},
 			{
 				"type": "phrase",
@@ -371,7 +371,7 @@
 				"type": "phrase",
 				"speaker": "dusk",
 				"state": "idle",
-				"text": "You need to be very careful with omonium flutterate, because it quickly evaporates upon contact with air.",
+				"text": "You need to be very careful with ammonium flutterate, because it quickly evaporates upon contact with air.",
 			},
 			{
 				"type": "script",

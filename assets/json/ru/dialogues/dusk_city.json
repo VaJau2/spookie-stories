@@ -54,6 +54,11 @@
 				"state": "idle",
 				"text": "…ждет дальше.",
 			},
+			{
+				"type": "script",
+				"path": "/root/main/dialogues/lab_event_dialogue",
+				"method": "start_count"
+			},
 		]
 	},
 	"bow_shop": {
@@ -182,6 +187,40 @@
 				"type": "script",
 				"path": "/root/main/dialogues/pie_shop_dialogue_script",
 				"method": "disable"
+			},
+		]
+	},
+	"lab_event": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Через некоторое время случилось то, что я описывала до этого в лаборатории.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Мои коллеги, одурманенные созданным ими зельем, вышли в город",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "sad",
+				"text": "И стали распространять вирус по его жителям.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "Мне нужно было попасть в лабораторию, чтобы синтезировать вакцину от него.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "scared",
+				"text": "И не заразиться самой.",
 			},
 		]
 	}

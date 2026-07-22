@@ -891,7 +891,7 @@ speed = 0
 
 [node name="animation_controller" type="Node" parent="." unique_id=775452075 node_paths=PackedStringArray("sprites", "anim", "movement_controller")]
 script = ExtResource("13_lq2rc")
-sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie"), NodePath("../cloth")]
+sprites = [NodePath("../sprite"), NodePath("../eye_sprite"), NodePath("../eye_white"), NodePath("../tail"), NodePath("../mane"), NodePath("../pie"), NodePath("../cloth"), NodePath("../stun")]
 anim = NodePath("../anim")
 movement_controller = NodePath("../movement_controller")
 

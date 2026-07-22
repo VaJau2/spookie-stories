@@ -28,6 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body != player_body:
 		return
 	
+	if shop_logic.has_method("may_enter"):
+		if !shop_logic.may_enter(player_body): return
+	
 	set_process(true)
 	hint.visible = true
 	hint.text = Loc.trans("interface.hints.shop_enter")
@@ -60,6 +63,8 @@ func _on_shop_timer_timeout() -> void:
 
 
 func _exit_shop() -> void:
+	set_process(false)
+	hint.visible = false
 	change_player_visible(true)
 	if shop_logic.has_method("proceed_exit"):
 		shop_logic.proceed_exit()

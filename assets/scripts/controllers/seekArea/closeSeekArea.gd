@@ -4,6 +4,7 @@ extends Area2D
 @onready var shape_right: CollisionShape2D = get_node("shape_r")
 @onready var ray: RayCast2D = get_node("ray")
 
+@export var is_active: bool = true
 @export var state_machine: StateMachine
 @export var anim_controller: AnimationController
 
@@ -22,6 +23,7 @@ func _on_flip_changed(new_value: bool) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if !is_active: return
 	if body.has_node("input_controller"):
 		if state_machine.current_state.name != "attack":
 			see_timer = 0
@@ -39,7 +41,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _process(delta: float) -> void:
-	if state_machine.current_state.name == "attack":
+	if !is_active ||  state_machine.current_state.name == "attack":
 		set_process(false)
 		return
 	
