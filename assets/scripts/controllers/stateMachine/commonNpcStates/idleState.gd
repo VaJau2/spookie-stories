@@ -52,9 +52,11 @@ func enable() -> void:
 	super.enable()
 	if movement_controller is MovementController:
 		movement_controller.load_state("walk")
+	
+	if len(patrol_points) > 0: set_new_target_point()
 
 
-func _on_came_to_point() -> void:
+func _on_came_to_point(_delta: float) -> void:
 	if !temp_target_point: return
 	
 	if temp_target_point.has_method("handle_character"):

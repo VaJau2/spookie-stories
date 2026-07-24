@@ -11,8 +11,7 @@ const DEFAULT_CAME_DISTANCE: float = 20
 @export var nav_agent: NavigationAgent2D
 var loading_cooldown: float = 1
 
-signal came_to_point
-
+signal came_to_point(delta: float)
 
 
 func _physics_process(delta: float) -> void:
@@ -29,7 +28,7 @@ func _physics_process(delta: float) -> void:
 			set_target(nav_agent.target_position)
 		
 		if nav_agent.is_navigation_finished():
-			came_to_point.emit()
+			came_to_point.emit(delta)
 		
 		return
 	

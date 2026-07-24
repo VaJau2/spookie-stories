@@ -22,6 +22,6 @@ func enable() -> void:
 		movement_controller.came_to_point.connect(_on_came_to_point)
 
 
-func _on_came_to_point() -> void:
+func _on_came_to_point(_delta: float) -> void:
 	animation_controller.set_flip(flip_h)
 	movement_controller.came_to_point.disconnect(_on_came_to_point)

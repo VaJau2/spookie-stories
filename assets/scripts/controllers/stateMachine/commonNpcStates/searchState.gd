@@ -13,14 +13,14 @@ var is_flip: bool
 
 func enable() -> void:
 	super.enable()
-	var player = _find_player()
-	if player == null: 
+	var victim = _find_victim()
+	if victim == null: 
 		state_machine.enable_state("idle")
 		return
 	
 	if movement_controller is NavigationMovementController:
 		movement_controller.load_state("walk")
-		movement_controller.set_target(player.global_position)
+		movement_controller.set_target(victim.global_position)
 	
 	search_timer = randf_range(SEARCH_TIME[0], SEARCH_TIME[1])
 
@@ -34,15 +34,16 @@ func _process(delta: float) -> void:
 		state_machine.enable_state("idle")
 
 
-func _find_player() -> CharacterBody2D:
-	var player = null
+func _find_victim() -> CharacterBody2D:
+	var victim = null
 	
 	for seek_area in seek_areas:
-		if seek_area.player != null:
-			player = seek_area.player
+		var temp_victim = seek_area.get_victim()
+		if temp_victim != null:
+			victim = temp_victim
 			break
 	
-	return player
+	return victim
 
 func _update_flip(delta: float) -> void:
 	if flip_timer > 0:

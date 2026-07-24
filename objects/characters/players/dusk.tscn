@@ -37,12 +37,20 @@
 [ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="32_5nuhs"]
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="33_46cq4"]
 [ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="35_r6iao"]
+[ext_resource type="Script" uid="uid://bakxswt6njr0t" path="res://assets/scripts/scenario/duskCity/audiBoops.gd" id="36_0j615"]
+[ext_resource type="AudioStream" uid="uid://cmb15v4jtvqjo" path="res://assets/audio/boops/boop1.mp3" id="37_k5vgv"]
 [ext_resource type="Script" uid="uid://cl52jt84mhv75" path="res://assets/scripts/controllers/duskCity/piesController.gd" id="38_74vo3"]
+[ext_resource type="AudioStream" uid="uid://cbc4kmiqxtlov" path="res://assets/audio/boops/boop2.mp3" id="38_iwv0j"]
 [ext_resource type="AudioStream" uid="uid://dybw6f2d4ps3m" path="res://assets/audio/pie/throw.wav" id="39_5doxs"]
 [ext_resource type="PackedScene" uid="uid://pwrt2tumt0rw" path="res://objects/prefabs/dusk_city/flying_pie.tscn" id="39_fj1it"]
 [ext_resource type="Script" uid="uid://1uf35u0ae77m" path="res://assets/scripts/controllers/cave/gamepadAutoaimArea.gd" id="39_qhues"]
+[ext_resource type="AudioStream" uid="uid://btmvpsst1ruie" path="res://assets/audio/boops/boop3.mp3" id="39_uefrl"]
+[ext_resource type="AudioStream" uid="uid://nhlrcr68ogum" path="res://assets/audio/boops/boop4.mp3" id="40_dto4j"]
 [ext_resource type="AudioStream" uid="uid://dgcuischlnqdc" path="res://assets/audio/revolver/shoot.mp3" id="40_fj1it"]
 [ext_resource type="Texture2D" uid="uid://dwyblf58qcg8o" path="res://assets/sprites/interface/autoaim.png" id="40_likot"]
+[ext_resource type="Script" uid="uid://jtgwrflk622s" path="res://assets/scripts/scenario/duskCity/playerBoopedState.gd" id="44_gntmu"]
+[ext_resource type="Texture2D" uid="uid://0fjay0i6givq" path="res://assets/sprites/characters/dusk_city/dusk-booped.png" id="45_t88nj"]
+[ext_resource type="Script" uid="uid://cp352qqfbbpa0" path="res://assets/scripts/controllers/areaShapesFlipController.gd" id="46_vyxn2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
 radius = 4.0
@@ -85,7 +93,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.36666667, 0.46666667),
+"times": PackedFloat32Array(0, 0.06666667, 0.1333, 0.36666667, 0.46666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 2, 3, 2, 0]
@@ -102,10 +110,24 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 2, 3, 2, 0]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../booped_state")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_boop"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_y0w58"]
 resource_name = "booped"
-length = 0.2
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -271,6 +293,9 @@ radius = 338.0133
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5doxs"]
 light_mode = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
+size = Vector2(16.875, 9)
+
 [node name="dusk" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
 
@@ -324,6 +349,18 @@ script = ExtResource("4_6u2w1")
 anim = "run"
 speed = 300
 
+[node name="booped" type="Node" parent="movement_controller" unique_id=791855750]
+script = ExtResource("4_6u2w1")
+idle_anim = "booped"
+anim = "booped"
+speed = 0
+
+[node name="boop" type="Node" parent="movement_controller" unique_id=1089476173]
+script = ExtResource("4_6u2w1")
+idle_anim = "boop"
+anim = "boop"
+speed = 0
+
 [node name="input_controller" type="Node" parent="." unique_id=2131803073 node_paths=PackedStringArray("movement_controller")]
 script = ExtResource("5_2jx10")
 movement_controller = NodePath("../movement_controller")
@@ -347,6 +384,12 @@ bus = &"Sound"
 script = ExtResource("7_g75cu")
 movement_controller = NodePath("../movement_controller")
 steps_data = Array[ExtResource("8_qhues")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7"), SubResource("Resource_m4lni")])
+
+[node name="audi_boops" type="AudioStreamPlayer2D" parent="." unique_id=1697491239]
+max_distance = 1000.0
+bus = &"Sound"
+script = ExtResource("36_0j615")
+boops = Array[AudioStreamMP3]([ExtResource("37_k5vgv"), ExtResource("38_iwv0j"), ExtResource("39_uefrl"), ExtResource("40_dto4j")])
 
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
 script = ExtResource("33_46cq4")
@@ -390,6 +433,43 @@ position = Vector2(0, -3.145)
 scale = Vector2(0.24193548, 0.1784375)
 texture = ExtResource("40_likot")
 
+[node name="boop_points" type="Node2D" parent="." unique_id=245510948]
+
+[node name="left" type="Node2D" parent="boop_points" unique_id=1624914514]
+position = Vector2(-45, 0)
+
+[node name="right" type="Node2D" parent="boop_points" unique_id=309355320]
+position = Vector2(45, 0)
+
+[node name="booped_state" type="Node2D" parent="." unique_id=2137106157 node_paths=PackedStringArray("sprite", "movement_controller", "anim_player", "audi_boops")]
+script = ExtResource("44_gntmu")
+sprite = NodePath("../sprite")
+booped_texture = ExtResource("45_t88nj")
+movement_controller = NodePath("../movement_controller")
+anim_player = NodePath("../anim")
+audi_boops = NodePath("../audi_boops")
+
+[node name="boop_area" type="Area2D" parent="booped_state" unique_id=1997737533]
+collision_layer = 2
+collision_mask = 2
+
+[node name="shape_l" type="CollisionShape2D" parent="booped_state/boop_area" unique_id=1615372624]
+position = Vector2(-25, -4)
+shape = SubResource("RectangleShape2D_4kxuq")
+disabled = true
+
+[node name="shape_r" type="CollisionShape2D" parent="booped_state/boop_area" unique_id=419866730]
+position = Vector2(18.5625, -4)
+shape = SubResource("RectangleShape2D_4kxuq")
+
+[node name="shape_flip_controller" type="Node" parent="booped_state/boop_area" unique_id=1763985579 node_paths=PackedStringArray("anim_controller", "shape_left", "shape_right")]
+script = ExtResource("46_vyxn2")
+anim_controller = NodePath("../../../animation_controller")
+shape_left = NodePath("../shape_l")
+shape_right = NodePath("../shape_r")
+
 [connection signal="material_changed" from="material_checker" to="audi_steps" method="on_change_material"]
 [connection signal="body_entered" from="autoaim_area" to="autoaim_area" method="_on_body_entered"]
 [connection signal="body_exited" from="autoaim_area" to="autoaim_area" method="_on_body_exited"]
+[connection signal="body_entered" from="booped_state/boop_area" to="booped_state" method="_on_boop_area_body_entered"]
+[connection signal="body_exited" from="booped_state/boop_area" to="booped_state" method="_on_boop_area_body_exited"]

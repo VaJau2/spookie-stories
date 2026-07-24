@@ -222,6 +222,11 @@
 				"state": "scared",
 				"text": "И не заразиться самой.",
 			},
+			{
+				"type": "script",
+				"path": "/root/main/dialogues/lab_event_dialogue",
+				"method": "spawn_booped_scientists"
+			},
 		]
 	}
 }

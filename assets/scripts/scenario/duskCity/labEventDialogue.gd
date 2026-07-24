@@ -2,6 +2,10 @@ extends Node
 
 @export var player_node: Node2D
 @export var dialogue_menu: DialogueMenu
+@export var ponies_parent: Node2D
+@export var prefabs: Array[PackedScene]
+@export var spawn_points: Array[Node2D]
+
 
 var start_timer: float = 10
 
@@ -34,3 +38,14 @@ func _process(delta: float) -> void:
 			start_timer -= delta
 		else:
 			_start_dialogue()
+
+
+func spawn_booped_scientists() -> void:
+	for i in range(len(prefabs)):
+		var instance = prefabs[i].instantiate()
+		ponies_parent.add_child(instance)
+		call_deferred("move_instance_to_point", instance, spawn_points[i])
+
+
+func move_instance_to_point(instance: Node2D, point: Node2D) -> void:
+	instance.global_position = point.global_position

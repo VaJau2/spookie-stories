@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 func _find_player() -> void:
 	if player != null: return
 	for seek_area in seek_areas:
-		if seek_area.player != null:
-			player = seek_area.player
+		var temp_victim = seek_area.get_victim()
+		if temp_victim != null:
+			player = temp_victim
 			break

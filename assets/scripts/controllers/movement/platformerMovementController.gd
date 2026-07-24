@@ -7,16 +7,11 @@ class_name PlatformerMovementController
 @export var on_floor: bool = true
 
 var is_jumping: bool
-var is_running: bool
 var on_floor_cooldown: float
 
 signal jumping
 signal finish_jumping
 signal stop_falling
-
-
-func set_is_running(value: bool) -> void:
-	is_running = value
 
 
 func emit_move_signals() -> void:

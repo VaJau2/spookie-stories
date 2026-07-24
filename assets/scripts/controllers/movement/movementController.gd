@@ -15,6 +15,12 @@ signal move
 signal stop
 signal state_changed(state: String)
 
+var is_running: bool
+
+
+func set_is_running(value: bool) -> void:
+	is_running = value
+
 
 func _ready() -> void:
 	load_state('default')

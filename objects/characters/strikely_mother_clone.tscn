@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="29_gognt"]
 [ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="30_fhfti"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_vc754"]
+[ext_resource type="Script" uid="uid://cp352qqfbbpa0" path="res://assets/scripts/controllers/areaShapesFlipController.gd" id="32_4ww8t"]
 [ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_84sis"]
 [ext_resource type="Texture2D" uid="uid://iu3p04cb6yfe" path="res://assets/sprites/interface/seek_signs.png" id="33_r3p24"]
 [ext_resource type="Script" uid="uid://t2h1nx74g3b" path="res://assets/scripts/scenario/lostArea.gd" id="34_e3ofm"]
@@ -218,10 +219,10 @@ run_sounds = Array[AudioStream]([ExtResource("20_pygho"), ExtResource("21_ub7h7"
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pbs"]
-size = Vector2(306, 157)
+size = Vector2(333, 222)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_majeu"]
-size = Vector2(318, 156)
+size = Vector2(349, 223)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aenfv"]
 size = Vector2(678, 393)
@@ -306,19 +307,24 @@ script = ExtResource("30_fhfti")
 seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
 anim_controller = NodePath("../../animation_controller")
 
-[node name="close_seek_area" type="Area2D" parent="." unique_id=1048299164 node_paths=PackedStringArray("state_machine", "anim_controller")]
+[node name="close_seek_area" type="Area2D" parent="." unique_id=1048299164 node_paths=PackedStringArray("state_machine")]
 monitorable = false
 script = ExtResource("31_vc754")
 state_machine = NodePath("../state_machine")
-anim_controller = NodePath("../animation_controller")
+
+[node name="shapes_flip_controller" type="Node" parent="close_seek_area" unique_id=769484360 node_paths=PackedStringArray("anim_controller", "shape_left", "shape_right")]
+script = ExtResource("32_4ww8t")
+anim_controller = NodePath("../../animation_controller")
+shape_left = NodePath("../shape_l")
+shape_right = NodePath("../shape_r")
 
 [node name="shape_l" type="CollisionShape2D" parent="close_seek_area" unique_id=2010900258]
-position = Vector2(-153, -38.5)
+position = Vector2(-139.5, -34)
 shape = SubResource("RectangleShape2D_u0pbs")
 disabled = true
 
 [node name="shape_r" type="CollisionShape2D" parent="close_seek_area" unique_id=1894323426]
-position = Vector2(159, -38)
+position = Vector2(143.5, -35.5)
 shape = SubResource("RectangleShape2D_majeu")
 
 [node name="ray" type="RayCast2D" parent="close_seek_area" unique_id=924487170]

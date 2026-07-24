@@ -35,31 +35,40 @@
 [ext_resource type="Script" uid="uid://btbqg1drfa2hk" path="res://assets/scripts/controllers/dialogueAnimController.gd" id="26_xsjtw"]
 [ext_resource type="Script" uid="uid://2ul8u36aghuj" path="res://assets/scripts/controllers/stateMachine/stateMachine.gd" id="27_py8k8"]
 [ext_resource type="Script" uid="uid://derwqqb2st24j" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/idleState.gd" id="28_oe1x5"]
-[ext_resource type="Script" uid="uid://bp2osgrl5ct58" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/attackState.gd" id="29_onhu7"]
 [ext_resource type="Script" uid="uid://dv7qhd6v7a7fa" path="res://assets/scripts/controllers/stateMachine/commonNpcStates/searchState.gd" id="30_d1b04"]
 [ext_resource type="AudioStream" uid="uid://dxfnfcphtrnyt" path="res://assets/audio/steps/dirt/stepDirtRun1.wav" id="31_eyyl5"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="31_prc3q"]
-[ext_resource type="Script" uid="uid://cj3rajod8qd3q" path="res://assets/scripts/controllers/seekArea/farSeekArea.gd" id="32_b3ebb"]
 [ext_resource type="AudioStream" uid="uid://dycqxerp73kqm" path="res://assets/audio/steps/dirt/stepDirtRun2.wav" id="32_wj3on"]
 [ext_resource type="AudioStream" uid="uid://d046fxbdaaptb" path="res://assets/audio/steps/dirt/stepDirtRun3.wav" id="33_aefd7"]
 [ext_resource type="AudioStream" uid="uid://drqaooh0882tk" path="res://assets/audio/steps/dirt/stepDirt1.wav" id="34_xsjtw"]
 [ext_resource type="Script" uid="uid://cdyiwfceycem6" path="res://assets/scripts/controllers/duskCity/randomPonyGenerator.gd" id="35_d1b04"]
 [ext_resource type="AudioStream" uid="uid://u4wk74h8stpb" path="res://assets/audio/steps/dirt/stepDirt2.wav" id="35_py8k8"]
 [ext_resource type="AudioStream" uid="uid://du1oa8y4jjsll" path="res://assets/audio/steps/dirt/stepDirt3.wav" id="36_ifn5j"]
+[ext_resource type="Script" uid="uid://bakxswt6njr0t" path="res://assets/scripts/scenario/duskCity/audiBoops.gd" id="38_o8tar"]
+[ext_resource type="AudioStream" uid="uid://cmb15v4jtvqjo" path="res://assets/audio/boops/boop1.mp3" id="39_6lx5t"]
 [ext_resource type="Texture2D" uid="uid://crsw8rwevcpkn" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_2.png" id="39_ov2xf"]
+[ext_resource type="AudioStream" uid="uid://cbc4kmiqxtlov" path="res://assets/audio/boops/boop2.mp3" id="40_f26mf"]
 [ext_resource type="Texture2D" uid="uid://dasw0d8lc0mvw" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_3.png" id="41_i7q1o"]
+[ext_resource type="Script" uid="uid://b6opu7ocuxpu1" path="res://assets/scripts/controllers/stateMachine/duskCity/attackBoopState.gd" id="41_ifn5j"]
+[ext_resource type="AudioStream" uid="uid://btmvpsst1ruie" path="res://assets/audio/boops/boop3.mp3" id="41_u55ik"]
+[ext_resource type="AudioStream" uid="uid://nhlrcr68ogum" path="res://assets/audio/boops/boop4.mp3" id="42_lnst8"]
 [ext_resource type="Texture2D" uid="uid://buqr8sw5bhslr" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_4.png" id="42_sissc"]
 [ext_resource type="Script" uid="uid://dd2ofhvq4do4o" path="res://assets/scripts/controllers/stateMachine/duskCity/piedState.gd" id="42_wj3on"]
 [ext_resource type="Texture2D" uid="uid://xpifcj0qk8ya" path="res://assets/sprites/characters/dusk_city/pony_pie_2.png" id="43_aefd7"]
 [ext_resource type="Texture2D" uid="uid://c33yq4yhgrga7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_mane_5.png" id="43_us3ag"]
 [ext_resource type="Texture2D" uid="uid://b4hj8ex4qs4r8" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_2.png" id="44_kwsan"]
 [ext_resource type="Texture2D" uid="uid://cjmbm6vmnstn7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_tail_3.png" id="45_ugpi1"]
+[ext_resource type="Script" uid="uid://bqfdxixuc01d4" path="res://assets/scripts/controllers/stateMachine/duskCity/boopedState.gd" id="45_xsjtw"]
+[ext_resource type="Texture2D" uid="uid://btsljv688dnt7" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_eyes_booped.png" id="46_ifn5j"]
 [ext_resource type="Texture2D" uid="uid://cag234mbksbd0" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/glasses.png" id="46_yhqeh"]
+[ext_resource type="Texture2D" uid="uid://coc1h3al3ng65" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/mare_booped.png" id="47_a4mwm"]
 [ext_resource type="Texture2D" uid="uid://bdr1lcwrj815n" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/socks.png" id="47_fvgtr"]
 [ext_resource type="Texture2D" uid="uid://lxtl2tjqwywf" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/uniform.png" id="48_ckk5e"]
 [ext_resource type="Texture2D" uid="uid://bqjexayepa1m" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/shirt.png" id="49_5pe4a"]
 [ext_resource type="Texture2D" uid="uid://buurx2k2rcdrs" path="res://assets/sprites/characters/dusk_city/random_ponies/mares/bag.png" id="50_wk0ul"]
 [ext_resource type="Script" uid="uid://bb0o5flqn57bg" path="res://assets/scripts/controllers/steps/materialChecker.gd" id="51_trtx1"]
+[ext_resource type="Script" uid="uid://bw2dabr4g2mo4" path="res://assets/scripts/controllers/stateMachine/duskCity/runFromBoopState.gd" id="53_f26mf"]
+[ext_resource type="Script" uid="uid://b4dywrgr0cwrx" path="res://assets/scripts/controllers/duskCity/boopedVictimFilter.gd" id="68_6lx5t"]
 
 [sub_resource type="Animation" id="Animation_226un"]
 length = 0.001
@@ -100,7 +109,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mxps"]
-radius = 13.0
+radius = 14.0
 height = 38.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyyl5"]
@@ -304,6 +313,20 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 2, 3, 2, 0]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../state_machine/attack")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.13333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_boop"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_u8f3l"]
@@ -960,14 +983,8 @@ walk_sounds = Array[AudioStream]([ExtResource("34_xsjtw"), ExtResource("35_py8k8
 run_sounds = Array[AudioStream]([ExtResource("31_eyyl5"), ExtResource("32_wj3on"), ExtResource("33_aefd7")])
 metadata/_custom_type_script = "uid://cqrlqmbvhk1x3"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0pbs"]
-size = Vector2(306, 157)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_majeu"]
-size = Vector2(318, 156)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aenfv"]
-size = Vector2(678, 393)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py8k8"]
+size = Vector2(648, 516)
 
 [node name="mare" type="CharacterBody2D" unique_id=301655442]
 texture_filter = 1
@@ -1085,7 +1102,19 @@ default = true
 [node name="run" type="Node" parent="movement_controller" unique_id=147852670]
 script = ExtResource("4_rmnwx")
 anim = "run"
-speed = 300
+speed = 260
+
+[node name="boop" type="Node" parent="movement_controller" unique_id=272843773]
+script = ExtResource("4_rmnwx")
+idle_anim = "boop"
+anim = "boop"
+speed = 0
+
+[node name="booped" type="Node" parent="movement_controller" unique_id=1334068396]
+script = ExtResource("4_rmnwx")
+idle_anim = "booped"
+anim = "booped"
+speed = 0
 
 [node name="pied" type="Node" parent="movement_controller" unique_id=1582619501]
 script = ExtResource("4_rmnwx")
@@ -1112,6 +1141,12 @@ script = ExtResource("6_hjyyq")
 movement_controller = NodePath("../movement_controller")
 steps_data = Array[ExtResource("7_i7q1o")]([SubResource("Resource_iqgwf"), SubResource("Resource_3khfa"), SubResource("Resource_s717i"), SubResource("Resource_lr2p7"), SubResource("Resource_a4mwm")])
 
+[node name="audi_boops" type="AudioStreamPlayer2D" parent="." unique_id=1627995009]
+max_distance = 1000.0
+bus = &"Sound"
+script = ExtResource("38_o8tar")
+boops = Array[AudioStreamMP3]([ExtResource("39_6lx5t"), ExtResource("40_f26mf"), ExtResource("41_u55ik"), ExtResource("42_lnst8")])
+
 [node name="anim_controller" type="Node" parent="." unique_id=1710659410 node_paths=PackedStringArray("anim")]
 script = ExtResource("26_xsjtw")
 anim = NodePath("../anim")
@@ -1125,50 +1160,36 @@ movement_controller = NodePath("../movement_controller")
 [node name="idle" type="Node" parent="state_machine" unique_id=396007561]
 script = ExtResource("28_oe1x5")
 
-[node name="attack" type="Node" parent="state_machine" unique_id=1455317754 node_paths=PackedStringArray("seek_areas")]
-script = ExtResource("29_onhu7")
-seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
+[node name="attack" type="Node" parent="state_machine" unique_id=1455317754 node_paths=PackedStringArray("seek_areas", "animation_controller", "anim_player", "boop_audi")]
+script = ExtResource("41_ifn5j")
+seek_areas = [NodePath("../../seek_area")]
+animation_controller = NodePath("../../animation_controller")
+anim_player = NodePath("../../anim")
+boop_audi = NodePath("../../audi_boops")
 
 [node name="search" type="Node" parent="state_machine" unique_id=925214597 node_paths=PackedStringArray("seek_areas", "anim_controller")]
 script = ExtResource("30_d1b04")
-seek_areas = [NodePath("../../close_seek_area"), NodePath("../../far_seek_area")]
+seek_areas = [NodePath("../../seek_area")]
 anim_controller = NodePath("../../animation_controller")
 
-[node name="pied" type="Node" parent="state_machine" unique_id=1141439092 node_paths=PackedStringArray("stun_anim", "pie")]
+[node name="pied" type="Node" parent="state_machine" unique_id=1141439092 node_paths=PackedStringArray("stun_anim", "pie", "seek_area")]
 script = ExtResource("42_wj3on")
 stun_anim = NodePath("../../stun")
 pie = NodePath("../../pie")
 pie_textures = Array[Texture2D]([ExtResource("7_rmnwx"), ExtResource("43_aefd7")])
+seek_area = NodePath("../../seek_area")
 
-[node name="close_seek_area" type="Area2D" parent="." unique_id=1048299164 node_paths=PackedStringArray("state_machine", "anim_controller")]
-visible = false
-monitoring = false
-monitorable = false
-script = ExtResource("31_prc3q")
-state_machine = NodePath("../state_machine")
-anim_controller = NodePath("../animation_controller")
+[node name="booped" type="Node" parent="state_machine" unique_id=1249138587 node_paths=PackedStringArray("anim", "seek_area", "sprites", "change_color_sprite")]
+script = ExtResource("45_xsjtw")
+anim = NodePath("../../anim")
+seek_area = NodePath("../../seek_area")
+sprites = [NodePath("../../sprite"), NodePath("../../eye_sprite")]
+booped_textures = Array[Texture2D]([ExtResource("47_a4mwm"), ExtResource("46_ifn5j")])
+change_color_sprite = NodePath("../../eye_sprite")
 
-[node name="shape_l" type="CollisionShape2D" parent="close_seek_area" unique_id=2010900258]
-position = Vector2(-153, -38.5)
-shape = SubResource("RectangleShape2D_u0pbs")
-disabled = true
-
-[node name="shape_r" type="CollisionShape2D" parent="close_seek_area" unique_id=1894323426]
-position = Vector2(159, -38)
-shape = SubResource("RectangleShape2D_majeu")
-
-[node name="ray" type="RayCast2D" parent="close_seek_area" unique_id=924487170]
-
-[node name="far_seek_area" type="Area2D" parent="." unique_id=1086742387 node_paths=PackedStringArray("state_machine")]
-monitoring = false
-monitorable = false
-script = ExtResource("32_b3ebb")
-state_machine = NodePath("../state_machine")
-
-[node name="shape" type="CollisionShape2D" parent="far_seek_area" unique_id=498995470]
-visible = false
-position = Vector2(8, -36.5)
-shape = SubResource("RectangleShape2D_aenfv")
+[node name="runFromBoop" type="Node" parent="state_machine" unique_id=1743858402 node_paths=PackedStringArray("seek_area")]
+script = ExtResource("53_f26mf")
+seek_area = NodePath("../../seek_area")
 
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
 
@@ -1187,8 +1208,37 @@ cloth_variants = Array[Texture2D]([ExtResource("5_hjyyq"), ExtResource("46_yhqeh
 script = ExtResource("51_trtx1")
 parent = NodePath("..")
 
-[connection signal="body_entered" from="close_seek_area" to="close_seek_area" method="_on_body_entered"]
-[connection signal="body_exited" from="close_seek_area" to="close_seek_area" method="_on_body_exited"]
-[connection signal="body_entered" from="far_seek_area" to="far_seek_area" method="_on_body_entered"]
-[connection signal="body_exited" from="far_seek_area" to="far_seek_area" method="_on_body_exited"]
+[node name="seek_area" type="Area2D" parent="." unique_id=1231453257 node_paths=PackedStringArray("custom_victim_filter", "state_machine")]
+collision_layer = 3
+collision_mask = 3
+monitorable = false
+script = ExtResource("31_prc3q")
+custom_victim_filter = NodePath("victim_filter")
+state_machine = NodePath("../state_machine")
+ignore_states = Array[String](["attack", "pied", "pied2"])
+check_only_player = false
+see_enemy_state = "runFromBoop"
+
+[node name="victim_filter" type="Node" parent="seek_area" unique_id=718025652 node_paths=PackedStringArray("parent", "booped_state")]
+script = ExtResource("68_6lx5t")
+parent = NodePath("../..")
+booped_state = NodePath("../../state_machine/booped")
+
+[node name="shape" type="CollisionShape2D" parent="seek_area" unique_id=1047950174]
+position = Vector2(9, -40)
+shape = SubResource("RectangleShape2D_py8k8")
+
+[node name="ray" type="RayCast2D" parent="seek_area" unique_id=2023800024]
+collision_mask = 3
+
+[node name="boop_points" type="Node2D" parent="." unique_id=233713069]
+
+[node name="left" type="Node2D" parent="boop_points" unique_id=1491511452]
+position = Vector2(-45, 0)
+
+[node name="right" type="Node2D" parent="boop_points" unique_id=224154071]
+position = Vector2(45, 0)
+
 [connection signal="material_changed" from="material_checker" to="audi_steps" method="on_change_material"]
+[connection signal="body_entered" from="seek_area" to="seek_area" method="_on_body_entered"]
+[connection signal="body_exited" from="seek_area" to="seek_area" method="_on_body_exited"]

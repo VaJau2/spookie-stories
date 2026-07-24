@@ -3,7 +3,7 @@ extends StateBase
 @export var stun_anim: Sprite2D
 @export var pie: Sprite2D
 @export var pie_textures: Array[Texture2D]
-
+@export var seek_area: CloseSeekArea
 
 var stun_timer: float
 const STUN_TIME: float = 8
@@ -35,4 +35,12 @@ func _process(delta: float) -> void:
 	if stun_timer > 0:
 		stun_timer -= delta
 	else:
-		state_machine.enable_state("idle")
+		var new_state: String = "idle"
+		
+		if seek_area:
+			var victim = seek_area.get_victim()
+			if victim:
+				if victim.visible: new_state = "attack"
+				else: new_state = "search"
+		
+		state_machine.enable_state(new_state)

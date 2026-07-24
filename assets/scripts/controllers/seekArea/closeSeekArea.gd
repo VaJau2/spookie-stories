@@ -1,63 +1,94 @@
 extends Area2D
 
-@onready var shape_left: CollisionShape2D = get_node("shape_l")
-@onready var shape_right: CollisionShape2D = get_node("shape_r")
+class_name CloseSeekArea
+
 @onready var ray: RayCast2D = get_node("ray")
+@export var custom_victim_filter: Node
 
-@export var is_active: bool = true
 @export var state_machine: StateMachine
-@export var anim_controller: AnimationController
+@export var ignore_states: Array[String] = ["attack"]
+@export var check_only_player: bool = true
+@export var see_enemy_state: String = "attack"
 
-var player: CharacterBody2D
+var all_victims: Array[CharacterBody2D]
+var update_see_timer: bool = false
 var see_timer: float
 
 
 func _ready() -> void:
-	set_process(false)
-	anim_controller.flip_changed.connect(_on_flip_changed)
+	update_see_timer = false
 
 
-func _on_flip_changed(new_value: bool) -> void:
-	shape_left.disabled = !new_value
-	shape_right.disabled = new_value
+func _body_is_victim(body: Node2D) -> bool:
+	if check_only_player:
+		return body.has_node("input_controller")
+	else:
+		return body is CharacterBody2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if !is_active: return
-	if body.has_node("input_controller"):
-		if state_machine.current_state.name != "attack":
+	if body == get_parent(): return
+	
+	if _body_is_victim(body):
+		all_victims.push_front(body)
+		
+		if !ignore_states.has(state_machine.current_state.name):
 			see_timer = 0
-			player = body
-			set_process(true)
+			update_see_timer = true
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if player == body:
-		see_timer = 0
-		player = null
-		set_process(false)
-		if state_machine.current_state.name == "attack":
-			state_machine.enable_state("search")
+	if all_victims.has(body):
+		all_victims.erase(body)
+		
+		if get_victim() == null && state_machine.current_state.name == see_enemy_state:
+			see_timer = 0
+			update_see_timer = false
+			state_machine.enable_state("search" if see_enemy_state == "attack" else "idle")
 
 
 func _process(delta: float) -> void:
-	if !is_active ||  state_machine.current_state.name == "attack":
-		set_process(false)
+	_update_see_timer(delta)
+	_check_target_visible()
+
+
+func get_victim() -> CharacterBody2D:
+	if custom_victim_filter: return custom_victim_filter.filter(all_victims)
+	if len(all_victims) > 0: return all_victims[0]
+	return null
+
+
+func _update_see_timer(delta: float) -> void:
+	if !update_see_timer: return
+	
+	if see_enemy_state == "" || ignore_states.has(state_machine.current_state.name):
+		update_see_timer = false
 		return
 	
-	ray.target_position = player.global_position - ray.global_position
+	var victim = get_victim()
+	if !victim: return
+	
+	ray.target_position = victim.global_position - ray.global_position
 	ray.force_raycast_update()
 	
-	if ray.get_collider() == player:
+	if ray.get_collider() == victim:
 		if see_timer < 1:
 			see_timer += _get_see_delta(delta)
 			return
-		state_machine.enable_state("attack")
-		set_process(false)
+		state_machine.enable_state(see_enemy_state)
+		update_see_timer = false
+
+
+func _check_target_visible() -> void:
+	var victim = get_victim()
+	
+	if victim && !victim.visible && state_machine.current_state.name == see_enemy_state:
+		state_machine.enable_state("search" if see_enemy_state == "attack" else "idle")
+		update_see_timer = true
 
 
 func _get_see_delta(delta: float) -> float:
-	var movement: MovementController = player.get_node("movement_controller")
+	var movement: MovementController = get_victim().get_node("movement_controller")
 	var state = movement.current_state.name
 	if state == "sit": return 2 * delta
 	if state == "run": return 10 * delta

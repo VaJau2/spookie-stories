@@ -3,7 +3,7 @@ extends Area2D
 @onready var parent: CharacterBody2D = get_parent()
 @export var state_machine: StateMachine
 
-var player: CharacterBody2D
+var victim: CharacterBody2D
 var hear_timer: float
 
 
@@ -14,14 +14,14 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_node("input_controller"):
 		hear_timer = 0
-		player = body
+		victim = body
 		set_process(true)
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if player == body:
+	if victim == body:
 		hear_timer = 0
-		player = null
+		victim = null
 		set_process(false)
 
 
@@ -38,10 +38,10 @@ func _process(delta: float) -> void:
 
 
 func _get_see_delta(delta: float) -> float:
-	if player.velocity.length() < 5: return 0
-	var movement: MovementController = player.get_node("movement_controller")
+	if victim.velocity.length() < 5: return 0
+	var movement: MovementController = victim.get_node("movement_controller")
 	var state = movement.current_state.name
-	var distance = player.global_position.distance_to(parent.global_position)
+	var distance = victim.global_position.distance_to(parent.global_position)
 	
 	if state == "sit": return 0
 	if state == "run": return 200 * delta / distance
