@@ -2,6 +2,7 @@ extends Area2D
 
 @export var one_time: bool
 @export var hint: HintLabel
+@export var hint_code: String = "shop_enter"
 @export var player_body: CharacterBody2D
 @export var shop_logic: Node
 @export var shop_timer: Timer
@@ -32,7 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if !shop_logic.may_enter(player_body): return
 	
 	set_process(true)
-	hint.show_temp_hint(Loc.trans("interface.hints.shop_enter"))
+	hint.show_temp_hint(Loc.trans("interface.hints." + hint_code))
 
 
 func _on_body_exited(body: Node2D) -> void:

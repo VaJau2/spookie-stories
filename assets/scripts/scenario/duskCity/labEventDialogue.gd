@@ -8,8 +8,9 @@ extends Node
 @export var pie_dialogues: Array[DialogueArea]
 @export var pie_dialogue_code: String
 @export var ponies_counter: Node
+@export var lab_enter_logic: Node
 
-@export var start_timer: float = 15
+@export var start_timer: float = 30
 
 var stop_counting: bool = false
 
@@ -35,6 +36,7 @@ func _on_finished_dialogue() -> void:
 	controller.set_may_move(true)
 	change_pie_dialogues()
 	ponies_counter.start_count()
+	lab_enter_logic.is_active = true
 	queue_free()
 
 

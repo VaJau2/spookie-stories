@@ -12,6 +12,7 @@
 			"shop": "Shop",
 			"strikely_home": "Strikely's Dream",
 			"gas_station": "Gas Station",
+			"dusk_lab": "Laboratory",
 			"cave": "Cave",
 		},
 		"no_level": "Level not passed",
@@ -41,6 +42,7 @@ and LMB to shoot",
 and X to shoot"
 		},
 		"shop_enter": "Move up to enter the shop",
+		"lab_enter": "Move up to enter the lab",
 		"boop": {
 			"keyboard": "Press E to boop",
 			"gamepad": "Press Y to boop",

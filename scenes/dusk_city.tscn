@@ -1299,7 +1299,7 @@ player = NodePath("../../ponies/dusk")
 script = ExtResource("32_dl0ae")
 dialogues_to_disable = [NodePath("../pie_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area2"), NodePath("../pie_shop_dialogue_area3")]
 
-[node name="lab_event_dialogue" type="Node2D" parent="dialogues" unique_id=151406989 node_paths=PackedStringArray("player_node", "dialogue_menu", "ponies_parent", "spawn_points", "pie_dialogues", "ponies_counter")]
+[node name="lab_event_dialogue" type="Node2D" parent="dialogues" unique_id=151406989 node_paths=PackedStringArray("player_node", "dialogue_menu", "ponies_parent", "spawn_points", "pie_dialogues", "ponies_counter", "lab_enter_logic")]
 script = ExtResource("35_wjxy6")
 player_node = NodePath("../../ponies/dusk")
 dialogue_menu = NodePath("../../menu/dialogue_menu")
@@ -1309,7 +1309,8 @@ spawn_points = [NodePath("spawn1"), NodePath("spawn2"), NodePath("spawn3")]
 pie_dialogues = [NodePath("../pie_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area2"), NodePath("../pie_shop_dialogue_area3")]
 pie_dialogue_code = "pie_shop_after"
 ponies_counter = NodePath("../../menu/ponies_counter")
-start_timer = 3.0
+lab_enter_logic = NodePath("../../shops/lab_enter_area/logic")
+start_timer = 20.0
 
 [node name="spawn1" type="Node2D" parent="dialogues/lab_event_dialogue" unique_id=212270604]
 position = Vector2(1171, -267)
@@ -1506,6 +1507,7 @@ position = Vector2(1675, -294)
 monitorable = false
 script = ExtResource("31_t4bl7")
 hint = NodePath("../../menu/hint")
+hint_code = "lab_enter"
 player_body = NodePath("../../ponies/dusk")
 shop_logic = NodePath("logic")
 shop_timer = NodePath("timer")
@@ -1523,7 +1525,6 @@ bus = &"Sound"
 
 [node name="logic" type="Node" parent="shops/lab_enter_area" unique_id=1647938604]
 script = ExtResource("45_aurji")
-is_active = true
 
 [node name="timer" type="Timer" parent="shops/lab_enter_area" unique_id=1256659387]
 wait_time = 2.0

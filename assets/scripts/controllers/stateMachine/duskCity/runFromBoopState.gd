@@ -17,6 +17,9 @@ func enable() -> void:
 	chaser = seek_area.get_victim()
 	temp_run_point = _get_run_point()
 	
+	if movement_controller is NavigationMovementController:
+		movement_controller.set_target(temp_run_point.global_position)
+	
 	if movement_controller is MovementController:
 		movement_controller.load_state("run")
 	
@@ -32,16 +35,14 @@ func disable() -> void:
 
 
 func _process(_delta: float) -> void:
-	if chaser == null:
-		state_machine.enable_state("idle")
-		return
-	
-	if movement_controller is NavigationMovementController:
-		movement_controller.set_target(temp_run_point.global_position)
+	if chaser == null: state_machine.enable_state("idle")
 
 
 func _on_came_to_point(_delta: float) -> void:
 	temp_run_point = _get_run_point()
+	
+	if movement_controller is NavigationMovementController:
+		movement_controller.set_target(temp_run_point.global_position)
 
 
 func _get_run_point() -> Node2D:

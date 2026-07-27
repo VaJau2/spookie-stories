@@ -2,6 +2,7 @@ extends Node
 
 @export var is_active: bool = false
 
+
 func may_enter(player: CharacterBody2D) -> bool:
 	if !is_active: return false
 	

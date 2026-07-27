@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://10ekk10qalxj"]
 
 [ext_resource type="Texture2D" uid="uid://dcqb1talbjhbq" path="res://assets/sprites/tiles/dusk-city.png" id="1_lxq53"]
+[ext_resource type="Script" uid="uid://d2qydt38lm02s" path="res://assets/scripts/background/houseTransparentArea.gd" id="2_vhju0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxuq"]
 size = Vector2(185, 143)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e8m1b"]
 polygon = PackedVector2Array(94, 29, -93, 30, -93, -285, 95, -285)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
+size = Vector2(177, 161)
 
 [node name="house1" type="StaticBody2D" unique_id=645723691]
 
@@ -23,3 +27,16 @@ shape = SubResource("RectangleShape2D_4kxuq")
 
 [node name="shadow" type="LightOccluder2D" parent="." unique_id=267192882]
 occluder = SubResource("OccluderPolygon2D_e8m1b")
+
+[node name="transparent_area" type="Area2D" parent="." unique_id=321142005 node_paths=PackedStringArray("sprite")]
+position = Vector2(0, -186)
+script = ExtResource("2_vhju0")
+sprite = NodePath("../sprite")
+player_name = "dusk"
+
+[node name="shape" type="CollisionShape2D" parent="transparent_area" unique_id=422323918]
+position = Vector2(-0.5, -15.5)
+shape = SubResource("RectangleShape2D_mti6b")
+
+[connection signal="body_entered" from="transparent_area" to="transparent_area" method="_on_body_entered"]
+[connection signal="body_exited" from="transparent_area" to="transparent_area" method="_on_body_exited"]

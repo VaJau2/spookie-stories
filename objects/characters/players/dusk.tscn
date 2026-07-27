@@ -436,10 +436,10 @@ texture = ExtResource("40_likot")
 [node name="boop_points" type="Node2D" parent="." unique_id=245510948]
 
 [node name="left" type="Node2D" parent="boop_points" unique_id=1624914514]
-position = Vector2(-45, 0)
+position = Vector2(-42, 0)
 
 [node name="right" type="Node2D" parent="boop_points" unique_id=309355320]
-position = Vector2(45, 0)
+position = Vector2(42, 0)
 
 [node name="booped_state" type="Node2D" parent="." unique_id=2137106157 node_paths=PackedStringArray("sprite", "movement_controller", "anim_player", "audi_boops")]
 script = ExtResource("44_gntmu")

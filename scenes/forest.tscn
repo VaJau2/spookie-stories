@@ -1580,7 +1580,7 @@ level_num = 1
 [node name="strikely_home" type="Button" parent="menu/main_menu/load/container" unique_id=134588954]
 layout_mode = 2
 focus_neighbor_top = NodePath("../shop")
-focus_neighbor_bottom = NodePath("../cave")
+focus_neighbor_bottom = NodePath("../dusk_lab")
 text = "Сон Страйкли"
 script = ExtResource("25_soql2")
 level_num = 2
@@ -1588,18 +1588,26 @@ level_num = 2
 [node name="gas_station" type="Button" parent="menu/main_menu/load/container" unique_id=121257697]
 layout_mode = 2
 focus_neighbor_top = NodePath("../shop")
-focus_neighbor_bottom = NodePath("../cave")
+focus_neighbor_bottom = NodePath("../dusk_lab")
 text = "Заправка"
 script = ExtResource("25_soql2")
 level_num = 3
 
-[node name="cave" type="Button" parent="menu/main_menu/load/container" unique_id=1471753581]
+[node name="dusk_lab" type="Button" parent="menu/main_menu/load/container" unique_id=1471753581]
+layout_mode = 2
+focus_neighbor_top = NodePath("../gas_station")
+focus_neighbor_bottom = NodePath("../../cancel")
+text = "Лаборатория"
+script = ExtResource("25_soql2")
+level_num = 4
+
+[node name="cave" type="Button" parent="menu/main_menu/load/container" unique_id=1569096062]
 layout_mode = 2
 focus_neighbor_top = NodePath("../gas_station")
 focus_neighbor_bottom = NodePath("../../cancel")
 text = "Шахта"
 script = ExtResource("25_soql2")
-level_num = 4
+level_num = 5
 
 [node name="cancel" type="Button" parent="menu/main_menu/load" unique_id=1442872170 node_paths=PackedStringArray("panel_to_close", "load_button")]
 layout_mode = 1
@@ -1638,6 +1646,19 @@ vertical_alignment = 1
 script = ExtResource("23_vbuu3")
 nodes = Array[ExtResource("24_xqxf2")]([SubResource("Resource_vchkt"), SubResource("Resource_bjg73"), SubResource("Resource_g34gq"), SubResource("Resource_soql2"), SubResource("Resource_u01n2"), SubResource("Resource_qu0hn")])
 
+[node name="version" type="Label" parent="menu/main_menu" unique_id=1598716992]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v 1.1"
+
 [node name="black_screen" type="ColorRect" parent="menu" unique_id=357954745]
 anchors_preset = 15
 anchor_right = 1.0
@@ -1664,5 +1685,6 @@ save_level_num = 1
 [connection signal="pressed" from="menu/main_menu/load/container/shop" to="menu/main_menu/load/container/shop" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/container/strikely_home" to="menu/main_menu/load/container/strikely_home" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/container/gas_station" to="menu/main_menu/load/container/gas_station" method="_on_pressed"]
+[connection signal="pressed" from="menu/main_menu/load/container/dusk_lab" to="menu/main_menu/load/container/dusk_lab" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/container/cave" to="menu/main_menu/load/container/cave" method="_on_pressed"]
 [connection signal="pressed" from="menu/main_menu/load/cancel" to="menu/main_menu/load/cancel" method="_on_pressed"]
