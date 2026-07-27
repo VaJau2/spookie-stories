@@ -667,7 +667,7 @@ position = Vector2(-1191, -107)
 [node name="point_light" type="PointLight2D" parent="nav_region/ponies/scientist" unique_id=1648111696]
 position = Vector2(1, -1)
 color = Color(0.6861467, 0.7707416, 0.8475429, 1)
-energy = 0.5
+energy = 0.45
 shadow_enabled = true
 texture = ExtResource("10_oflyp")
 texture_scale = 0.6
@@ -677,7 +677,7 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(-1, -1)
 color = Color(0.6862745, 0.77254903, 0.84705883, 1)
-energy = 0.75
+energy = 0.6
 range_item_cull_mask = 2
 texture = ExtResource("7_wwjas")
 

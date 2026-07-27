@@ -12,11 +12,6 @@ var came_to_point: bool = false
 
 func _ready() -> void:
 	_load_patrol_points()
-	if len(patrol_points) == 0: return
-	
-	set_new_target_point()
-	if movement_controller is NavigationMovementController:
-		movement_controller.came_to_point.connect(_on_came_to_point)
 
 
 func _process(delta: float) -> void:
@@ -53,17 +48,29 @@ func enable() -> void:
 	if movement_controller is MovementController:
 		movement_controller.load_state("walk")
 	
+	if movement_controller is NavigationMovementController:
+		if !movement_controller.came_to_point.is_connected(_on_came_to_point):
+			movement_controller.came_to_point.connect(_on_came_to_point)
+	
 	if len(patrol_points) > 0: set_new_target_point()
 
 
+func disable() -> void:
+	super.disable()
+	if movement_controller is NavigationMovementController:
+		if movement_controller.came_to_point.is_connected(_on_came_to_point):
+			movement_controller.came_to_point.disconnect(_on_came_to_point)
+
+
 func _on_came_to_point(_delta: float) -> void:
+	if !is_processing(): return
 	if !temp_target_point: return
 	
 	if temp_target_point.has_method("handle_character"):
 		temp_target_point.handle_character(self)
 		return
 	
-	wait_timer = randf_range(WAIT_TIME[0], WAIT_TIME[1])	
+	wait_timer = randf_range(WAIT_TIME[0], WAIT_TIME[1])
 	came_to_point = true
 
 

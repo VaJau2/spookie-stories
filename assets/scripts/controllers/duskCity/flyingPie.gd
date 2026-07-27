@@ -2,12 +2,21 @@ extends Area2D
 
 class_name FlyingPie
 
+@export var healing_pie: Texture2D
+@export var sprite: Sprite2D
 @onready var particles: GPUParticles2D = get_node("particles")
 
+
+var is_healing: bool = false
 var live_delay: float = 8.0
 
 var parent: CharacterBody2D
 var fly_dir: Vector2
+
+
+func make_healing_pie() -> void:
+	is_healing = true
+	sprite.texture = healing_pie
 
 
 func _process(delta: float) -> void:
@@ -38,6 +47,8 @@ func _handle_body(body: Node2D) -> void:
 	if body.has_node("state_machine"):
 		var state_machine: StateMachine = body.get_node("state_machine")
 		state_machine.enable_state("pied")
+		if is_healing:
+			state_machine.get_node("booped").disable_booped()
 
 
 func _enable_particles() -> void:

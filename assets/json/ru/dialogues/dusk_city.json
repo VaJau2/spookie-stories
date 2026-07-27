@@ -228,5 +228,151 @@
 				"method": "spawn_booped_scientists"
 			},
 		]
+	},
+	"pie_shop_after": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Научно доказано, что лучшее оружие против зараженных буп-вирусом пони это пироги.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Чтобы сделать их еще более эффективными, мне нужно принести их в лабораторию.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "И синтезировать с помощью них вакцину.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/dialogues/pie_shop_dialogue_script",
+				"method": "disable"
+			},
+		]
+	},
+	"booped": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "О нет... кажется меня бупнули.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "Моя первая история пошла совсем не так, как я планировала.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Как вы обычно говорите? Все было не",
+				"autoskip": 1
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "idle",
+				"text": "Стой, стой",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "smirk",
+				"text": "Давай продолжим с той же точки.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "happy",
+				"text": "Твоя история только начинается!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Вы ... точно этого хотите?",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "happy",
+				"text": "Да!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Почему бы и нет.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "...ладно",
+			},
+		]
+	},
+	"healed_all": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "happy",
+				"text": "В конечном итоге мне удалось спасти всех от ужасной буп-участи.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "Ученая-пони-химик, которая все это устроила, больше никогда не пыталась играть с химическими реагентами.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "А в лаборатории ввели новые правила безопасности, чтобы такое больше не повторилось.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level_healed",
+				"method": "start"
+			}
+		]
+	},
+	"booped_all": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "idle",
+				"text": "В конечном итоге в городе не осталось ни одной пони, не зараженной буп-вирусом.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "serious",
+				"text": "И все они были обречены на ужасную судьбу вечно бупать друг-друга.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "shy",
+				"text": "Включая... и меня тоже.",
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level_booped",
+				"method": "start"
+			}
+		]
 	}
 }

@@ -41,6 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://xpifcj0qk8ya" path="res://assets/sprites/characters/dusk_city/pony_pie_2.png" id="39_i8xu8"]
 [ext_resource type="Script" uid="uid://bqfdxixuc01d4" path="res://assets/scripts/controllers/stateMachine/duskCity/boopedState.gd" id="40_ok83m"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="41_c4i0b"]
+[ext_resource type="Texture2D" uid="uid://1f84gp8voe60" path="res://assets/sprites/characters/dusk_city/scientist.png" id="41_xmrjl"]
+[ext_resource type="Script" uid="uid://bw2dabr4g2mo4" path="res://assets/scripts/controllers/stateMachine/duskCity/runFromBoopState.gd" id="42_4xaye"]
 [ext_resource type="Script" uid="uid://b4dywrgr0cwrx" path="res://assets/scripts/controllers/duskCity/boopedVictimFilter.gd" id="42_uofhb"]
 
 [sub_resource type="Animation" id="Animation_226un"]
@@ -493,11 +495,18 @@ pie = NodePath("../../pie")
 pie_textures = Array[Texture2D]([ExtResource("3_4xaye"), ExtResource("39_i8xu8")])
 seek_area = NodePath("../../seek_area")
 
-[node name="booped" type="Node" parent="state_machine" unique_id=1791981936 node_paths=PackedStringArray("anim", "seek_area")]
+[node name="booped" type="Node" parent="state_machine" unique_id=1791981936 node_paths=PackedStringArray("anim", "seek_area", "sprites")]
 script = ExtResource("40_ok83m")
 anim = NodePath("../../anim")
 seek_area = NodePath("../../seek_area")
+sprites = [NodePath("../../sprite")]
+usual_textures = Array[Texture2D]([ExtResource("41_xmrjl")])
+booped_textures = Array[Texture2D]([ExtResource("2_io6g8")])
 is_booped = true
+
+[node name="runFromBoop" type="Node" parent="state_machine" unique_id=891386339 node_paths=PackedStringArray("seek_area")]
+script = ExtResource("42_4xaye")
+seek_area = NodePath("../../seek_area")
 
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
 target_desired_distance = 8.0

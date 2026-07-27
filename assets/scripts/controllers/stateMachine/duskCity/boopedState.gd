@@ -1,12 +1,19 @@
 extends StateBase
 
+class_name BoopedState
+
 @export var anim: AnimationPlayer
 @export var seek_area: CloseSeekArea
 
 @export var sprites: Array[Sprite2D]
+@export var usual_textures: Array[Texture2D]
 @export var booped_textures: Array[Texture2D]
 @export var change_color_sprite: Sprite2D
-@export var is_booped: bool = false
+
+@export var is_booped: bool = false: set = _booped_state_changed
+
+signal booped_changed()
+
 var old_color: Color
 
 
@@ -27,8 +34,7 @@ func disable() -> void:
 func _on_anim_finished(anim_name: String) -> void:
 	if anim_name != "booped": return
 	
-	if !is_booped:
-		make_booped()
+	make_booped()
 	
 	var new_state: String = "idle"
 	
@@ -42,10 +48,30 @@ func _on_anim_finished(anim_name: String) -> void:
 
 
 func make_booped() -> void:
+	if is_booped: return
 	is_booped = true
 	seek_area.see_enemy_state = "attack"
-	if change_color_sprite: change_color_sprite.modulate = Color.WHITE
+	if change_color_sprite: 
+		old_color = change_color_sprite.modulate
+		change_color_sprite.modulate = Color.WHITE
 	for i in range(len(sprites)):
 		sprites[i].texture = booped_textures[i]
 	movement_controller.get_node("walk").speed = randi_range(190, 220)
 	movement_controller.get_node("run").speed = randi_range(330, 370)
+
+
+func disable_booped() -> void:
+	if !is_booped: return
+	is_booped = false
+	if change_color_sprite: 
+		change_color_sprite.modulate = old_color
+	for i in range(len(sprites)):
+		sprites[i].texture = usual_textures[i]
+	seek_area.see_enemy_state = "runFromBoop"
+	movement_controller.get_node("walk").speed = 150
+	movement_controller.get_node("run").speed = 260
+
+
+func _booped_state_changed(value: bool) -> void:
+	is_booped = value
+	booped_changed.emit()

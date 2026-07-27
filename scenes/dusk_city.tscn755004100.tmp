@@ -32,8 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://xdmo2wyhtorg" path="res://objects/characters/dusk_city/mare.tscn" id="24_th87y"]
 [ext_resource type="Script" uid="uid://dkvhngecttki4" path="res://assets/scripts/interface/piesAmmoCount.gd" id="27_mjed6"]
 [ext_resource type="Texture2D" uid="uid://6cl2w4bo7s0l" path="res://assets/sprites/interface/pie.png" id="27_yuknr"]
-[ext_resource type="Script" uid="uid://cuhgrfwln6gok" path="res://assets/scripts/interface/duskCityPoniesCounter.gd" id="30_6evdd"]
-[ext_resource type="Texture2D" uid="uid://611t2oqv3ttn" path="res://assets/sprites/interface/healing-pie.png" id="30_qpgjt"]
 [ext_resource type="Script" uid="uid://pe0dwvkln6s" path="res://assets/scripts/background/dialogueArea.gd" id="30_wnsja"]
 [ext_resource type="Script" uid="uid://o18dw0hfl55i" path="res://assets/scripts/scenario/duskCity/bowShopDialogueScript.gd" id="31_ppdmc"]
 [ext_resource type="Script" uid="uid://68bd51w5qi5w" path="res://assets/scripts/scenario/duskCity/shop/shopArea.gd" id="31_t4bl7"]
@@ -44,12 +42,6 @@
 [ext_resource type="Script" uid="uid://cmm2hqgu7h504" path="res://assets/scripts/scenario/duskCity/labEventDialogue.gd" id="35_wjxy6"]
 [ext_resource type="PackedScene" uid="uid://r2amc1bvx1ev" path="res://objects/characters/dusk_city/scientist_2_booped.tscn" id="37_2svdp"]
 [ext_resource type="PackedScene" uid="uid://c77eiapqqdkua" path="res://objects/characters/dusk_city/scientist_booped.tscn" id="38_es7dc"]
-[ext_resource type="Script" uid="uid://b841snlns6na" path="res://assets/scripts/scenario/duskCity/firstTimeBoopedDialogue.gd" id="39_es7dc"]
-[ext_resource type="Script" uid="uid://s03xhmg4oo6b" path="res://assets/scripts/scenario/duskCity/finalDialogue.gd" id="42_t4nnl"]
-[ext_resource type="AudioStream" uid="uid://dxsspx6l1ls7j" path="res://assets/audio/healPotion.wav" id="44_d4d6e"]
-[ext_resource type="Script" uid="uid://cugkp5662b7xw" path="res://assets/scripts/scenario/duskCity/shop/labLogic.gd" id="45_aurji"]
-[ext_resource type="AudioStream" uid="uid://c2q3vxv5i0807" path="res://assets/audio/furniture/door_open_2.mp3" id="45_lxf1k"]
-[ext_resource type="Script" uid="uid://bkiqfexdm8qvm" path="res://assets/scripts/background/nextLevelAnim.gd" id="50_6bk16"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6jccf"]
 vertices = PackedVector2Array(1238.3438, 1167, 1238.3438, 1190.3438, 1167, 1190.3438, 1167, 1185, 1161.6563, 1167, 1161.6563, 1185, 278.34375, -201.65625, 201.65625, -201.65625, 201.65625, -225, 278.34375, -225, -86.34375, 543, 3121, 540, 3163, 540, 2444, 599, 2133, 596, 955, -457, 1833, -449, 1516, -449, 119, -452, 914, -457, 981, -202, 2863, -207, 2916, -207, 2491, -45, 2276, -45, 2024, -73, -1556, 873, -584, 846, 2450, 800, 2665, 800, 532, 919, 314, 919, 1718, -526, 2491, -529, 2544, -529, 2129, -516, 2088, -516, 1306, -593, -1497, -596, 31, -630, 514, -632, 556, -632, 1348, -593, 2088, -462, 2129, -462, -1566, -306, -266, -312, -213, -312, -123, -283, -307, -280, -360, -280, 1593.6563, 1359, 1689.6563, 1353.6563, 2411, 1342, 2453, 1342, 2783, 1415, 1161.6563, 1359, 2742, 1415, 1017.65625, 1407, 1094.3438, 1359, 556, -673, 514, -673, -1070, -683, -1070, -725, 1926.3438, 495, 1017.65625, 489.65625, 1034, 428, 1586, 423, 1801, 423, 1926.3438, 459.65625, 1806, -73, 921.65625, -81, 928, -202, 57.65625, 783, 702.28906, 777.65625, 755, 777.65625, 755, 790, 2491, 128, 2929, 105, 3113, 96, 3166, 96, 2652, 244, 2437, 244, -534.34375, 159, 2276, 128, 2397, 244, 2154, 242, -1115.6563, 105.65625, -853, 101, -549, 96, -401.71094, 105.65625, -534.34375, 123.65625, -569.65625, 123.65625, -536, 1135, -415, 1131, -200, 1131, -534.34375, 1275.6563, -569.65625, 1275.6563, -1053, -252, -1094, -252, -1298, -255, -1298, -297, -673, -279, 1162, 1547, 3503.2188, 1679.9063, -1760.8594, 1650.0781, -1019, 1598, -716, 1583, 1121, 1547, -888, -186, -307, -238, -123, -241, -70, -241, 134.34375, -81, 106, -49, -109, -49, -131, -50, -645, -99, 1096, -472, 1665, -526, 2361.6563, 489.65625, 2818, 500, 1961.6563, 495, 2294.3438, 489.65625, -1071, 101, 2024, 126, 1806, 126, -74, 1544, 1121, 1493, 1939, 415, 2146.7422, 415, 2142.289, 441.65625, 1961.6563, 459.65625, 1553, 123, 1343, 126, 2916, -249, 2863, -249, 1833, -278, -799, 846, 2544, -571, 2491, -571, 744, 53, 1125, 126, 106, 124, 230, 96, 702, 53, 3121, 1482, 3163, 1482, 2453, 1301, 2411, 1301, 2133, 1289, 2133, 1247, 2315, 1056, -74, 1503, -116, 1503, -188, 1362, 265, 1340, 318, 1340, 603, 1420, 603, 1461, 2888, 105, -831, 96, 1622.3438, 1353.6563, 1763, 1089, 2262, 1056, 2080, 1247, -116, 1544, -1072, 1598, 819, 428, 304, 372, 393.65625, 351, 422.34375, 351, 2742, 1469, 2783, 1469, 1162, 1493, -360, -238, -346, -50, -346, 123, -347.65625, 105.65625, -347.65625, 43.65625, -631, -238, 1043, -472, 9.65625, 447, 124, 433, 134.34375, 433, 134.34375, 495, -11.65625, 489.65625, 2858, 772, 2899, 772, 3163, 1441, 3121, 1441, 3163, 499, 3121, 499, 2871, 458, 2652, 417, -199.35938, 1051.6563, -200, 1055.4922, -200, 958, 736, 1116, 736, 943, 758.34375, 998.34375, 758.34375, 1407, -673, -238, -888, -228, 177, 96, 326.34375, 351, -401, 303, -401, 267.65625, -393.65625, 278.34375, -393.65625, 543, 3540.7578, -792, 465, 1277, 506, 1277, 645, 1420, 318, 1298, 2444, 798, 2226, 798, 1801, 798, 1586, 798, 1265, 795, 983, 795, 3166, 54, 970, 790, 3113, 54, 2929, 51, -1496, 703, -1549, 703, -1521, 538, -819, 441, -601, 441, -393.65625, 566.34375, -799, 673, -968, 437, -1186, 437, -1471, 356, -1186, 238, -1521, 496, 1467, 713, 1425, 713, 304, 330, 326.34375, 278.34375, 2899, 718, 1586, 625, 1467, 672, 506, 1223, 532, 1118, 1385.6563, -369, 1385.6563, -404.34375, 1516, -278, 1350.3438, -404.34375, 819, 255, 681.65625, 351, 681.65625, 278.34375, -436.34375, 303, -601, 242, -436.34375, 267.65625, 1265, 666, 1425, 672, -70, -283, 134.34375, -345.65625, -213, -354, 78, -452, 177, 54, 372.34375, -134.34375, 372.34375, -196.34375, 422.34375, -153.65625, 422.34375, -81, 983, 600, 970, 617, -1513, 356, -1574, 496, 2450, 627, -1471, 315, -1738.1328, -793.9922, -853, -98, -831, -99, 251, 330, 251, 372, 153.65625, 351, 153.65625, 278.34375, -818, 940, -818, 1135, -923.65625, 1113.6563, -923.65625, 1051.6563, 1125, -73, 744, 12, 1593.6563, 1286.3438, 1622.3438, 1291.6563, 955, -511, 1043, -514, 712.6406, 715.65625, 304, 716, 304, 674, 251, 716, 57.65625, 566.34375, 251, 674, 2665, 627, 2858, 718, -1185, 945, -1185, 1144, -1523, 1098, -1523, 1044, 9.65625, 374.34375, 124, 392, -1053, -198, -941, -228, -941, -186, -1071, -98, -1115.6563, 43.65625, -1496, 745, -1556, 832, -1549, 745, 230, 54, 702, 12, 1763, 1047, 2262, 1014, -716, 1529, -241, 1362, 1801, 250, 1915.6563, 303, 2888, 51, 1348, -552, 1665, -568, 902.34375, 1407, 645, 1461, -188, 1320, 265, 1298, -109, 124, -131, 123, -241, 1320, -534.34375, 1311, -155.65625, 1113.6563, 314, 1118, -1555, 1575, -1555, 1534, -1072, 1556, -1597, 1575, -1597, 1534, -536, 1006, -415, 958, -819, 242, -968, 238, 2818, 458, 2361.6563, 427.65625, 2437, 417, 1305.6563, 1263, 1305.6563, 1046.3438, 1710, 1089, 2080, 1289, 1689.6563, 1291.6563, -569.65625, 159, -1439, 141, -1169.7109, 105.65625, 1710, 1047, 1593.6563, 1023, 1593.6563, 950.34375, 2196.3438, 441.65625, 1553, -50, 1306, -552, 1096, -514, -1497, -554, 914, -511, -155.65625, 1051.6563, 1034, 255, 1586, 250, 921.65625, -249.65625, 928, -244, -153.65625, 783, 119, -506, 78, -506, -631, -452, -266, -354, -1566, -348, -672, -452, 31, -672, -22, -672, 2871, 500, 2397, 417, 2196.3438, 417, 2294.3438, 427.65625, 345.65625, 495, 470.34375, 495, 1718, -568, -1523, 45, -1523, 3, -1159.3594, 43.65625, -1269, 61, -1311, 61, 981, -244, 1350.3438, -369, 1183, -369, 1147.6563, -369, -631, -506, -672, -506, 1183, -404.34375, 1147.6563, -404.34375, 470.34375, -249.65625, 470.34375, -153.65625, 372.34375, -230.34375, 356.34375, -196.34375, 356.34375, -207, 345.65625, -207, 345.65625, -230.34375, 372.34375, -292.34375, 356.34375, -292.34375, 356.34375, -303, 345.65625, -303, 345.65625, -345.65625, -631, -279, 345.65625, -81, 345.65625, -134.34375, 489.65625, -81, 489.65625, -86.34375, 537.65625, -86.34375, 537.65625, -129, 566.34375, -129, 566.34375, -86.34375, 633.65625, -86.34375, 633.65625, -129, 662.34375, -129, 662.34375, -86.34375, 729.65625, -86.34375, 729.65625, -129, 758.34375, -129, 758.34375, -86.34375, 825.65625, -86.34375, 825.65625, -129, 854.34375, -129, 854.34375, -81, 1343, -50, 1343, -73, -549, -33, -645, -33, 1343, 123, -1269, 102, -1311, 102, -1439, 87, 2182, 244, 2182, 379.65625, 2154, 379.65625, 1939, 242, 1939, 267.65625, 1915.6563, 267.65625, 1939, 303, 614.34375, 278.34375, 614.34375, 351, 585.65625, 351, 585.65625, 278.34375, 950.34375, 428, 950.34375, 489.65625, 681.65625, 489.65625, 1017.65625, 428, 681.65625, 427.65625, 633.65625, 427.65625, 633.65625, 422.34375, 633.65625, 495, 633.65625, 489.65625, 470.34375, 422.34375, 470.34375, 427.65625, 422.34375, 427.65625, 345.65625, 422.34375, 166, 392, 86.34375, 351, 422.34375, 489.65625, 470.34375, 489.65625, 166, 422.34375, -11.65625, 374.34375, -11.65625, 331.65625, -27.65625, 331.65625, -27.65625, 321, -63, 393.65625, -57.65625, 393.65625, -57.65625, 417, -63, 417, -11.65625, 447, -249.65625, 447, -278.34375, 470.34375, -321, 470.34375, -321, 465, -249.65625, 374.34375, -326.34375, 465, -326.34375, 351, -196.34375, 351, -196.34375, 374.34375, -182.34375, 447, -182.34375, 399, -153.65625, 399, -153.65625, 470.34375, -249.65625, 470.34375, -278.34375, 543, -249.65625, 543, 2226, 599, 2226, 662, 2133, 662, 1947, 791, 2226, 791, 1801, 625, 1947, 596, 1169, 666, 1169, 600, 755, 617, 755, 715.65625, -182.34375, 710.34375, -321, 710.34375, -321, 705, -278.34375, 687, -57.65625, 639, -57.65625, 687, -326.34375, 705, -326.34375, 687, -278.34375, 639, -9.65625, 687, -9.65625, 710.34375, -153.65625, 710.34375, -182.34375, 783, -393.65625, 783, -584, 673, 1526.3438, 1286.3438, 1526.3438, 1291.6563, 1478.3438, 1291.6563, 1449.6563, 1286.3438, 1478.3438, 1353.6563, 1526.3438, 1353.6563, 1526.3438, 1359, 1449.6563, 1359, 1382.3438, 1286.3438, 1382.3438, 1291.6563, 1334.3438, 1291.6563, 1334.3438, 1353.6563, 1382.3438, 1353.6563, 1382.3438, 1359, 1305.6563, 1359, 1094.3438, 1263, 1238.3438, 1286.3438, 1238.3438, 1291.6563, 1190.3438, 1291.6563, 1161.6563, 1286.3438, 1190.3438, 1353.6563, 1238.3438, 1353.6563, 1238.3438, 1359, 1094.3438, 1286.3438, 1094.3438, 1291.6563, 1046.3438, 1291.6563, 1017.65625, 998.34375, 1046.3438, 1353.6563, 1094.3438, 1353.6563, 532, 943, -632, 1006, -632, 940, -967, 1051.6563, -967, 945, -569.65625, 1311, -757, 1529, -967, 1144, -967, 1113.6563, -200, 1113.6563, 532, 1116, 465, 1223, 873.65625, 1286.3438, 825.65625, 1286.3438, 825.65625, 1215, 873.65625, 1215, 873.65625, 1142.3438, 825.65625, 1142.3438, 825.65625, 1119, 873.65625, 1119, 873.65625, 1071, 902.34375, 1071, 902.34375, 1119, 902.34375, 1142.3438, 950.34375, 1119, 950.34375, 1142.3438, 902.34375, 1215, 902.34375, 1286.3438, 950.34375, 1215, 950.34375, 1286.3438, 873.65625, 1407, -22, -630, -1123, -683, -1351, -255, -1094, -198, -1576, 3, -391.35938, 43.65625, -1123, -725, -1480, 87, -1550, -554, -1619, -348, -1598, 873, -1598, 832, -1574, 538, -63, 489.65625, -86.34375, 278.34375, -63, 321, -1550, -596, 2315, 1014, 1094.3438, 1023, 1094.3438, 950.34375, -757, 1583, -1576, 45, -1480, 141, -1513, 315, -1564, 1098, -1019, 1556, 1094.3438, 1046.3438, 518.34375, 351, 489.65625, 351, 518.34375, 278.34375, 489.65625, 278.34375, -1564, 1044, -1351, -297, -1619, -306, 422.34375, 278.34375, 393.65625, 278.34375, 1305.6563, 1286.3438, 86.34375, 278.34375, 566.34375, 422.34375, 566.34375, 495, 537.65625, 495, 537.65625, 422.34375)
@@ -401,9 +393,6 @@ size = Vector2(215, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnsja"]
 size = Vector2(215, 258)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm1bc"]
-size = Vector2(1592, 291)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mti6b"]
 
@@ -1028,35 +1017,49 @@ script = ExtResource("4_tj71r")
 
 [node name="menu" type="CanvasLayer" parent="." unique_id=236685790]
 
-[node name="ponies_counter" type="Label" parent="menu" unique_id=1480869666 node_paths=PackedStringArray("ponies_parent", "final_dialogue")]
+[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("5_qagya")]
+texture_filter = 1
+
+[node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("6_enflp")]
 visible = false
-anchors_preset = 1
-anchor_left = 1.0
+
+[node name="black_screen" type="ColorRect" parent="menu" unique_id=59141334]
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -219.0
-offset_top = 17.0
-offset_right = -24.0
-offset_bottom = 40.0
-grow_horizontal = 0
-script = ExtResource("30_6evdd")
-ponies_parent = NodePath("../../ponies")
-final_dialogue = NodePath("../../dialogues/final_dialogue")
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_8s8pl")
+
+[node name="hint" type="Label" parent="menu" unique_id=693952521]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 34.0
+grow_horizontal = 2
+text = "Нажмите Crtl чтобы красться"
+script = ExtResource("8_lnurw")
+hint_key = "crouch"
 
 [node name="pies" type="Control" parent="menu" unique_id=414550702 node_paths=PackedStringArray("player")]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -289.0
-offset_top = 46.0
-offset_right = -13.0
-offset_bottom = 101.0
+offset_left = -288.0
+offset_top = 11.0
+offset_right = -12.0
+offset_bottom = 66.0
 grow_horizontal = 0
 size_flags_stretch_ratio = 0.68
 script = ExtResource("27_mjed6")
 player = NodePath("../../ponies/dusk")
-usual_pie = ExtResource("27_yuknr")
-healing_pie = ExtResource("30_qpgjt")
 
 [node name="pie8" type="TextureRect" parent="menu/pies" unique_id=204807148]
 layout_mode = 0
@@ -1137,36 +1140,6 @@ rotation = -0.7853982
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("27_yuknr")
 
-[node name="hint" type="Label" parent="menu" unique_id=693952521]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -119.0
-offset_top = 11.0
-offset_right = 119.0
-offset_bottom = 34.0
-grow_horizontal = 2
-text = "Нажмите Crtl чтобы красться"
-script = ExtResource("8_lnurw")
-hint_key = "crouch"
-
-[node name="black_screen" type="ColorRect" parent="menu" unique_id=59141334]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("7_8s8pl")
-
-[node name="dialogue_menu" parent="menu" unique_id=2084497248 instance=ExtResource("5_qagya")]
-texture_filter = 1
-
-[node name="pause_menu" parent="menu" unique_id=357530029 instance=ExtResource("6_enflp")]
-visible = false
-
 [node name="dir_light" type="DirectionalLight2D" parent="." unique_id=223049557]
 position = Vector2(-367, 309)
 rotation = -2.1834068
@@ -1218,6 +1191,7 @@ bus = &"Sound"
 [node name="start_dialogue_area" type="Area2D" parent="dialogues" unique_id=1295540465 node_paths=PackedStringArray("dialogue_menu")]
 position = Vector2(-1136, 196)
 script = ExtResource("30_wnsja")
+is_active = false
 player_name = "dusk"
 dialogue_file = "dusk_city"
 dialogue_code = "start"
@@ -1299,17 +1273,13 @@ player = NodePath("../../ponies/dusk")
 script = ExtResource("32_dl0ae")
 dialogues_to_disable = [NodePath("../pie_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area2"), NodePath("../pie_shop_dialogue_area3")]
 
-[node name="lab_event_dialogue" type="Node2D" parent="dialogues" unique_id=151406989 node_paths=PackedStringArray("player_node", "dialogue_menu", "ponies_parent", "spawn_points", "pie_dialogues", "ponies_counter")]
+[node name="lab_event_dialogue" type="Node2D" parent="dialogues" unique_id=151406989 node_paths=PackedStringArray("player_node", "dialogue_menu", "ponies_parent", "spawn_points")]
 script = ExtResource("35_wjxy6")
 player_node = NodePath("../../ponies/dusk")
 dialogue_menu = NodePath("../../menu/dialogue_menu")
 ponies_parent = NodePath("../../ponies")
 prefabs = Array[PackedScene]([ExtResource("22_u66j8"), ExtResource("37_2svdp"), ExtResource("38_es7dc")])
 spawn_points = [NodePath("spawn1"), NodePath("spawn2"), NodePath("spawn3")]
-pie_dialogues = [NodePath("../pie_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area2"), NodePath("../pie_shop_dialogue_area3")]
-pie_dialogue_code = "pie_shop_after"
-ponies_counter = NodePath("../../menu/ponies_counter")
-start_timer = 3.0
 
 [node name="spawn1" type="Node2D" parent="dialogues/lab_event_dialogue" unique_id=212270604]
 position = Vector2(1171, -267)
@@ -1365,31 +1335,6 @@ position = Vector2(-1556, 1715)
 [node name="5" type="Node2D" parent="dialogues/lab_event_dialogue/spawn3/patrol_points" unique_id=439473483]
 position = Vector2(-1975, 1135)
 
-[node name="stop_count_area" type="Area2D" parent="dialogues/lab_event_dialogue" unique_id=1895668696]
-position = Vector2(1675, -318)
-
-[node name="shape" type="CollisionShape2D" parent="dialogues/lab_event_dialogue/stop_count_area" unique_id=1636219386]
-position = Vector2(196, 44.5)
-shape = SubResource("RectangleShape2D_mm1bc")
-
-[node name="first_time_booped_dialogue" type="Node" parent="dialogues" unique_id=1352186616 node_paths=PackedStringArray("black_screen", "dialogue_menu", "ponies_counter", "dialogues_to_disable", "hint")]
-script = ExtResource("39_es7dc")
-black_screen = NodePath("../../menu/black_screen")
-dialogue_menu = NodePath("../../menu/dialogue_menu")
-ponies_counter = NodePath("../../menu/ponies_counter")
-dialogues_to_disable = [NodePath("../bow_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area"), NodePath("../pie_shop_dialogue_area2"), NodePath("../pie_shop_dialogue_area3")]
-hint = NodePath("../../menu/hint")
-
-[node name="final_dialogue" type="Node" parent="dialogues" unique_id=1254200870 node_paths=PackedStringArray("dialogue_menu")]
-script = ExtResource("42_t4nnl")
-dialogue_menu = NodePath("../../menu/dialogue_menu")
-healed_dialogue_code = "healed_all"
-booped_dialogue_code = "booped_all"
-
-[node name="timer" type="Timer" parent="dialogues/final_dialogue" unique_id=1732762382]
-wait_time = 4.0
-one_shot = true
-
 [node name="shops" type="Node2D" parent="." unique_id=1093277994]
 
 [node name="bow_shop_enter_area" type="Area2D" parent="shops" unique_id=2022056517 node_paths=PackedStringArray("hint", "player_body", "shop_logic", "shop_timer", "shop_audi")]
@@ -1440,9 +1385,8 @@ stream = ExtResource("18_8k0bb")
 max_distance = 500.0
 bus = &"Sound"
 
-[node name="logic" type="Node" parent="shops/pie_shop_enter_area" unique_id=788880620 node_paths=PackedStringArray("hint")]
+[node name="logic" type="Node" parent="shops/pie_shop_enter_area" unique_id=788880620]
 script = ExtResource("35_8lwec")
-hint = NodePath("../../../menu/hint")
 
 [node name="timer" type="Timer" parent="shops/pie_shop_enter_area" unique_id=672172181]
 one_shot = true
@@ -1467,9 +1411,8 @@ stream = ExtResource("18_8k0bb")
 max_distance = 500.0
 bus = &"Sound"
 
-[node name="logic" type="Node" parent="shops/pie_shop_enter_area2" unique_id=731297489 node_paths=PackedStringArray("hint")]
+[node name="logic" type="Node" parent="shops/pie_shop_enter_area2" unique_id=731297489]
 script = ExtResource("35_8lwec")
-hint = NodePath("../../../menu/hint")
 
 [node name="timer" type="Timer" parent="shops/pie_shop_enter_area2" unique_id=1649859967]
 one_shot = true
@@ -1494,39 +1437,10 @@ stream = ExtResource("18_8k0bb")
 max_distance = 500.0
 bus = &"Sound"
 
-[node name="logic" type="Node" parent="shops/pie_shop_enter_area3" unique_id=1000248560 node_paths=PackedStringArray("hint")]
+[node name="logic" type="Node" parent="shops/pie_shop_enter_area3" unique_id=1000248560]
 script = ExtResource("35_8lwec")
-hint = NodePath("../../../menu/hint")
 
 [node name="timer" type="Timer" parent="shops/pie_shop_enter_area3" unique_id=1341422104]
-one_shot = true
-
-[node name="lab_enter_area" type="Area2D" parent="shops" unique_id=570683692 node_paths=PackedStringArray("hint", "player_body", "shop_logic", "shop_timer", "shop_audi")]
-position = Vector2(1675, -294)
-monitorable = false
-script = ExtResource("31_t4bl7")
-hint = NodePath("../../menu/hint")
-player_body = NodePath("../../ponies/dusk")
-shop_logic = NodePath("logic")
-shop_timer = NodePath("timer")
-shop_audi = NodePath("audi")
-door_sound = ExtResource("45_lxf1k")
-buy_sound = ExtResource("44_d4d6e")
-
-[node name="shape" type="CollisionShape2D" parent="shops/lab_enter_area" unique_id=1828356260]
-shape = SubResource("RectangleShape2D_mti6b")
-
-[node name="audi" type="AudioStreamPlayer2D" parent="shops/lab_enter_area" unique_id=1447025035]
-stream = ExtResource("44_d4d6e")
-max_distance = 500.0
-bus = &"Sound"
-
-[node name="logic" type="Node" parent="shops/lab_enter_area" unique_id=1647938604]
-script = ExtResource("45_aurji")
-is_active = true
-
-[node name="timer" type="Timer" parent="shops/lab_enter_area" unique_id=1256659387]
-wait_time = 2.0
 one_shot = true
 
 [node name="run_points" type="Node2D" parent="." unique_id=1610187999]
@@ -1549,23 +1463,11 @@ position = Vector2(-1128, 724)
 [node name="6" type="Node2D" parent="run_points" unique_id=357430262]
 position = Vector2(1264, 460)
 
-[node name="next_level_healed" type="Node" parent="." unique_id=244599785 node_paths=PackedStringArray("black_screen")]
-script = ExtResource("50_6bk16")
-black_screen = NodePath("../menu/black_screen")
-next_level = "forest5"
-
-[node name="next_level_booped" type="Node" parent="." unique_id=78791496 node_paths=PackedStringArray("black_screen")]
-script = ExtResource("50_6bk16")
-black_screen = NodePath("../menu/black_screen")
-next_level = "forest5-booped"
-
 [connection signal="body_entered" from="dialogues/start_dialogue_area" to="dialogues/start_dialogue_area" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogues/bow_shop_dialogue_area" to="dialogues/bow_shop_dialogue_area" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogues/pie_shop_dialogue_area" to="dialogues/pie_shop_dialogue_area" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogues/pie_shop_dialogue_area2" to="dialogues/pie_shop_dialogue_area2" method="_on_body_entered"]
 [connection signal="body_entered" from="dialogues/pie_shop_dialogue_area3" to="dialogues/pie_shop_dialogue_area3" method="_on_body_entered"]
-[connection signal="body_entered" from="dialogues/lab_event_dialogue/stop_count_area" to="dialogues/lab_event_dialogue" method="_on_stop_count_area_body_entered"]
-[connection signal="body_exited" from="dialogues/lab_event_dialogue/stop_count_area" to="dialogues/lab_event_dialogue" method="_on_stop_count_area_body_exited"]
 [connection signal="body_entered" from="shops/bow_shop_enter_area" to="shops/bow_shop_enter_area" method="_on_body_entered"]
 [connection signal="body_exited" from="shops/bow_shop_enter_area" to="shops/bow_shop_enter_area" method="_on_body_exited"]
 [connection signal="body_entered" from="shops/pie_shop_enter_area" to="shops/pie_shop_enter_area" method="_on_body_entered"]
@@ -1574,5 +1476,3 @@ next_level = "forest5-booped"
 [connection signal="body_exited" from="shops/pie_shop_enter_area2" to="shops/pie_shop_enter_area2" method="_on_body_exited"]
 [connection signal="body_entered" from="shops/pie_shop_enter_area3" to="shops/pie_shop_enter_area3" method="_on_body_entered"]
 [connection signal="body_exited" from="shops/pie_shop_enter_area3" to="shops/pie_shop_enter_area3" method="_on_body_exited"]
-[connection signal="body_entered" from="shops/lab_enter_area" to="shops/lab_enter_area" method="_on_body_entered"]
-[connection signal="body_exited" from="shops/lab_enter_area" to="shops/lab_enter_area" method="_on_body_exited"]

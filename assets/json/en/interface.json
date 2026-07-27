@@ -40,7 +40,15 @@ and LMB to shoot",
 			"gamepad": "Press Y to jump
 and X to shoot"
 		},
-		"shop_enter": "Move up to enter the shop"
+		"shop_enter": "Move up to enter the shop",
+		"boop": {
+			"keyboard": "Press E to boop",
+			"gamepad": "Press Y to boop",
+		},
+		"pie": {
+			"keyboard": "Press LMB to throw a pie",
+			"gamepad": "Press X to throw a pie",
+		}
 	},
 	"dialogue": {
 		"skip": "to continue"
@@ -51,5 +59,9 @@ Press Escape to exit",
 	},
 	"exit_web": {
 		"label": "Thank you for playing с:",
+	},
+	"ponies_counter": {
+		"healed": "Left to cure: ",
+		"booped": "Left to boop: "
 	}
 }

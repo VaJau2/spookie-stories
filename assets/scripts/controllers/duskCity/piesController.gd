@@ -13,8 +13,9 @@ const PIES_MAX_COUNT: int = 8
 @onready var parent: CharacterBody2D = get_parent()
 @onready var audi: AudioStreamPlayer2D = get_node("audi")
 
+var healing_pies_count: int = 0: set = set_healing_pies_count
 var pies_count : int = 0: set = set_pies_count
-signal pies_changed(value: int)
+signal pies_changed(value: int, heaing_value: int)
 
 var cooldown_timer: float
 var COOLDOWN_TIME: float = 0.5
@@ -23,7 +24,12 @@ var COOLDOWN_TIME: float = 0.5
 func set_pies_count(value: int) -> void:
 	pies_count = value
 	autoaim_area.is_active = pies_count > 0
-	pies_changed.emit(value)
+	pies_changed.emit(pies_count, healing_pies_count)
+
+
+func set_healing_pies_count(value: int) -> void:
+	healing_pies_count = value
+	pies_changed.emit(pies_count, healing_pies_count)
 
 
 func _ready() -> void:
@@ -48,8 +54,11 @@ func _on_shoot(pos: Vector2) -> void:
 	audi.stream = shoot_sound
 	audi.play()
 	pies_count -= 1
+	if healing_pies_count > 0:
+		healing_pies_count -= 1
 	
 	var pie: FlyingPie = pie_prefab.instantiate()
+	if healing_pies_count > 0: pie.make_healing_pie()
 	pie.parent = parent
 	get_node("../../").add_child(pie)
 	call_deferred("_move_spawned_pie", pie, pos)

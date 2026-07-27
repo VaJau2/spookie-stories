@@ -11,6 +11,8 @@ class_name PlayerBoopedState
 @export var is_booped: bool
 var boop_victim: CharacterBody2D
 
+var first_time_booped: bool = true
+
 
 func _ready() -> void:
 	anim_player.animation_finished.connect(_on_anim_finished)
@@ -20,7 +22,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if !is_booped: return
 	if Input.is_action_just_pressed("ui_boop"):
-		print("boop")
 		movement_controller.load_state("boop")
 
 
@@ -35,6 +36,10 @@ func _set_booped() -> void:
 	movement_controller.get_node("run").speed = 350
 	sprite.texture = booped_texture
 	is_booped = true
+	if first_time_booped:
+		var script = get_node("/root/main/dialogues/first_time_booped_dialogue")
+		script.start_dialogue()
+		first_time_booped = false
 
 
 func on_boop() -> void:

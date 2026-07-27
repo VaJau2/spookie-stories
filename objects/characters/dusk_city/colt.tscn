@@ -973,6 +973,7 @@ script = ExtResource("46_vvji6")
 anim = NodePath("../../anim")
 seek_area = NodePath("../../seek_area")
 sprites = [NodePath("../../sprite"), NodePath("../../eye_sprite")]
+usual_textures = Array[Texture2D]([ExtResource("2_36330"), ExtResource("4_r0scs")])
 booped_textures = Array[Texture2D]([ExtResource("52_lq2rc"), ExtResource("53_yybie")])
 change_color_sprite = NodePath("../../eye_sprite")
 

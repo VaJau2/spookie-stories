@@ -19,6 +19,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if !idle_state.is_processing():
+		idle_state.parent.visible = true
+		set_process(false)
+		return
+	
 	if wait_time > 0:
 		wait_time -= delta
 		return

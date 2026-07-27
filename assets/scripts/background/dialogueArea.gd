@@ -28,7 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if player_node != null and body != player_node: return
 	
 	is_active = false
-	dialogue_menu.start_dialogue(dialogue_file, dialogue_code)
+	dialogue_menu.start_dialogue(dialogue_file, dialogue_code, !stop_player)
 	if stop_player and player_node != null:
 		var controller: MovementController = player_node.get_node("movement_controller")
 		controller.set_may_move(false)

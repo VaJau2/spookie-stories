@@ -40,8 +40,10 @@
 [ext_resource type="Script" uid="uid://dd2ofhvq4do4o" path="res://assets/scripts/controllers/stateMachine/duskCity/piedState.gd" id="38_pr1o2"]
 [ext_resource type="Texture2D" uid="uid://xpifcj0qk8ya" path="res://assets/sprites/characters/dusk_city/pony_pie_2.png" id="39_qlrda"]
 [ext_resource type="Script" uid="uid://bqfdxixuc01d4" path="res://assets/scripts/controllers/stateMachine/duskCity/boopedState.gd" id="40_oqxf3"]
+[ext_resource type="Texture2D" uid="uid://8o4jvthvrmo3" path="res://assets/sprites/characters/dusk_city/scientist2.png" id="41_rdq4l"]
 [ext_resource type="Script" uid="uid://bhm33ivrcrnav" path="res://assets/scripts/controllers/seekArea/closeSeekArea.gd" id="41_uhw30"]
 [ext_resource type="Script" uid="uid://b4dywrgr0cwrx" path="res://assets/scripts/controllers/duskCity/boopedVictimFilter.gd" id="42_7pdid"]
+[ext_resource type="Script" uid="uid://bw2dabr4g2mo4" path="res://assets/scripts/controllers/stateMachine/duskCity/runFromBoopState.gd" id="42_vl03d"]
 
 [sub_resource type="Animation" id="Animation_226un"]
 length = 0.001
@@ -493,11 +495,18 @@ pie = NodePath("../../pie")
 pie_textures = Array[Texture2D]([ExtResource("3_vl03d"), ExtResource("39_qlrda")])
 seek_area = NodePath("../../seek_area")
 
-[node name="booped" type="Node" parent="state_machine" unique_id=1791981936 node_paths=PackedStringArray("anim", "seek_area")]
+[node name="booped" type="Node" parent="state_machine" unique_id=1791981936 node_paths=PackedStringArray("anim", "seek_area", "sprites")]
 script = ExtResource("40_oqxf3")
 anim = NodePath("../../anim")
 seek_area = NodePath("../../seek_area")
+sprites = [NodePath("../../sprite")]
+usual_textures = Array[Texture2D]([ExtResource("41_rdq4l")])
+booped_textures = Array[Texture2D]([ExtResource("2_n4776")])
 is_booped = true
+
+[node name="runFromBoop" type="Node" parent="state_machine" unique_id=1779009642 node_paths=PackedStringArray("seek_area")]
+script = ExtResource("42_vl03d")
+seek_area = NodePath("../../seek_area")
 
 [node name="nav_agent" type="NavigationAgent2D" parent="." unique_id=2104604028]
 target_desired_distance = 8.0

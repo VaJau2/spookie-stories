@@ -26,6 +26,8 @@ func _ready() -> void:
 
 
 func enable_state(state_name: String) -> void:
+	if !get_parent().visible: return
+	
 	if current_state != null:
 		current_state.disable()
 	

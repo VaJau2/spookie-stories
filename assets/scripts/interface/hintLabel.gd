@@ -1,9 +1,12 @@
 extends Label
 
+class_name HintLabel
+
 @export var hint_key: String
 @export var show_time: float = 2.0
 
 var temp_trans_key: String = ""
+
 
 func show_hint() -> void:
 	_update_hint_text()
@@ -13,6 +16,13 @@ func show_hint() -> void:
 		modulate.a += 0.1
 		await get_tree().process_frame
 	set_process(true)
+
+
+func show_temp_hint(_text: String) -> void:
+	set_process(false)
+	visible = true
+	modulate.a = 1
+	text = _text
 
 
 func _update_hint_text() -> void:
@@ -41,5 +51,3 @@ func _process(delta: float) -> void:
 		else:
 			if modulate.a > 0:
 				modulate.a -= delta * 3
-			else:
-				queue_free()

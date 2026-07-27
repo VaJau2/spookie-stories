@@ -41,6 +41,12 @@
 				"text": "Может история и хороша, но вы же понимаете, что она полностью выдумана?"
 			},
 			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "idle",
+				"text": "Даск вряд ли смогла бы справиться в одиночку с целым городом зараженных."
+			},
+			{
 				"type": "new_state",
 				"speaker": "dusk",
 				"state": "shy",
@@ -61,7 +67,155 @@
 				"type": "phrase",
 				"speaker": "bowler_hat",
 				"state": "confused",
-				"text": "Ну, расскажи",
+				"text": "Ну, расскажи.",
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "Это было не так давно. Меня до сих пор иногда бросает в дрожь от воспоминаний."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Я только-только устроился работать шерифом в своем родном городе после смерти моего отца."
+			},
+			{
+				"type": "phrase",
+				"speaker": "strikely",
+				"state": "sad",
+				"text": "О, нам очень жаль…"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sad",
+				"text": "Да."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "В общем, мне нужно было расследовать загадочные взрывы в шахтах."
+			},
+			{
+				"type": "new_state",
+				"speaker": "strikely",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "Они конечно были не редким явлением, но в то время происходили чуть ли не каждый день."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"text": "Когда наконец разгребли завалы, мы с моей верной напарницей направились вглубь шахт."
+			},
+			{
+				"type": "script",
+				"path": "/root/main/next_level",
+				"method": "start"
+			}
+		]
+	},
+	"talk-booped": {
+		"nodes": [
+			{
+				"type": "phrase",
+				"speaker": "dusk",
+				"state": "confused",
+				"text": "Эта история закончилась не так, как я хотела.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "pay",
+				"state": "happy",
+				"text": "А мне понравилось!",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "smirk",
+				"text": "Согласен. Весьма милая история.",
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "goofy",
+				"text": "Хоть в итоге все и заразились буп-вирусом…",
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "pay",
+				"state": "idle",
+			},
+			{
+				"type": "new_state",
+				"speaker": "bowler_hat",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "idle",
+				"text": "Может история и хороша, но вы же понимаете, что она полностью выдумана?"
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "look-down",
+				"text": "Иначе возвращаться в город уже не было бы никакого смысла…"
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "shy",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "sarcastic",
+				"text": "Если ты не хочешь быть забупаным до смерти."
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "idle",
+				"text": "В любом случае - я могу рассказать вам действительно страшные вещи."
+			},
+			{
+				"type": "new_state",
+				"speaker": "dusk",
+				"state": "idle",
+			},
+			{
+				"type": "phrase",
+				"speaker": "serious_tale",
+				"state": "idle",
+				"text": "А страшны они тем, что действительно происходили со мной в прошлом."
+			},
+			{
+				"type": "phrase",
+				"speaker": "bowler_hat",
+				"state": "confused",
+				"text": "Ну, расскажи.",
 			},
 			{
 				"type": "new_state",

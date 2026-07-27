@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6cl2w4bo7s0l" path="res://assets/sprites/interface/pie.png" id="1_5s0lt"]
 [ext_resource type="Script" uid="uid://cagkn5s8ssqm1" path="res://assets/scripts/controllers/duskCity/flyingPie.gd" id="1_esyi5"]
+[ext_resource type="Texture2D" uid="uid://611t2oqv3ttn" path="res://assets/sprites/interface/healing-pie.png" id="2_rhs31"]
 [ext_resource type="AudioStream" uid="uid://2auidxfn3s0r" path="res://assets/audio/pie/pie_splat.wav" id="3_6nk22"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
@@ -47,12 +48,14 @@ func _on_finished() -> void:
 	queue_free()
 "
 
-[node name="flying_pie" type="Area2D" unique_id=342330269]
+[node name="flying_pie" type="Area2D" unique_id=342330269 node_paths=PackedStringArray("sprite")]
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_esyi5")
+healing_pie = ExtResource("2_rhs31")
+sprite = NodePath("sprite")
 
-[node name="Pie" type="Sprite2D" parent="." unique_id=2120446718]
+[node name="sprite" type="Sprite2D" parent="." unique_id=2120446718]
 texture = ExtResource("1_5s0lt")
 
 [node name="shape" type="CollisionShape2D" parent="." unique_id=1370985625]

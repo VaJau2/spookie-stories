@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dn5t30i1be2xk" path="res://assets/sprites/interface/A.png" id="5_dl60q"]
 [ext_resource type="Script" uid="uid://b3vckk3r1vgc5" path="res://assets/scripts/interface/translate/translateHandler.gd" id="6_hlvh2"]
 [ext_resource type="Script" uid="uid://kbfv44blqaag" path="res://assets/scripts/interface/translate/translateData.gd" id="7_sg52v"]
+[ext_resource type="Script" uid="uid://i01rhmjy1dy4" path="res://assets/scripts/interface/dialogue/autoskipProgressBar.gd" id="11_heye4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg52v"]
 content_margin_left = 0.0
@@ -115,3 +116,21 @@ script = ExtResource("5_2x3gq")
 [node name="translate" type="Node" parent="." unique_id=448602713]
 script = ExtResource("6_hlvh2")
 nodes = Array[ExtResource("7_sg52v")]([SubResource("Resource_2x3gq")])
+
+[node name="progress_bar" type="ProgressBar" parent="." unique_id=227520994 node_paths=PackedStringArray("skip_label")]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -6.0
+offset_right = -6.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+show_percentage = false
+script = ExtResource("11_heye4")
+skip_label = NodePath("../skip")

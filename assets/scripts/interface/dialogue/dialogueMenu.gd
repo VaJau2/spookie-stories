@@ -3,6 +3,7 @@ extends Panel
 class_name DialogueMenu
 
 const DEFAULT_TIMER: float = 0.02
+const NODE_SKIP_TIMER: float = 0.12
 
 @export var ponies_parent: Node2D
 
@@ -22,7 +23,11 @@ var node_timer: float = DEFAULT_TIMER
 var animation_timer: float = 0
 var is_autoskip: bool = false
 
+var dialogue_skip: bool = false
+var node_skip_timer: float = 0
+
 signal started_dialogue
+signal next_node
 signal finished_dialogue
 
 enum TypeEnum {
@@ -35,6 +40,7 @@ enum TypeEnum {
 func _process(delta: float) -> void:
 	if !visible: return
 	_animate_text(delta)
+	_update_skip_node(delta)
 	
 	if Input.is_action_just_pressed("ui_select"):
 		if is_autoskip or text.visible_ratio >= 1:
@@ -43,7 +49,8 @@ func _process(delta: float) -> void:
 			text.visible_ratio = 1
 
 
-func start_dialogue(file: String, code: String) -> void:
+func start_dialogue(file: String, code: String, _dialogue_skip: bool = false) -> void:
+	dialogue_skip = _dialogue_skip
 	dialogue_data = _get_dialogue_data(file, code)
 	if dialogue_data.is_empty(): return
 	index = 0
@@ -52,6 +59,14 @@ func start_dialogue(file: String, code: String) -> void:
 	if movement_controller: movement_controller.set_may_move(false)
 	visible = true
 	started_dialogue.emit()
+
+
+func _update_skip_node(delta: float) -> void:
+	if dialogue_skip:
+		if node_skip_timer > 0:
+			node_skip_timer -= delta
+		else:
+			_next_node()
 
 
 func finish_dialogue() -> void:
@@ -80,6 +95,9 @@ func _show_node(node_data: Dictionary) -> void:
 			animation_timer = 0
 			text.visible_characters = 0
 			skip.visible = false
+			
+			if dialogue_skip:
+				node_skip_timer = node_data.text.length() * NODE_SKIP_TIMER
 		
 		TypeEnum.new_state:
 			var state = node_data.state if node_data.has("state") else "idle"
@@ -97,6 +115,7 @@ func _show_node(node_data: Dictionary) -> void:
 			if node.has_method(method):
 				node.call(method)
 			_next_node()
+	next_node.emit()
 
 
 func _next_node() -> void:
@@ -156,4 +175,3 @@ func _find_speaker_anim(speaker_code: String):
 		return temp_anim
 	if speaker.has_node("movement_controller"):
 		return speaker.get_node("movement_controller")
-	

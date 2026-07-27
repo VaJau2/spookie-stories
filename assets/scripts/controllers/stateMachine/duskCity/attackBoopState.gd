@@ -1,6 +1,7 @@
 extends StateBase
 
 const BOOP_COOLDOWN: Array[float] = [0.8, 1.5]
+const MAX_BOOPS_COUNT: int = 3
 
 @export var seek_areas: Array[Area2D]
 @export var animation_controller: AnimationController
@@ -9,10 +10,12 @@ const BOOP_COOLDOWN: Array[float] = [0.8, 1.5]
 
 var victim: CharacterBody2D = null
 var boop_cooldown: float
+var boops_count: int = 0
 
 
 func enable() -> void:
 	super.enable()
+	boops_count = 0
 	_find_victim()
 	if victim == null: 
 		state_machine.enable_state("idle")
@@ -74,6 +77,9 @@ func on_boop() -> void:
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "boop":
 		movement_controller.load_state(_get_move_state())
+		boops_count += 1
+		if boops_count >= MAX_BOOPS_COUNT:
+			state_machine.enable_state("idle")
 
 
 func _get_move_state() -> String:

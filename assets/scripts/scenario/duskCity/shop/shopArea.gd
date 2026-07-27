@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var one_time: bool
-@export var hint: Label
+@export var hint: HintLabel
 @export var player_body: CharacterBody2D
 @export var shop_logic: Node
 @export var shop_timer: Timer
@@ -9,7 +9,7 @@ extends Area2D
 @export_category("audi")
 @export var shop_audi: AudioStreamPlayer2D
 @export var door_sound: AudioStreamMP3
-@export var buy_sound: AudioStreamMP3
+@export var buy_sound: AudioStream
 
 var check_buy: bool
 
@@ -32,8 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if !shop_logic.may_enter(player_body): return
 	
 	set_process(true)
-	hint.visible = true
-	hint.text = Loc.trans("interface.hints.shop_enter")
+	hint.show_temp_hint(Loc.trans("interface.hints.shop_enter"))
 
 
 func _on_body_exited(body: Node2D) -> void:

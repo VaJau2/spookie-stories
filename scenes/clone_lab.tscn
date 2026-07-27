@@ -1233,7 +1233,7 @@ position = Vector2(-2590, 871)
 [node name="patrol_points" type="Node2D" parent="strikely-mother-clone2" unique_id=1828865965]
 
 [node name="1" type="Node2D" parent="strikely-mother-clone2/patrol_points" unique_id=1114084957]
-position = Vector2(-1218, -8)
+position = Vector2(-1167, -13)
 
 [node name="2" type="Node2D" parent="strikely-mother-clone2/patrol_points" unique_id=362609423]
 position = Vector2(544, 271)
