@@ -356,6 +356,7 @@ max_zoom = 3.0
 
 [node name="movement_controller" type="Node" parent="." unique_id=555073924]
 script = ExtResource("2_8u0ls")
+normalize_dir = false
 
 [node name="walk" type="Node" parent="movement_controller" unique_id=295092636]
 script = ExtResource("3_u0d4t")

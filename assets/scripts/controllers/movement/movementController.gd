@@ -7,6 +7,7 @@ class_name MovementController
 #-----------------------------------------------
 
 @onready var parent: CharacterBody2D = get_parent()
+@export var normalize_dir: bool = true
 
 
 var current_state: MovementState
@@ -35,7 +36,9 @@ func set_may_move(value: bool) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if !may_move: return
-	set_velocity(dir.normalized() * current_state.speed)
+	var temp_dir = dir
+	if normalize_dir: temp_dir = dir.normalized()
+	set_velocity(temp_dir * current_state.speed)
 	parent.move_and_slide()
 
 

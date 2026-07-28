@@ -508,6 +508,7 @@ position_smoothing_enabled = true
 
 [node name="platformer_movement" type="Node" parent="." unique_id=555073924]
 script = ExtResource("2_gg3qa")
+normalize_dir = false
 
 [node name="walk" type="Node" parent="platformer_movement" unique_id=295092636]
 script = ExtResource("3_6spuu")
