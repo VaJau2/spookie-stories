@@ -50,7 +50,11 @@ and X to shoot"
 		"pie": {
 			"keyboard": "Press LMB to throw a pie",
 			"gamepad": "Press X to throw a pie",
-		}
+		},
+		"box": {
+			"keyboard": "Press Е to hide in a box",
+			"gamepad": "Press Y to hide in a box",
+		},
 	},
 	"dialogue": {
 		"skip": "to continue"

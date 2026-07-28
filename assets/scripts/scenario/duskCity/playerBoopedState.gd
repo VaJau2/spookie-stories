@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if !is_booped: return
-	if Input.is_action_just_pressed("ui_boop"):
+	if Input.is_action_just_pressed("ui_interact"):
 		movement_controller.load_state("boop")
 
 

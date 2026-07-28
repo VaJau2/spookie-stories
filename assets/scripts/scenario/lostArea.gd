@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var state_machine: StateMachine
 @export var player_name: String
 @export var scene_name: String
 @export var variable_name: String = "gas_station"
@@ -10,7 +11,12 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if state_machine && state_machine.current_state.name == "idle":
+		return
+	
 	if body.name == player_name:
+		var box: PlayerBoxController = body.get_node_or_null("box_controller")
+		if box && box.is_hiding: box.stop_hiding()
 		var moving = body.get_node("movement_controller")
 		moving.may_move = false
 		set_process(true)

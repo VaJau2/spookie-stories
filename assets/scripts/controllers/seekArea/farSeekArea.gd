@@ -43,6 +43,9 @@ func _process(delta: float) -> void:
 
 func _get_see_delta(delta: float) -> float:
 	if victim.velocity.length() < 5: return 0
+	var box: PlayerBoxController = victim.get_node_or_null("box_controller")
+	if box && box.is_hiding: return 0
+	
 	var movement: MovementController = victim.get_node("movement_controller")
 	var state = movement.current_state.name
 	var distance = victim.global_position.distance_to(parent.global_position)

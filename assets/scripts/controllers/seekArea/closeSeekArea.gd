@@ -88,8 +88,13 @@ func _check_target_visible() -> void:
 
 
 func _get_see_delta(delta: float) -> float:
-	var movement: MovementController = get_victim().get_node("movement_controller")
+	var victim = get_victim()
+	var movement: MovementController = victim.get_node("movement_controller")
 	var state = movement.current_state.name
+	
+	var box: PlayerBoxController = victim.get_node_or_null("box_controller")
+	if box && box.is_hiding: return 0
+	
 	if state == "sit": return 2 * delta
 	if state == "run": return 10 * delta
 	return 5 * delta

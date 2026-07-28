@@ -348,9 +348,10 @@ hframes = 2
 script = ExtResource("34_j8qhy")
 state_machine = NodePath("../state_machine")
 
-[node name="lost_area" type="Area2D" parent="." unique_id=1914835]
+[node name="lost_area" type="Area2D" parent="." unique_id=1914835 node_paths=PackedStringArray("state_machine")]
 monitorable = false
 script = ExtResource("34_e3ofm")
+state_machine = NodePath("../state_machine")
 player_name = "strikely"
 scene_name = "clone_lab_lost"
 variable_name = "clone_lab"

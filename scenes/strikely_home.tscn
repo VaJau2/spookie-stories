@@ -2159,6 +2159,8 @@ range_item_cull_mask = 3
 texture = ExtResource("12_y4xsm")
 texture_scale = 0.9
 
+[node name="without_box" type="Node" parent="ponies/strikely" unique_id=515812420]
+
 [node name="input" type="Node" parent="." unique_id=1809801128]
 script = ExtResource("12_hymxt")
 

@@ -1592,6 +1592,7 @@ focus_neighbor_bottom = NodePath("../dusk_lab")
 text = "Заправка"
 script = ExtResource("25_soql2")
 level_num = 3
+clear_save_variables = Array[String](["gas_station"])
 
 [node name="dusk_lab" type="Button" parent="menu/main_menu/load/container" unique_id=1471753581]
 layout_mode = 2

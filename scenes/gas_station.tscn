@@ -1791,12 +1791,6 @@ position = Vector2(-26, 54)
 [node name="walk" type="Node2D" parent="station_land/spawn_points/3" unique_id=405495465]
 position = Vector2(-385, 25)
 
-[node name="4" type="Node2D" parent="station_land/spawn_points" unique_id=828218115]
-position = Vector2(-970, 85)
-
-[node name="walk" type="Node2D" parent="station_land/spawn_points/4" unique_id=344388865]
-position = Vector2(247, -18)
-
 [node name="player_start_run_point" type="Node2D" parent="station_land" unique_id=154034153]
 position = Vector2(2501, 37)
 
@@ -2140,7 +2134,7 @@ pump_dialogue_area = NodePath("../station_land/pump_dialogue_area")
 [node name="spawn_wolfs" type="Node" parent="." unique_id=1976047241 node_paths=PackedStringArray("spawn_points", "obstacles", "delete_wolfs_area", "sit_dialogue")]
 script = ExtResource("53_stlba")
 wolf_prefab = ExtResource("52_i7u8q")
-spawn_points = [NodePath("../station_land/spawn_points/1"), NodePath("../station_land/spawn_points/2"), NodePath("../station_land/spawn_points/3"), NodePath("../station_land/spawn_points/4")]
+spawn_points = [NodePath("../station_land/spawn_points/1"), NodePath("../station_land/spawn_points/2"), NodePath("../station_land/spawn_points/3")]
 obstacles = NodePath("../station_land/nav_region/wood_obstacles")
 player_name = "bowler_hat"
 growl_sound = ExtResource("60_3mtdj")

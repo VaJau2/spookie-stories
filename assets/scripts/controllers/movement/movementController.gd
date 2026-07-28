@@ -35,7 +35,7 @@ func set_may_move(value: bool) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if !may_move: return
-	set_velocity(dir * current_state.speed)
+	set_velocity(dir.normalized() * current_state.speed)
 	parent.move_and_slide()
 
 
